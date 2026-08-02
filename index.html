@@ -86,14 +86,14 @@
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
     <link href="assets/css2_2832c0ff631d.css" rel="stylesheet"/>
-    <script src="assets/resource_3fa48481346f.js"></script>
-    <script src="assets/iconify_654a1ef798a3.js"></script>
+    <script src="assets/resource_3fa48481346f.js" defer></script>
+    <script src="assets/iconify_654a1ef798a3.js" defer></script>
     
     <!-- GSAP, ScrollTrigger & Lenis Smooth Scroll -->
     <link href="assets/lenis.min.css" rel="stylesheet"/>
-    <script src="assets/gsap.min.js"></script>
-    <script src="assets/ScrollTrigger.min.js"></script>
-    <script src="assets/lenis.min.js"></script>
+    <script src="assets/gsap.min.js" defer></script>
+    <script src="assets/ScrollTrigger.min.js" defer></script>
+    <script src="assets/lenis.min.js" defer></script>
     
     <style>
         /* Animações */
@@ -291,11 +291,23 @@
             transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .animate-on-scroll.animate {
-            opacity: 1;
-            transform: translateY(0);
+            opacity: 1 !important;
+            transform: translateY(0) !important;
         }
 
-        /* Perspectiva do Cubo */
+        @media (max-width: 1023px) {
+            .animate-on-scroll {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        }
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) rotate(30deg); }
+            20% { transform: translateX(100%) rotate(30deg); }
+            100% { transform: translateX(100%) rotate(30deg); }
+        }
+
+        /* 3D Cube Styles */
         .cube-scene {
             perspective: 1200px;
             perspective-origin: 50% 50%;
@@ -361,34 +373,16 @@
             overflow-x: clip !important;
         }
 
-        /* Otimizações Responsivas Mobile para Seções Especiais */
         @media (max-width: 1023px) {
-            #cronograma-3d-section, #portfolio-section {
-                height: auto !important;
+            .pix-notification {
+                animation: none !important;
+                transform: scale(0.95) !important;
+                background: rgba(4, 28, 44, 0.95);
             }
-            #sticky-cube-wrapper, #sticky-port-wrapper {
-                position: relative !important;
-                height: auto !important;
-                top: auto !important;
-                overflow: visible !important;
-            }
-            .cube-scene {
-                display: none !important;
-            }
-            #portfolio-section .relative {
-                height: auto !important;
-                display: flex !important;
-                flex-direction: column !important;
-                align-items: center !important;
-                gap: 1.5rem !important;
-            }
-            #port-img-1, #port-img-2, #port-img-3 {
-                position: relative !important;
-                transform: none !important;
-                opacity: 1 !important;
-                width: 100% !important;
-                max-width: 320px !important;
-                height: 320px !important;
+            .pix-notification-glass {
+                animation: none !important;
+                transform: scale(0.95) !important;
+                background: rgba(255, 255, 255, 0.1) !important;
             }
         }
     </style>
@@ -413,19 +407,20 @@
         document.addEventListener("DOMContentLoaded", () => initInViewAnimations());
     })();
     </script>
+    <!-- GSAP, ScrollTrigger & Lenis Smooth Scroll -->
+    <link href="assets/lenis.min.css" rel="stylesheet"/>
+    <script src="assets/gsap.min.js"></script>
+    <script src="assets/ScrollTrigger.min.js"></script>
+    <script src="assets/lenis.min.js" defer></script>
 </head>
 <body class="min-h-screen bg-slate-950 text-white antialiased" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;">
     
-    <!-- Container Fixo de Fundo: Canvas HTML5 Renderizado via GSAP + ScrollTrigger + Frames WebP -->
     <div id="canvas-bg-container" class="fixed inset-0 w-full h-full z-0 pointer-events-none overflow-hidden bg-[#020d14]">
-        <canvas id="hero-scroll-canvas" class="w-full h-full object-cover filter brightness-90 contrast-110"></canvas>
-        
-        <!-- Overlay Grafite Noturno Suave para Leitura Perfeita de Toda a Copy -->
-        <div class="absolute inset-0 bg-gradient-to-b from-[#020d14]/70 via-[#020d14]/40 to-[#020d14]/80 pointer-events-none"></div>
+        <canvas id="hero-scroll-canvas" class="w-full h-full object-cover filter brightness-100 contrast-110"></canvas>
+        <div class="absolute inset-0 bg-gradient-to-b from-[#020d14]/45 via-[#020d14]/25 to-[#020d14]/55 pointer-events-none"></div>
     </div>
 
-    <!-- Background Grid -->
-    <div class="fixed inset-0 -z-10 bg-gradient-to-b from-[#03151f] via-[#052130] to-[#021017]">
+    <div class="fixed inset-0 -z-10 bg-gradient-to-b from-[#010c14] via-[#031520] to-[#01070d]">
         <div class="absolute inset-0 opacity-[0.025]">
             <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
                 <defs>
@@ -440,9 +435,9 @@
         <div class="absolute top-[30vh] right-1/4 w-[400px] h-[400px] bg-sky-500/10 rounded-full blur-[120px] pointer-events-none"></div>
     </div>
 
-    <!-- Cabeçalho -->
-    <header class="relative z-50 animate-fade-in border-b border-white/5 bg-slate-900/20 backdrop-blur-md">
-        <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-5 flex items-center justify-between">
+    <!-- Cabeçalho Limpo (Normal / Não-Fixado) -->
+    <header class="relative z-50 animate-fade-in border-b border-white/10 bg-[#020d14]/40 backdrop-blur-xl">
+        <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 sm:py-5 flex items-center justify-between">
             <a class="flex items-center gap-3" href="#">
                 <span class="inline-flex items-center justify-center bg-sky-500/10 w-9 h-9 rounded-full backdrop-blur border border-sky-500/30">
                     <svg aria-hidden="true" data-height="16" data-icon="solar:widget-6-bold-duotone" data-width="16" height="16" role="img" style="color: #38bdf8;" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
@@ -470,11 +465,11 @@
 
     <main class="relative z-10">
         
-                <!-- SEÇÃO 1: HERO (Texto Alinhado à Esquerda + Gradiente Suave na Esquerda + Animação Totalmente Visível na Direita) -->
-        <section id="hero-section" class="w-full relative min-h-screen flex items-center bg-transparent overflow-hidden py-16">
+        <!-- SEÇÃO 1: HERO (Alinhamento Limpo & Perfeito dos Textos) -->
+        <section id="hero-section" class="w-full relative min-h-screen flex items-center bg-transparent overflow-hidden py-10 lg:py-16">
             
-            <!-- Gradiente Escuro de Suporte no Lado Esquerdo (Clareado para 30%/10% para máxima nitidez do vídeo) -->
-            <div class="absolute inset-y-0 left-0 w-full lg:w-[50%] bg-gradient-to-r from-[#020d14]/30 via-[#020d14]/10 to-transparent z-0 pointer-events-none"></div>
+            <!-- Gradiente Iluminado no Lado Esquerdo (+25% de Claridade) -->
+            <div class="absolute inset-y-0 left-0 w-full lg:w-[55%] bg-gradient-to-r from-[#020d14]/75 via-[#020d14]/45 to-transparent z-0 pointer-events-none"></div>
 
             <div class="w-full mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
                 
@@ -525,13 +520,6 @@
 
             </div>
         </section>
-
-            
-
-            </div>
-        </section>
-
-
 
         <!-- SEÇÃO 2: A REALIDADE E AS DORES DO CLT (Preenchimento 100%, Interação por Scroll do Usuário + Ambientação Futebol Gramado/Chuteira) -->
         <section id="dores-section" class="w-full bg-[#051f2d] border-t border-white/5 relative h-auto lg:h-[170vh] py-12 lg:py-0">
@@ -1207,17 +1195,23 @@
                         <div id="crono-block-sabado" class="space-y-4">
                             
                             <!-- Header Banner Sábado (Sticky top-24, Grosso, Borda Dourada Exclusiva) -->
-                            <div id="sabado-header" class="sticky top-24 z-30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-[#020d14]/95 backdrop-blur-xl border-2 border-amber-400 rounded-3xl py-7 px-6 sm:px-8 mb-6 shadow-[0_15px_35px_rgba(251,191,36,0.3)] transition-all">
-                                <div class="flex items-center gap-4">
-                                    <span class="w-4 h-4 rounded-full bg-amber-400 animate-ping"></span>
-                                    <div>
-                                        <span class="text-[10px] font-black uppercase tracking-widest text-amber-400 block mb-0.5">1º DIA DE WORKSHOP</span>
-                                        <h3 class="text-xl sm:text-2xl font-black text-white uppercase tracking-wider">
-                                            📅 SÁBADO (29 DE AGOSTO)
+                            <div id="sabado-header" class="sticky top-24 z-30 flex flex-col sm:flex-row items-center justify-between gap-4 bg-[#020d14]/95 backdrop-blur-xl border-2 border-amber-400 rounded-3xl py-6 px-6 sm:px-8 mb-6 shadow-[0_15px_35px_rgba(251,191,36,0.3)] transition-all">
+                                <div class="flex items-center gap-4 my-auto">
+                                    <span class="w-4 h-4 rounded-full bg-amber-400 animate-ping flex-shrink-0"></span>
+                                    <div class="flex flex-col justify-center text-center sm:text-left">
+                                        <span class="text-[10px] font-black uppercase tracking-widest text-amber-400 block mb-0.5 text-center sm:text-left">1º DIA DE WORKSHOP</span>
+                                        <h3 class="text-xl sm:text-2xl font-black text-white uppercase tracking-wider leading-tight text-center sm:text-left">
+                                            📅 SÁBADO
+                                            <span class="text-amber-300 text-sm sm:text-base font-bold block mt-0.5 text-center sm:text-left">(29 DE AGOSTO)</span>
                                         </h3>
                                     </div>
                                 </div>
-                                <span class="text-xs sm:text-sm font-black text-amber-300 bg-amber-500/15 px-4 py-2 rounded-xl border border-amber-400/40">10h às 17h (Ao Vivo)</span>
+                                <div class="my-auto text-center w-full sm:w-auto flex justify-center">
+                                    <div class="inline-flex flex-col items-center justify-center text-center text-xs sm:text-sm font-black text-amber-300 bg-amber-500/15 px-5 py-2.5 rounded-xl border border-amber-400/40 leading-snug">
+                                        <span>10h às 17h</span>
+                                        <span class="text-[11px] font-extrabold text-amber-400/90 block mt-0.5">(Ao Vivo)</span>
+                                    </div>
+                                </div>
                             </div>
 
                             <!-- Item 1 -->
@@ -1378,17 +1372,23 @@
                         <div id="crono-block-domingo" class="space-y-4 pt-8 border-t border-white/10">
                             
                             <!-- Header Banner Domingo (Sticky top-24, Grosso, Borda Esmeralda Exclusiva) -->
-                            <div id="domingo-header" class="sticky top-24 z-30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-[#020d14]/95 backdrop-blur-xl border-2 border-emerald-400 rounded-3xl py-7 px-6 sm:px-8 mb-6 shadow-[0_15px_35px_rgba(52,211,153,0.3)] transition-all">
-                                <div class="flex items-center gap-4">
-                                    <span class="w-4 h-4 rounded-full bg-emerald-400 animate-ping"></span>
-                                    <div>
-                                        <span class="text-[10px] font-black uppercase tracking-widest text-emerald-400 block mb-0.5">2º DIA DE WORKSHOP</span>
-                                        <h3 class="text-xl sm:text-2xl font-black text-white uppercase tracking-wider">
-                                            📅 DOMINGO (30 DE AGOSTO)
+                            <div id="domingo-header" class="sticky top-24 z-30 flex flex-col sm:flex-row items-center justify-between gap-4 bg-[#020d14]/95 backdrop-blur-xl border-2 border-emerald-400 rounded-3xl py-6 px-6 sm:px-8 mb-6 shadow-[0_15px_35px_rgba(52,211,153,0.3)] transition-all">
+                                <div class="flex items-center gap-4 my-auto">
+                                    <span class="w-4 h-4 rounded-full bg-emerald-400 animate-ping flex-shrink-0"></span>
+                                    <div class="flex flex-col justify-center text-center sm:text-left">
+                                        <span class="text-[10px] font-black uppercase tracking-widest text-emerald-400 block mb-0.5 text-center sm:text-left">2º DIA DE WORKSHOP</span>
+                                        <h3 class="text-xl sm:text-2xl font-black text-white uppercase tracking-wider leading-tight text-center sm:text-left">
+                                            📅 DOMINGO
+                                            <span class="text-emerald-300 text-sm sm:text-base font-bold block mt-0.5 text-center sm:text-left">(30 DE AGOSTO)</span>
                                         </h3>
                                     </div>
                                 </div>
-                                <span class="text-xs sm:text-sm font-black text-emerald-300 bg-emerald-500/15 px-4 py-2 rounded-xl border border-emerald-400/40">10h às 17h (Ao Vivo)</span>
+                                <div class="my-auto text-center w-full sm:w-auto flex justify-center">
+                                    <div class="inline-flex flex-col items-center justify-center text-center text-xs sm:text-sm font-black text-emerald-300 bg-emerald-500/15 px-5 py-2.5 rounded-xl border border-emerald-400/40 leading-snug">
+                                        <span>10h às 17h</span>
+                                        <span class="text-[11px] font-extrabold text-emerald-400/90 block mt-0.5">(Ao Vivo)</span>
+                                    </div>
+                                </div>
                             </div>
 
                             <!-- Item 1 -->
@@ -1658,49 +1658,49 @@
                     <!-- Card 3 -->
                     <div class="sticky top-[180px] z-[30] w-full max-w-[850px] mx-auto rounded-[28px] sm:rounded-[36px] border-2 border-purple-400/40 bg-[#052637] p-3 sm:p-5 shadow-2xl overflow-hidden transition-all duration-300">
                         <div class="w-full h-[320px] sm:h-[450px] rounded-2xl sm:rounded-3xl overflow-hidden bg-slate-950 relative">
-                            <img src="fotos/3.webp" alt="Projeto de Uniforme Esportivo Bfnine 3" class="w-full h-full object-cover"/>
+                            <img src="fotos/3.webp" alt="Projeto de Uniforme Esportivo Bfnine 3" class="w-full h-full object-cover" loading="lazy" decoding="async"/>
                         </div>
                     </div>
 
                     <!-- Card 4 -->
                     <div class="sticky top-[195px] z-[40] w-full max-w-[850px] mx-auto rounded-[28px] sm:rounded-[36px] border-2 border-sky-400/40 bg-[#052637] p-3 sm:p-5 shadow-2xl overflow-hidden transition-all duration-300">
                         <div class="w-full h-[320px] sm:h-[450px] rounded-2xl sm:rounded-3xl overflow-hidden bg-slate-950 relative">
-                            <img src="fotos/4.webp" alt="Projeto de Uniforme Esportivo Bfnine 4" class="w-full h-full object-cover"/>
+                            <img src="fotos/4.webp" alt="Projeto de Uniforme Esportivo Bfnine 4" class="w-full h-full object-cover" loading="lazy" decoding="async"/>
                         </div>
                     </div>
 
                     <!-- Card 5 -->
                     <div class="sticky top-[210px] z-[50] w-full max-w-[850px] mx-auto rounded-[28px] sm:rounded-[36px] border-2 border-emerald-400/40 bg-[#052637] p-3 sm:p-5 shadow-2xl overflow-hidden transition-all duration-300">
                         <div class="w-full h-[320px] sm:h-[450px] rounded-2xl sm:rounded-3xl overflow-hidden bg-slate-950 relative">
-                            <img src="fotos/5.webp" alt="Projeto de Uniforme Esportivo Bfnine 5" class="w-full h-full object-cover"/>
+                            <img src="fotos/5.webp" alt="Projeto de Uniforme Esportivo Bfnine 5" class="w-full h-full object-cover" loading="lazy" decoding="async"/>
                         </div>
                     </div>
 
                     <!-- Card 6 -->
                     <div class="sticky top-[225px] z-[60] w-full max-w-[850px] mx-auto rounded-[28px] sm:rounded-[36px] border-2 border-amber-400/40 bg-[#052637] p-3 sm:p-5 shadow-2xl overflow-hidden transition-all duration-300">
                         <div class="w-full h-[320px] sm:h-[450px] rounded-2xl sm:rounded-3xl overflow-hidden bg-slate-950 relative">
-                            <img src="fotos/6.webp" alt="Projeto de Uniforme Esportivo Bfnine 6" class="w-full h-full object-cover"/>
+                            <img src="fotos/6.webp" alt="Projeto de Uniforme Esportivo Bfnine 6" class="w-full h-full object-cover" loading="lazy" decoding="async"/>
                         </div>
                     </div>
 
                     <!-- Card 7 -->
                     <div class="sticky top-[240px] z-[70] w-full max-w-[850px] mx-auto rounded-[28px] sm:rounded-[36px] border-2 border-rose-400/40 bg-[#052637] p-3 sm:p-5 shadow-2xl overflow-hidden transition-all duration-300">
                         <div class="w-full h-[320px] sm:h-[450px] rounded-2xl sm:rounded-3xl overflow-hidden bg-slate-950 relative">
-                            <img src="fotos/7.webp" alt="Projeto de Uniforme Esportivo Bfnine 7" class="w-full h-full object-cover"/>
+                            <img src="fotos/7.webp" alt="Projeto de Uniforme Esportivo Bfnine 7" class="w-full h-full object-cover" loading="lazy" decoding="async"/>
                         </div>
                     </div>
 
                     <!-- Card 8 -->
                     <div class="sticky top-[255px] z-[80] w-full max-w-[850px] mx-auto rounded-[28px] sm:rounded-[36px] border-2 border-teal-400/40 bg-[#052637] p-3 sm:p-5 shadow-2xl overflow-hidden transition-all duration-300">
                         <div class="w-full h-[320px] sm:h-[450px] rounded-2xl sm:rounded-3xl overflow-hidden bg-slate-950 relative">
-                            <img src="fotos/8.webp" alt="Projeto de Uniforme Esportivo Bfnine 8" class="w-full h-full object-cover"/>
+                            <img src="fotos/8.webp" alt="Projeto de Uniforme Esportivo Bfnine 8" class="w-full h-full object-cover" loading="lazy" decoding="async"/>
                         </div>
                     </div>
 
                     <!-- Card 9 -->
                     <div class="sticky top-[270px] z-[90] w-full max-w-[850px] mx-auto rounded-[28px] sm:rounded-[36px] border-2 border-yellow-400/50 bg-[#052637] p-3 sm:p-5 shadow-2xl overflow-hidden transition-all duration-300">
                         <div class="w-full h-[320px] sm:h-[450px] rounded-2xl sm:rounded-3xl overflow-hidden bg-slate-950 relative">
-                            <img src="fotos/9.webp" alt="Projeto de Uniforme Esportivo Bfnine 9" class="w-full h-full object-cover"/>
+                            <img src="fotos/9.webp" alt="Projeto de Uniforme Esportivo Bfnine 9" class="w-full h-full object-cover" loading="lazy" decoding="async"/>
                         </div>
                     </div>
 
@@ -2110,7 +2110,7 @@
 
                                 <!-- Imagem do Especialista / Manto no Ticket -->
                                 <div class="relative my-4 rounded-2xl overflow-hidden bg-slate-950 border border-sky-500/20 shadow-inner">
-                                    <img src="assets/especialista_hero.png" alt="Ingresso Flávio Bfnine" class="w-full h-48 sm:h-56 object-cover object-top group-hover:scale-105 transition-transform duration-500"/>
+                                    <img src="assets/especialista_hero.png" alt="Ingresso Flávio Bfnine" class="w-full h-72 sm:h-80 md:h-[340px] object-cover object-top group-hover:scale-105 transition-transform duration-500"/>
                                     
                                     <!-- Selos Pill Sobrepostos -->
                                     <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
@@ -2118,7 +2118,7 @@
                                             MÉTODO BFNINE
                                         </span>
                                         <span class="inline-flex items-center rounded-full bg-slate-950/80 border border-sky-400/40 text-sky-300 px-2.5 py-0.5 text-[9px] font-bold uppercase">
-                                            EDIÇÃO 01
+                                            EDIÇÃO 06
                                         </span>
                                     </div>
                                 </div>
@@ -2144,7 +2144,7 @@
                                 </div>
                                 <div class="flex items-center gap-2">
                                     <span class="rounded-full bg-sky-500/20 border border-sky-500/40 px-3 py-1 text-xs font-black text-sky-300 uppercase">EDIÇÃO</span>
-                                    <span class="w-7 h-7 rounded-full bg-sky-400 text-slate-950 font-black text-xs flex items-center justify-center">01</span>
+                                    <span class="w-7 h-7 rounded-full bg-sky-400 text-slate-950 font-black text-xs flex items-center justify-center">06</span>
                                 </div>
                             </div>
 
@@ -2174,31 +2174,31 @@
                                 </p>
                             </div>
 
-                            <!-- Ícones de Garantia / Pagamento Seguro -->
-                            <div class="flex items-center gap-4 text-xs text-slate-400 pt-1">
+                            <!-- Ícones de Garantia / Pagamento Seguro com Espaçamento -->
+                            <div class="flex flex-wrap items-center gap-3 text-xs text-slate-300 pt-2 pb-1">
                                 <span class="font-bold text-slate-300">Pagamento Seguro via:</span>
                                 <div class="flex items-center gap-2 font-bold text-slate-200">
-                                    <span class="bg-white/10 px-2 py-1 rounded text-[10px] text-emerald-300">⚡ PIX</span>
-                                    <span class="bg-white/10 px-2 py-1 rounded text-[10px]">💳 Cartão</span>
-                                    <span class="bg-white/10 px-2 py-1 rounded text-[10px]">🔒 Kiwify</span>
+                                    <span class="bg-emerald-500/10 border border-emerald-500/30 px-2.5 py-1 rounded-md text-[10px] font-black text-emerald-300">⚡ PIX</span>
+                                    <span class="bg-white/10 px-2.5 py-1 rounded-md text-[10px]">💳 Cartão</span>
+                                    <span class="bg-white/10 px-2.5 py-1 rounded-md text-[10px]">🔒 Kiwify</span>
                                 </div>
                             </div>
 
-                            <!-- Botão CTA Principal -->
-                            <div class="pt-4">
-                                <a href="https://pxa.fabricaesportiva.com.br/lt/ws" target="_blank" class="w-full text-center flex items-center justify-center gap-3 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black px-8 py-5 shadow-[0_0_30px_rgba(16,185,129,0.4)] transition-all uppercase tracking-widest text-sm sm:text-base btn-shimmer group" style="border-radius: 9999px;" onclick="if(window.fbq){ fbq('track', 'AddToCart', {content_name: 'Ingresso Workshop', value: 19.00, currency: 'BRL'}); fbq('trackCustom', 'SubscribedButtonClick', {button_name: 'Garantir Vaga'}); }">
-                                    <span>GARANTIR MEU INGRESSO AO VIVO</span>
-                                    <span class="group-hover:translate-x-1 transition-transform">➔</span>
+                            <!-- Botão CTA Principal Super Destacado com Respiro Mobile -->
+                            <div class="py-6 sm:py-8 my-2 border-y border-white/10">
+                                <a href="https://pxa.fabricaesportiva.com.br/lt/ws" target="_blank" class="w-full text-center flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-emerald-400 via-green-500 to-emerald-400 hover:from-emerald-300 hover:to-green-400 text-slate-950 font-black px-6 sm:px-10 py-5 sm:py-6 shadow-[0_0_40px_rgba(34,197,94,0.7)] hover:shadow-[0_0_50px_rgba(34,197,94,0.9)] transition-all transform hover:scale-[1.02] uppercase tracking-widest text-base sm:text-lg btn-shimmer ring-4 ring-emerald-400/30 group" style="border-radius: 9999px;" onclick="if(window.fbq){ fbq('track', 'AddToCart', {content_name: 'Ingresso Workshop', value: 19.00, currency: 'BRL'}); fbq('trackCustom', 'SubscribedButtonClick', {button_name: 'Garantir Vaga'}); }">
+                                    <span class="drop-shadow-sm">GARANTIR MEU INGRESSO AO VIVO</span>
+                                    <span class="text-xl group-hover:translate-x-1.5 transition-transform">➔</span>
                                 </a>
                                 
-                                <!-- Barra de Escassez / Progresso -->
-                                <div class="mt-4 max-w-md mx-auto">
-                                    <div class="flex justify-between items-center text-[10px] text-slate-300 font-bold mb-1 uppercase tracking-wider">
-                                        <span>🔥 Ingressos LOTE 1 (R$ 19) quase esgotados</span>
-                                        <span class="text-emerald-400 font-black">87% VENDIDOS</span>
+                                <!-- Barra de Escassez / Progresso com Espaçamento Adequado -->
+                                <div class="mt-6 max-w-md mx-auto">
+                                    <div class="flex justify-between items-center text-[11px] sm:text-xs text-slate-200 font-extrabold mb-2 uppercase tracking-wider">
+                                        <span class="flex items-center gap-1.5"><span class="animate-pulse text-amber-400">🔥</span> Ingressos LOTE 1 (R$ 19) quase esgotados</span>
+                                        <span class="text-emerald-400 font-black bg-emerald-500/10 px-2.5 py-0.5 rounded border border-emerald-500/30">87% VENDIDOS</span>
                                     </div>
-                                    <div class="w-full bg-slate-950 rounded-full h-2.5 border border-emerald-500/30 overflow-hidden p-0.5">
-                                        <div class="bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-400 h-full rounded-full animate-pulse" style="width: 87%;"></div>
+                                    <div class="w-full bg-slate-950 rounded-full h-3 border border-emerald-500/40 overflow-hidden p-0.5 shadow-inner">
+                                        <div class="bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-400 h-full rounded-full animate-pulse shadow-[0_0_10px_rgba(16,185,129,0.5)]" style="width: 87%;"></div>
                                     </div>
                                 </div>
                             </div>
@@ -2907,19 +2907,53 @@
                 }
             }
 
-            // Pré-carregamento dos 240 quadros em RAM
+            // Pré-carregamento Otimizado de Alta Performance (Frame 0 Imediato + Restante Diferido)
             let loadedCount = 0;
             for (let i = 0; i < totalWebpFrames; i++) {
-                const img = new Image();
-                const formattedIndex = String(i).padStart(3, '0');
-                img.src = `assets/hero_frames/frame_${formattedIndex}.webp`;
-                img.onload = () => {
-                    loadedCount++;
-                    if (i === 0 || loadedCount === 1) {
-                        renderCanvasFrame(0);
+                loadedImages.push(null);
+            }
+
+            // 1. Carrega o primeiro frame imediatamente para FCP / LCP instantâneo (< 0.3s)
+            const firstImg = new Image();
+            firstImg.src = 'assets/hero_frames/frame_000.webp';
+            firstImg.onload = () => {
+                loadedImages[0] = firstImg;
+                renderCanvasFrame(0);
+            };
+
+            // 2. Carrega o restante dos quadros em segundo plano quando a CPU estiver ociosa
+            const scheduleRemainingFramesLoad = () => {
+                let frameIdx = 1;
+                function loadBatch() {
+                    const batchSize = 10;
+                    for (let b = 0; b < batchSize && frameIdx < totalWebpFrames; b++, frameIdx++) {
+                        const idx = frameIdx;
+                        const img = new Image();
+                        const formattedIndex = String(idx).padStart(3, '0');
+                        img.src = `assets/hero_frames/frame_${formattedIndex}.webp`;
+                        img.onload = () => {
+                            loadedImages[idx] = img;
+                        };
                     }
-                };
-                loadedImages.push(img);
+                    if (frameIdx < totalWebpFrames) {
+                        if ('requestIdleCallback' in window) {
+                            requestIdleCallback(loadBatch, { timeout: 1000 });
+                        } else {
+                            setTimeout(loadBatch, 50);
+                        }
+                    }
+                }
+                if ('requestIdleCallback' in window) {
+                    requestIdleCallback(loadBatch, { timeout: 1500 });
+                } else {
+                    setTimeout(loadBatch, 300);
+                }
+            };
+
+            if (document.readyState === 'complete') {
+                scheduleRemainingFramesLoad();
+            } else {
+                window.addEventListener('load', scheduleRemainingFramesLoad, { once: true });
             }
 
             function renderCanvasFrame(index) {
@@ -2946,8 +2980,10 @@
             function startFrameInterpolationLoop() {
                 function loop() {
                     const diff = targetFrameIndex - currentFrameIndex;
+                    const isMobile = window.innerWidth < 1024;
+                    const lerpFactor = isMobile ? 0.03 : 0.05; // Cadência estendida e aveludada (+5s de exibição)
                     if (Math.abs(diff) > 0.01) {
-                        currentFrameIndex += diff * 0.10; // Suavidade aveludada no scroll
+                        currentFrameIndex += diff * lerpFactor;
                         renderCanvasFrame(currentFrameIndex);
                         requestAnimationFrame(loop);
                     } else {
@@ -2965,11 +3001,33 @@
             window.addEventListener('resize', resizeCanvas);
             resizeCanvas();
 
-            // 3. GSAP ScrollTrigger (Controle 100% pelo Scroll do Usuário, ritmo suave e macio)
+            // 3. GSAP ScrollTrigger (Sincronização Direta & Responsiva no Mobile e Desktop)
             const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            function syncCanvasOnMobileScroll() {
+                const heroSection = document.getElementById('hero-section');
+                if (!heroSection) return;
+                
+                const parent = heroSection.parentElement;
+                const isPinSpacer = parent && parent.classList.contains('pin-spacer');
+                const container = isPinSpacer ? parent : heroSection;
+                
+                const containerRect = container.getBoundingClientRect();
+                const totalHeight = container.offsetHeight - window.innerHeight;
+                
+                if (totalHeight > 0) {
+                    const scrolled = -containerRect.top;
+                    const progress = Math.min(Math.max(scrolled / totalHeight, 0), 1);
+                    targetFrameIndex = progress * (totalWebpFrames - 1);
+                    startFrameInterpolationLoop();
+                }
+            }
 
             if (!prefersReducedMotion && typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
                 gsap.registerPlugin(ScrollTrigger);
+
+                const isMobileLayout = window.innerWidth < 1024;
+                const scrollDistance = isMobileLayout ? "+=2000" : "+=4200";
 
                 gsap.to(sequence, {
                     frame: totalWebpFrames - 1,
@@ -2977,18 +3035,23 @@
                     scrollTrigger: {
                         trigger: "#hero-section",
                         start: "top top",
-                        end: "+=2600",
+                        end: scrollDistance,
                         pin: true,
-                        scrub: 1.2,
+                        scrub: 1.5,
                         onUpdate: (self) => {
                             targetFrameIndex = self.progress * (totalWebpFrames - 1);
                             startFrameInterpolationLoop();
                         }
                     }
                 });
+
+                setTimeout(() => ScrollTrigger.refresh(), 300);
             } else {
                 renderCanvasFrame(0);
             }
+
+            window.addEventListener('scroll', syncCanvasOnMobileScroll, { passive: true });
+            window.addEventListener('touchmove', syncCanvasOnMobileScroll, { passive: true });
 
             // 4. Manter o controle visual das seções existentes (Dores, Processo, Cronograma, Depoimentos)
             const doresSection = document.getElementById('dores-section');
