@@ -1,0 +1,7 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/fabricae/bfninecamisetas.com.br/wsp2v1
+    - /bin/cp -R index.html $DEPLOYPATH
+    - /bin/cp -R assets $DEPLOYPATH
+    - /bin/cp -R fotos $DEPLOYPATH 2>/dev/null || true
