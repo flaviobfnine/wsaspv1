@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <link rel="preload" as="image" href="assets/hero_team_locker.webp" fetchpriority="high" type="image/webp"/>
+    
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0" name="viewport"/>
     <title>Workshop Fabricação Esportiva para Iniciantes e CLT — Bfnine</title>
-    <!-- Meta Pixel Code -->
+    <!-- Meta Pixel Code (Otimizado para Alta Performance / Non-Blocking LCP) -->
     <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
+    window.fbq = window.fbq || function(){ (window.fbq.q = window.fbq.q || []).push(arguments); };
+    window.fbq.l = +new Date();
     
-    // Inicialização do Pixel com ID Oficial
+    function loadMetaPixel() {
+        if (window.metaPixelLoaded) return;
+        window.metaPixelLoaded = true;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://connect.facebook.net/en_US/fbevents.js';
+        var first = document.getElementsByTagName('script')[0];
+        first.parentNode.insertBefore(s, first);
+    }
+    
+    // Inicializa filas do Pixel imediatamente
     fbq('init', '833766893782097');
-    
-    // 1. Eventos Imediatos de Carregamento (PageView + ViewContent)
     fbq('track', 'PageView');
     fbq('track', 'ViewContent', { 
         content_name: 'Workshop Fabricação Esportiva Aspirante',
@@ -26,60 +30,19 @@
         value: 19.00,
         currency: 'BRL'
     });
+
+    // Carrega o script do Pixel em segundo plano após renderização da tela ou interações
+    if ('requestIdleCallback' in window) {
+        requestIdleCallback(loadMetaPixel, { timeout: 2500 });
+    } else {
+        setTimeout(loadMetaPixel, 1500);
+    }
+    window.addEventListener('scroll', loadMetaPixel, { once: true, passive: true });
+    window.addEventListener('touchstart', loadMetaPixel, { once: true, passive: true });
     </script>
     <noscript><img loading="lazy" decoding="async" height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=833766893782097&ev=PageView&noscript=1"
     /></noscript>
-    
-    <!-- Meta Pixel Checkpoints (ofer_ingresso, Scroll_60 e Scroll_95) -->
-    <script>
-    (function() {
-        let scroll60Fired = false;
-        let scroll95Fired = false;
-        let oferIngressoFired = false;
-
-        function checkScrollDepth() {
-            if (typeof fbq === 'undefined') return;
-            let winHeight = window.innerHeight || document.documentElement.clientHeight;
-            let docHeight = document.documentElement.scrollHeight;
-            let scrollTop = window.scrollY || document.documentElement.scrollTop;
-            if (docHeight - winHeight <= 0) return;
-            let scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
-
-            if (scrollPercent >= 60 && !scroll60Fired) {
-                scroll60Fired = true;
-                fbq('trackCustom', 'Scroll_60', { page: 'workshop-aspirante', depth: '60%' });
-            }
-            if (scrollPercent >= 95 && !scroll95Fired) {
-                scroll95Fired = true;
-                fbq('trackCustom', 'Scroll_95', { page: 'workshop-aspirante', depth: '95%' });
-            }
-        }
-
-        window.addEventListener('scroll', checkScrollDepth, { passive: true });
-
-        document.addEventListener('DOMContentLoaded', function() {
-            checkScrollDepth();
-
-            // Disparo automático do evento ofer_ingresso / ViewContent no CTA de Preço
-            const ctaSection = document.getElementById('comprar') || document.querySelector('[data-pixel-tag="ofer_ingresso"]');
-            if (ctaSection && 'IntersectionObserver' in window) {
-                const observer = new IntersectionObserver(function(entries) {
-                    entries.forEach(function(entry) {
-                        if (entry.isIntersecting && !oferIngressoFired) {
-                            oferIngressoFired = true;
-                            if (typeof fbq !== 'undefined') {
-                                fbq('track', 'ViewContent', { content_name: 'ofer_ingresso', value: 19.00, currency: 'BRL' });
-                                fbq('trackCustom', 'ofer_ingresso', { page: 'workshop-aspirante' });
-                            }
-                        }
-                    });
-                }, { threshold: 0.2 });
-                observer.observe(ctaSection);
-            }
-        });
-    })();
-    </script>
     <!-- End Meta Pixel Code -->
 
     
