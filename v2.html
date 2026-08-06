@@ -2968,7 +2968,7 @@
                 }
             }
 
-            function initGSAP() {
+                        function initGSAP() {
                 if (!prefersReducedMotion && typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
                     gsap.registerPlugin(ScrollTrigger);
 
@@ -2985,20 +2985,17 @@
                             pin: true,
                             scrub: 1.5,
                             onUpdate: (self) => {
-                if (heroVideo && heroVideo.duration && !isNaN(heroVideo.duration)) {
-                    try {
-                        heroVideo.currentTime = self.progress * heroVideo.duration;
-                    } catch(e) {}
-                }
-            } catch(e) {}
-                }
-            }
-            }
-            }
+                                targetFrameIndex = self.progress * (totalWebpFrames - 1);
+                                startFrameInterpolationLoop();
+                            }
                         }
                     });
 
                     setTimeout(() => ScrollTrigger.refresh(), 300);
+                } else {
+                    renderCanvasFrame(0);
+                }
+            }
                 } else {
                     renderCanvasFrame(0);
                 }
