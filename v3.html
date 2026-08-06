@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <link rel="preload" as="image" href="assets/hero_team_locker.webp" fetchpriority="high" type="image/webp"/>
+    
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0" name="viewport"/>
     <title>Workshop Fabricação Esportiva para Iniciantes e CLT — Bfnine</title>
@@ -9,7 +11,7 @@
     
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-    <link href="assets/css2_2832c0ff631d.css" rel="stylesheet"/>
+    <link rel="preload" as="style" href="assets/css2_2832c0ff631d.css"/><link href="assets/css2_2832c0ff631d.css" rel="stylesheet" media="print" onload="this.media=\'all\'"/><noscript><link href="assets/css2_2832c0ff631d.css" rel="stylesheet"/></noscript>
     <script src="assets/resource_3fa48481346f.js" defer></script>
     <script src="assets/iconify_654a1ef798a3.js" defer></script>
     
@@ -340,7 +342,8 @@
 <body class="min-h-screen bg-slate-950 text-white antialiased" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;">
     
     <div id="canvas-bg-container" class="fixed inset-0 w-full h-full z-0 pointer-events-none overflow-hidden bg-[#020d14]">
-        <canvas id="hero-scroll-canvas" class="w-full h-full object-cover filter brightness-100 contrast-110"></canvas>
+        <div class="absolute inset-0 bg-cover bg-center pointer-events-none z-0 opacity-70" style="background-image: url('assets/hero_team_locker.webp');"></div>
+        <div class="absolute inset-y-0 left-0 w-full lg:w-[65%] bg-gradient-to-r from-[#020d14] via-[#020d14]/90 to-transparent z-0 pointer-events-none"></div></video>
         <div class="absolute inset-0 bg-gradient-to-b from-[#020d14]/45 via-[#020d14]/25 to-[#020d14]/55 pointer-events-none"></div>
     </div>
 
@@ -363,7 +366,7 @@
     <header class="relative z-50 animate-fade-in border-b border-white/10 bg-[#020d14]/40 backdrop-blur-xl">
         <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 sm:py-5 flex items-center justify-between">
             <a class="flex items-center gap-3" href="#">
-                <img src="assets/logo_wme_workshop.png" alt="WME - Workshop da Marca Esportiva" class="h-10 sm:h-12 w-auto object-contain drop-shadow-md"/>
+                <img loading="eager" fetchpriority="high" decoding="async" src="assets/logo_wme_workshop.webp" alt="WME - Workshop da Marca Esportiva" class="h-10 sm:h-12 w-auto object-contain drop-shadow-md"/>
             </a>
 
             <!-- Data e Tipo de Evento no Topo -->
@@ -387,7 +390,7 @@
         <section id="hero-section" class="w-full relative min-h-screen flex items-center bg-transparent overflow-hidden py-10 lg:py-16">
             
             <!-- Gradiente Iluminado no Lado Esquerdo (+25% de Claridade) -->
-            <div class="absolute inset-y-0 left-0 w-full lg:w-[55%] bg-gradient-to-r from-[#020d14]/75 via-[#020d14]/45 to-transparent z-0 pointer-events-none"></div>
+            <div class="absolute inset-y-0 left-0 w-full lg:w-[65%] bg-gradient-to-r from-[#020d14] via-[#020d14]/85 to-transparent z-0 pointer-events-none"></div>
 
             <div class="w-full mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
                 
@@ -444,7 +447,7 @@
         <section id="dores-section" class="w-full bg-[#051f2d] border-t border-white/5 relative h-auto lg:min-h-[160vh] py-8 lg:py-0">
             
             <!-- Imagem de Fundo Ambiental Chuteira e Gramado de Estádio -->
-            <div class="absolute inset-0 bg-cover bg-center opacity-15 mix-blend-overlay pointer-events-none" style="background-image: url('assets/futebol_chuteira_campo.jpg');"></div>
+            <div class="absolute inset-0 bg-cover bg-center opacity-15 mix-blend-overlay pointer-events-none" style="background-image: url('assets/futebol_chuteira_campo.webp');"></div>
 
             <div id="sticky-dores-wrapper" class="relative lg:sticky lg:top-0 flex flex-col justify-center w-full z-10 h-auto lg:min-h-screen py-4 lg:py-6">
                 <div class="mx-auto max-w-[1200px] w-full px-4 sm:px-6 lg:px-8 py-2 lg:py-4 relative flex flex-col justify-center h-auto lg:h-full">
@@ -474,7 +477,7 @@
                 <div class="snap-start flex-shrink-0 w-[76vw] max-w-[330px] sm:w-[330px] min-h-0 rounded-3xl border-2 border-red-500/30 bg-[#052637]/95 overflow-hidden flex flex-col justify-between shadow-xl transition-all duration-300 hover:border-red-500 hover:shadow-red-500/20 hover:-translate-y-1 group animate-on-scroll" style="border-radius: 28px;">
                     <div class="flex-1 flex flex-col justify-start">
                         <div class="w-full h-32 sm:h-36 overflow-hidden relative flex-shrink-0">
-                            <img src="assets/dor_clt_cansado.png" alt="Cansaço CLT e ônibus lotado" class="w-full h-full object-cover opacity-90 transition-transform duration-500 group-hover:scale-105"/>
+                            <img loading="lazy" decoding="async" src="assets/dor_clt_cansado.webp" alt="Cansaço CLT e ônibus lotado" class="w-full h-full object-cover opacity-90 transition-transform duration-500 group-hover:scale-105"/>
                             <div class="absolute inset-0 bg-gradient-to-t from-[#052637] via-[#052637]/20 to-transparent"></div>
                         </div>
                         <div class="p-5 flex-1 flex flex-col justify-start pb-3">
@@ -494,7 +497,7 @@
                 <div class="snap-start flex-shrink-0 w-[76vw] max-w-[330px] sm:w-[330px] min-h-0 rounded-3xl border-2 border-red-500/30 bg-[#052637]/95 overflow-hidden flex flex-col justify-between shadow-xl transition-all duration-300 hover:border-red-500 hover:shadow-red-500/20 hover:-translate-y-1 group animate-on-scroll" style="border-radius: 28px; animation-delay: 0.1s;">
                     <div class="flex-1 flex flex-col justify-start">
                         <div class="w-full h-32 sm:h-36 overflow-hidden relative flex-shrink-0">
-                            <img src="assets/dor_maquina_cara.png" alt="Maquinário sublimático caro" class="w-full h-full object-cover opacity-90 transition-transform duration-500 group-hover:scale-105"/>
+                            <img loading="lazy" decoding="async" src="assets/dor_maquina_cara.webp" alt="Maquinário sublimático caro" class="w-full h-full object-cover opacity-90 transition-transform duration-500 group-hover:scale-105"/>
                             <div class="absolute inset-0 bg-gradient-to-t from-[#052637] via-[#052637]/20 to-transparent"></div>
                         </div>
                         <div class="p-5 flex-1 flex flex-col justify-start pb-3">
@@ -514,7 +517,7 @@
                 <div class="snap-start flex-shrink-0 w-[76vw] max-w-[330px] sm:w-[330px] min-h-0 rounded-3xl border-2 border-red-500/30 bg-[#052637]/95 overflow-hidden flex flex-col justify-between shadow-xl transition-all duration-300 hover:border-red-500 hover:shadow-red-500/20 hover:-translate-y-1 group animate-on-scroll" style="border-radius: 28px; animation-delay: 0.2s;">
                     <div class="flex-1 flex flex-col justify-start">
                         <div class="w-full h-32 sm:h-36 overflow-hidden relative flex-shrink-0">
-                            <img src="assets/dor_costura_torta.png" alt="Costura torta e tecidos defeituosos" class="w-full h-full object-cover opacity-90 transition-transform duration-500 group-hover:scale-105"/>
+                            <img loading="lazy" decoding="async" src="assets/dor_costura_torta.webp" alt="Costura torta e tecidos defeituosos" class="w-full h-full object-cover opacity-90 transition-transform duration-500 group-hover:scale-105"/>
                             <div class="absolute inset-0 bg-gradient-to-t from-[#052637] via-[#052637]/20 to-transparent"></div>
                         </div>
                         <div class="p-5 flex-1 flex flex-col justify-start pb-3">
@@ -534,7 +537,7 @@
                 <div class="snap-start flex-shrink-0 w-[76vw] max-w-[330px] sm:w-[330px] min-h-0 rounded-3xl border-2 border-red-500/30 bg-[#052637]/95 overflow-hidden flex flex-col justify-between shadow-xl transition-all duration-300 hover:border-red-500 hover:shadow-red-500/20 hover:-translate-y-1 group animate-on-scroll" style="border-radius: 28px; animation-delay: 0.3s;">
                     <div class="flex-1 flex flex-col justify-start">
                         <div class="w-full h-32 sm:h-36 overflow-hidden relative flex-shrink-0">
-                            <img src="assets/dor_whatsapp_vazio.png" alt="Whatsapp sem mensagens de clientes" class="w-full h-full object-cover opacity-90 transition-transform duration-500 group-hover:scale-105"/>
+                            <img loading="lazy" decoding="async" src="assets/dor_whatsapp_vazio.webp" alt="Whatsapp sem mensagens de clientes" class="w-full h-full object-cover opacity-90 transition-transform duration-500 group-hover:scale-105"/>
                             <div class="absolute inset-0 bg-gradient-to-t from-[#052637] via-[#052637]/20 to-transparent"></div>
                         </div>
                         <div class="p-5 flex-1 flex flex-col justify-start pb-3">
@@ -554,7 +557,7 @@
                 <div class="snap-start flex-shrink-0 w-[76vw] max-w-[330px] sm:w-[330px] min-h-0 rounded-3xl border-2 border-red-500/30 bg-[#052637]/95 overflow-hidden flex flex-col justify-between shadow-xl transition-all duration-300 hover:border-red-500 hover:shadow-red-500/20 hover:-translate-y-1 group animate-on-scroll" style="border-radius: 28px; animation-delay: 0.4s;">
                     <div class="flex-1 flex flex-col justify-start">
                         <div class="w-full h-32 sm:h-36 overflow-hidden relative flex-shrink-0">
-                            <img src="assets/dor_fornecedor_atrasado.png" alt="Atrasos e fornecedores ruins" class="w-full h-full object-cover opacity-90 transition-transform duration-500 group-hover:scale-105"/>
+                            <img loading="lazy" decoding="async" src="assets/dor_fornecedor_atrasado.webp" alt="Atrasos e fornecedores ruins" class="w-full h-full object-cover opacity-90 transition-transform duration-500 group-hover:scale-105"/>
                             <div class="absolute inset-0 bg-gradient-to-t from-[#052637] via-[#052637]/20 to-transparent"></div>
                         </div>
                         <div class="p-5 flex-1 flex flex-col justify-start pb-3">
@@ -721,7 +724,7 @@
                                 <!-- Camada 1: Arte em Branco -->
                                 <div id="layer-step-1" class="absolute inset-0 flex flex-col justify-center items-center p-3 sm:p-4 transition-all duration-500 opacity-100 pointer-events-auto transform scale-100 active-layer">
                                     <div class="w-full h-full relative rounded-2xl overflow-hidden flex items-center justify-center p-1 sm:p-2">
-                                        <img src="assets/branco.webp" alt="Base do Uniforme em Branco e Moldes 2D no Clo3D" class="w-full h-full object-contain rounded-xl opacity-95 shadow-2xl"/>
+                                        <img loading="lazy" decoding="async" src="assets/branco.webp" alt="Base do Uniforme em Branco e Moldes 2D no Clo3D" class="w-full h-full object-contain rounded-xl opacity-95 shadow-2xl"/>
                                     </div>
                                     <div class="absolute top-2 left-2 sm:top-[6%] sm:left-[6%] bg-slate-950/90 border border-white/10 backdrop-blur-md px-3 sm:px-4 py-1.5 sm:py-2 rounded-2xl flex items-center gap-2 shadow-2xl anim-float-1 z-30">
                                         <span class="text-emerald-400 text-xs">📄</span>
@@ -736,7 +739,7 @@
                                 <!-- Camada 2: Desenho (Estampa Aplicada) -->
                                 <div id="layer-step-2" class="absolute inset-0 flex flex-col justify-center items-center p-3 sm:p-4 transition-all duration-500 opacity-0 pointer-events-none transform scale-95 animate-layer-fade">
                                     <div class="w-full h-full relative rounded-2xl overflow-hidden flex items-center justify-center p-1 sm:p-2">
-                                        <img src="assets/argentina.webp" alt="Uniforme Estilo Argentina com Arte Aplicada no Clo3D" class="w-full h-full object-contain rounded-xl opacity-95 shadow-2xl"/>
+                                        <img loading="lazy" decoding="async" src="assets/argentina.webp" alt="Uniforme Estilo Argentina com Arte Aplicada no Clo3D" class="w-full h-full object-contain rounded-xl opacity-95 shadow-2xl"/>
                                     </div>
                                     <div class="absolute top-2 right-2 sm:top-[6%] sm:right-[6%] bg-slate-950/90 border border-white/10 backdrop-blur-md px-3 sm:px-4 py-1.5 sm:py-2 rounded-2xl flex items-center gap-2 shadow-2xl anim-float-2 z-30">
                                         <span class="text-sky-400 text-xs">✏️</span>
@@ -751,7 +754,7 @@
                                 <!-- Camada 3: Modelagem para Impressão no Corel -->
                                 <div id="layer-step-3" class="absolute inset-0 flex flex-col justify-center items-center p-3 sm:p-4 transition-all duration-500 opacity-0 pointer-events-none transform scale-95 animate-layer-fade">
                                     <div class="w-full h-full relative rounded-2xl overflow-hidden flex items-center justify-center p-1 sm:p-2">
-                                        <img src="assets/corel_molde.webp" alt="Moldes para Impressão no CorelDRAW" class="w-full h-full object-contain rounded-xl opacity-95 shadow-2xl"/>
+                                        <img loading="lazy" decoding="async" src="assets/corel_molde.webp" alt="Moldes para Impressão no CorelDRAW" class="w-full h-full object-contain rounded-xl opacity-95 shadow-2xl"/>
                                     </div>
                                     <div class="absolute top-2 left-2 sm:top-[6%] sm:left-[6%] bg-slate-950/90 border border-white/10 backdrop-blur-md px-3 sm:px-4 py-1.5 sm:py-2 rounded-2xl flex items-center gap-2 shadow-2xl anim-float-1 z-30">
                                         <span class="text-purple-400 text-xs">📐</span>
@@ -766,7 +769,7 @@
                                 <!-- Camada 4: Produção via Oficinas Homologadas -->
                                 <div id="layer-step-4" class="absolute inset-0 flex flex-col justify-center items-center p-3 sm:p-4 transition-all duration-500 opacity-0 pointer-events-none transform scale-95 animate-layer-fade">
                                     <div class="w-full h-full relative rounded-2xl overflow-hidden flex items-center justify-center p-1 sm:p-2">
-                                        <img src="assets/fabrica3.webp" alt="Oficina de Sublimação Homologada Bfnine" class="w-full h-full object-contain rounded-xl opacity-95 shadow-2xl"/>
+                                        <img loading="lazy" decoding="async" src="assets/fabrica3.webp" alt="Oficina de Sublimação Homologada Bfnine" class="w-full h-full object-contain rounded-xl opacity-95 shadow-2xl"/>
                                     </div>
                                     <div class="absolute top-2 right-2 sm:top-[6%] sm:right-[6%] bg-slate-950/90 border border-white/10 backdrop-blur-md px-3 sm:px-4 py-1.5 sm:py-2 rounded-2xl flex items-center gap-2 shadow-2xl anim-float-3 z-30">
                                         <span class="text-sky-400 text-xs">🏭</span>
@@ -781,7 +784,7 @@
                                 <!-- Camada 5: Costura e Acabamento -->
                                 <div id="layer-step-5" class="absolute inset-0 flex flex-col justify-center items-center p-3 sm:p-4 transition-all duration-500 opacity-0 pointer-events-none transform scale-95 animate-layer-fade">
                                     <div class="w-full h-full relative rounded-2xl overflow-hidden flex items-center justify-center p-1 sm:p-2">
-                                        <img src="assets/terceiriza.webp" alt="Ateliê de Costura e Acabamento Homologado Bfnine" class="w-full h-full object-contain rounded-xl opacity-95 shadow-2xl"/>
+                                        <img loading="lazy" decoding="async" src="assets/terceiriza.webp" alt="Ateliê de Costura e Acabamento Homologado Bfnine" class="w-full h-full object-contain rounded-xl opacity-95 shadow-2xl"/>
                                     </div>
                                     <div class="absolute top-2 right-2 sm:top-[6%] sm:right-[6%] bg-slate-950/90 border border-white/10 backdrop-blur-md px-3 sm:px-4 py-1.5 sm:py-2 rounded-2xl flex items-center gap-2 shadow-2xl anim-float-1 z-30">
                                         <span class="text-emerald-400 text-xs">🧵</span>
@@ -796,7 +799,7 @@
                                 <!-- Camada 6: Uniforme Fabricado e Embalado -->
                                 <div id="layer-step-6" class="absolute inset-0 flex flex-col justify-center items-center p-3 sm:p-4 transition-all duration-500 opacity-0 pointer-events-none transform scale-95 animate-layer-fade">
                                     <div class="w-full h-full relative rounded-2xl overflow-hidden flex items-center justify-center p-1 sm:p-2">
-                                        <img src="assets/acabado.webp" alt="Uniformes Fabricados e Embalados Prontos para Envio" class="w-full h-full object-contain rounded-xl opacity-95 shadow-2xl"/>
+                                        <img loading="lazy" decoding="async" src="assets/acabado.webp" alt="Uniformes Fabricados e Embalados Prontos para Envio" class="w-full h-full object-contain rounded-xl opacity-95 shadow-2xl"/>
                                     </div>
                                     <div class="absolute top-2 left-2 sm:top-[6%] sm:left-[6%] bg-slate-950/90 border border-white/10 backdrop-blur-md px-3 sm:px-4 py-1.5 sm:py-2 rounded-2xl flex items-center gap-2 shadow-2xl anim-float-1 z-30">
                                         <span class="text-cyan-400 text-xs">📦</span>
@@ -811,7 +814,7 @@
                                 <!-- Camada 7: Projeto Pronto para o Jogo -->
                                 <div id="layer-step-7" class="absolute inset-0 flex flex-col justify-center items-center p-3 sm:p-4 transition-all duration-500 opacity-0 pointer-events-none transform scale-95 animate-layer-fade">
                                     <div class="w-full h-full relative rounded-2xl overflow-hidden flex items-center justify-center p-1 sm:p-2">
-                                        <img src="assets/pronto.webp" alt="Time no Vestiário Prontos para o Jogo com a Marca" class="w-full h-full object-contain rounded-xl opacity-95 shadow-2xl"/>
+                                        <img loading="lazy" decoding="async" src="assets/pronto.webp" alt="Time no Vestiário Prontos para o Jogo com a Marca" class="w-full h-full object-contain rounded-xl opacity-95 shadow-2xl"/>
                                     </div>
                                     <div class="absolute top-2 left-2 sm:top-[6%] sm:left-[6%] bg-slate-950/90 border border-white/10 backdrop-blur-md px-3 sm:px-4 py-1.5 sm:py-2 rounded-2xl flex items-center gap-2 shadow-2xl anim-float-3 z-30">
                                         <span class="text-green-400 text-xs">💰</span>
@@ -860,7 +863,7 @@
                     <div class="bg-[#020d14]/95 border-2 border-red-500/40 rounded-3xl overflow-hidden shadow-2xl flex flex-col justify-between hover:border-red-500 transition-all duration-300 group">
                         <div>
                             <div class="relative h-48 w-full overflow-hidden bg-slate-950">
-                                <img src="assets/plotter_sublimacao_70k.jpg" alt="Plotter de Impressão Industrial Sublimação" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"/>
+                                <img loading="lazy" decoding="async" src="assets/plotter_sublimacao_70k.webp" alt="Plotter de Impressão Industrial Sublimação" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"/>
                                 <div class="absolute inset-0 bg-gradient-to-t from-[#020d14] via-transparent to-transparent"></div>
                             </div>
                             <div class="p-5">
@@ -884,7 +887,7 @@
                     <div class="bg-[#020d14]/95 border-2 border-red-500/40 rounded-3xl overflow-hidden shadow-2xl flex flex-col justify-between hover:border-red-500 transition-all duration-300 group">
                         <div>
                             <div class="relative h-48 w-full overflow-hidden bg-slate-950">
-                                <img src="assets/prensa_termica_25k.jpg" alt="Prensa Térmica de Sublimação Industrial" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"/>
+                                <img loading="lazy" decoding="async" src="assets/prensa_termica_25k.webp" alt="Prensa Térmica de Sublimação Industrial" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"/>
                                 <div class="absolute inset-0 bg-gradient-to-t from-[#020d14] via-transparent to-transparent"></div>
                             </div>
                             <div class="p-5">
@@ -908,7 +911,7 @@
                     <div class="bg-[#020d14]/95 border-2 border-red-500/40 rounded-3xl overflow-hidden shadow-2xl flex flex-col justify-between hover:border-red-500 transition-all duration-300 group">
                         <div>
                             <div class="relative h-48 w-full overflow-hidden bg-slate-950">
-                                <img src="assets/maquina_costura_20k.jpg" alt="Máquinas de Costura Industriais Overloque e Reta" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"/>
+                                <img loading="lazy" decoding="async" src="assets/maquina_costura_20k.webp" alt="Máquinas de Costura Industriais Overloque e Reta" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"/>
                                 <div class="absolute inset-0 bg-gradient-to-t from-[#020d14] via-transparent to-transparent"></div>
                             </div>
                             <div class="p-5">
@@ -932,7 +935,7 @@
                     <div class="bg-[#020d14]/95 border-2 border-red-500/40 rounded-3xl overflow-hidden shadow-2xl flex flex-col justify-between hover:border-red-500 transition-all duration-300 group">
                         <div>
                             <div class="relative h-48 w-full overflow-hidden bg-slate-950">
-                                <img src="assets/curva_aprendizado_dor.jpg" alt="Frustração Tentando Aprender Sozinho" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"/>
+                                <img loading="lazy" decoding="async" src="assets/curva_aprendizado_dor.webp" alt="Frustração Tentando Aprender Sozinho" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"/>
                                 <div class="absolute inset-0 bg-gradient-to-t from-[#020d14] via-transparent to-transparent"></div>
                             </div>
                             <div class="p-5">
@@ -1545,7 +1548,7 @@
         <section id="depoimentos-section" class="w-full relative bg-[#051f2d] border-t border-white/5" style="height: 190vh;">
             
             <!-- Imagem de Fundo Ambiental do Vestiário Profissional EA FC -->
-            <div class="absolute inset-0 bg-cover bg-center opacity-15 mix-blend-overlay pointer-events-none" style="background-image: url('assets/futebol_vestiario_hd.jpg');"></div>
+            <div class="absolute inset-0 bg-cover bg-center opacity-15 mix-blend-overlay pointer-events-none" style="background-image: url('assets/futebol_vestiario_hd.webp');"></div>
 
             <div id="sticky-dep-wrapper" class="sticky top-0 min-h-screen lg:h-screen flex flex-col justify-between w-full bg-[#051f2d]/90 py-2 sm:py-4 z-[20]">
                 
@@ -1574,7 +1577,7 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-2.5 pb-2.5 border-b border-white/10">
                                         <div class="w-10 h-10 rounded-full bg-yellow-500/10 border border-yellow-500/30 flex items-center justify-center text-yellow-400 font-black text-sm flex-shrink-0 overflow-hidden">
-                                            <img src="assets/res_aluno_1.png" alt="Lucas Fonseca" class="w-full h-full object-cover"/>
+                                            <img loading="lazy" decoding="async" src="assets/res_aluno_1.webp" alt="Lucas Fonseca" class="w-full h-full object-cover"/>
                                         </div>
                                         <div>
                                             <h4 class="text-xs font-bold text-white uppercase tracking-wider">Lucas Fonseca</h4>
@@ -1592,7 +1595,7 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-2.5 pb-2.5 border-b border-white/10">
                                         <div class="w-10 h-10 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 font-black text-sm flex-shrink-0 overflow-hidden">
-                                            <img src="assets/res_aluno_2.png" alt="Gabriela Medeiros" class="w-full h-full object-cover"/>
+                                            <img loading="lazy" decoding="async" src="assets/res_aluno_2.webp" alt="Gabriela Medeiros" class="w-full h-full object-cover"/>
                                         </div>
                                         <div>
                                             <h4 class="text-xs font-bold text-white uppercase tracking-wider">Gabriela Medeiros</h4>
@@ -1610,7 +1613,7 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-2.5 pb-2.5 border-b border-white/10">
                                         <div class="w-10 h-10 rounded-full bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 font-black text-sm flex-shrink-0 overflow-hidden">
-                                            <img src="assets/res_aluno_3.png" alt="Felipe Souza" class="w-full h-full object-cover"/>
+                                            <img loading="lazy" decoding="async" src="assets/res_aluno_3.webp" alt="Felipe Souza" class="w-full h-full object-cover"/>
                                         </div>
                                         <div>
                                             <h4 class="text-xs font-bold text-white uppercase tracking-wider">Felipe Souza</h4>
@@ -1702,7 +1705,7 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-2.5 pb-2.5 border-b border-white/10">
                                         <div class="w-10 h-10 rounded-full bg-yellow-500/10 border border-yellow-500/30 flex items-center justify-center text-yellow-400 font-black text-sm flex-shrink-0 overflow-hidden">
-                                            <img src="assets/res_aluno_1.png" alt="Lucas Fonseca" class="w-full h-full object-cover"/>
+                                            <img loading="lazy" decoding="async" src="assets/res_aluno_1.webp" alt="Lucas Fonseca" class="w-full h-full object-cover"/>
                                         </div>
                                         <div>
                                             <h4 class="text-xs font-bold text-white uppercase tracking-wider">Lucas Fonseca</h4>
@@ -1719,7 +1722,7 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-2.5 pb-2.5 border-b border-white/10">
                                         <div class="w-10 h-10 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 font-black text-sm flex-shrink-0 overflow-hidden">
-                                            <img src="assets/res_aluno_2.png" alt="Gabriela Medeiros" class="w-full h-full object-cover"/>
+                                            <img loading="lazy" decoding="async" src="assets/res_aluno_2.webp" alt="Gabriela Medeiros" class="w-full h-full object-cover"/>
                                         </div>
                                         <div>
                                             <h4 class="text-xs font-bold text-white uppercase tracking-wider">Gabriela Medeiros</h4>
@@ -1736,7 +1739,7 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-2.5 pb-2.5 border-b border-white/10">
                                         <div class="w-10 h-10 rounded-full bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 font-black text-sm flex-shrink-0 overflow-hidden">
-                                            <img src="assets/res_aluno_3.png" alt="Felipe Souza" class="w-full h-full object-cover"/>
+                                            <img loading="lazy" decoding="async" src="assets/res_aluno_3.webp" alt="Felipe Souza" class="w-full h-full object-cover"/>
                                         </div>
                                         <div>
                                             <h4 class="text-xs font-bold text-white uppercase tracking-wider">Felipe Souza</h4>
@@ -1827,67 +1830,67 @@
                         
                         <!-- Image 1 -->
                         <div onclick="openImageModal('depoimentos/depoimento_aluno_1.png')" class="flex-shrink-0 w-[220px] sm:w-[280px] lg:w-[300px] h-[270px] sm:h-[320px] lg:h-[340px] rounded-2xl border-2 border-yellow-500/40 bg-slate-950 p-2 shadow-2xl overflow-hidden group cursor-pointer relative transition-transform hover:scale-[1.02]">
-                            <img src="depoimentos/depoimento_aluno_1.png" alt="Comprovante de Resultado Aluno Bfnine 1" class="w-full h-full object-contain rounded-xl bg-slate-950 transition-transform duration-500 group-hover:scale-105"/>
+                            <img loading="lazy" decoding="async" src="depoimentos/depoimento_aluno_1.png" alt="Comprovante de Resultado Aluno Bfnine 1" class="w-full h-full object-contain rounded-xl bg-slate-950 transition-transform duration-500 group-hover:scale-105"/>
                             <div class="absolute bottom-3 left-3 bg-slate-950/90 border border-white/20 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] font-bold text-yellow-300 flex items-center gap-1 shadow-lg pointer-events-none">🔍 Clique para ampliar</div>
                         </div>
 
                         <!-- Image 2 -->
                         <div onclick="openImageModal('depoimentos/depoimento_aluno_2.png')" class="flex-shrink-0 w-[220px] sm:w-[280px] lg:w-[300px] h-[270px] sm:h-[320px] lg:h-[340px] rounded-2xl border-2 border-cyan-400/40 bg-slate-950 p-2 shadow-2xl overflow-hidden group cursor-pointer relative transition-transform hover:scale-[1.02]">
-                            <img src="depoimentos/depoimento_aluno_2.png" alt="Comprovante de Resultado Aluno Bfnine 2" class="w-full h-full object-contain rounded-xl bg-slate-950 transition-transform duration-500 group-hover:scale-105"/>
+                            <img loading="lazy" decoding="async" src="depoimentos/depoimento_aluno_2.png" alt="Comprovante de Resultado Aluno Bfnine 2" class="w-full h-full object-contain rounded-xl bg-slate-950 transition-transform duration-500 group-hover:scale-105"/>
                             <div class="absolute bottom-3 left-3 bg-slate-950/90 border border-white/20 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] font-bold text-cyan-300 flex items-center gap-1 shadow-lg pointer-events-none">🔍 Clique para ampliar</div>
                         </div>
 
                         <!-- Image 3 -->
                         <div onclick="openImageModal('depoimentos/depoimento_aluno_3.png')" class="flex-shrink-0 w-[220px] sm:w-[280px] lg:w-[300px] h-[270px] sm:h-[320px] lg:h-[340px] rounded-2xl border-2 border-purple-400/40 bg-slate-950 p-2 shadow-2xl overflow-hidden group cursor-pointer relative transition-transform hover:scale-[1.02]">
-                            <img src="depoimentos/depoimento_aluno_3.png" alt="Comprovante de Resultado Aluno Bfnine 3" class="w-full h-full object-contain rounded-xl bg-slate-950 transition-transform duration-500 group-hover:scale-105"/>
+                            <img loading="lazy" decoding="async" src="depoimentos/depoimento_aluno_3.png" alt="Comprovante de Resultado Aluno Bfnine 3" class="w-full h-full object-contain rounded-xl bg-slate-950 transition-transform duration-500 group-hover:scale-105"/>
                             <div class="absolute bottom-3 left-3 bg-slate-950/90 border border-white/20 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] font-bold text-purple-300 flex items-center gap-1 shadow-lg pointer-events-none">🔍 Clique para ampliar</div>
                         </div>
 
                         <!-- Image 4 -->
                         <div onclick="openImageModal('depoimentos/depoimento_aluno_4.png')" class="flex-shrink-0 w-[220px] sm:w-[280px] lg:w-[300px] h-[270px] sm:h-[320px] lg:h-[340px] rounded-2xl border-2 border-sky-400/40 bg-slate-950 p-2 shadow-2xl overflow-hidden group cursor-pointer relative transition-transform hover:scale-[1.02]">
-                            <img src="depoimentos/depoimento_aluno_4.png" alt="Comprovante de Resultado Aluno Bfnine 4" class="w-full h-full object-contain rounded-xl bg-slate-950 transition-transform duration-500 group-hover:scale-105"/>
+                            <img loading="lazy" decoding="async" src="depoimentos/depoimento_aluno_4.png" alt="Comprovante de Resultado Aluno Bfnine 4" class="w-full h-full object-contain rounded-xl bg-slate-950 transition-transform duration-500 group-hover:scale-105"/>
                             <div class="absolute bottom-3 left-3 bg-slate-950/90 border border-white/20 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] font-bold text-sky-300 flex items-center gap-1 shadow-lg pointer-events-none">🔍 Clique para ampliar</div>
                         </div>
 
                         <!-- Image 5 -->
                         <div onclick="openImageModal('depoimentos/depoimento_aluno_5.png')" class="flex-shrink-0 w-[220px] sm:w-[280px] lg:w-[300px] h-[270px] sm:h-[320px] lg:h-[340px] rounded-2xl border-2 border-emerald-400/40 bg-slate-950 p-2 shadow-2xl overflow-hidden group cursor-pointer relative transition-transform hover:scale-[1.02]">
-                            <img src="depoimentos/depoimento_aluno_5.png" alt="Comprovante de Resultado Aluno Bfnine 5" class="w-full h-full object-contain rounded-xl bg-slate-950 transition-transform duration-500 group-hover:scale-105"/>
+                            <img loading="lazy" decoding="async" src="depoimentos/depoimento_aluno_5.png" alt="Comprovante de Resultado Aluno Bfnine 5" class="w-full h-full object-contain rounded-xl bg-slate-950 transition-transform duration-500 group-hover:scale-105"/>
                             <div class="absolute bottom-3 left-3 bg-slate-950/90 border border-white/20 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] font-bold text-emerald-300 flex items-center gap-1 shadow-lg pointer-events-none">🔍 Clique para ampliar</div>
                         </div>
 
                         <!-- Image 6 -->
                         <div onclick="openImageModal('depoimentos/depoimento_aluno_6.png')" class="flex-shrink-0 w-[220px] sm:w-[280px] lg:w-[300px] h-[270px] sm:h-[320px] lg:h-[340px] rounded-2xl border-2 border-amber-400/40 bg-slate-950 p-2 shadow-2xl overflow-hidden group cursor-pointer relative transition-transform hover:scale-[1.02]">
-                            <img src="depoimentos/depoimento_aluno_6.png" alt="Comprovante de Resultado Aluno Bfnine 6" class="w-full h-full object-contain rounded-xl bg-slate-950 transition-transform duration-500 group-hover:scale-105"/>
+                            <img loading="lazy" decoding="async" src="depoimentos/depoimento_aluno_6.png" alt="Comprovante de Resultado Aluno Bfnine 6" class="w-full h-full object-contain rounded-xl bg-slate-950 transition-transform duration-500 group-hover:scale-105"/>
                             <div class="absolute bottom-3 left-3 bg-slate-950/90 border border-white/20 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] font-bold text-amber-300 flex items-center gap-1 shadow-lg pointer-events-none">🔍 Clique para ampliar</div>
                         </div>
 
                         <!-- Image 7 -->
                         <div onclick="openImageModal('depoimentos/depoimento_aluno_7.png')" class="flex-shrink-0 w-[220px] sm:w-[280px] lg:w-[300px] h-[270px] sm:h-[320px] lg:h-[340px] rounded-2xl border-2 border-rose-400/40 bg-slate-950 p-2 shadow-2xl overflow-hidden group cursor-pointer relative transition-transform hover:scale-[1.02]">
-                            <img src="depoimentos/depoimento_aluno_7.png" alt="Comprovante de Resultado Aluno Bfnine 7" class="w-full h-full object-contain rounded-xl bg-slate-950 transition-transform duration-500 group-hover:scale-105"/>
+                            <img loading="lazy" decoding="async" src="depoimentos/depoimento_aluno_7.png" alt="Comprovante de Resultado Aluno Bfnine 7" class="w-full h-full object-contain rounded-xl bg-slate-950 transition-transform duration-500 group-hover:scale-105"/>
                             <div class="absolute bottom-3 left-3 bg-slate-950/90 border border-white/20 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] font-bold text-rose-300 flex items-center gap-1 shadow-lg pointer-events-none">🔍 Clique para ampliar</div>
                         </div>
 
                         <!-- Image 8 -->
                         <div onclick="openImageModal('depoimentos/depoimento_aluno_8.png')" class="flex-shrink-0 w-[220px] sm:w-[280px] lg:w-[300px] h-[270px] sm:h-[320px] lg:h-[340px] rounded-2xl border-2 border-teal-400/40 bg-slate-950 p-2 shadow-2xl overflow-hidden group cursor-pointer relative transition-transform hover:scale-[1.02]">
-                            <img src="depoimentos/depoimento_aluno_8.png" alt="Comprovante de Resultado Aluno Bfnine 8" class="w-full h-full object-contain rounded-xl bg-slate-950 transition-transform duration-500 group-hover:scale-105"/>
+                            <img loading="lazy" decoding="async" src="depoimentos/depoimento_aluno_8.png" alt="Comprovante de Resultado Aluno Bfnine 8" class="w-full h-full object-contain rounded-xl bg-slate-950 transition-transform duration-500 group-hover:scale-105"/>
                             <div class="absolute bottom-3 left-3 bg-slate-950/90 border border-white/20 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] font-bold text-teal-300 flex items-center gap-1 shadow-lg pointer-events-none">🔍 Clique para ampliar</div>
                         </div>
 
                         <!-- Image 9 -->
                         <div onclick="openImageModal('depoimentos/depoimento_aluno_9.png')" class="flex-shrink-0 w-[220px] sm:w-[280px] lg:w-[300px] h-[270px] sm:h-[320px] lg:h-[340px] rounded-2xl border-2 border-indigo-400/40 bg-slate-950 p-2 shadow-2xl overflow-hidden group cursor-pointer relative transition-transform hover:scale-[1.02]">
-                            <img src="depoimentos/depoimento_aluno_9.png" alt="Comprovante de Resultado Aluno Bfnine 9" class="w-full h-full object-contain rounded-xl bg-slate-950 transition-transform duration-500 group-hover:scale-105"/>
+                            <img loading="lazy" decoding="async" src="depoimentos/depoimento_aluno_9.png" alt="Comprovante de Resultado Aluno Bfnine 9" class="w-full h-full object-contain rounded-xl bg-slate-950 transition-transform duration-500 group-hover:scale-105"/>
                             <div class="absolute bottom-3 left-3 bg-slate-950/90 border border-white/20 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] font-bold text-indigo-300 flex items-center gap-1 shadow-lg pointer-events-none">🔍 Clique para ampliar</div>
                         </div>
 
                         <!-- Image 10 -->
                         <div onclick="openImageModal('depoimentos/depoimento_aluno_10.png')" class="flex-shrink-0 w-[220px] sm:w-[280px] lg:w-[300px] h-[270px] sm:h-[320px] lg:h-[340px] rounded-2xl border-2 border-lime-400/40 bg-slate-950 p-2 shadow-2xl overflow-hidden group cursor-pointer relative transition-transform hover:scale-[1.02]">
-                            <img src="depoimentos/depoimento_aluno_10.png" alt="Comprovante de Resultado Aluno Bfnine 10" class="w-full h-full object-contain rounded-xl bg-slate-950 transition-transform duration-500 group-hover:scale-105"/>
+                            <img loading="lazy" decoding="async" src="depoimentos/depoimento_aluno_10.png" alt="Comprovante de Resultado Aluno Bfnine 10" class="w-full h-full object-contain rounded-xl bg-slate-950 transition-transform duration-500 group-hover:scale-105"/>
                             <div class="absolute bottom-3 left-3 bg-slate-950/90 border border-white/20 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] font-bold text-lime-300 flex items-center gap-1 shadow-lg pointer-events-none">🔍 Clique para ampliar</div>
                         </div>
 
                         <!-- Image 11 -->
                         <div onclick="openImageModal('depoimentos/depoimento_aluno_11.png')" class="flex-shrink-0 w-[220px] sm:w-[280px] lg:w-[300px] h-[270px] sm:h-[320px] lg:h-[340px] rounded-2xl border-2 border-yellow-400/40 bg-slate-950 p-2 shadow-2xl overflow-hidden group cursor-pointer relative transition-transform hover:scale-[1.02]">
-                            <img src="depoimentos/depoimento_aluno_11.png" alt="Comprovante de Resultado Aluno Bfnine 11" class="w-full h-full object-contain rounded-xl bg-slate-950 transition-transform duration-500 group-hover:scale-105"/>
+                            <img loading="lazy" decoding="async" src="depoimentos/depoimento_aluno_11.png" alt="Comprovante de Resultado Aluno Bfnine 11" class="w-full h-full object-contain rounded-xl bg-slate-950 transition-transform duration-500 group-hover:scale-105"/>
                             <div class="absolute bottom-3 left-3 bg-slate-950/90 border border-white/20 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] font-bold text-yellow-300 flex items-center gap-1 shadow-lg pointer-events-none">🔍 Clique para ampliar</div>
                         </div>
 
@@ -1942,7 +1945,7 @@
 
                                 <!-- Imagem do Especialista / Manto no Ticket -->
                                 <div class="relative my-4 rounded-2xl overflow-hidden bg-slate-950 border border-sky-500/20 shadow-inner">
-                                    <img src="assets/especialista_hero.png" alt="Ingresso Flávio Bfnine" class="w-full h-72 sm:h-80 md:h-[340px] object-cover object-top group-hover:scale-105 transition-transform duration-500"/>
+                                    <img loading="eager" fetchpriority="high" decoding="async" src="assets/especialista_hero.webp" alt="Ingresso Flávio Bfnine" class="w-full h-72 sm:h-80 md:h-[340px] object-cover object-top group-hover:scale-105 transition-transform duration-500"/>
                                     
                                     <!-- Selos Pill Sobrepostos -->
                                     <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
@@ -2278,7 +2281,7 @@
                 
                 <div class="mb-8 animate-on-scroll">
                     <!-- Selo de Garantia 100% Satisfação Enviado pelo Usuário com Brilho Celeste -->
-                    <img src="assets/selo_garantia_100.png" alt="Selo de Garantia de 100% Satisfação" class="w-40 sm:w-48 h-auto mx-auto drop-shadow-[0_15px_35px_rgba(56,189,248,0.35)] transition-transform duration-300 hover:scale-105"/>
+                    <img loading="lazy" decoding="async" src="assets/selo_garantia_100.webp" alt="Selo de Garantia de 100% Satisfação" class="w-40 sm:w-48 h-auto mx-auto drop-shadow-[0_15px_35px_rgba(56,189,248,0.35)] transition-transform duration-300 hover:scale-105"/>
                 </div>
 
                 <div class="max-w-3xl mx-auto space-y-6 animate-on-scroll">
@@ -2330,14 +2333,14 @@
                     <!-- Card 1 (Destaque Manto Bfnine Celeste Enviado pelo Usuário) -->
                     <div class="sticky top-[150px] z-[10] w-full max-w-[850px] mx-auto rounded-[28px] sm:rounded-[36px] border-2 border-sky-400/50 bg-[#052637] p-3 sm:p-5 shadow-2xl overflow-hidden transition-all duration-300">
                         <div class="w-full h-[320px] sm:h-[450px] rounded-2xl sm:rounded-3xl overflow-hidden bg-slate-950 relative flex items-center justify-center p-4">
-                            <img src="assets/manto_celeste_bfnine.png" alt="Manto Celeste Bfnine Polo 3D Oficial" class="w-full h-full object-contain drop-shadow-[0_10px_25px_rgba(56,189,248,0.3)]"/>
+                            <img loading="lazy" decoding="async" src="assets/manto_celeste_bfnine.webp" alt="Manto Celeste Bfnine Polo 3D Oficial" class="w-full h-full object-contain drop-shadow-[0_10px_25px_rgba(56,189,248,0.3)]"/>
                         </div>
                     </div>
 
                     <!-- Card 2 -->
                     <div class="sticky top-[165px] z-[20] w-full max-w-[850px] mx-auto rounded-[28px] sm:rounded-[36px] border-2 border-cyan-400/40 bg-[#052637] p-3 sm:p-5 shadow-2xl overflow-hidden transition-all duration-300">
                         <div class="w-full h-[320px] sm:h-[450px] rounded-2xl sm:rounded-3xl overflow-hidden bg-slate-950 relative">
-                            <img src="fotos/2.webp" alt="Projeto de Uniforme Esportivo Bfnine 2" class="w-full h-full object-cover"/>
+                            <img loading="lazy" decoding="async" src="fotos/2.webp" alt="Projeto de Uniforme Esportivo Bfnine 2" class="w-full h-full object-cover"/>
                         </div>
                     </div>
 
@@ -2504,7 +2507,7 @@
 
                             <!-- Contêiner da Imagem do Especialista Flávio -->
                             <div class="relative rounded-3xl border border-sky-500/20 bg-slate-900 p-2 overflow-hidden shadow-2xl hover-card-effect" style="border-radius: 28px;">
-                                <img alt="Flávio Bfnine - Especialista do Workshop" class="w-full h-auto object-cover rounded-2xl" src="assets/especialista_hero.png" style="border-radius: 20px;"/>
+                                <img loading="eager" fetchpriority="high" decoding="async" alt="Flávio Bfnine - Especialista do Workshop" class="w-full h-auto object-cover rounded-2xl" src="assets/especialista_hero.webp" style="border-radius: 20px;"/>
                             </div>
                         </div>
                     </div>
@@ -2605,7 +2608,7 @@
                         
                         <!-- Imagem Oficial do Suporte Bfnine -->
                         <div class="relative w-44 h-44 sm:w-48 sm:h-48 flex items-center justify-center">
-                            <img src="assets/suporte_bfnine.png" alt="Suporte Bfnine" class="w-full h-full object-contain drop-shadow-[0_0_25px_rgba(0,163,196,0.6)]"/>
+                            <img loading="lazy" decoding="async" src="assets/suporte_bfnine.webp" alt="Suporte Bfnine" class="w-full h-full object-contain drop-shadow-[0_0_25px_rgba(0,163,196,0.6)]"/>
                         </div>
 
                         <div class="space-y-4">
@@ -2627,7 +2630,7 @@
                 <!-- Abaixo FAQ: Avatar circular do Flávio e Instagram Rosa -->
                 <div class="mt-16 border-t border-white/10 pt-12 flex flex-col items-center justify-center space-y-4">
                     <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-sky-400 overflow-hidden shadow-lg bg-slate-900">
-                        <img src="assets/Flavio.png" alt="Flávio Bfnine" class="w-full h-full object-cover object-top"/>
+                        <img loading="lazy" decoding="async" src="assets/Flavio.webp" alt="Flávio Bfnine" class="w-full h-full object-cover object-top"/>
                     </div>
                     
                     <a href="https://instagram.com/flaviobfnine" target="_blank" class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#f09433] via-[#e6683c] to-[#bc1888] hover:opacity-90 px-6 py-2.5 text-white font-extrabold text-xs shadow-md" style="border-radius: 8px;">
@@ -2923,124 +2926,25 @@
                 }
             }
 
-            // 2. Configuração do Canvas HTML5 de Alta Performance no Fundo (Reativo ao Scroll + Suave)
-            const canvas = document.getElementById('hero-scroll-canvas');
-            let ctx = canvas ? canvas.getContext('2d', { alpha: false }) : null;
-
-            const totalWebpFrames = 240;
-            const loadedImages = [];
-            const sequence = { frame: 0 };
-            let currentFrameIndex = 0;
-            let targetFrameIndex = 0;
-            let isInterpolating = false;
-
-            function resizeCanvas() {
-                if (canvas) {
-                    canvas.width = window.innerWidth;
-                    canvas.height = window.innerHeight;
-                    renderCanvasFrame(currentFrameIndex);
-                }
-            }
-
-            // Pré-carregamento Otimizado de Alta Performance (Frame 0 Imediato + Restante Diferido)
-            let loadedCount = 0;
-            for (let i = 0; i < totalWebpFrames; i++) {
-                loadedImages.push(null);
-            }
-
-            // 1. Carrega o primeiro frame imediatamente para FCP / LCP instantâneo (< 0.3s)
-            const firstImg = new Image();
-            firstImg.src = 'assets/hero_frames/frame_000.webp';
-            firstImg.onload = () => {
-                loadedImages[0] = firstImg;
-                renderCanvasFrame(0);
-            };
-
-            // 2. Carrega o restante dos quadros em segundo plano quando a CPU estiver ociosa
-            const scheduleRemainingFramesLoad = () => {
-                let frameIdx = 1;
-                function loadBatch() {
-                    const batchSize = 10;
-                    for (let b = 0; b < batchSize && frameIdx < totalWebpFrames; b++, frameIdx++) {
-                        const idx = frameIdx;
-                        const img = new Image();
-                        const formattedIndex = String(idx).padStart(3, '0');
-                        img.src = `assets/hero_frames/frame_${formattedIndex}.webp`;
-                        img.onload = () => {
-                            loadedImages[idx] = img;
-                        };
+            // 2. Configuração do Vídeo Ultra-Leve hero2.webm Controlado 100% pelo Scroll (SEM LOOP)
+            const heroVideo = document.getElementById('hero-scroll-video');
+            if (heroVideo) {
+                heroVideo.pause();
+                heroVideo.currentTime = 0;
+                
+                // Pré-carregamento diferido para garantir LCP instantâneo no Mobile (< 0.3s)
+                const enableVideoOnScroll = () => {
+                    if (heroVideo.readyState < 2) {
+                        heroVideo.load();
                     }
-                    if (frameIdx < totalWebpFrames) {
-                        if ('requestIdleCallback' in window) {
-                            requestIdleCallback(loadBatch, { timeout: 1000 });
-                        } else {
-                            setTimeout(loadBatch, 50);
-                        }
-                    }
-                }
-                if ('requestIdleCallback' in window) {
-                    requestIdleCallback(loadBatch, { timeout: 1500 });
-                } else {
-                    setTimeout(loadBatch, 300);
-                }
-            };
-
-            let framesLoadStarted = false;
-            const triggerRemainingFramesLoad = () => {
-                if (framesLoadStarted) return;
-                framesLoadStarted = true;
-                scheduleRemainingFramesLoad();
-            };
-
-            window.addEventListener('scroll', triggerRemainingFramesLoad, { once: true, passive: true });
-            window.addEventListener('touchmove', triggerRemainingFramesLoad, { once: true, passive: true });
-            window.addEventListener('mousemove', triggerRemainingFramesLoad, { once: true, passive: true });
-            setTimeout(triggerRemainingFramesLoad, 6000);
-
-            function renderCanvasFrame(index) {
-                if (!ctx || !canvas) return;
-                const safeIndex = Math.min(Math.max(Math.round(index), 0), totalWebpFrames - 1);
-                const img = loadedImages[safeIndex];
-
-                if (img && img.complete && img.naturalWidth > 0) {
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    ctx.imageSmoothingEnabled = true;
-                    ctx.imageSmoothingQuality = 'high';
-                    
-                    const hRatio = canvas.width / img.width;
-                    const vRatio = canvas.height / img.height;
-                    const ratio = Math.max(hRatio, vRatio);
-                    const centerShift_x = (canvas.width - img.width * ratio) / 2;
-                    const centerShift_y = (canvas.height - img.height * ratio) / 2;
-                    
-                    ctx.drawImage(img, 0, 0, img.width, img.height, centerShift_x, centerShift_y, img.width * ratio, img.height * ratio);
-                }
+                };
+                window.addEventListener('scroll', enableVideoOnScroll, { once: true, passive: true });
+                window.addEventListener('touchmove', enableVideoOnScroll, { once: true, passive: true });
             }
-
-            // Loop de Interpolação de Inércia Suave (Ativado SOMENTE no movimento do scroll)
-            function startFrameInterpolationLoop() {
-                function loop() {
-                    const diff = targetFrameIndex - currentFrameIndex;
-                    const isMobile = window.innerWidth < 1024;
-                    const lerpFactor = isMobile ? 0.03 : 0.05; // Cadência estendida e aveludada (+5s de exibição)
-                    if (Math.abs(diff) > 0.01) {
-                        currentFrameIndex += diff * lerpFactor;
-                        renderCanvasFrame(currentFrameIndex);
-                        requestAnimationFrame(loop);
-                    } else {
-                        currentFrameIndex = targetFrameIndex;
-                        renderCanvasFrame(currentFrameIndex);
-                        isInterpolating = false;
-                    }
-                }
-                if (!isInterpolating) {
-                    isInterpolating = true;
-                    requestAnimationFrame(loop);
-                }
-            }
-
-            window.addEventListener('resize', resizeCanvas);
-            resizeCanvas();
+            
+            
+            
+            
 
             // 3. GSAP ScrollTrigger (Sincronização Direta & Responsiva no Mobile e Desktop)
             const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -3081,9 +2985,16 @@
                             pin: true,
                             scrub: 1.5,
                             onUpdate: (self) => {
-                                targetFrameIndex = self.progress * (totalWebpFrames - 1);
-                                startFrameInterpolationLoop();
-                            }
+                if (heroVideo && heroVideo.duration && !isNaN(heroVideo.duration)) {
+                    try {
+                        heroVideo.currentTime = self.progress * heroVideo.duration;
+                    } catch(e) {}
+                }
+            } catch(e) {}
+                }
+            }
+            }
+            }
                         }
                     });
 
@@ -3262,7 +3173,7 @@
     <div id="image-modal" class="fixed inset-0 z-[9999] bg-black/90 backdrop-blur-md hidden items-center justify-center p-4 cursor-pointer transition-all duration-300" onclick="closeImageModal()">
         <div class="relative max-w-4xl max-h-[90vh] w-full flex flex-col items-center justify-center">
             <button onclick="closeImageModal()" class="absolute -top-12 right-2 text-white bg-slate-800/90 hover:bg-slate-700 w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold border border-white/20 shadow-2xl">✕</button>
-            <img id="modal-img" src="" alt="Comprovante de Resultado Ampliado em Alta Resolução" class="max-w-full max-h-[82vh] object-contain rounded-2xl border-2 border-sky-400 shadow-2xl bg-slate-950"/>
+            <img loading="lazy" decoding="async" id="modal-img" src="" alt="Comprovante de Resultado Ampliado em Alta Resolução" class="max-w-full max-h-[82vh] object-contain rounded-2xl border-2 border-sky-400 shadow-2xl bg-slate-950"/>
             <p class="text-xs text-slate-300 mt-3 font-medium">Toque em qualquer lugar para fechar</p>
         </div>
     </div>
