@@ -1,0 +1,6 @@
+# Desativa reescrita do WordPress para permitir que o site HTML estático abra direto
+<IfModule mod_rewrite.c>
+  RewriteEngine Off
+</IfModule>
+
+DirectoryIndex index.html
