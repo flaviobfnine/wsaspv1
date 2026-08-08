@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/bfninecamisetas/public_html/wsp1
+    - export DEPLOYPATH=/home/fabricae/bfninecamisetas.com.br/wsp1
     - /bin/cp -R * $DEPLOYPATH
