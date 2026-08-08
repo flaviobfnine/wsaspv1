@@ -1,0 +1,9 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/fabricae/bfninecamisetas.com.br/wsp2v1
+    - /bin/rm -f $DEPLOYPATH/workshop*.html $DEPLOYPATH/design-system.html $DEPLOYPATH/fabrica-sem-maquina.html $DEPLOYPATH/modelagens.html $DEPLOYPATH/sublimador-elite.html
+    - /bin/cp -R index.html $DEPLOYPATH
+    - /bin/cp -R assets $DEPLOYPATH
+    - /bin/cp -R fotos $DEPLOYPATH 2>/dev/null || true
+    - /bin/cp -R depoimentos $DEPLOYPATH 2>/dev/null || true
