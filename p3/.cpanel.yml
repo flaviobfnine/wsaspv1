@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - /bin/mkdir -p /home/fabricae/public_html/wsp3
-    - /bin/cp -rf * /home/fabricae/public_html/wsp3/
     - /bin/mkdir -p /home/fabricae/bfninecamisetas.com.br/wsp3
-    - /bin/cp -rf * /home/fabricae/bfninecamisetas.com.br/wsp3/
+    - /bin/cp -rf index.html v2.html v3.html v4.html compra-ingresso-confirmada.html assets /home/fabricae/bfninecamisetas.com.br/wsp3/
+    - /bin/cp -rf fotos /home/fabricae/bfninecamisetas.com.br/wsp3/ 2>/dev/null || true
+    - /bin/cp -rf depoimentos /home/fabricae/bfninecamisetas.com.br/wsp3/ 2>/dev/null || true
