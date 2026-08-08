@@ -343,10 +343,11 @@
     <script src="assets/ScrollTrigger.min.js" defer></script>
     <script src="assets/lenis.min.js" defer></script>
 
+
 <!-- Meta Pixel Code Oficial BFNINE (Pixel ID: 833766893782097) -->
     <script>
-    if (!window._metaPixelInitialized) {
-        window._metaPixelInitialized = true;
+    if (!window._metaPixelLoaded && window.top === window.self) {
+        window._metaPixelLoaded = true;
         !function(f,b,e,v,n,t,s)
         {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
         n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -366,9 +367,6 @@
         });
     }
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=833766893782097&ev=PageView&noscript=1"
-    /></noscript>
     
     <!-- Scroll Checkpoints (Scroll_60 e Scroll_95) -->
     <script>
