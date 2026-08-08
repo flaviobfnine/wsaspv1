@@ -1,15 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/fabricae/public_html/wsp3
-    - export DEPLOYPATH2=/home/fabricae/bfninecamisetas.com.br/wsp3
-    - /bin/mkdir -p $DEPLOYPATH 2>/dev/null || true
-    - /bin/mkdir -p $DEPLOYPATH2 2>/dev/null || true
-    - /bin/cp -R index.html v2.html v3.html v4.html compra-ingresso-confirmada.html $DEPLOYPATH 2>/dev/null || true
-    - /bin/cp -R assets $DEPLOYPATH 2>/dev/null || true
-    - /bin/cp -R fotos $DEPLOYPATH 2>/dev/null || true
-    - /bin/cp -R depoimentos $DEPLOYPATH 2>/dev/null || true
-    - /bin/cp -R index.html v2.html v3.html v4.html compra-ingresso-confirmada.html $DEPLOYPATH2 2>/dev/null || true
-    - /bin/cp -R assets $DEPLOYPATH2 2>/dev/null || true
-    - /bin/cp -R fotos $DEPLOYPATH2 2>/dev/null || true
-    - /bin/cp -R depoimentos $DEPLOYPATH2 2>/dev/null || true
+    - /bin/mkdir -p /home/fabricae/public_html/wsp3
+    - /bin/cp -rf * /home/fabricae/public_html/wsp3/
+    - /bin/mkdir -p /home/fabricae/bfninecamisetas.com.br/wsp3
+    - /bin/cp -rf * /home/fabricae/bfninecamisetas.com.br/wsp3/
