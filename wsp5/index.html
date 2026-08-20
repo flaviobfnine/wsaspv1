@@ -2542,28 +2542,23 @@
                 }
 
                 if (processSection) {
-                    const procRect = processSection.getBoundingClientRect();
-                    const viewHeight = window.innerHeight;
-                    const totalHeight = processSection.clientHeight;
-                    
-                    if (procRect.top <= 0 && procRect.bottom >= viewHeight) {
-                        const scrolled = -procRect.top;
-                        const totalScrollable = totalHeight - viewHeight;
-                        const pct = Math.min(Math.max(scrolled / totalScrollable, 0), 1);
+                    if (!isMobile) {
+                        const procRect = processSection.getBoundingClientRect();
+                        const viewHeight = window.innerHeight;
+                        const totalHeight = processSection.clientHeight;
                         
-                        if (isMobile) {
-                            const processTrack = document.getElementById('process-track');
-                            const processTrackContainer = document.getElementById('process-track-container');
-                            if (processTrack && processTrackContainer) {
-                                const trackWidth = processTrack.scrollWidth;
-                                const containerWidth = processTrackContainer.clientWidth;
-                                const maxTranslate = Math.max(trackWidth - containerWidth + 24, 0);
-                                processTrack.style.transform = `translateX(-${pct * maxTranslate}px)`;
-                            }
+                        if (procRect.top <= 0 && procRect.bottom >= viewHeight) {
+                            const scrolled = -procRect.top;
+                            const totalScrollable = totalHeight - viewHeight;
+                            const pct = Math.min(Math.max(scrolled / totalScrollable, 0), 1);
+                            const step = Math.min(Math.floor(pct * 7), 6) + 1;
+                            activateStep(step);
                         }
-
-                        const step = Math.min(Math.floor(pct * 7), 6) + 1;
-                        activateStep(step);
+                    } else {
+                        const processTrack = document.getElementById('process-track');
+                        if (processTrack) {
+                            processTrack.style.transform = 'none';
+                        }
                     }
                 }
 
