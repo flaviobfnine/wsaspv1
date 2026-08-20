@@ -1148,67 +1148,109 @@
                                 <div id="process-track" class="flex flex-col gap-6 w-full relative">
                                     
                                     <!-- Card 1 -->
-                                    <button onclick="activateStep(1)" id="process-card-1" class="sticky top-[100px] z-[10] text-left w-full bg-[#051f2d] border-2 border-yellow-500 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 shadow-[0_15px_35px_rgba(0,0,0,0.9)]" style="border-radius: 20px;">
-                                        <div>
-                                            <div class="w-8 h-8 rounded-lg bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center text-yellow-400 font-extrabold text-xs mb-3">01</div>
-                                            <h3 class="text-base font-extrabold text-white uppercase tracking-wider">Marca Esportiva de Elite</h3>
-                                            <p class="text-xs text-slate-200 mt-2 leading-relaxed">Construir uma marca forte e valorizada, saindo do estigma de oficina local ou brindes baratos.</p>
+                                    <div id="process-card-1" class="sticky top-[90px] z-[10] w-full bg-[#051f2d] border-2 border-yellow-500/60 rounded-3xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.9)] transition-all duration-300">
+                                        <div class="flex items-center gap-3 mb-3">
+                                            <div class="w-8 h-8 rounded-lg bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center text-yellow-400 font-extrabold text-xs">01</div>
+                                            <h3 class="text-base sm:text-lg font-black text-white uppercase tracking-wider">MARCA ESPORTIVA DE ELITE</h3>
                                         </div>
-                                    </button>
+                                        <p class="text-xs sm:text-sm text-slate-200 leading-relaxed font-medium mb-4">
+                                            Construir uma marca forte e valorizada, saindo do estigma de oficina local ou brindes baratos.
+                                        </p>
+                                        <div class="w-full h-52 sm:h-60 relative rounded-2xl overflow-hidden bg-slate-950 border border-sky-500/30 p-2 shadow-inner">
+                                            <img src="assets/branco.webp" alt="Base do Uniforme em Branco" class="w-full h-full object-contain rounded-xl opacity-95"/>
+                                            <div class="absolute bottom-2 left-2 bg-slate-950/90 border border-white/10 px-2.5 py-1 rounded-xl text-[9px] font-bold text-emerald-400">📄 Base 100% Limpa</div>
+                                        </div>
+                                    </div>
 
                                     <!-- Card 2 -->
-                                    <button onclick="activateStep(2)" id="process-card-2" class="sticky top-[100px] z-[20] text-left w-full bg-[#051f2d] border-2 border-yellow-500/60 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 shadow-[0_15px_35px_rgba(0,0,0,0.9)]" style="border-radius: 20px;">
-                                        <div>
-                                            <div class="w-8 h-8 rounded-lg bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center text-yellow-400 font-extrabold text-xs mb-3">02</div>
-                                            <h3 class="text-base font-extrabold text-white uppercase tracking-wider">Apresentação & Gabaritos 3D</h3>
-                                            <p class="text-xs text-slate-200 mt-2 leading-relaxed">Mockups 3D hiper-realistas que encantam diretores de times e justificam vender por ticket alto.</p>
+                                    <div id="process-card-2" class="sticky top-[105px] z-[20] w-full bg-[#051f2d] border-2 border-yellow-500/60 rounded-3xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.9)] transition-all duration-300">
+                                        <div class="flex items-center gap-3 mb-3">
+                                            <div class="w-8 h-8 rounded-lg bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center text-yellow-400 font-extrabold text-xs">02</div>
+                                            <h3 class="text-base sm:text-lg font-black text-white uppercase tracking-wider">APRESENTAÇÃO & GABARITOS 3D</h3>
                                         </div>
-                                    </button>
+                                        <p class="text-xs sm:text-sm text-slate-200 leading-relaxed font-medium mb-4">
+                                            Mockups 3D hiper-realistas que encantam diretores de times e justificam vender por ticket alto.
+                                        </p>
+                                        <div class="w-full h-52 sm:h-60 relative rounded-2xl overflow-hidden bg-slate-950 border border-sky-500/30 p-2 shadow-inner">
+                                            <img src="assets/argentina.webp" alt="Vetorização e Arte 3D" class="w-full h-full object-contain rounded-xl opacity-95"/>
+                                            <div class="absolute bottom-2 left-2 bg-slate-950/90 border border-white/10 px-2.5 py-1 rounded-xl text-[9px] font-bold text-sky-400">✏️ Vetorização & Escudo 3D</div>
+                                        </div>
+                                    </div>
 
                                     <!-- Card 3 -->
-                                    <button onclick="activateStep(3)" id="process-card-3" class="sticky top-[100px] z-[30] text-left w-full bg-[#051f2d] border-2 border-yellow-500/60 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 shadow-[0_15px_35px_rgba(0,0,0,0.9)]" style="border-radius: 20px;">
-                                        <div>
-                                            <div class="w-8 h-8 rounded-lg bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center text-yellow-400 font-extrabold text-xs mb-3">03</div>
-                                            <h3 class="text-base font-extrabold text-white uppercase tracking-wider">Produção Sem Erros nem Perdas</h3>
-                                            <p class="text-xs text-slate-200 mt-2 leading-relaxed">Gabaritos e processos que eliminam refações de estampa, perda de tecido e prejuízos.</p>
+                                    <div id="process-card-3" class="sticky top-[120px] z-[30] w-full bg-[#051f2d] border-2 border-yellow-500/60 rounded-3xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.9)] transition-all duration-300">
+                                        <div class="flex items-center gap-3 mb-3">
+                                            <div class="w-8 h-8 rounded-lg bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center text-yellow-400 font-extrabold text-xs">03</div>
+                                            <h3 class="text-base sm:text-lg font-black text-white uppercase tracking-wider">PRODUÇÃO SEM ERROS NEM PERDAS</h3>
                                         </div>
-                                    </button>
+                                        <p class="text-xs sm:text-sm text-slate-200 leading-relaxed font-medium mb-4">
+                                            Gabaritos e processos que eliminam refações de estampa, perda de tecido e prejuízos.
+                                        </p>
+                                        <div class="w-full h-52 sm:h-60 relative rounded-2xl overflow-hidden bg-slate-950 border border-sky-500/30 p-2 shadow-inner">
+                                            <img src="assets/corel_molde.webp" alt="Moldes 2D para Impressão" class="w-full h-full object-contain rounded-xl opacity-95"/>
+                                            <div class="absolute bottom-2 left-2 bg-slate-950/90 border border-white/10 px-2.5 py-1 rounded-xl text-[9px] font-bold text-purple-400">📐 Moldes de Encaixe Perfeito</div>
+                                        </div>
+                                    </div>
 
                                     <!-- Card 4 -->
-                                    <button onclick="activateStep(4)" id="process-card-4" class="sticky top-[100px] z-[40] text-left w-full bg-[#051f2d] border-2 border-yellow-500/60 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 shadow-[0_15px_35px_rgba(0,0,0,0.9)]" style="border-radius: 20px;">
-                                        <div>
-                                            <div class="w-8 h-8 rounded-lg bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center text-yellow-400 font-extrabold text-xs mb-3">04</div>
-                                            <h3 class="text-base font-extrabold text-white uppercase tracking-wider">Script de Vendas no WhatsApp</h3>
-                                            <p class="text-xs text-slate-200 mt-2 leading-relaxed">Estrutura rápida de mensagens e orçamentos para converter contatos da internet na hora.</p>
+                                    <div id="process-card-4" class="sticky top-[135px] z-[40] w-full bg-[#051f2d] border-2 border-yellow-500/60 rounded-3xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.9)] transition-all duration-300">
+                                        <div class="flex items-center gap-3 mb-3">
+                                            <div class="w-8 h-8 rounded-lg bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center text-yellow-400 font-extrabold text-xs">04</div>
+                                            <h3 class="text-base sm:text-lg font-black text-white uppercase tracking-wider">SCRIPT DE VENDAS NO WHATSAPP</h3>
                                         </div>
-                                    </button>
+                                        <p class="text-xs sm:text-sm text-slate-200 leading-relaxed font-medium mb-4">
+                                            Estrutura rápida de mensagens e orçamentos para converter contatos da internet na hora.
+                                        </p>
+                                        <div class="w-full h-52 sm:h-60 relative rounded-2xl overflow-hidden bg-slate-950 border border-sky-500/30 p-2 shadow-inner">
+                                            <img src="assets/fabrica3.webp" alt="Sublimação Homologada" class="w-full h-full object-contain rounded-xl opacity-95"/>
+                                            <div class="absolute bottom-2 left-2 bg-slate-950/90 border border-white/10 px-2.5 py-1 rounded-xl text-[9px] font-bold text-rose-400">🏭 Confecção Parceira</div>
+                                        </div>
+                                    </div>
 
                                     <!-- Card 5 -->
-                                    <button onclick="activateStep(5)" id="process-card-5" class="sticky top-[100px] z-[50] text-left w-full bg-[#051f2d] border-2 border-yellow-500/60 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 shadow-[0_15px_35px_rgba(0,0,0,0.9)]" style="border-radius: 20px;">
-                                        <div>
-                                            <div class="w-8 h-8 rounded-lg bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center text-yellow-400 font-extrabold text-xs mb-3">05</div>
-                                            <h3 class="text-base font-extrabold text-white uppercase tracking-wider">Ticket Multiplicado (Kits)</h3>
-                                            <p class="text-xs text-slate-200 mt-2 leading-relaxed">Ofertas combinadas com calção, meião e agasalhos para triplicar o valor de cada pedido.</p>
+                                    <div id="process-card-5" class="sticky top-[150px] z-[50] w-full bg-[#051f2d] border-2 border-yellow-500/60 rounded-3xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.9)] transition-all duration-300">
+                                        <div class="flex items-center gap-3 mb-3">
+                                            <div class="w-8 h-8 rounded-lg bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center text-yellow-400 font-extrabold text-xs">05</div>
+                                            <h3 class="text-base sm:text-lg font-black text-white uppercase tracking-wider">TICKET MULTIPLICADO (KITS)</h3>
                                         </div>
-                                    </button>
+                                        <p class="text-xs sm:text-sm text-slate-200 leading-relaxed font-medium mb-4">
+                                            Ofertas combinadas com calção, meião e agasalhos para triplicar o valor de cada pedido.
+                                        </p>
+                                        <div class="w-full h-52 sm:h-60 relative rounded-2xl overflow-hidden bg-slate-950 border border-sky-500/30 p-2 shadow-inner">
+                                            <img src="assets/terceiriza.webp" alt="Ateliê de Costura Homologado" class="w-full h-full object-contain rounded-xl opacity-95"/>
+                                            <div class="absolute bottom-2 left-2 bg-slate-950/90 border border-white/10 px-2.5 py-1 rounded-xl text-[9px] font-bold text-emerald-400">🧵 Costura & Acabamento Premium</div>
+                                        </div>
+                                    </div>
 
                                     <!-- Card 6 -->
-                                    <button onclick="activateStep(6)" id="process-card-6" class="sticky top-[100px] z-[60] text-left w-full bg-[#051f2d] border-2 border-yellow-500/60 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 shadow-[0_15px_35px_rgba(0,0,0,0.9)]" style="border-radius: 20px;">
-                                        <div>
-                                            <div class="w-8 h-8 rounded-lg bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center text-yellow-400 font-extrabold text-xs mb-3">06</div>
-                                            <h3 class="text-base font-extrabold text-white uppercase tracking-wider">Vendas para o Brasil Todo</h3>
-                                            <p class="text-xs text-slate-200 mt-2 leading-relaxed">Como atrair diretores e presidentes de clubes amadores de qualquer estado todos os dias.</p>
+                                    <div id="process-card-6" class="sticky top-[165px] z-[60] w-full bg-[#051f2d] border-2 border-yellow-500/60 rounded-3xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.9)] transition-all duration-300">
+                                        <div class="flex items-center gap-3 mb-3">
+                                            <div class="w-8 h-8 rounded-lg bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center text-yellow-400 font-extrabold text-xs">06</div>
+                                            <h3 class="text-base sm:text-lg font-black text-white uppercase tracking-wider">VENDAS PARA O BRASIL TODO</h3>
                                         </div>
-                                    </button>
+                                        <p class="text-xs sm:text-sm text-slate-200 leading-relaxed font-medium mb-4">
+                                            Como atrair diretores e presidentes de clubes amadores de qualquer estado todos os dias.
+                                        </p>
+                                        <div class="w-full h-52 sm:h-60 relative rounded-2xl overflow-hidden bg-slate-950 border border-sky-500/30 p-2 shadow-inner">
+                                            <img src="assets/acabado.webp" alt="Uniformes Prontos para Envio" class="w-full h-full object-contain rounded-xl opacity-95"/>
+                                            <div class="absolute bottom-2 left-2 bg-slate-950/90 border border-white/10 px-2.5 py-1 rounded-xl text-[9px] font-bold text-cyan-400">📦 Lotes Embalados</div>
+                                        </div>
+                                    </div>
 
                                     <!-- Card 7 -->
-                                    <button onclick="activateStep(7)" id="process-card-7" class="sticky top-[100px] z-[70] text-left w-full bg-[#051f2d] border-2 border-yellow-500/60 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 shadow-[0_15px_35px_rgba(0,0,0,0.9)]" style="border-radius: 20px;">
-                                        <div>
-                                            <div class="w-8 h-8 rounded-lg bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center text-yellow-400 font-extrabold text-xs mb-3">07</div>
-                                            <h3 class="text-base font-extrabold text-white uppercase tracking-wider">Escala, Lucro & Previsibilidade</h3>
-                                            <p class="text-xs text-slate-200 mt-2 leading-relaxed">Fluxo contínuo de caixa, pedidos recorrentes todo mês e produção rodando com alta margem.</p>
+                                    <div id="process-card-7" class="sticky top-[180px] z-[70] w-full bg-[#051f2d] border-2 border-yellow-500/60 rounded-3xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.9)] transition-all duration-300">
+                                        <div class="flex items-center gap-3 mb-3">
+                                            <div class="w-8 h-8 rounded-lg bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center text-yellow-400 font-extrabold text-xs">07</div>
+                                            <h3 class="text-base sm:text-lg font-black text-white uppercase tracking-wider">ESCALA, LUCRO & PREVISIBILIDADE</h3>
                                         </div>
-                                    </button>
+                                        <p class="text-xs sm:text-sm text-slate-200 leading-relaxed font-medium mb-4">
+                                            Fluxo contínuo de caixa, pedidos recorrentes todo mês e produção rodando com alta margem.
+                                        </p>
+                                        <div class="w-full h-52 sm:h-60 relative rounded-2xl overflow-hidden bg-slate-950 border border-sky-500/30 p-2 shadow-inner">
+                                            <img src="assets/pronto.webp" alt="Time Campeão Fardado" class="w-full h-full object-contain rounded-xl opacity-95"/>
+                                            <div class="absolute bottom-2 left-2 bg-slate-950/90 border border-white/10 px-2.5 py-1 rounded-xl text-[9px] font-bold text-green-400">🏆 Time Campeão no Vestiário</div>
+                                        </div>
+                                    </div>
 
                                 </div>
                             </div>
