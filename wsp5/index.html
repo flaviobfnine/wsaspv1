@@ -411,15 +411,19 @@
         <!-- SEÇÃO 1: HERO (Alinhamento Limpo & Perfeito dos Textos) -->
         <section id="hero-section" class="w-full relative min-h-screen flex flex-col justify-center pt-12 sm:pt-16 lg:pt-20 pb-12 lg:pb-16 bg-[#020d14] overflow-hidden">
             
-            <!-- Fundo Estático Ultra-Leve (Vestiário BFNINE - Carregamento Instantâneo < 0.2s) -->
+            <!-- Fundo Estático Ultra-Leve (Mobile = 5 Jogadores BFNINE Vertical / Desktop = Vestiário Horizontal) -->
             <div class="absolute inset-0 w-full h-full z-0 overflow-hidden bg-[#020d14]">
                 <picture class="w-full h-full block">
+                    <!-- Mobile: Imagem Vertical dos 5 Jogadores BFNINE -->
+                    <source media="(max-width: 639px)" srcset="assets/hero_vestiario_bfnine_mobile.png"/>
+                    <!-- Desktop: Imagem Horizontal Atual -->
                     <source srcset="assets/hero_vestario_bfnine.webp" type="image/webp"/>
-                    <img src="assets/hero_vestario_bfnine.jpg" alt="Elenco Vestiário Bfnine Camisetas" class="w-full h-full object-cover object-center filter brightness-105 contrast-105" loading="eager" decoding="async" fetchpriority="high"/>
+                    <img src="assets/hero_vestario_bfnine.jpg" alt="Elenco Vestiário Bfnine Camisetas" class="w-full h-full object-cover object-top filter brightness-105 contrast-105" loading="eager" decoding="async" fetchpriority="high"/>
                 </picture>
-                <!-- Gradiente Clareado em 15% mantendo alto contraste da copy -->
-                <div class="absolute inset-0 bg-gradient-to-r from-[#020d14]/80 via-[#020d14]/65 to-[#020d14]/50 pointer-events-none"></div>
-                <div class="absolute inset-0 bg-gradient-to-b from-[#020d14]/75 via-transparent to-[#020d14]/80 pointer-events-none"></div>
+                
+                <!-- Gradiente Escuro no Mobile Estilo Referência (Transição Suave dos Jogadores para o Texto) -->
+                <div class="absolute inset-0 max-sm:bg-gradient-to-b max-sm:from-black/35 max-sm:via-[#020d14]/75 max-sm:to-[#020d14] sm:bg-gradient-to-r sm:from-[#020d14]/80 sm:via-[#020d14]/65 sm:to-[#020d14]/50 pointer-events-none"></div>
+                <div class="absolute inset-0 sm:bg-gradient-to-b sm:from-[#020d14]/75 sm:via-transparent sm:to-[#020d14]/80 pointer-events-none"></div>
             </div>
 
             <div class="w-full mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center lg:items-start text-center lg:text-left space-y-8 sm:space-y-9 lg:space-y-9 my-auto -mt-[10px] lg:mt-0 pt-2 sm:pt-6 lg:pt-0 pb-6 sm:pb-12 lg:pb-0">
