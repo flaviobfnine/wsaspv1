@@ -413,12 +413,12 @@
             
             <!-- Fundo Estático Ultra-Leve (Mobile = 5 Jogadores BFNINE Vertical / Desktop = Vestiário Horizontal) -->
             <div class="absolute inset-0 w-full h-full z-0 overflow-hidden bg-[#020d14]">
-                <picture class="w-full h-full block">
+                <picture class="w-full h-full block max-sm:-translate-y-[25px] max-sm:scale-[1.08] transform-gpu">
                     <!-- Mobile: Imagem Vertical dos 5 Jogadores BFNINE -->
                     <source media="(max-width: 639px)" srcset="assets/hero_vestiario_bfnine_mobile.png"/>
                     <!-- Desktop: Imagem Horizontal Atual -->
                     <source srcset="assets/hero_vestario_bfnine.webp" type="image/webp"/>
-                    <img src="assets/hero_vestario_bfnine.jpg" alt="Elenco Vestiário Bfnine Camisetas" class="w-full h-full object-cover object-top filter brightness-105 contrast-105" loading="eager" decoding="async" fetchpriority="high"/>
+                    <img src="assets/hero_vestario_bfnine.jpg" alt="Elenco Vestiário Bfnine Camisetas" class="w-full h-full object-cover max-sm:object-[50%_0%] sm:object-top filter brightness-105 contrast-105" loading="eager" decoding="async" fetchpriority="high"/>
                 </picture>
                 
                 <!-- Gradiente Escuro no Mobile Estilo Referência (Transição Suave dos Jogadores para o Texto) -->
@@ -426,68 +426,77 @@
                 <div class="absolute inset-0 sm:bg-gradient-to-b sm:from-[#020d14]/75 sm:via-transparent sm:to-[#020d14]/80 pointer-events-none"></div>
             </div>
 
-            <div class="w-full mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center lg:items-start text-center lg:text-left space-y-8 sm:space-y-9 lg:space-y-9 my-auto -mt-[10px] lg:mt-0 pt-2 sm:pt-6 lg:pt-0 pb-6 sm:pb-12 lg:pb-0">
+            <div class="w-full mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center lg:items-start text-center lg:text-left pt-4 sm:pt-8 lg:pt-0 pb-8 sm:pb-12 lg:pb-0">
                 
-                <!-- 0. Logo Oficial do Workshop da Marca Esportiva -->
-                <div class="animate-fade-in mb-3 sm:mb-5 lg:mb-6">
-                    <a href="#">
-                        <img src="assets/logo_wme_workshop.webp" alt="WME - Workshop da Marca Esportiva" class="h-12 sm:h-14 lg:h-16 w-auto object-contain drop-shadow-[0_4px_20px_rgba(56,189,248,0.25)]"/>
-                    </a>
+                <!-- Topo: Logo + Sobrancelha Data -->
+                <div class="w-full flex flex-col items-center lg:items-start space-y-3 sm:space-y-4 mb-2">
+                    <!-- 0. Logo Oficial do Workshop da Marca Esportiva -->
+                    <div class="animate-fade-in">
+                        <a href="#">
+                            <img src="assets/logo_wme_workshop.webp" alt="WME - Workshop da Marca Esportiva" class="h-11 sm:h-14 lg:h-16 w-auto object-contain drop-shadow-[0_4px_20px_rgba(56,189,248,0.25)]"/>
+                        </a>
+                    </div>
+
+                    <!-- 1. Sobrancelha em Pílula -->
+                    <div class="animate-fade-in">
+                        <span class="inline-flex items-center gap-2 rounded-full border border-sky-500/30 bg-sky-950/80 backdrop-blur-md px-3.5 sm:px-4 py-1.5 sm:py-2 text-[10px] sm:text-xs font-bold uppercase tracking-widest text-white shadow-[0_0_15px_rgba(56,189,248,0.2)]">
+                            <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            01, 02 E 03 DE SETEMBRO | DAS 19H00 ÀS 22H00 (AO VIVO)
+                        </span>
+                    </div>
                 </div>
 
-                <!-- 1. Sobrancelha em Pílula (Badge Estilo Apple com Alto Contraste) -->
-                <div class="animate-fade-in">
-                    <span class="inline-flex items-center gap-2 rounded-full border border-sky-500/30 bg-sky-950/80 backdrop-blur-md px-4 py-2 text-xs font-bold uppercase tracking-widest text-white shadow-[0_0_15px_rgba(56,189,248,0.2)]">
-                        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                        01, 02 E 03 DE SETEMBRO | DAS 19H00 ÀS 22H00 (AO VIVO)
-                    </span>
-                </div>
+                <!-- ESPAÇADOR EXCLUSIVO DO MOBILE: Revela 100% dos Rostos dos 5 Jogadores -->
+                <div class="w-full h-[160px] sm:hidden pointer-events-none"></div>
 
-                <!-- 2. Headline Principal Impactante + Subheadline com Contraste Suave -->
-                <div class="animate-fade-in max-w-xl lg:max-w-3xl" style="animation-delay: 0.1s;">
-                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1] sm:leading-[1.15]" style="font-family: Inter, ui-sans-serif, system-ui, sans-serif;">
-                        <span class="text-emerald-400 font-black drop-shadow-[0_0_20px_rgba(52,211,153,0.35)]">Domine</span> a Fabricação Esportiva através da Sublimação em <span class="text-emerald-400 font-black drop-shadow-[0_0_20px_rgba(52,211,153,0.35)]">3 Noites</span> e comece a faturar de <span class="text-emerald-400 font-black drop-shadow-[0_0_20px_rgba(52,211,153,0.35)]">5 a 50 Mil</span> por mês.
-                    </h1>
-                    <p class="mt-6 sm:mt-7 lg:mt-7 text-xs sm:text-sm md:text-base text-slate-300 leading-relaxed font-medium tracking-wide max-w-xl lg:max-w-2xl">
-                        Aprenda a criar, fabricar e vender fardamentos de futebol profissionais para time de várzea ai da sua cidade, mesmo que você não possua máquinas.
-                    </p>
-                </div>
+                <!-- Rodapé Hero: Headline + Subheadline + Botão CTA + Escassez -->
+                <div class="w-full flex flex-col items-center lg:items-start space-y-6 sm:space-y-8">
+                    <!-- 2. Headline Principal Impactante + Subheadline -->
+                    <div class="animate-fade-in max-w-xl lg:max-w-3xl">
+                        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1] sm:leading-[1.15]" style="font-family: Inter, ui-sans-serif, system-ui, sans-serif;">
+                            <span class="text-emerald-400 font-black drop-shadow-[0_0_20px_rgba(52,211,153,0.35)]">Domine</span> a Fabricação Esportiva através da Sublimação em <span class="text-emerald-400 font-black drop-shadow-[0_0_20px_rgba(52,211,153,0.35)]">3 Noites</span> e comece a faturar de <span class="text-emerald-400 font-black drop-shadow-[0_0_20px_rgba(52,211,153,0.35)]">5 a 50 Mil</span> por mês.
+                        </h1>
+                        <p class="mt-4 sm:mt-7 lg:mt-7 text-[15px] sm:text-[17px] md:text-lg text-slate-300 leading-relaxed font-medium tracking-wide max-w-xl lg:max-w-2xl">
+                            Aprenda a criar, fabricar e vender fardamentos de futebol profissionais para time de várzea ai da sua cidade, mesmo que você não possua máquinas.
+                        </p>
+                    </div>
 
+                    <!-- 4. Bloco CTA + Barra de Progresso -->
+                    <div class="w-full max-w-2xl animate-fade-in pt-2 sm:pt-6 lg:pt-4">
+                        <div class="flex flex-col sm:flex-row items-center gap-5 sm:gap-8 w-full">
+                            
+                            <!-- Botão Pílula Luminoso -->
+                            <a href="#comprar" class="relative overflow-hidden inline-flex items-center justify-between gap-2.5 rounded-full bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 hover:from-emerald-500 hover:to-green-500 border border-emerald-400/60 p-2 pl-4 sm:pl-6 shadow-[0_0_35px_rgba(16,185,129,0.6)] transition-all duration-300 transform-gpu w-full sm:w-auto min-w-[240px] cta-pulse-glow group">
+                                <div class="cta-shimmer-beam"></div>
+                                <span class="relative z-10 text-xs sm:text-base font-black text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] tracking-wider uppercase">
+                                    GARANTIR MINHA VAGA AGORA
+                                </span>
+                                <span class="relative z-10 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-slate-950 text-emerald-400 flex items-center justify-center font-black group-hover:translate-x-1 transition-transform shadow-md flex-shrink-0">
+                                    ➔
+                                </span>
+                            </a>
 
-
-                <!-- 4. Bloco CTA + Barra de Progresso Lado a Lado (Ancoragem R$ 197 por R$ 24,90) -->
-                <div class="w-full max-w-2xl animate-fade-in pt-5 sm:pt-8 lg:pt-6 mt-3 sm:mt-6 lg:mt-0" style="animation-delay: 0.2s;">
-                    <div class="flex flex-col sm:flex-row items-center gap-6 sm:gap-8 w-full">
-                        
-                        <!-- Botão Pílula Luminoso com Ancoragem de R$ 197 por R$ 24,90 -->
-                        <a href="#comprar" class="relative overflow-hidden inline-flex items-center justify-between gap-2.5 rounded-full bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 hover:from-emerald-500 hover:to-green-500 border border-emerald-400/60 p-2 pl-4 sm:pl-6 shadow-[0_0_35px_rgba(16,185,129,0.6)] transition-all duration-300 transform-gpu w-full sm:w-auto min-w-[240px] cta-pulse-glow group">
-                            <div class="cta-shimmer-beam"></div>
-                            <span class="relative z-10 text-xs sm:text-base font-black text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] tracking-wider uppercase">
-                                GARANTIR MINHA VAGA AGORA
-                            </span>
-                            <span class="relative z-10 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-slate-950 text-emerald-400 flex items-center justify-center font-black group-hover:translate-x-1 transition-transform shadow-md flex-shrink-0">
-                                ➔
-                            </span>
-                        </a></a>
-
-                        <!-- Barra de Progresso + Escassez (Meio-Termo Elegante sem Ofuscar o CTA) -->
-                        <div class="flex-1 w-full space-y-2 pt-3 sm:pt-1">
-                            <div class="flex items-center justify-between text-[11px] sm:text-xs font-bold tracking-wide">
-                                <span class="text-amber-400 flex items-center gap-1.5"><span class="animate-pulse">🔥</span> Lote 2 quase esgotado</span>
-                                <span class="text-sky-300 font-extrabold">77% Vendidos</span>
+                            <!-- Barra de Progresso + Escassez -->
+                            <div class="flex-1 w-full space-y-2 pt-2 sm:pt-1">
+                                <div class="flex items-center justify-between text-[11px] sm:text-xs font-bold tracking-wide">
+                                    <span class="text-amber-400 flex items-center gap-1.5"><span class="animate-pulse">🔥</span> Lote 2 quase esgotado</span>
+                                    <span class="text-sky-300 font-extrabold">77% Vendidos</span>
+                                </div>
+                                <div class="w-full bg-slate-900/90 rounded-full h-3 overflow-hidden border border-sky-500/30 p-0.5 shadow-inner">
+                                    <div class="bg-gradient-to-r from-emerald-500 via-sky-400 to-cyan-300 h-full rounded-full transition-all duration-500" style="width: 77%;"></div>
+                                </div>
+                                <p class="text-[11px] text-slate-300 font-medium tracking-wide text-center sm:text-left">
+                                    <span class="font-bold text-white">77%</span> dos ingressos do Lote 2 já foram preenchidos
+                                </p>
                             </div>
-                            <div class="w-full bg-slate-900/90 rounded-full h-3 overflow-hidden border border-sky-500/30 p-0.5 shadow-inner">
-                                <div class="bg-gradient-to-r from-emerald-500 via-sky-400 to-cyan-300 h-full rounded-full transition-all duration-500" style="width: 77%;"></div>
-                            </div>
-                            <p class="text-[11px] text-slate-300 font-medium tracking-wide text-center sm:text-left">
-                                <span class="font-bold text-white">77%</span> dos ingressos do Lote 2 já foram preenchidos
-                            </p>
+
                         </div>
-
                     </div>
                 </div>
 
             </div>
+        </section>
+
         </section>
 
         <!-- SEÇÃO 6: DEPOIMENTOS & PROVAS SOCIAIS DE ALUNOS (Sticky Wrapper Top-0 Unificado + Ambientação Vestiário Futebol HD) -->
@@ -501,7 +510,7 @@
                 <!-- Header Fixo no Topo no Mobile (Sticky Header) + Headline de Alto Destaque -->
                 <div class="w-full text-center max-w-3xl mx-auto px-4 flex-shrink-0 pt-4 sm:pt-6 pb-6 bg-slate-100">
                     <span class="inline-flex items-center rounded-full bg-amber-500 text-slate-950 font-black px-4 py-1.5 text-xs sm:text-sm uppercase tracking-widest shadow-md rounded-full mb-2">
-                        💬 RESULTADOS COMPROVADOS DE ALUNOS
+                        💬 RESULTADOS COMPROVADOS
                     </span>
                     <h2 class="text-xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight mt-1 sm:mt-2 leading-tight">
                         Veja o Que Aconteceu com Quem Decidiu Assistir ao <span class="text-emerald-600 underline decoration-emerald-500/50 decoration-4">Workshop da Marca Esportiva</span> e Aplicar o Método Bfnine
