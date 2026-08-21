@@ -413,12 +413,12 @@
             
             <!-- Fundo Estático Ultra-Leve (Mobile = 5 Jogadores BFNINE Vertical / Desktop = Vestiário Horizontal) -->
             <div class="absolute inset-0 w-full h-full z-0 overflow-hidden bg-[#020d14]">
-                <picture class="w-full h-full block max-sm:-translate-y-[25px] max-sm:scale-[1.08] transform-gpu">
+                <picture class="w-full h-full block">
                     <!-- Mobile: Imagem Vertical dos 5 Jogadores BFNINE -->
                     <source media="(max-width: 639px)" srcset="assets/hero_vestiario_bfnine_mobile.png"/>
                     <!-- Desktop: Imagem Horizontal Atual -->
                     <source srcset="assets/hero_vestario_bfnine.webp" type="image/webp"/>
-                    <img src="assets/hero_vestario_bfnine.jpg" alt="Elenco Vestiário Bfnine Camisetas" class="w-full h-full object-cover max-sm:object-[50%_0%] sm:object-top filter brightness-105 contrast-105" loading="eager" decoding="async" fetchpriority="high"/>
+                    <img src="assets/hero_vestario_bfnine.jpg" alt="Elenco Vestiário Bfnine Camisetas" class="w-full h-full max-sm:object-contain max-sm:object-top sm:object-cover sm:object-top filter brightness-105 contrast-105" loading="eager" decoding="async" fetchpriority="high"/>
                 </picture>
                 
                 <!-- Gradiente Escuro no Mobile Estilo Referência (Transição Suave dos Jogadores para o Texto) -->
@@ -426,38 +426,36 @@
                 <div class="absolute inset-0 sm:bg-gradient-to-b sm:from-[#020d14]/75 sm:via-transparent sm:to-[#020d14]/80 pointer-events-none"></div>
             </div>
 
-            <div class="w-full mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center lg:items-start text-center lg:text-left pt-4 sm:pt-8 lg:pt-0 pb-8 sm:pb-12 lg:pb-0">
+            <div class="w-full mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center lg:items-start text-center lg:text-left pt-2 sm:pt-8 lg:pt-0 pb-6 sm:pb-12 lg:pb-0">
                 
-                <!-- Topo: Logo + Sobrancelha Data -->
-                <div class="w-full flex flex-col items-center lg:items-start space-y-3 sm:space-y-4 mb-2">
-                    <!-- 0. Logo Oficial do Workshop da Marca Esportiva -->
-                    <div class="animate-fade-in">
+                <!-- ESPAÇADOR DO TOPO NO MOBILE: Deixa os rostos dos 5 jogadores 100% livres e visíveis -->
+                <div class="w-full h-[200px] sm:hidden pointer-events-none"></div>
+
+                <!-- GRUPO UNIFICADO DE CONTEÚDO (Logo -> Data -> Headline -> Subheadline -> CTA -> Escassez) -->
+                <div class="w-full flex flex-col items-center lg:items-start space-y-4 sm:space-y-6">
+                    
+                    <!-- 0. Logo Oficial WME -->
+                    <div class="animate-fade-in mb-1">
                         <a href="#">
-                            <img src="assets/logo_wme_workshop.webp" alt="WME - Workshop da Marca Esportiva" class="h-11 sm:h-14 lg:h-16 w-auto object-contain drop-shadow-[0_4px_20px_rgba(56,189,248,0.25)]"/>
+                            <img src="assets/logo_wme_workshop.webp" alt="WME - Workshop da Marca Esportiva" class="h-12 sm:h-14 lg:h-16 w-auto object-contain drop-shadow-[0_4px_20px_rgba(56,189,248,0.25)]"/>
                         </a>
                     </div>
 
-                    <!-- 1. Sobrancelha em Pílula -->
-                    <div class="animate-fade-in">
+                    <!-- 1. Sobrancelha em Pílula com Data -->
+                    <div class="animate-fade-in mb-1">
                         <span class="inline-flex items-center gap-2 rounded-full border border-sky-500/30 bg-sky-950/80 backdrop-blur-md px-3.5 sm:px-4 py-1.5 sm:py-2 text-[10px] sm:text-xs font-bold uppercase tracking-widest text-white shadow-[0_0_15px_rgba(56,189,248,0.2)]">
                             <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                             01, 02 E 03 DE SETEMBRO | DAS 19H00 ÀS 22H00 (AO VIVO)
                         </span>
                     </div>
-                </div>
 
-                <!-- ESPAÇADOR EXCLUSIVO DO MOBILE: Revela 100% dos Rostos dos 5 Jogadores -->
-                <div class="w-full h-[160px] sm:hidden pointer-events-none"></div>
-
-                <!-- Rodapé Hero: Headline + Subheadline + Botão CTA + Escassez -->
-                <div class="w-full flex flex-col items-center lg:items-start space-y-6 sm:space-y-8">
                     <!-- 2. Headline Principal Impactante + Subheadline -->
                     <div class="animate-fade-in max-w-xl lg:max-w-3xl">
                         <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1] sm:leading-[1.15]" style="font-family: Inter, ui-sans-serif, system-ui, sans-serif;">
-                            <span class="text-emerald-400 font-black drop-shadow-[0_0_20px_rgba(52,211,153,0.35)]">Domine</span> a Fabricação Esportiva através da Sublimação em <span class="text-emerald-400 font-black drop-shadow-[0_0_20px_rgba(52,211,153,0.35)]">3 Noites</span> e comece a faturar de <span class="text-emerald-400 font-black drop-shadow-[0_0_20px_rgba(52,211,153,0.35)]">5 a 50 Mil</span> por mês.
+                            <span class="text-emerald-400 font-black drop-shadow-[0_0_20px_rgba(52,211,153,0.35)]">Domine</span> a fabricação esportiva em <span class="text-emerald-400 font-black drop-shadow-[0_0_20px_rgba(52,211,153,0.35)]">3 noites</span> e comece a faturar de <span class="text-emerald-400 font-black drop-shadow-[0_0_20px_rgba(52,211,153,0.35)]">5 a 50 mil</span> por mês.
                         </h1>
-                        <p class="mt-4 sm:mt-7 lg:mt-7 text-[15px] sm:text-[17px] md:text-lg text-slate-300 leading-relaxed font-medium tracking-wide max-w-xl lg:max-w-2xl">
-                            Aprenda a criar, fabricar e vender fardamentos de futebol profissionais para time de várzea ai da sua cidade, mesmo que você não possua máquinas.
+                        <p class="mt-3 sm:mt-7 lg:mt-7 text-[15px] sm:text-[17px] md:text-lg text-slate-300 leading-relaxed font-medium tracking-wide max-w-xl lg:max-w-2xl">
+                            Aprenda a criar, fabricar e vender uniformes de futebol para time de várzea ai da sua cidade, mesmo que você não possua máquinas.
                         </p>
                     </div>
 
@@ -492,6 +490,7 @@
 
                         </div>
                     </div>
+
                 </div>
 
             </div>
