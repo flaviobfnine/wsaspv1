@@ -511,13 +511,22 @@
                     <!-- SEÇÃO DE VÍDEOS DE DEPOIMENTOS DE ALUNOS (YouTube Shorts) -->
                 <div class="mx-auto max-w-[1100px] w-full px-4 sm:px-6 lg:px-8 py-6">
                     
-                                        <!-- Grid dos 3 Vídeos Verticais (Mobile = Sticky Stack / Desktop = 3 Colunas) -->
+                                        <!-- Grid dos 3 Vídeos Verticais (Facade Pattern On-Demand / Carregamento Instantâneo) -->
                     <div class="max-lg:space-y-8 lg:grid lg:grid-cols-3 lg:gap-8 lg:w-full lg:max-w-5xl lg:mx-auto">
                         
-                        <!-- Vídeo Depoimento 1 (Agora aW3PnDfMhmE) -->
+                        <!-- Vídeo Depoimento 1 (aW3PnDfMhmE) -->
                         <div class="w-full max-w-[360px] mx-auto lg:w-full rounded-3xl border-2 border-amber-500/50 bg-slate-950 p-2.5 sm:p-3 shadow-[0_20px_50px_rgba(0,0,0,0.8)] overflow-hidden transition-transform duration-300 transform-gpu hover:scale-[1.02]">
-                            <div class="w-full aspect-[9/16] min-h-[440px] sm:min-h-[480px] rounded-2xl overflow-hidden bg-slate-900 border border-amber-500/30">
-                                <iframe src="https://www.youtube.com/embed/aW3PnDfMhmE" title="Depoimento Aluno Bfnine 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="w-full h-full rounded-2xl"></iframe>
+                            <div onclick="loadYouTubeShort(this, 'aW3PnDfMhmE')" class="w-full aspect-[9/16] min-h-[440px] sm:min-h-[480px] rounded-2xl overflow-hidden bg-slate-900 border border-amber-500/30 relative cursor-pointer group">
+                                <img src="https://img.youtube.com/vi/aW3PnDfMhmE/hqdefault.jpg" alt="Depoimento Aluno Bfnine 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" fetchpriority="high"/>
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-slate-950/20"></div>
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-red-600 group-hover:bg-red-500 text-white flex items-center justify-center shadow-[0_0_30px_rgba(220,38,38,0.8)] group-hover:scale-110 transition-all duration-300">
+                                        <svg class="w-8 h-8 sm:w-10 sm:h-10 text-white translate-x-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                    </div>
+                                </div>
+                                <div class="absolute bottom-3 left-3 right-3 bg-slate-950/90 border border-white/15 backdrop-blur-md px-3 py-1.5 rounded-full text-center">
+                                    <span class="text-xs font-black text-amber-300 flex items-center justify-center gap-1.5">▶️ CLIQUE PARA ASSISTIR</span>
+                                </div>
                             </div>
                             <div class="mt-2.5 px-2 text-center">
                                 <span class="text-xs font-black text-amber-400 uppercase tracking-wider block">🎓 Depoimento Aluno Bfnine</span>
@@ -525,10 +534,19 @@
                             </div>
                         </div>
 
-                        <!-- Vídeo Depoimento 2 (Agora -b7eLbBzqic) -->
+                        <!-- Vídeo Depoimento 2 (-b7eLbBzqic) -->
                         <div class="w-full max-w-[360px] mx-auto lg:w-full rounded-3xl border-2 border-sky-500/50 bg-slate-950 p-2.5 sm:p-3 shadow-[0_20px_50px_rgba(0,0,0,0.8)] overflow-hidden transition-transform duration-300 transform-gpu hover:scale-[1.02]">
-                            <div class="w-full aspect-[9/16] min-h-[440px] sm:min-h-[480px] rounded-2xl overflow-hidden bg-slate-900 border border-sky-500/30">
-                                <iframe src="https://www.youtube.com/embed/-b7eLbBzqic" title="Depoimento Aluno Bfnine 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="w-full h-full rounded-2xl"></iframe>
+                            <div onclick="loadYouTubeShort(this, '-b7eLbBzqic')" class="w-full aspect-[9/16] min-h-[440px] sm:min-h-[480px] rounded-2xl overflow-hidden bg-slate-900 border border-sky-500/30 relative cursor-pointer group">
+                                <img src="https://img.youtube.com/vi/-b7eLbBzqic/hqdefault.jpg" alt="Depoimento Aluno Bfnine 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy"/>
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-slate-950/20"></div>
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-red-600 group-hover:bg-red-500 text-white flex items-center justify-center shadow-[0_0_30px_rgba(220,38,38,0.8)] group-hover:scale-110 transition-all duration-300">
+                                        <svg class="w-8 h-8 sm:w-10 sm:h-10 text-white translate-x-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                    </div>
+                                </div>
+                                <div class="absolute bottom-3 left-3 right-3 bg-slate-950/90 border border-white/15 backdrop-blur-md px-3 py-1.5 rounded-full text-center">
+                                    <span class="text-xs font-black text-sky-300 flex items-center justify-center gap-1.5">▶️ CLIQUE PARA ASSISTIR</span>
+                                </div>
                             </div>
                             <div class="mt-2.5 px-2 text-center">
                                 <span class="text-xs font-black text-sky-400 uppercase tracking-wider block">🎓 Depoimento Aluno Bfnine</span>
@@ -538,8 +556,17 @@
 
                         <!-- Vídeo Depoimento 3 (fENCbnSBU3w) -->
                         <div class="w-full max-w-[360px] mx-auto lg:w-full rounded-3xl border-2 border-emerald-500/50 bg-slate-950 p-2.5 sm:p-3 shadow-[0_20px_50px_rgba(0,0,0,0.8)] overflow-hidden transition-transform duration-300 transform-gpu hover:scale-[1.02]">
-                            <div class="w-full aspect-[9/16] min-h-[440px] sm:min-h-[480px] rounded-2xl overflow-hidden bg-slate-900 border border-emerald-500/30">
-                                <iframe src="https://www.youtube.com/embed/fENCbnSBU3w" title="Depoimento Aluno Bfnine 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="w-full h-full rounded-2xl"></iframe>
+                            <div onclick="loadYouTubeShort(this, 'fENCbnSBU3w')" class="w-full aspect-[9/16] min-h-[440px] sm:min-h-[480px] rounded-2xl overflow-hidden bg-slate-900 border border-emerald-500/30 relative cursor-pointer group">
+                                <img src="https://img.youtube.com/vi/fENCbnSBU3w/hqdefault.jpg" alt="Depoimento Aluno Bfnine 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy"/>
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-slate-950/20"></div>
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-red-600 group-hover:bg-red-500 text-white flex items-center justify-center shadow-[0_0_30px_rgba(220,38,38,0.8)] group-hover:scale-110 transition-all duration-300">
+                                        <svg class="w-8 h-8 sm:w-10 sm:h-10 text-white translate-x-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                    </div>
+                                </div>
+                                <div class="absolute bottom-3 left-3 right-3 bg-slate-950/90 border border-white/15 backdrop-blur-md px-3 py-1.5 rounded-full text-center">
+                                    <span class="text-xs font-black text-emerald-300 flex items-center justify-center gap-1.5">▶️ CLIQUE PARA ASSISTIR</span>
+                                </div>
                             </div>
                             <div class="mt-2.5 px-2 text-center">
                                 <span class="text-xs font-black text-emerald-400 uppercase tracking-wider block">🎓 Depoimento Aluno Bfnine</span>
@@ -547,7 +574,7 @@
                             </div>
                         </div>
 
-                    </div></div></div>
+                    </div></div></div></div>
                 </div>
 
             </div>
@@ -2268,6 +2295,11 @@
             <p class="text-xs text-slate-300 mt-3 font-medium">Toque em qualquer lugar para fechar</p>
         </div>
     </div>
+<script>
+        function loadYouTubeShort(container, videoId) {
+            container.innerHTML = '<iframe src="https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0" title="Depoimento Aluno Bfnine" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="w-full h-full rounded-2xl"></iframe>';
+        }
+</script>
 </body>
 </html>
 
