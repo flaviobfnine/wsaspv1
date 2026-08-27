@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Workshop Marca Esportiva - Faltam 3 Dias</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,800;0,900;1,900&family=Teko:wght@700&display=swap');
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #041926;
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    overflow: hidden;
+    color: #FFF;
+  }
+
+  /* Stage Background with Sky Blue ambient lighting from Print 3 */
+  .bg-stage {
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(circle at 50% 32%, rgba(0, 163, 255, 0.45) 0%, transparent 65%),
+      radial-gradient(circle at 85% 15%, rgba(0, 210, 255, 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 15% 75%, rgba(4, 25, 38, 0.95) 0%, transparent 60%),
+      linear-gradient(180deg, #052033 0%, #041926 60%, #020C14 100%);
+  }
+
+  /* Giant Number 3 in Background like Print 1 */
+  .giant-number-bg {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Teko', sans-serif;
+    font-size: 980px;
+    font-weight: 700;
+    line-height: 0.8;
+    color: rgba(255, 255, 255, 0.14);
+    text-shadow: 0 0 100px rgba(0, 163, 255, 0.35);
+    z-index: 1;
+    user-select: none;
+  }
+
+  /* Stage Spotlights */
+  .light-beam-left {
+    position: absolute;
+    top: -100px;
+    left: -120px;
+    width: 550px;
+    height: 950px;
+    background: linear-gradient(135deg, rgba(0, 210, 255, 0.35) 0%, transparent 70%);
+    transform: rotate(25deg);
+    filter: blur(45px);
+    z-index: 2;
+  }
+
+  .light-beam-right {
+    position: absolute;
+    top: -100px;
+    right: -120px;
+    width: 550px;
+    height: 950px;
+    background: linear-gradient(-135deg, rgba(0, 163, 255, 0.4) 0%, transparent 70%);
+    transform: rotate(-25deg);
+    filter: blur(45px);
+    z-index: 2;
+  }
+
+  /* Flávio Hero Portrait Overlay (Print 2 Cutout) */
+  .person-wrapper {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 820px;
+    z-index: 5;
+    filter: drop-shadow(0 20px 45px rgba(0, 0, 0, 0.9));
+  }
+
+  .person-img {
+    width: 100%;
+    display: block;
+    filter: contrast(1.1) brightness(0.98) saturate(1.1);
+  }
+
+  /* Dark Vignette over Person Bottom */
+  .person-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 48%, rgba(4, 25, 38, 0.88) 72%, #020C14 100%);
+    z-index: 6;
+  }
+
+  /* Top Bar */
+  .top-bar {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    right: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+  }
+
+  .logo {
+    height: 75px;
+    filter: drop-shadow(0 4px 15px rgba(0,0,0,0.9));
+  }
+
+  .pill-tag {
+    background: rgba(0, 163, 255, 0.18);
+    border: 2px solid #00A3FF;
+    color: #00A3FF;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 25px rgba(0, 163, 255, 0.45);
+  }
+
+  /* Bottom Content Block - Print 1 Typography Style */
+  .bottom-content {
+    position: absolute;
+    bottom: 55px;
+    left: 50px;
+    right: 50px;
+    text-align: center;
+    z-index: 10;
+  }
+
+  .event-badge {
+    display: inline-block;
+    background: linear-gradient(90deg, #00A3FF 0%, #00D2FF 100%);
+    color: #041926;
+    font-size: 24px;
+    font-weight: 900;
+    padding: 12px 36px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 30px rgba(0, 163, 255, 0.5);
+  }
+
+  /* FALTAM (Champagne Gold Gradient like Print 1) */
+  .text-faltam {
+    font-size: 98px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    background: linear-gradient(180deg, #FFF6D6 0%, #E6C587 50%, #B88E3D 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 6px 15px rgba(0,0,0,0.9));
+    line-height: 0.92;
+  }
+
+  /* 3 DIAS (White/Cyan 3D Metallic text like Print 1) */
+  .text-3dias {
+    font-size: 120px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #FFFFFF;
+    text-shadow: 
+      0 0 35px rgba(0, 163, 255, 0.85),
+      0 6px 30px rgba(0,0,0,0.95);
+    line-height: 0.92;
+    margin-top: 4px;
+  }
+
+  .sub-live-badge {
+    margin-top: 22px;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 800;
+    color: #E2E8F0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 10px 28px;
+    border-radius: 50px;
+    border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(8px);
+  }
+
+</style>
+</head>
+<body>
+  <div class="bg-stage"></div>
+  <div class="light-beam-left"></div>
+  <div class="light-beam-right"></div>
+
+  <!-- Background Giant Number 3 -->
+  <div class="giant-number-bg">3</div>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <img class="logo" src="file:///d:/BACKUP_ARQUIVOS/SITES/ASIMOV/SITES/SITE%202/assets/logo_wme_workshop.webp" />
+    <div class="pill-tag">🔥 CONTAGEM REGRESSIVA</div>
+  </div>
+
+  <!-- Person Overlay (Flávio Print 2) -->
+  <div class="person-wrapper">
+    <img class="person-img" src="file:///d:/BACKUP_ARQUIVOS/SITES/ASIMOV/SITES/SITE%202/assets/flavio_hero_a.png" />
+  </div>
+  <div class="person-gradient"></div>
+
+  <!-- Bottom Typography (Print 1 style) -->
+  <div class="bottom-content">
+    <div class="event-badge">WORKSHOP DA MARCA ESPORTIVA</div>
+    <div class="text-faltam">FALTAM</div>
+    <div class="text-3dias">3 DIAS</div>
+    <div class="sub-live-badge">🔴 AO VIVO & 100% GRATUITO</div>
+  </div>
+</body>
+</html>
