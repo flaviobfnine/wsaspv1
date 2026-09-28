@@ -17,32 +17,30 @@
             theme: {
                 extend: {
                     colors: {
-                        emerald: {
-                            950: '#04140E',
-                            900: '#082218',
-                            800: '#0D3829',
-                            700: '#124E3A',
-                            600: '#16654C',
-                            500: '#10B981',
-                            400: '#34D399',
-                            300: '#6EE7B7'
+                        navy: {
+                            950: '#060B17',
+                            900: '#0C1425',
+                            800: '#121E36',
+                            700: '#1B2A4A',
+                            600: '#263B63'
                         },
-                        cream: {
-                            50: '#FDFBF7',
-                            100: '#F7F3E9',
-                            200: '#EFE7D3',
+                        caramel: {
+                            500: '#C58B49',
+                            400: '#D49A56',
+                            300: '#E5AA6A',
+                            200: '#F2C999',
+                            600: '#A36F33'
+                        },
+                        champagne: {
+                            100: '#FDFBF7',
+                            200: '#F7E7CE',
                             300: '#E2D3B0',
                             400: '#D5BE8B'
                         },
                         gold: {
                             400: '#FBBF24',
-                            500: '#F59E0B',
-                            600: '#D97706'
-                        },
-                        onyx: {
-                            950: '#030706',
-                            900: '#070F0C',
-                            800: '#0F1A16'
+                            500: '#D4AF37',
+                            600: '#B8860B'
                         }
                     },
                     fontFamily: {
@@ -58,50 +56,47 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        .glow-emerald {
-            box-shadow: 0 0 50px -10px rgba(16, 185, 129, 0.25);
+        .glow-caramel {
+            box-shadow: 0 0 50px -10px rgba(197, 139, 73, 0.35);
         }
-        .glow-gold {
-            box-shadow: 0 0 40px -10px rgba(245, 158, 11, 0.3);
+        .glow-champagne {
+            box-shadow: 0 0 40px -10px rgba(247, 231, 206, 0.2);
         }
-        .border-gradient {
-            border-image: linear-gradient(to right, rgba(16, 185, 129, 0.5), rgba(245, 158, 11, 0.5), rgba(16, 185, 129, 0.2)) 1;
-        }
-        .text-gradient-gold {
-            background: linear-gradient(135deg, #F7F3E9 0%, #E2D3B0 50%, #F59E0B 100%);
+        .text-gradient-caramel {
+            background: linear-gradient(135deg, #F2C999 0%, #D49A56 50%, #C58B49 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .text-gradient-emerald {
-            background: linear-gradient(135deg, #6EE7B7 0%, #10B981 50%, #059669 100%);
+        .text-gradient-champagne {
+            background: linear-gradient(135deg, #FFFFFF 0%, #F7E7CE 50%, #E2D3B0 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .bg-glass {
-            background: rgba(8, 34, 24, 0.75);
+            background: rgba(12, 20, 37, 0.85);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
         }
         .bg-card {
-            background: linear-gradient(180deg, rgba(13, 56, 41, 0.6) 0%, rgba(7, 15, 12, 0.9) 100%);
+            background: linear-gradient(180deg, rgba(18, 30, 54, 0.7) 0%, rgba(6, 11, 23, 0.95) 100%);
         }
     </style>
 </head>
-<body class="bg-onyx-950 text-cream-100 font-sans antialiased selection:bg-emerald-500 selection:text-onyx-950">
+<body class="bg-navy-950 text-champagne-100 font-sans antialiased selection:bg-caramel-500 selection:text-navy-950">
 
     <!-- STICKY HEADER -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-onyx-950/90 backdrop-blur-md border-b border-emerald-800/40">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-navy-950/90 backdrop-blur-md border-b border-navy-800/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-gold-500 flex items-center justify-center font-heading font-extrabold text-onyx-950 text-xl shadow-lg">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-caramel-400 to-gold-500 flex items-center justify-center font-heading font-extrabold text-navy-950 text-xl shadow-lg">
                     P
                 </div>
                 <div>
-                    <span class="font-heading font-extrabold text-lg sm:text-xl tracking-wider text-cream-50 block leading-none">PREMIER BRAND</span>
-                    <span class="text-[10px] tracking-widest text-emerald-400 font-bold uppercase block mt-1">SPORTS — A LIGA DAS GRANDES MARCAS</span>
+                    <span class="font-heading font-extrabold text-lg sm:text-xl tracking-wider text-champagne-100 block leading-none">PREMIER BRAND</span>
+                    <span class="text-[10px] tracking-widest text-caramel-300 font-bold uppercase block mt-1">SPORTS — A LIGA DAS GRANDES MARCAS</span>
                 </div>
             </div>
-            <a href="#aplicacao" class="hidden md:inline-flex items-center space-x-2 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-onyx-950 font-extrabold px-6 py-3 rounded-full text-sm transition-all duration-300 transform hover:scale-105 shadow-lg glow-emerald">
+            <a href="#aplicacao" class="hidden md:inline-flex items-center space-x-2 bg-gradient-to-r from-caramel-500 to-caramel-400 hover:from-caramel-400 hover:to-caramel-300 text-navy-950 font-extrabold px-6 py-3 rounded-full text-sm transition-all duration-300 transform hover:scale-105 shadow-lg glow-caramel">
                 <span>APLICAR PARA UMA VAGA</span>
                 <i class="fa-solid fa-arrow-right text-xs"></i>
             </a>
@@ -109,65 +104,65 @@
     </header>
 
     <!-- HERO SECTION -->
-    <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-onyx-950">
+    <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-navy-950">
         <!-- Background Orbs -->
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-500/10 rounded-full blur-[140px] pointer-events-none"></div>
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-caramel-500/10 rounded-full blur-[140px] pointer-events-none"></div>
         <div class="absolute top-1/3 right-10 w-[300px] h-[300px] bg-gold-500/10 rounded-full blur-[100px] pointer-events-none"></div>
 
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <!-- Tag High Ticket -->
-            <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-emerald-900/60 border border-emerald-700/50 mb-8 backdrop-blur-md">
+            <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-navy-900 border border-caramel-500/40 mb-8 backdrop-blur-md">
                 <span class="w-2 h-2 rounded-full bg-gold-400 animate-pulse"></span>
-                <span class="text-xs sm:text-sm font-semibold text-emerald-300 uppercase tracking-wider">PROGRAMA SELETIVO HIGH TICKET (6 MESES)</span>
+                <span class="text-xs sm:text-sm font-semibold text-caramel-200 uppercase tracking-wider">PROGRAMA SELETIVO HIGH TICKET (6 MESES)</span>
             </div>
 
             <!-- Headline Principal -->
-            <h1 class="font-heading font-extrabold text-3xl sm:text-5xl lg:text-6xl text-cream-50 leading-[1.15] mb-6 tracking-tight">
-                Transforme sua fábrica regional em uma <span class="text-gradient-gold">Marca Esportiva Nacional</span> que fatura até <span class="text-gradient-emerald">R$ 60.000 por mês</span>.
+            <h1 class="font-heading font-extrabold text-3xl sm:text-5xl lg:text-6xl text-white leading-[1.15] mb-6 tracking-tight">
+                Transforme sua fábrica regional em uma <span class="text-gradient-caramel">Marca Esportiva Nacional</span> que fatura até <span class="text-gradient-champagne">R$ 60.000 por mês</span>.
             </h1>
 
             <!-- Subheadline -->
-            <p class="text-lg sm:text-xl text-cream-200/80 max-w-3xl mx-auto mb-10 leading-relaxed font-normal">
+            <p class="text-lg sm:text-xl text-champagne-300/90 max-w-3xl mx-auto mb-10 leading-relaxed font-normal">
                 Elimine o desperdício de tecido e tinta na esteira de produção e implemente o motor de vendas pela internet para fechar contratos com times amadores do Brasil inteiro nos próximos 6 meses.
             </p>
 
             <!-- Botões CTA Hero -->
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
-                <a href="#aplicacao" class="w-full sm:w-auto bg-gradient-to-r from-emerald-500 via-emerald-400 to-gold-500 hover:brightness-110 text-onyx-950 font-extrabold px-8 py-5 rounded-2xl text-base sm:text-lg transition-all duration-300 transform hover:-translate-y-1 shadow-2xl glow-emerald flex items-center justify-center space-x-3">
+                <a href="#aplicacao" class="w-full sm:w-auto bg-gradient-to-r from-caramel-500 via-caramel-400 to-gold-500 hover:brightness-110 text-navy-950 font-extrabold px-8 py-5 rounded-2xl text-base sm:text-lg transition-all duration-300 transform hover:-translate-y-1 shadow-2xl glow-caramel flex items-center justify-center space-x-3">
                     <i class="fa-solid fa-trophy text-lg"></i>
                     <span>APLICAR PARA A MENTORIA PREMIER</span>
                 </a>
             </div>
 
             <!-- Destaques em Números / Destaques da Liga -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-10 border-t border-emerald-900/60 max-w-4xl mx-auto text-left">
-                <div class="p-4 rounded-xl bg-onyx-900/50 border border-emerald-900/40">
-                    <p class="text-2xl sm:text-3xl font-heading font-extrabold text-gold-400">-30%</p>
-                    <p class="text-xs text-cream-300/70 mt-1">Desperdício em 30 dias</p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-10 border-t border-navy-800/60 max-w-4xl mx-auto text-left">
+                <div class="p-4 rounded-xl bg-navy-900/60 border border-navy-800">
+                    <p class="text-2xl sm:text-3xl font-heading font-extrabold text-caramel-300">-30%</p>
+                    <p class="text-xs text-champagne-300/70 mt-1">Desperdício em 30 dias</p>
                 </div>
-                <div class="p-4 rounded-xl bg-onyx-900/50 border border-emerald-900/40">
-                    <p class="text-2xl sm:text-3xl font-heading font-extrabold text-emerald-400">R$ 60K</p>
-                    <p class="text-xs text-cream-300/70 mt-1">Meta mensal estimada</p>
+                <div class="p-4 rounded-xl bg-navy-900/60 border border-navy-800">
+                    <p class="text-2xl sm:text-3xl font-heading font-extrabold text-gold-400">R$ 60K</p>
+                    <p class="text-xs text-champagne-300/70 mt-1">Meta mensal estimada</p>
                 </div>
-                <div class="p-4 rounded-xl bg-onyx-900/50 border border-emerald-900/40">
-                    <p class="text-2xl sm:text-3xl font-heading font-extrabold text-gold-400">6 Meses</p>
-                    <p class="text-xs text-cream-300/70 mt-1">Acompanhamento direto</p>
+                <div class="p-4 rounded-xl bg-navy-900/60 border border-navy-800">
+                    <p class="text-2xl sm:text-3xl font-heading font-extrabold text-caramel-300">6 Meses</p>
+                    <p class="text-xs text-champagne-300/70 mt-1">Acompanhamento direto</p>
                 </div>
-                <div class="p-4 rounded-xl bg-onyx-900/50 border border-emerald-900/40">
-                    <p class="text-2xl sm:text-3xl font-heading font-extrabold text-emerald-400">100% Nacional</p>
-                    <p class="text-xs text-cream-300/70 mt-1">Vendas pelo Brasil</p>
+                <div class="p-4 rounded-xl bg-navy-900/60 border border-navy-800">
+                    <p class="text-2xl sm:text-3xl font-heading font-extrabold text-gold-400">100% Nacional</p>
+                    <p class="text-xs text-champagne-300/70 mt-1">Vendas pelo Brasil</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- SEÇÃO OS GARGALOS (VOCÊ SE IDENTIFICA?) -->
-    <section class="py-20 bg-onyx-900 relative">
+    <section class="py-20 bg-navy-900 relative">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-emerald-400 text-xs font-bold uppercase tracking-widest block mb-2">DIAGNÓSTICO DA SUA CONFECÇÃO</span>
-                <h2 class="text-3xl sm:text-4xl font-heading font-bold text-cream-50">Sua fábrica sofre com algum destes 4 gargalos?</h2>
-                <p class="text-cream-300/70 mt-4">A maioria dos donos de confecção esportiva são excelentes fabricantes, mas vivem presos na armadilha da operação local.</p>
+                <span class="text-caramel-300 text-xs font-bold uppercase tracking-widest block mb-2">DIAGNÓSTICO DA SUA CONFECÇÃO</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-bold text-white">Sua fábrica sofre com algum destes 4 gargalos?</h2>
+                <p class="text-champagne-300/70 mt-4">A maioria dos donos de confecção esportiva são excelentes fabricantes, mas vivem presos na armadilha da operação local.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -176,8 +171,8 @@
                     <div class="w-12 h-12 rounded-xl bg-red-950/80 border border-red-800/40 flex items-center justify-center text-red-400 mb-6 text-xl">
                         <i class="fa-solid fa-coins"></i>
                     </div>
-                    <h3 class="text-xl font-heading font-bold text-cream-50 mb-3">1. O Lucro Desaparece na Esteira</h3>
-                    <p class="text-cream-300/70 text-sm leading-relaxed">
+                    <h3 class="text-xl font-heading font-bold text-white mb-3">1. O Lucro Desaparece na Esteira</h3>
+                    <p class="text-champagne-300/70 text-sm leading-relaxed">
                         O dinheiro do seu mês vai embora com desperdícios de tinta, sobras de tecido cortado errado, refação de estampas e falta de padronização nas etapas de costura e prensagem.
                     </p>
                 </div>
@@ -187,8 +182,8 @@
                     <div class="w-12 h-12 rounded-xl bg-red-950/80 border border-red-800/40 flex items-center justify-center text-red-400 mb-6 text-xl">
                         <i class="fa-solid fa-handshake-slash"></i>
                     </div>
-                    <h3 class="text-xl font-heading font-bold text-cream-50 mb-3">2. Refém do Boca a Boca Local</h3>
-                    <p class="text-cream-300/70 text-sm leading-relaxed">
+                    <h3 class="text-xl font-heading font-bold text-white mb-3">2. Refém do Boca a Boca Local</h3>
+                    <p class="text-champagne-300/70 text-sm leading-relaxed">
                         Você briga por centavos contra confecções vizinhas da sua região porque só vende para quem passa na sua porta ou por indicação, sem um canal previsível de vendas pela internet.
                     </p>
                 </div>
@@ -198,8 +193,8 @@
                     <div class="w-12 h-12 rounded-xl bg-red-950/80 border border-red-800/40 flex items-center justify-center text-red-400 mb-6 text-xl">
                         <i class="fa-solid fa-industry"></i>
                     </div>
-                    <h3 class="text-xl font-heading font-bold text-cream-50 mb-3">3. Capacidade Ociosa nas Máquinas</h3>
-                    <p class="text-cream-300/70 text-sm leading-relaxed">
+                    <h3 class="text-xl font-heading font-bold text-white mb-3">3. Capacidade Ociosa nas Máquinas</h3>
+                    <p class="text-champagne-300/70 text-sm leading-relaxed">
                         Sua estrutura (plotters, prensas ou calandras) tem capacidade para produzir o triplo, mas a falta de demanda constante deixa equipamentos parados e a equipe sem metas.
                     </p>
                 </div>
@@ -209,8 +204,8 @@
                     <div class="w-12 h-12 rounded-xl bg-red-950/80 border border-red-800/40 flex items-center justify-center text-red-400 mb-6 text-xl">
                         <i class="fa-solid fa-user-gear"></i>
                     </div>
-                    <h3 class="text-xl font-heading font-bold text-cream-50 mb-3">4. Dono Refém da Operação</h3>
-                    <p class="text-cream-300/70 text-sm leading-relaxed">
+                    <h3 class="text-xl font-heading font-bold text-white mb-3">4. Dono Refém da Operação</h3>
+                    <p class="text-champagne-300/70 text-sm leading-relaxed">
                         Você passa o dia apagando incêndio, ajustando arquivo, cortando pano e fazendo atendimento no WhatsApp. Não sobra tempo para gerir a empresa como um verdadeiro empresário.
                     </p>
                 </div>
@@ -219,21 +214,21 @@
     </section>
 
     <!-- O MOVIMENTO PREMIER BRAND SPORTS -->
-    <section class="py-20 bg-gradient-to-b from-onyx-950 to-emerald-950 relative overflow-hidden">
+    <section class="py-20 bg-gradient-to-b from-navy-950 to-navy-900 relative overflow-hidden">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="p-10 md:p-16 rounded-3xl bg-glass border border-emerald-700/40 shadow-2xl relative">
+            <div class="p-10 md:p-16 rounded-3xl bg-glass border border-caramel-500/30 shadow-2xl relative">
                 <div class="max-w-3xl">
-                    <span class="px-4 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-bold tracking-widest uppercase">A MUDANÇA DE CHAVE</span>
-                    <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-cream-50 mt-6 mb-6">
-                        Chega de ser visto como uma "oficina de costura". É hora de jogar na <span class="text-gradient-gold">Liga das Grandes Marcas</span>.
+                    <span class="px-4 py-1.5 rounded-full bg-caramel-500/20 border border-caramel-400/40 text-caramel-200 text-xs font-bold tracking-widest uppercase">A MUDANÇA DE CHAVE</span>
+                    <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-white mt-6 mb-6">
+                        Chega de ser visto como uma "oficina de costura". É hora de jogar na <span class="text-gradient-caramel">Liga das Grandes Marcas</span>.
                     </h2>
-                    <p class="text-cream-200/80 leading-relaxed text-base mb-6">
+                    <p class="text-champagne-200/90 leading-relaxed text-base mb-6">
                         As grandes marcas de esporte (Nike, Adidas, Puma) não venceram no mercado porque tinham segredos industriais inalcançáveis. Elas venceram porque alinharam **2 coisas simples**: uma esteira produtiva padronizada de alta qualidade e uma presença comercial forte que vende desejo.
                     </p>
-                    <p class="text-cream-200/80 leading-relaxed text-base mb-8">
+                    <p class="text-champagne-200/90 leading-relaxed text-base mb-8">
                         Na mentoria **PREMIER BRAND SPORTS**, você vai receber a metodologia exata para estancar os desperdícios da sua fábrica em 30 dias e estruturar sua confecção para vender uniformes com margem alta para times do Brasil inteiro.
                     </p>
-                    <a href="#aplicacao" class="inline-flex items-center space-x-3 text-gold-400 font-extrabold text-lg hover:text-gold-300 transition-colors">
+                    <a href="#aplicacao" class="inline-flex items-center space-x-3 text-caramel-300 font-extrabold text-lg hover:text-caramel-200 transition-colors">
                         <span>Quero entrar para a Liga Premier</span>
                         <i class="fa-solid fa-chevron-right text-xs"></i>
                     </a>
@@ -243,64 +238,64 @@
     </section>
 
     <!-- METODOLOGIA DOS 3 PILARES PREMIER -->
-    <section class="py-24 bg-onyx-950 relative">
+    <section class="py-24 bg-navy-950 relative">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-20">
-                <span class="text-emerald-400 text-xs font-bold uppercase tracking-widest block mb-2">METODOLOGIA EXCLUSIVA</span>
-                <h2 class="text-3xl sm:text-5xl font-heading font-extrabold text-cream-50">Os 3 Pilares da PREMIER BRAND SPORTS</h2>
-                <p class="text-cream-300/70 mt-4 text-base">O passo a passo estratégico de 6 meses para reestruturar sua fábrica e acelerar suas vendas.</p>
+                <span class="text-caramel-300 text-xs font-bold uppercase tracking-widest block mb-2">METODOLOGIA EXCLUSIVA</span>
+                <h2 class="text-3xl sm:text-5xl font-heading font-extrabold text-white">Os 3 Pilares da PREMIER BRAND SPORTS</h2>
+                <p class="text-champagne-300/70 mt-4 text-base">O passo a passo estratégico de 6 meses para reestruturar sua fábrica e acelerar suas vendas.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- PILAR 1 -->
-                <div class="p-8 rounded-3xl bg-card border border-emerald-800/40 relative flex flex-col justify-between hover:border-emerald-500/60 transition-all duration-300">
+                <div class="p-8 rounded-3xl bg-card border border-navy-800 relative flex flex-col justify-between hover:border-caramel-500/50 transition-all duration-300">
                     <div>
-                        <div class="w-14 h-14 rounded-2xl bg-emerald-900/60 border border-emerald-500/40 flex items-center justify-center text-emerald-400 text-2xl font-bold mb-8">
+                        <div class="w-14 h-14 rounded-2xl bg-navy-800 border border-caramel-500/30 flex items-center justify-center text-caramel-300 text-2xl font-bold mb-8">
                             01
                         </div>
-                        <h3 class="text-2xl font-heading font-bold text-cream-50 mb-4">Padronização da Fábrica</h3>
-                        <p class="text-cream-300/70 text-sm leading-relaxed mb-6">
+                        <h3 class="text-2xl font-heading font-bold text-white mb-4">Padronização da Fábrica</h3>
+                        <p class="text-champagne-300/70 text-sm leading-relaxed mb-6">
                             Elimine refações e retrabalho. Estabeleça fichas técnicas, controle de estampa, redução de desperdício de tinta e corte perfeito para aumentar a margem bruta de cada peça.
                         </p>
                     </div>
-                    <ul class="space-y-2 text-xs text-emerald-300/80 pt-6 border-t border-emerald-900/50">
+                    <ul class="space-y-2 text-xs text-caramel-200 pt-6 border-t border-navy-800">
                         <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-gold-400"></i><span>-30% de desperdício nos primeiros 30 dias</span></li>
                         <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-gold-400"></i><span>Fluxo enxuto sem comprar máquinas novas</span></li>
                     </ul>
                 </div>
 
                 <!-- PILAR 2 -->
-                <div class="p-8 rounded-3xl bg-card border border-gold-500/40 relative flex flex-col justify-between hover:border-gold-400/60 transition-all duration-300 shadow-xl glow-gold">
-                    <div class="absolute -top-4 right-6 px-3 py-1 rounded-full bg-gold-500 text-onyx-950 text-[10px] font-extrabold uppercase">
+                <div class="p-8 rounded-3xl bg-card border border-caramel-500/50 relative flex flex-col justify-between hover:border-caramel-400 transition-all duration-300 shadow-xl glow-caramel">
+                    <div class="absolute -top-4 right-6 px-3 py-1 rounded-full bg-caramel-500 text-navy-950 text-[10px] font-extrabold uppercase">
                         CHAVE DE MARGEM
                     </div>
                     <div>
-                        <div class="w-14 h-14 rounded-2xl bg-gold-500/20 border border-gold-400/40 flex items-center justify-center text-gold-400 text-2xl font-bold mb-8">
+                        <div class="w-14 h-14 rounded-2xl bg-caramel-500/20 border border-caramel-400/40 flex items-center justify-center text-caramel-300 text-2xl font-bold mb-8">
                             02
                         </div>
-                        <h3 class="text-2xl font-heading font-bold text-cream-50 mb-4">Oferta & Catálogo Premium</h3>
-                        <p class="text-cream-300/70 text-sm leading-relaxed mb-6">
+                        <h3 class="text-2xl font-heading font-bold text-white mb-4">Oferta & Catálogo Premium</h3>
+                        <p class="text-champagne-300/70 text-sm leading-relaxed mb-6">
                             Transforme sua produção simples em coleções e pacotes atraentes para times amadores. Pare de brigar por centavos e cobre o preço justo que sua qualidade merece.
                         </p>
                     </div>
-                    <ul class="space-y-2 text-xs text-gold-300/80 pt-6 border-t border-gold-900/50">
-                        <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-emerald-400"></i><span>Kits completos para times esportivos</span></li>
-                        <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-emerald-400"></i><span>Posicionamento de marca de alto valor</span></li>
+                    <ul class="space-y-2 text-xs text-caramel-200 pt-6 border-t border-navy-800">
+                        <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-gold-400"></i><span>Kits completos para times esportivos</span></li>
+                        <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-gold-400"></i><span>Posicionamento de marca de alto valor</span></li>
                     </ul>
                 </div>
 
                 <!-- PILAR 3 -->
-                <div class="p-8 rounded-3xl bg-card border border-emerald-800/40 relative flex flex-col justify-between hover:border-emerald-500/60 transition-all duration-300">
+                <div class="p-8 rounded-3xl bg-card border border-navy-800 relative flex flex-col justify-between hover:border-caramel-500/50 transition-all duration-300">
                     <div>
-                        <div class="w-14 h-14 rounded-2xl bg-emerald-900/60 border border-emerald-500/40 flex items-center justify-center text-emerald-400 text-2xl font-bold mb-8">
+                        <div class="w-14 h-14 rounded-2xl bg-navy-800 border border-caramel-500/30 flex items-center justify-center text-caramel-300 text-2xl font-bold mb-8">
                             03
                         </div>
-                        <h3 class="text-2xl font-heading font-bold text-cream-50 mb-4">Motor de Vendas Nacionais</h3>
-                        <p class="text-cream-300/70 text-sm leading-relaxed mb-6">
+                        <h3 class="text-2xl font-heading font-bold text-white mb-4">Motor de Vendas Nacionais</h3>
+                        <p class="text-champagne-300/70 text-sm leading-relaxed mb-6">
                             Implemente o funil de atração digital. Anúncios segmentados, catálogo online de alta conversão e automação de orçamentos para fechar pedidos sem sair da fábrica.
                         </p>
                     </div>
-                    <ul class="space-y-2 text-xs text-emerald-300/80 pt-6 border-t border-emerald-900/50">
+                    <ul class="space-y-2 text-xs text-caramel-200 pt-6 border-t border-navy-800">
                         <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-gold-400"></i><span>Pedidos de times vindos de todo o país</span></li>
                         <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-gold-400"></i><span>Meta estimada de R$ 60.000/mês</span></li>
                     </ul>
@@ -310,61 +305,61 @@
     </section>
 
     <!-- FORMATO DA ENTREGA HIGH TICKET -->
-    <section class="py-20 bg-onyx-900 border-y border-emerald-900/40">
+    <section class="py-20 bg-navy-900 border-y border-navy-800">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <span class="text-gold-400 text-xs font-bold uppercase tracking-widest block mb-2">ACOMPANHAMENTO VIP</span>
-                <h2 class="text-3xl sm:text-4xl font-heading font-bold text-cream-50">O que você recebe ao ser selecionado</h2>
+                <h2 class="text-3xl sm:text-4xl font-heading font-bold text-white">O que você recebe ao ser selecionado</h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Entregável 1 -->
-                <div class="flex items-start space-x-5 p-6 rounded-2xl bg-onyx-950 border border-emerald-800/40">
-                    <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl shrink-0">
+                <div class="flex items-start space-x-5 p-6 rounded-2xl bg-navy-950 border border-navy-800">
+                    <div class="w-12 h-12 rounded-xl bg-caramel-500/20 text-caramel-300 flex items-center justify-center text-xl shrink-0">
                         <i class="fa-solid fa-user-check"></i>
                     </div>
                     <div>
-                        <h4 class="text-lg font-heading font-bold text-cream-50 mb-2">12 Encontros Individuais (Quinzenais)</h4>
-                        <p class="text-cream-300/70 text-sm leading-relaxed">
+                        <h4 class="text-lg font-heading font-bold text-white mb-2">12 Encontros Individuais (Quinzenais)</h4>
+                        <p class="text-champagne-300/70 text-sm leading-relaxed">
                             Reuniões exclusivas direto comigo para analisar a esteira da sua fábrica, ajustar fichas técnicas e validar suas campanhas de venda.
                         </p>
                     </div>
                 </div>
 
                 <!-- Entregável 2 -->
-                <div class="flex items-start space-x-5 p-6 rounded-2xl bg-onyx-950 border border-emerald-800/40">
+                <div class="flex items-start space-x-5 p-6 rounded-2xl bg-navy-950 border border-navy-800">
                     <div class="w-12 h-12 rounded-xl bg-gold-500/20 text-gold-400 flex items-center justify-center text-xl shrink-0">
                         <i class="fa-solid fa-users"></i>
                     </div>
                     <div>
-                        <h4 class="text-lg font-heading font-bold text-cream-50 mb-2">Grupo VIP da Liga Premier (Networking)</h4>
-                        <p class="text-cream-300/70 text-sm leading-relaxed">
+                        <h4 class="text-lg font-heading font-bold text-white mb-2">Grupo VIP da Liga Premier (Networking)</h4>
+                        <p class="text-champagne-300/70 text-sm leading-relaxed">
                             Convivência direta com os maiores fabricantes esportivos do Brasil. Troca de fornecedores, indicações e parcerias estratégicas.
                         </p>
                     </div>
                 </div>
 
                 <!-- Entregável 3 -->
-                <div class="flex items-start space-x-5 p-6 rounded-2xl bg-onyx-950 border border-emerald-800/40">
-                    <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl shrink-0">
+                <div class="flex items-start space-x-5 p-6 rounded-2xl bg-navy-950 border border-navy-800">
+                    <div class="w-12 h-12 rounded-xl bg-caramel-500/20 text-caramel-300 flex items-center justify-center text-xl shrink-0">
                         <i class="fa-solid fa-comments"></i>
                     </div>
                     <div>
-                        <h4 class="text-lg font-heading font-bold text-cream-50 mb-2">Suporte Diário no WhatsApp</h4>
-                        <p class="text-cream-300/70 text-sm leading-relaxed">
+                        <h4 class="text-lg font-heading font-bold text-white mb-2">Suporte Diário no WhatsApp</h4>
+                        <p class="text-champagne-300/70 text-sm leading-relaxed">
                             Canal direto com nossa equipe para resolver dúvidas operacionais do dia a dia e aprovar propostas para grandes times.
                         </p>
                     </div>
                 </div>
 
                 <!-- Entregável 4 -->
-                <div class="flex items-start space-x-5 p-6 rounded-2xl bg-onyx-950 border border-emerald-800/40">
+                <div class="flex items-start space-x-5 p-6 rounded-2xl bg-navy-950 border border-navy-800">
                     <div class="w-12 h-12 rounded-xl bg-gold-500/20 text-gold-400 flex items-center justify-center text-xl shrink-0">
                         <i class="fa-solid fa-box-archive"></i>
                     </div>
                     <div>
-                        <h4 class="text-lg font-heading font-bold text-cream-50 mb-2">Kit de Ferramentas & Modelos Prontos</h4>
-                        <p class="text-cream-300/70 text-sm leading-relaxed">
+                        <h4 class="text-lg font-heading font-bold text-white mb-2">Kit de Ferramentas & Modelos Prontos</h4>
+                        <p class="text-champagne-300/70 text-sm leading-relaxed">
                             Planilhas de custo de produção, modelos de fichas técnicas de sublimação, roteiros de atendimento e criativos de anúncios.
                         </p>
                     </div>
@@ -374,40 +369,40 @@
     </section>
 
     <!-- FORMULÁRIO DE APLICAÇÃO -->
-    <section id="aplicacao" class="py-24 bg-onyx-950 relative">
+    <section id="aplicacao" class="py-24 bg-navy-950 relative">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="p-8 sm:p-12 rounded-3xl bg-card border border-emerald-600/40 shadow-2xl glow-emerald">
+            <div class="p-8 sm:p-12 rounded-3xl bg-card border border-caramel-500/40 shadow-2xl glow-caramel">
                 <div class="text-center mb-10">
                     <span class="px-4 py-1.5 rounded-full bg-gold-500/20 border border-gold-400/40 text-gold-300 text-xs font-bold uppercase tracking-widest">PROCESSO SELETIVO</span>
-                    <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-cream-50 mt-4">Aplicação para a PREMIER BRAND SPORTS</h2>
-                    <p class="text-cream-300/70 mt-3 text-sm">Preencha o formulário abaixo para passar pela nossa análise de perfil de fábrica. Entraremos em contato via WhatsApp para agendar sua reunião individual.</p>
+                    <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-white mt-4">Aplicação para a PREMIER BRAND SPORTS</h2>
+                    <p class="text-champagne-300/70 mt-3 text-sm">Preencha o formulário abaixo para passar pela nossa análise de perfil de fábrica. Entraremos em contato via WhatsApp para agendar sua reunião individual.</p>
                 </div>
 
                 <form action="#" method="POST" class="space-y-6">
                     <div>
-                        <label class="block text-xs font-bold text-cream-200 uppercase tracking-wider mb-2">Seu Nome Completo</label>
-                        <input type="text" placeholder="Digite seu nome" required class="w-full bg-onyx-950 border border-emerald-800/60 rounded-xl px-4 py-3.5 text-cream-50 placeholder-cream-400/40 focus:outline-none focus:border-emerald-400 transition-colors">
+                        <label class="block text-xs font-bold text-champagne-200 uppercase tracking-wider mb-2">Seu Nome Completo</label>
+                        <input type="text" placeholder="Digite seu nome" required class="w-full bg-navy-950 border border-navy-800 rounded-xl px-4 py-3.5 text-white placeholder-champagne-300/30 focus:outline-none focus:border-caramel-400 transition-colors">
                     </div>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-xs font-bold text-cream-200 uppercase tracking-wider mb-2">Seu WhatsApp de Contato</label>
-                            <input type="tel" placeholder="(00) 00000-0000" required class="w-full bg-onyx-950 border border-emerald-800/60 rounded-xl px-4 py-3.5 text-cream-50 placeholder-cream-400/40 focus:outline-none focus:border-emerald-400 transition-colors">
+                            <label class="block text-xs font-bold text-champagne-200 uppercase tracking-wider mb-2">Seu WhatsApp de Contato</label>
+                            <input type="tel" placeholder="(00) 00000-0000" required class="w-full bg-navy-950 border border-navy-800 rounded-xl px-4 py-3.5 text-white placeholder-champagne-300/30 focus:outline-none focus:border-caramel-400 transition-colors">
                         </div>
                         <div>
-                            <label class="block text-xs font-bold text-cream-200 uppercase tracking-wider mb-2">Nome da sua Confecção / Estamparia</label>
-                            <input type="text" placeholder="Nome da sua fábrica" required class="w-full bg-onyx-950 border border-emerald-800/60 rounded-xl px-4 py-3.5 text-cream-50 placeholder-cream-400/40 focus:outline-none focus:border-emerald-400 transition-colors">
+                            <label class="block text-xs font-bold text-champagne-200 uppercase tracking-wider mb-2">Nome da sua Confecção / Estamparia</label>
+                            <input type="text" placeholder="Nome da sua fábrica" required class="w-full bg-navy-950 border border-navy-800 rounded-xl px-4 py-3.5 text-white placeholder-champagne-300/30 focus:outline-none focus:border-caramel-400 transition-colors">
                         </div>
                     </div>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-xs font-bold text-cream-200 uppercase tracking-wider mb-2">Cidade e Estado</label>
-                            <input type="text" placeholder="Ex: Franca - SP" required class="w-full bg-onyx-950 border border-emerald-800/60 rounded-xl px-4 py-3.5 text-cream-50 placeholder-cream-400/40 focus:outline-none focus:border-emerald-400 transition-colors">
+                            <label class="block text-xs font-bold text-champagne-200 uppercase tracking-wider mb-2">Cidade e Estado</label>
+                            <input type="text" placeholder="Ex: Franca - SP" required class="w-full bg-navy-950 border border-navy-800 rounded-xl px-4 py-3.5 text-white placeholder-champagne-300/30 focus:outline-none focus:border-caramel-400 transition-colors">
                         </div>
                         <div>
-                            <label class="block text-xs font-bold text-cream-200 uppercase tracking-wider mb-2">Faturamento Médio Mensal</label>
-                            <select required class="w-full bg-onyx-950 border border-emerald-800/60 rounded-xl px-4 py-3.5 text-cream-50 focus:outline-none focus:border-emerald-400 transition-colors">
+                            <label class="block text-xs font-bold text-champagne-200 uppercase tracking-wider mb-2">Faturamento Médio Mensal</label>
+                            <select required class="w-full bg-navy-950 border border-navy-800 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-caramel-400 transition-colors">
                                 <option value="" disabled selected>Selecione uma faixa</option>
                                 <option value="1">Até R$ 15.000 / mês</option>
                                 <option value="2">R$ 15.000 a R$ 30.000 / mês</option>
@@ -418,13 +413,13 @@
                     </div>
 
                     <div>
-                        <label class="block text-xs font-bold text-cream-200 uppercase tracking-wider mb-2">Quais equipamentos você possui na fábrica?</label>
-                        <input type="text" placeholder="Ex: Plotter Roland, Prensa 100x150, Costura própria..." required class="w-full bg-onyx-950 border border-emerald-800/60 rounded-xl px-4 py-3.5 text-cream-50 placeholder-cream-400/40 focus:outline-none focus:border-emerald-400 transition-colors">
+                        <label class="block text-xs font-bold text-champagne-200 uppercase tracking-wider mb-2">Quais equipamentos você possui na fábrica?</label>
+                        <input type="text" placeholder="Ex: Plotter Roland, Prensa 100x150, Costura própria..." required class="w-full bg-navy-950 border border-navy-800 rounded-xl px-4 py-3.5 text-white placeholder-champagne-300/30 focus:outline-none focus:border-caramel-400 transition-colors">
                     </div>
 
                     <div>
-                        <label class="block text-xs font-bold text-cream-200 uppercase tracking-wider mb-2">Qual o seu maior gargalo hoje?</label>
-                        <select required class="w-full bg-onyx-950 border border-emerald-800/60 rounded-xl px-4 py-3.5 text-cream-50 focus:outline-none focus:border-emerald-400 transition-colors">
+                        <label class="block text-xs font-bold text-champagne-200 uppercase tracking-wider mb-2">Qual o seu maior gargalo hoje?</label>
+                        <select required class="w-full bg-navy-950 border border-navy-800 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-caramel-400 transition-colors">
                             <option value="" disabled selected>Selecione seu maior problema</option>
                             <option value="1">Desperdício e erros na produção (Pilar 1)</option>
                             <option value="2">Briga por preço e falta de catálogo forte (Pilar 2)</option>
@@ -433,21 +428,21 @@
                         </select>
                     </div>
 
-                    <button type="submit" class="w-full bg-gradient-to-r from-emerald-500 via-emerald-400 to-gold-500 hover:brightness-110 text-onyx-950 font-extrabold py-5 rounded-2xl text-lg transition-all duration-300 shadow-xl glow-emerald flex items-center justify-center space-x-3">
+                    <button type="submit" class="w-full bg-gradient-to-r from-caramel-500 via-caramel-400 to-gold-500 hover:brightness-110 text-navy-950 font-extrabold py-5 rounded-2xl text-lg transition-all duration-300 shadow-xl glow-caramel flex items-center justify-center space-x-3">
                         <span>ENVIAR APLICAÇÃO PARA ANÁLISE</span>
                         <i class="fa-solid fa-paper-plane text-sm"></i>
                     </button>
-                    <p class="text-center text-xs text-cream-300/50">Seus dados estão protegidos. Entraremos em contato em até 24 horas úteis.</p>
+                    <p class="text-center text-xs text-champagne-300/50">Seus dados estão protegidos. Entraremos em contato em até 24 horas úteis.</p>
                 </form>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="py-12 bg-onyx-950 border-t border-emerald-900/40 text-center">
+    <footer class="py-12 bg-navy-950 border-t border-navy-800 text-center">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p class="font-heading font-bold text-cream-100 tracking-wider">PREMIER BRAND SPORTS</p>
-            <p class="text-xs text-cream-300/50 mt-2">© 2026 — Todos os direitos reservados. A Liga das Grandes Marcas Esportivas.</p>
+            <p class="font-heading font-bold text-white tracking-wider">PREMIER BRAND SPORTS</p>
+            <p class="text-xs text-champagne-300/50 mt-2">© 2026 — Todos os direitos reservados. A Liga das Grandes Marcas Esportivas.</p>
         </div>
     </footer>
 
