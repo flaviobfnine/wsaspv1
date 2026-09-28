@@ -105,11 +105,14 @@
         </div>
     </header>
 
-    <!-- HERO SECTION (ESTRUTURA HIGH TICKET / VITOR DAMÁSIO STYLE) -->
+    <!-- HERO SECTION (ESTRUTURA HIGH TICKET COM FOTO BACKGROUND DO ESPECIALISTA) -->
     <section class="relative pt-28 pb-20 md:pt-36 md:pb-28 overflow-hidden bg-onyx-950">
-        <!-- Background Orbs -->
-        <div class="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-500/10 rounded-full blur-[140px] pointer-events-none"></div>
-        <div class="absolute top-1/3 right-10 w-[400px] h-[400px] bg-gold-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <!-- Image Background with Gradient Vignette -->
+        <div class="absolute inset-0 z-0">
+            <img src="assets/hero_bg_especialista.webp" alt="Flávio — Especialista Premier Brand Sports" class="w-full h-full object-cover object-center opacity-25 blur-[1px]">
+            <div class="absolute inset-0 bg-gradient-to-r from-onyx-950 via-onyx-950/90 to-onyx-950/60"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-onyx-950/80 via-transparent to-onyx-950"></div>
+        </div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -124,7 +127,7 @@
 
                     <!-- Headline Principal -->
                     <h1 class="font-heading font-extrabold text-3xl sm:text-5xl lg:text-5xl text-cream-50 leading-[1.15] mb-6 tracking-tight">
-                        Transforme sua fábrica em uma <span class="text-gradient-gold">Marca Esportiva Nacional</span> que fatura até <span class="text-gradient-emerald">R$ 15.000 por semana</span>.
+                        Transforme sua fábrica em uma <span class="text-gradient-gold">Marca Esportiva Nacional</span> que fatura <span class="text-gradient-emerald">R$ 15.000 por semana</span>.
                     </h1>
 
                     <!-- Subheadline -->
@@ -161,22 +164,22 @@
                     </p>
                 </div>
 
-                <!-- COLUNA DIREITA: FOTO DO ESPECIALISTA / MENTOR FLÁVIO -->
+                <!-- COLUNA DIREITA: FOTO DO ESPECIALISTA EM DESTAQUE -->
                 <div class="lg:col-span-5 relative flex justify-center">
-                    <div class="relative w-full max-w-md">
+                    <div class="relative w-full max-w-lg">
                         <!-- Moldura com Glow Esmeralda & Ouro -->
-                        <div class="absolute -inset-2 bg-gradient-to-tr from-emerald-500 to-gold-500 rounded-3xl blur-2xl opacity-30 animate-pulse"></div>
+                        <div class="absolute -inset-2 bg-gradient-to-tr from-emerald-500 via-gold-500 to-emerald-400 rounded-3xl blur-2xl opacity-40 animate-pulse"></div>
                         
-                        <div class="relative bg-card rounded-3xl border border-emerald-500/40 p-4 overflow-hidden shadow-2xl">
-                            <img src="../assets/flavio_hero_a.png" alt="Flávio — Mentor PREMIER BRAND SPORTS" class="w-full h-auto rounded-2xl object-cover transform hover:scale-105 transition-transform duration-500">
+                        <div class="relative bg-card rounded-3xl border-2 border-gold-500/50 p-3 overflow-hidden shadow-2xl group">
+                            <img src="assets/hero_bg_especialista.webp" alt="Flávio — Mentor PREMIER BRAND SPORTS" class="w-full h-auto rounded-2xl object-cover transform hover:scale-105 transition-transform duration-500 shadow-lg">
                             
                             <!-- Card de Autoridade Flutuante -->
-                            <div class="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-onyx-950/90 backdrop-blur-md border border-gold-500/40 shadow-xl flex items-center justify-between">
+                            <div class="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-onyx-950/95 backdrop-blur-md border border-gold-400/60 shadow-2xl flex items-center justify-between">
                                 <div>
                                     <h4 class="font-heading font-extrabold text-cream-50 text-sm sm:text-base">FLÁVIO BFNINE</h4>
-                                    <p class="text-xs text-emerald-400 font-medium">Especialista em Fabricação Esportiva</p>
+                                    <p class="text-xs text-emerald-400 font-bold">Mestre da Fabricação Esportiva</p>
                                 </div>
-                                <div class="w-10 h-10 rounded-full bg-gold-500/20 border border-gold-400 flex items-center justify-center text-gold-400">
+                                <div class="w-10 h-10 rounded-full bg-gold-500/20 border border-gold-400 flex items-center justify-center text-gold-400 shadow-md">
                                     <i class="fa-solid fa-award text-lg"></i>
                                 </div>
                             </div>
