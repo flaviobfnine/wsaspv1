@@ -59,10 +59,10 @@
 
     <style>
         .glow-emerald {
-            box-shadow: 0 0 50px -10px rgba(16, 185, 129, 0.25);
+            box-shadow: 0 0 50px -10px rgba(16, 185, 129, 0.3);
         }
         .glow-gold {
-            box-shadow: 0 0 40px -10px rgba(245, 158, 11, 0.3);
+            box-shadow: 0 0 40px -10px rgba(245, 158, 11, 0.35);
         }
         .text-gradient-gold {
             background: linear-gradient(135deg, #F7F3E9 0%, #E2D3B0 50%, #F59E0B 100%);
@@ -75,12 +75,12 @@
             -webkit-text-fill-color: transparent;
         }
         .bg-glass {
-            background: rgba(8, 34, 24, 0.75);
+            background: rgba(8, 34, 24, 0.85);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
         }
         .bg-card {
-            background: linear-gradient(180deg, rgba(13, 56, 41, 0.6) 0%, rgba(7, 15, 12, 0.9) 100%);
+            background: linear-gradient(180deg, rgba(13, 56, 41, 0.65) 0%, rgba(7, 15, 12, 0.95) 100%);
         }
     </style>
 </head>
@@ -98,68 +98,171 @@
                     <span class="text-[10px] tracking-widest text-emerald-400 font-bold uppercase block mt-1">SPORTS — A LIGA DAS GRANDES MARCAS</span>
                 </div>
             </div>
-            <a href="#aplicacao" class="hidden md:inline-flex items-center space-x-2 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-onyx-950 font-extrabold px-6 py-3 rounded-full text-sm transition-all duration-300 transform hover:scale-105 shadow-lg glow-emerald">
+            <a href="#aplicacao" class="hidden md:inline-flex items-center space-x-2 bg-gradient-to-r from-emerald-500 via-emerald-400 to-gold-500 hover:brightness-110 text-onyx-950 font-extrabold px-6 py-3 rounded-full text-sm transition-all duration-300 transform hover:scale-105 shadow-lg glow-emerald">
                 <span>APLICAR PARA UMA VAGA</span>
                 <i class="fa-solid fa-arrow-right text-xs"></i>
             </a>
         </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-onyx-950">
+    <!-- HERO SECTION (ESTRUTURA HIGH TICKET / VITOR DAMÁSIO STYLE) -->
+    <section class="relative pt-28 pb-20 md:pt-36 md:pb-28 overflow-hidden bg-onyx-950">
         <!-- Background Orbs -->
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-500/10 rounded-full blur-[140px] pointer-events-none"></div>
-        <div class="absolute top-1/3 right-10 w-[300px] h-[300px] bg-gold-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+        <div class="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-500/10 rounded-full blur-[140px] pointer-events-none"></div>
+        <div class="absolute top-1/3 right-10 w-[400px] h-[400px] bg-gold-500/10 rounded-full blur-[120px] pointer-events-none"></div>
 
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <!-- Tag High Ticket -->
-            <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-emerald-900/60 border border-emerald-700/50 mb-8 backdrop-blur-md">
-                <span class="w-2 h-2 rounded-full bg-gold-400 animate-pulse"></span>
-                <span class="text-xs sm:text-sm font-semibold text-emerald-300 uppercase tracking-wider">PROGRAMA SELETIVO HIGH TICKET (6 MESES)</span>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- COLUNA ESQUERDA: COPY & OFERTA HIGH TICKET -->
+                <div class="lg:col-span-7 text-left">
+                    <!-- Tag High Ticket -->
+                    <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-emerald-900/60 border border-emerald-700/50 mb-6 backdrop-blur-md">
+                        <span class="w-2.5 h-2.5 rounded-full bg-gold-400 animate-pulse"></span>
+                        <span class="text-xs sm:text-sm font-semibold text-emerald-300 uppercase tracking-wider">PROGRAMA SELETIVO HIGH TICKET (6 MESES)</span>
+                    </div>
+
+                    <!-- Headline Principal -->
+                    <h1 class="font-heading font-extrabold text-3xl sm:text-5xl lg:text-5xl text-cream-50 leading-[1.15] mb-6 tracking-tight">
+                        Transforme sua fábrica em uma <span class="text-gradient-gold">Marca Esportiva Nacional</span> que fatura até <span class="text-gradient-emerald">R$ 60.000/mês</span>.
+                    </h1>
+
+                    <!-- Subheadline -->
+                    <p class="text-base sm:text-lg text-cream-200/80 mb-8 leading-relaxed font-normal">
+                        Elimine o desperdício de tinta e tecido na esteira de produção e monte seu motor de vendas online para fechar com times amadores do Brasil inteiro nos próximos 6 meses.
+                    </p>
+
+                    <!-- Lista de Ganhos Rápidos -->
+                    <div class="space-y-3 mb-10 text-sm sm:text-base text-cream-100">
+                        <div class="flex items-center space-x-3">
+                            <i class="fa-solid fa-circle-check text-emerald-400 text-lg shrink-0"></i>
+                            <span><b>-30% de Desperdício</b> nos primeiros 30 dias de fábrica.</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fa-solid fa-circle-check text-gold-400 text-lg shrink-0"></i>
+                            <span><b>Catálogo de Elite</b> com margem cheia para parar de chorar preço.</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fa-solid fa-circle-check text-emerald-400 text-lg shrink-0"></i>
+                            <span><b>Pedidos do Brasil Inteiro</b> direto no seu WhatsApp todos os dias.</span>
+                        </div>
+                    </div>
+
+                    <!-- Botão CTA Hero -->
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                        <a href="#aplicacao" class="bg-gradient-to-r from-emerald-500 via-emerald-400 to-gold-500 hover:brightness-110 text-onyx-950 font-extrabold px-8 py-5 rounded-2xl text-base sm:text-lg transition-all duration-300 transform hover:-translate-y-1 shadow-2xl glow-emerald text-center flex items-center justify-center space-x-3">
+                            <i class="fa-solid fa-trophy text-lg"></i>
+                            <span>APLICAR PARA UMA VAGA NA LIGA</span>
+                        </a>
+                    </div>
+                    <p class="text-xs text-cream-300/50 mt-3 flex items-center space-x-2">
+                        <i class="fa-solid fa-lock text-emerald-400"></i>
+                        <span>Análise seletiva de perfil industrial • Vagas limitadas por turma</span>
+                    </p>
+                </div>
+
+                <!-- COLUNA DIREITA: FOTO DO ESPECIALISTA / MENTOR FLÁVIO -->
+                <div class="lg:col-span-5 relative flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <!-- Moldura com Glow Esmeralda & Ouro -->
+                        <div class="absolute -inset-2 bg-gradient-to-tr from-emerald-500 to-gold-500 rounded-3xl blur-2xl opacity-30 animate-pulse"></div>
+                        
+                        <div class="relative bg-card rounded-3xl border border-emerald-500/40 p-4 overflow-hidden shadow-2xl">
+                            <img src="../assets/flavio_hero_a.png" alt="Flávio — Mentor PREMIER BRAND SPORTS" class="w-full h-auto rounded-2xl object-cover transform hover:scale-105 transition-transform duration-500">
+                            
+                            <!-- Card de Autoridade Flutuante -->
+                            <div class="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-onyx-950/90 backdrop-blur-md border border-gold-500/40 shadow-xl flex items-center justify-between">
+                                <div>
+                                    <h4 class="font-heading font-extrabold text-cream-50 text-sm sm:text-base">FLÁVIO BFNINE</h4>
+                                    <p class="text-xs text-emerald-400 font-medium">Especialista em Fabricação Esportiva</p>
+                                </div>
+                                <div class="w-10 h-10 rounded-full bg-gold-500/20 border border-gold-400 flex items-center justify-center text-gold-400">
+                                    <i class="fa-solid fa-award text-lg"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO PROVAS SOCIAIS / RESULTADOS DE ALUNOS FABRICANTES (PROVA SOCIAL DAMÁSIO STYLE) -->
+    <section class="py-20 bg-onyx-900 border-y border-emerald-900/40 relative">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-400 text-xs font-bold uppercase tracking-widest block mb-2">PROVA SOCIAL DE QUEM FAZ</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-cream-50">Fabricantes como você que já viraram a chave do jogo</h2>
+                <p class="text-cream-300/70 mt-3 text-sm">Donos de confecção e estamparia que eliminaram desperdícios e multiplicaram suas vendas.</p>
             </div>
 
-            <!-- Headline Principal -->
-            <h1 class="font-heading font-extrabold text-3xl sm:text-5xl lg:text-6xl text-cream-50 leading-[1.15] mb-6 tracking-tight">
-                Transforme sua fábrica regional em uma <span class="text-gradient-gold">Marca Esportiva Nacional</span> que fatura até <span class="text-gradient-emerald">R$ 60.000 por mês</span>.
-            </h1>
-
-            <!-- Subheadline -->
-            <p class="text-lg sm:text-xl text-cream-200/80 max-w-3xl mx-auto mb-10 leading-relaxed font-normal">
-                Elimine o desperdício de tecido e tinta na esteira de produção e implemente o motor de vendas pela internet para fechar contratos com times amadores do Brasil inteiro nos próximos 6 meses.
-            </p>
-
-            <!-- Botões CTA Hero -->
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
-                <a href="#aplicacao" class="w-full sm:w-auto bg-gradient-to-r from-emerald-500 via-emerald-400 to-gold-500 hover:brightness-110 text-onyx-950 font-extrabold px-8 py-5 rounded-2xl text-base sm:text-lg transition-all duration-300 transform hover:-translate-y-1 shadow-2xl glow-emerald flex items-center justify-center space-x-3">
-                    <i class="fa-solid fa-trophy text-lg"></i>
-                    <span>APLICAR PARA A MENTORIA PREMIER</span>
-                </a>
-            </div>
-
-            <!-- Destaques em Números / Destaques da Liga -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-10 border-t border-emerald-900/60 max-w-4xl mx-auto text-left">
-                <div class="p-4 rounded-xl bg-onyx-900/50 border border-emerald-900/40">
-                    <p class="text-2xl sm:text-3xl font-heading font-extrabold text-gold-400">-30%</p>
-                    <p class="text-xs text-cream-300/70 mt-1">Desperdício em 30 dias</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Prova Social 1 -->
+                <div class="p-6 rounded-2xl bg-onyx-950 border border-emerald-800/50 hover:border-emerald-500/60 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="relative mb-4 rounded-xl overflow-hidden border border-emerald-900">
+                            <img src="../assets/thumb_feed_faturou_8k.png" alt="Resultado de Aluno" class="w-full h-48 object-cover">
+                            <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-emerald-500 text-onyx-950 text-xs font-extrabold">
+                                R$ 48.000 / mês
+                            </div>
+                        </div>
+                        <h4 class="font-heading font-bold text-cream-50 text-lg mb-2">Confecção Esportiva SP</h4>
+                        <p class="text-cream-300/80 text-xs leading-relaxed mb-4">
+                            "Eu perdia rolos inteiros de tecido por erro de arquivo e estampa torta. O Flávio me ensinou a padronizar a Ficha Técnica. Estanquei o vazamento de caixa no primeiro mês e hoje vendo pro Brasil todo."
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-emerald-900/50 flex items-center justify-between text-xs text-gold-400 font-semibold">
+                        <span><i class="fa-solid fa-check-double mr-1"></i>Padronização de Fábrica</span>
+                        <span class="text-emerald-400">Verificado</span>
+                    </div>
                 </div>
-                <div class="p-4 rounded-xl bg-onyx-900/50 border border-emerald-900/40">
-                    <p class="text-2xl sm:text-3xl font-heading font-extrabold text-emerald-400">R$ 60K</p>
-                    <p class="text-xs text-cream-300/70 mt-1">Meta mensal estimada</p>
+
+                <!-- Prova Social 2 -->
+                <div class="p-6 rounded-2xl bg-onyx-950 border border-gold-500/40 hover:border-gold-400 transition-all duration-300 flex flex-col justify-between shadow-xl glow-gold">
+                    <div>
+                        <div class="relative mb-4 rounded-xl overflow-hidden border border-gold-500/30">
+                            <img src="../assets/res_aluno_1.webp" alt="Resultado de Aluno" class="w-full h-48 object-cover">
+                            <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-gold-500 text-onyx-950 text-xs font-extrabold">
+                                R$ 62.000 / mês
+                            </div>
+                        </div>
+                        <h4 class="font-heading font-bold text-cream-50 text-lg mb-2">Estamparia Esportiva MG</h4>
+                        <p class="text-cream-300/80 text-xs leading-relaxed mb-4">
+                            "Eu era refém das confecções da minha cidade que choravam por 1 real de desconto. Montei meu catálogo de kits de times com a mentoria e fechei 18 novos times só este mês."
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-gold-900/50 flex items-center justify-between text-xs text-gold-400 font-semibold">
+                        <span><i class="fa-solid fa-check-double mr-1"></i>Motor de Vendas Nacionais</span>
+                        <span class="text-emerald-400">Verificado</span>
+                    </div>
                 </div>
-                <div class="p-4 rounded-xl bg-onyx-900/50 border border-emerald-900/40">
-                    <p class="text-2xl sm:text-3xl font-heading font-extrabold text-gold-400">6 Meses</p>
-                    <p class="text-xs text-cream-300/70 mt-1">Acompanhamento direto</p>
-                </div>
-                <div class="p-4 rounded-xl bg-onyx-900/50 border border-emerald-900/40">
-                    <p class="text-2xl sm:text-3xl font-heading font-extrabold text-emerald-400">100% Nacional</p>
-                    <p class="text-xs text-cream-300/70 mt-1">Vendas pelo Brasil</p>
+
+                <!-- Prova Social 3 -->
+                <div class="p-6 rounded-2xl bg-onyx-950 border border-emerald-800/50 hover:border-emerald-500/60 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="relative mb-4 rounded-xl overflow-hidden border border-emerald-900">
+                            <img src="../assets/res_aluno_2.webp" alt="Resultado de Aluno" class="w-full h-48 object-cover">
+                            <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-emerald-500 text-onyx-950 text-xs font-extrabold">
+                                -35% Desperdício
+                            </div>
+                        </div>
+                        <h4 class="font-heading font-bold text-cream-50 text-lg mb-2">Oficina Esportiva PR</h4>
+                        <p class="text-cream-300/80 text-xs leading-relaxed mb-4">
+                            "Achava que precisava comprar uma prensa industrial de 80 mil para crescer. O Flávio me mostrou como reorganizar a esteira com minhas máquinas atuais e triplicar a produção."
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-emerald-900/50 flex items-center justify-between text-xs text-gold-400 font-semibold">
+                        <span><i class="fa-solid fa-check-double mr-1"></i>Engenharia de Esteira</span>
+                        <span class="text-emerald-400">Verificado</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- SEÇÃO OS GARGALOS (VOCÊ SE IDENTIFICA?) -->
-    <section class="py-20 bg-onyx-900 relative">
+    <section class="py-20 bg-onyx-950 relative">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <span class="text-emerald-400 text-xs font-bold uppercase tracking-widest block mb-2">DIAGNÓSTICO DA SUA CONFECÇÃO</span>
@@ -306,65 +409,90 @@
         </div>
     </section>
 
-    <!-- FORMATO DA ENTREGA HIGH TICKET -->
-    <section class="py-20 bg-onyx-900 border-y border-emerald-900/40">
+    <!-- SEÇÃO QUEM É O SEU MENTOR (AUTORIDADE FLÁVIO BFNINE) -->
+    <section class="py-20 bg-onyx-900 border-t border-emerald-900/40 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
+                <div class="md:col-span-5">
+                    <div class="relative rounded-3xl overflow-hidden border border-emerald-500/40 shadow-2xl">
+                        <img src="../assets/flavio_pure_head.png" alt="Flávio Bfnine" class="w-full h-auto object-cover">
+                    </div>
+                </div>
+                <div class="md:col-span-7">
+                    <span class="text-gold-400 text-xs font-bold uppercase tracking-widest block mb-2">QUEM SERÁ SEU MENTOR</span>
+                    <h2 class="text-3xl font-heading font-extrabold text-cream-50 mb-6">Prazer, eu sou o Flávio (Bfnine)</h2>
+                    <p class="text-cream-200/80 text-sm leading-relaxed mb-4">
+                        Construí minha trajetória dentro do mercado de confecção e fabricação esportiva no campo de batalha. Eu sei exatamente a dor de ver um rolo de tecido ser cortado errado, a agonia de ver a impressora parar na véspera da entrega e a frustração de ver o cliente local chorar preço.
+                    </p>
+                    <p class="text-cream-200/80 text-sm leading-relaxed mb-6">
+                        Desenvolvi a mentoria **PREMIER BRAND SPORTS** para entregar aos donos de confecção o atalho que eu levei anos para construir: como ter uma fábrica enxuta, padronizada e com um motor de vendas capaz de buscar pedidos em todo o território nacional.
+                    </p>
+                    <div class="flex items-center space-x-4">
+                        <div class="px-4 py-2 rounded-xl bg-onyx-950 border border-emerald-800">
+                            <p class="text-xs text-emerald-400 font-bold">Experiência Prática</p>
+                            <p class="text-sm font-extrabold text-cream-50">Chão de Fábrica Real</p>
+                        </div>
+                        <div class="px-4 py-2 rounded-xl bg-onyx-950 border border-gold-800">
+                            <p class="text-xs text-gold-400 font-bold">Foco em Vendas</p>
+                            <p class="text-sm font-extrabold text-cream-50">Alcance Nacional</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PARA QUEM É VS PARA QUEM NÃO É -->
+    <section class="py-20 bg-onyx-950 border-t border-emerald-900/40">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-gold-400 text-xs font-bold uppercase tracking-widest block mb-2">ACOMPANHAMENTO VIP</span>
-                <h2 class="text-3xl sm:text-4xl font-heading font-bold text-cream-50">O que você recebe ao ser selecionado</h2>
+                <span class="text-emerald-400 text-xs font-bold uppercase tracking-widest block mb-2">EXCLUSIVIDADE & SELEÇÃO</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-bold text-cream-50">Esta mentoria É ou NÃO É para você?</h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Entregável 1 -->
-                <div class="flex items-start space-x-5 p-6 rounded-2xl bg-onyx-950 border border-emerald-800/40">
-                    <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl shrink-0">
-                        <i class="fa-solid fa-user-check"></i>
-                    </div>
-                    <div>
-                        <h4 class="text-lg font-heading font-bold text-cream-50 mb-2">12 Encontros Individuais (Quinzenais)</h4>
-                        <p class="text-cream-300/70 text-sm leading-relaxed">
-                            Reuniões exclusivas direto comigo para analisar a esteira da sua fábrica, ajustar fichas técnicas e validar suas campanhas de venda.
-                        </p>
-                    </div>
+                <!-- Para quem É -->
+                <div class="p-8 rounded-3xl bg-card border border-emerald-500/40">
+                    <h3 class="text-xl font-heading font-bold text-emerald-400 mb-6 flex items-center space-x-2">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Para quem É a Premier Brand:</span>
+                    </h3>
+                    <ul class="space-y-4 text-sm text-cream-200/90">
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-check text-emerald-400 mt-1 shrink-0"></i>
+                            <span>Donos de confecção ou estamparia que já possuem maquinário ou equipe própria.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-check text-emerald-400 mt-1 shrink-0"></i>
+                            <span>Quem quer eliminar desperdícios de tecido/tinta e aumentar a margem por peça.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-check text-emerald-400 mt-1 shrink-0"></i>
+                            <span>Empresários dispostos a implementar um canal de vendas online para vender no Brasil.</span>
+                        </li>
+                    </ul>
                 </div>
 
-                <!-- Entregável 2 -->
-                <div class="flex items-start space-x-5 p-6 rounded-2xl bg-onyx-950 border border-emerald-800/40">
-                    <div class="w-12 h-12 rounded-xl bg-gold-500/20 text-gold-400 flex items-center justify-center text-xl shrink-0">
-                        <i class="fa-solid fa-users"></i>
-                    </div>
-                    <div>
-                        <h4 class="text-lg font-heading font-bold text-cream-50 mb-2">Grupo VIP da Liga Premier (Networking)</h4>
-                        <p class="text-cream-300/70 text-sm leading-relaxed">
-                            Convivência direta com os maiores fabricantes esportivos do Brasil. Troca de fornecedores, indicações e parcerias estratégicas.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Entregável 3 -->
-                <div class="flex items-start space-x-5 p-6 rounded-2xl bg-onyx-950 border border-emerald-800/40">
-                    <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl shrink-0">
-                        <i class="fa-solid fa-comments"></i>
-                    </div>
-                    <div>
-                        <h4 class="text-lg font-heading font-bold text-cream-50 mb-2">Suporte Diário no WhatsApp</h4>
-                        <p class="text-cream-300/70 text-sm leading-relaxed">
-                            Canal direto com nossa equipe para resolver dúvidas operacionais do dia a dia e aprovar propostas para grandes times.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Entregável 4 -->
-                <div class="flex items-start space-x-5 p-6 rounded-2xl bg-onyx-950 border border-emerald-800/40">
-                    <div class="w-12 h-12 rounded-xl bg-gold-500/20 text-gold-400 flex items-center justify-center text-xl shrink-0">
-                        <i class="fa-solid fa-box-archive"></i>
-                    </div>
-                    <div>
-                        <h4 class="text-lg font-heading font-bold text-cream-50 mb-2">Kit de Ferramentas & Modelos Prontos</h4>
-                        <p class="text-cream-300/70 text-sm leading-relaxed">
-                            Planilhas de custo de produção, modelos de fichas técnicas de sublimação, roteiros de atendimento e criativos de anúncios.
-                        </p>
-                    </div>
+                <!-- Para quem NÃO é -->
+                <div class="p-8 rounded-3xl bg-onyx-900 border border-red-900/40">
+                    <h3 class="text-xl font-heading font-bold text-red-400 mb-6 flex items-center space-x-2">
+                        <i class="fa-solid fa-circle-xmark"></i>
+                        <span>Para quem NÃO É:</span>
+                    </h3>
+                    <ul class="space-y-4 text-sm text-cream-300/70">
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-xmark text-red-400 mt-1 shrink-0"></i>
+                            <span>Quem procura fórmulas mágicas ou enriquecimento fácil sem trabalhar.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-xmark text-red-400 mt-1 shrink-0"></i>
+                            <span>Quem não aceita padronizar a produção nem mudar processos antigos.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-xmark text-red-400 mt-1 shrink-0"></i>
+                            <span>Curiosos que querem apenas "dicas grátis" sem investimento em crescimento.</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
