@@ -86,45 +86,20 @@
 </head>
 <body class="bg-onyx-950 text-cream-100 font-sans antialiased selection:bg-emerald-500 selection:text-onyx-950">
 
-    <!-- STICKY HEADER -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-onyx-950/90 backdrop-blur-md border-b border-emerald-800/40">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-gold-500 flex items-center justify-center font-heading font-extrabold text-onyx-950 text-xl shadow-lg">
-                    P
-                </div>
-                <div>
-                    <span class="font-heading font-extrabold text-lg sm:text-xl tracking-wider text-cream-50 block leading-none">PREMIER BRAND</span>
-                    <span class="text-[10px] tracking-widest text-emerald-400 font-bold uppercase block mt-1">SPORTS — A LIGA DAS GRANDES MARCAS</span>
-                </div>
-            </div>
-            <a href="#aplicacao" class="hidden md:inline-flex items-center space-x-2 bg-gradient-to-r from-emerald-500 via-emerald-400 to-gold-500 hover:brightness-110 text-onyx-950 font-extrabold px-6 py-3 rounded-full text-sm transition-all duration-300 transform hover:scale-105 shadow-lg glow-emerald">
-                <span>APLICAR PARA UMA VAGA</span>
-                <i class="fa-solid fa-arrow-right text-xs"></i>
-            </a>
-        </div>
-    </header>
-
     <!-- HERO SECTION (ESTRUTURA FULL BACKGROUND VITOR DAMÁSIO STYLE) -->
-    <section class="relative min-h-[85vh] flex items-center pt-28 pb-20 md:pt-36 md:pb-28 overflow-hidden bg-onyx-950">
-        <!-- Full Bleed Specialist Background Image -->
+    <section class="relative min-h-[90vh] flex items-center pt-16 pb-20 md:pt-24 md:pb-28 overflow-hidden bg-onyx-950">
+        <!-- Full Bleed Specialist Background Image shifted to the right -->
         <div class="absolute inset-0 z-0">
-            <img src="assets/hero_bg_especialista.webp" alt="Flávio — Especialista Premier Brand Sports" class="w-full h-full object-cover object-[center_top] md:object-[right_center]">
-            <!-- Gradient Overlay: Dark on Left for text readability, clear on right to highlight specialist and jerseys -->
-            <div class="absolute inset-0 bg-gradient-to-r from-onyx-950 via-onyx-950/90 md:via-onyx-950/75 to-onyx-950/20"></div>
-            <div class="absolute inset-0 bg-gradient-to-b from-onyx-950/80 via-transparent to-onyx-950"></div>
+            <img src="assets/hero_bg_especialista.webp" alt="Flávio — Especialista Premier Brand Sports" class="w-full h-full object-cover opacity-90" style="object-position: 75% center;">
+            <!-- Dark Overlay Gradient on Left for sharp text contrast, transparent on Right for full specialist visibility -->
+            <div class="absolute inset-0 bg-gradient-to-r from-onyx-950 via-onyx-950/95 md:via-onyx-950/80 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-onyx-950/60 via-transparent to-onyx-950"></div>
         </div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-            <div class="max-w-3xl text-left">
-                <!-- Tag High Ticket / Sobrancelha -->
-                <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-emerald-900/80 border border-emerald-700/60 mb-6 backdrop-blur-md">
-                    <span class="w-2.5 h-2.5 rounded-full bg-gold-400 animate-pulse"></span>
-                    <span class="text-xs sm:text-sm font-semibold text-emerald-300 uppercase tracking-wider">MENTORIA QUE TRANSFORMA SUA CONFECÇÃO EM UMA GRANDE MARCA ESPORTIVA</span>
-                </div>
-
+            <div class="max-w-2xl text-left">
                 <!-- Headline Principal -->
-                <h1 class="font-heading font-extrabold text-3xl sm:text-5xl lg:text-5xl text-cream-50 leading-[1.15] mb-6 tracking-tight drop-shadow-lg">
+                <h1 class="font-heading font-extrabold text-3xl sm:text-5xl lg:text-5xl text-cream-50 leading-[1.15] mb-6 tracking-tight drop-shadow-2xl">
                     Transforme sua fábrica em uma <span class="text-gradient-gold">Marca Esportiva Nacional</span> que fatura <span class="text-gradient-emerald">R$ 15.000 por semana</span>.
                 </h1>
 
