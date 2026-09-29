@@ -86,21 +86,27 @@
 </head>
 <body class="bg-onyx-950 text-cream-100 font-sans antialiased selection:bg-emerald-500 selection:text-onyx-950">
 
-    <!-- HERO SECTION (ESTRUTURA FULL BACKGROUND COM ESPECIALISTA 100% À DIREITA) -->
-    <section class="relative min-h-[92vh] flex items-center pt-16 pb-20 md:pt-24 md:pb-28 overflow-hidden bg-onyx-950">
+    <!-- HERO SECTION (RESPONSIVA: MOBILE PORTRAIT COM TEXTO ABAIXO DO PEITO / DESKTOP LANDSCAPE À DIREITA) -->
+    <section class="relative min-h-[92vh] flex items-center pt-8 pb-16 lg:pt-24 lg:pb-28 overflow-hidden bg-onyx-950">
         
-        <!-- Especialista 100% Visível na Metade Direita da Tela -->
-        <div class="absolute inset-y-0 right-0 w-full lg:w-7/12 z-0 pointer-events-none">
+        <!-- VISUAL MOBILE (FUNDO PORTRAIT ATE O PEITO + TEXTO ABAIXO) -->
+        <div class="block lg:hidden absolute inset-x-0 top-0 h-[460px] z-0 pointer-events-none">
+            <img src="assets/hero_bg_mobile.webp" alt="Flávio — Especialista Premier Brand Sports" class="w-full h-full object-cover object-top brightness-105">
+            <!-- Gradient vertical para que a transição comece na linha do peito e o texto fique 100% legível -->
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-onyx-950/60 to-onyx-950"></div>
+        </div>
+
+        <!-- VISUAL DESKTOP (ESPECIALISTA 100% À DIREITA) -->
+        <div class="hidden lg:block absolute inset-y-0 right-0 w-7/12 z-0 pointer-events-none">
             <img src="assets/hero_bg_especialista.webp" alt="Flávio — Especialista Premier Brand Sports" class="w-full h-full object-cover object-center brightness-105">
-            <!-- Esfumado sutil apenas na borda esquerda da imagem para transição suave -->
-            <div class="absolute inset-y-0 left-0 w-28 md:w-48 bg-gradient-to-r from-onyx-950 via-onyx-950/80 to-transparent"></div>
+            <div class="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-onyx-950 via-onyx-950/80 to-transparent"></div>
             <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-onyx-950 via-onyx-950/60 to-transparent"></div>
         </div>
 
-        <!-- Fundo Escuro na Metade Esquerda para o Texto -->
-        <div class="absolute inset-y-0 left-0 w-full lg:w-5/12 bg-onyx-950 z-0"></div>
+        <!-- Fundo Escuro na Metade Esquerda para o Texto (Desktop) -->
+        <div class="hidden lg:block absolute inset-y-0 left-0 w-5/12 bg-onyx-950 z-0"></div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full pt-[330px] sm:pt-[360px] lg:pt-0">
             <div class="max-w-xl text-left">
                 <!-- Headline Principal -->
                 <h1 class="font-heading font-extrabold text-3xl sm:text-5xl lg:text-5xl text-cream-50 leading-[1.15] mb-6 tracking-tight drop-shadow-2xl">
