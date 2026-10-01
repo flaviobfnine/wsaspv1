@@ -575,215 +575,218 @@
         </div>
     </section>
 
-    <!-- SEÇÃO A JORNADA DO FABRICANTE (GRÁFICO MONTANHA-RUSSA DE CONVERSÃO) -->
-    <section id="jornada" class="py-20 bg-onyx-950 border-t border-emerald-900/40 relative overflow-hidden">
-        <!-- Glows Ambientais -->
-        <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-red-500/5 blur-[140px] rounded-full pointer-events-none"></div>
-        <div class="absolute bottom-10 right-10 w-[500px] h-[300px] bg-emerald-500/10 blur-[120px] rounded-full pointer-events-none"></div>
+    <!-- SEÇÃO A JORNADA DO FABRICANTE (FUNDO BRANCO DESTACADO - PATTERN INTERRUPT DE ALTO IMPACTO) -->
+    <section id="jornada" class="py-20 bg-white text-gray-900 border-y-4 border-emerald-500 shadow-2xl relative overflow-hidden">
+        <!-- Elemento Gráfico de Fundo Suave -->
+        <div class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none"></div>
 
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <!-- Cabeçalho da Seção -->
+            <!-- Cabeçalho da Seção (Estilo Imagem de Referência) -->
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-gold-400 text-xs font-bold uppercase tracking-widest block mb-2">A REALIDADE DO CHÃO DE FÁBRICA</span>
-                <h2 class="text-3xl sm:text-5xl font-heading font-extrabold text-cream-50 leading-tight mb-4">
-                    Eu passei exatamente por aquilo que você <span class="text-red-500 italic">está enfrentando hoje</span>.
+                <span class="px-4 py-1.5 rounded-full bg-red-100 text-red-700 text-xs font-bold uppercase tracking-widest inline-block mb-3 border border-red-200">
+                    A HISTÓRIA REAL DO CHÃO DE FÁBRICA
+                </span>
+                <h2 class="text-3xl sm:text-5xl font-heading font-extrabold text-gray-900 leading-tight mb-4">
+                    Eu fiz exatamente aquilo que você <span class="text-red-600 italic underline decoration-red-400 decoration-wavy">quer fazer</span>.
                 </h2>
-                <p class="text-sm sm:text-base text-cream-300/80 leading-relaxed">
-                    Passo a passo, erro a erro na produção, até descobrir o método definitivo para transformar uma confecção estressante em uma <strong class="text-gold-400">Marca Esportiva Nacional de Elite</strong>.
+                <p class="text-base sm:text-lg text-gray-600 font-medium">
+                    Passo a passo, erro a erro, até conquistar o topo do mercado de confecção e fabricação esportiva.
                 </p>
             </div>
 
-            <!-- CONTAINER DESKTOP (GRÁFICO INTERATIVO DE LINHA ONDULADA) -->
-            <div class="hidden lg:block relative my-16 py-12">
-                <!-- SVG Grafo de Montanha-Russa (Do Vermelho de Erros ao Verde Esmeralda/Ouro da Premier) -->
+            <!-- CONTAINER DESKTOP (GRÁFICO LIMPO INSPIRADO NA IMAGEM DE REFERÊNCIA) -->
+            <div class="hidden lg:block relative my-12 py-10">
+                <!-- SVG Linha Guia do Gráfico Ondulado (Pontilhada Vermelha a Verde/Ouro) -->
                 <div class="absolute inset-0 pointer-events-none flex items-center justify-center">
-                    <svg class="w-full h-full overflow-visible" viewBox="0 0 1000 400" fill="none" preserveAspectRatio="none">
+                    <svg class="w-full h-full overflow-visible" viewBox="0 0 1000 380" fill="none" preserveAspectRatio="none">
                         <defs>
-                            <linearGradient id="journeyGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
                                 <stop offset="0%" stop-color="#ef4444" />
-                                <stop offset="25%" stop-color="#dc2626" />
-                                <stop offset="50%" stop-color="#991b1b" />
-                                <stop offset="70%" stop-color="#10b981" />
-                                <stop offset="100%" stop-color="#f59e0b" />
+                                <stop offset="30%" stop-color="#dc2626" />
+                                <stop offset="55%" stop-color="#b91c1c" />
+                                <stop offset="75%" stop-color="#10b981" />
+                                <stop offset="100%" stop-color="#d97706" />
                             </linearGradient>
                         </defs>
-                        <!-- Linha Guia Tracejada em Onda -->
-                        <path d="M 50 280 Q 180 340 250 240 T 450 320 T 650 360 T 820 180 T 950 60" 
-                              stroke="url(#journeyGradient)" stroke-width="4" stroke-dasharray="8 6" opacity="0.85" />
+                        <!-- Linha Gráfica Tracejada -->
+                        <path d="M 60 260 L 220 110 L 370 320 L 510 210 L 660 140 L 800 220 L 940 50" 
+                              stroke="url(#lineGrad)" stroke-width="4" stroke-dasharray="7 5" opacity="0.9" />
                     </svg>
                 </div>
 
                 <!-- CARDS DOS CHECKPOINTS (Dispostos visualmente no gráfico) -->
-                <div class="relative z-10 grid grid-cols-7 gap-3 items-stretch">
+                <div class="relative z-10 grid grid-cols-7 gap-3">
                     
-                    <!-- CHECKPOINT 01 -->
-                    <div class="flex flex-col items-center text-center group">
-                        <div class="w-10 h-10 rounded-full bg-onyx-900 border-2 border-red-500/60 text-red-400 flex items-center justify-center font-mono font-bold text-xs shadow-lg mb-4 group-hover:scale-110 transition-transform">
-                            01
+                    <!-- CP 01 (Início) -->
+                    <div class="flex flex-col items-center translate-y-48">
+                        <div class="p-3 bg-white border border-gray-300 rounded-xl shadow-md text-left w-full relative mb-3 hover:shadow-xl transition-shadow">
+                            <span class="text-[9px] font-mono text-gray-500 font-bold uppercase block mb-0.5">CHECKPOINT 01</span>
+                            <h4 class="text-xs font-extrabold text-gray-900 leading-tight">Início da Fábrica</h4>
+                            <p class="text-[10px] text-gray-600 mt-1">Compra da 1ª prensa e o sonho de produzir.</p>
                         </div>
-                        <div class="p-3.5 rounded-2xl bg-onyx-900/90 border border-red-900/40 text-left shadow-xl backdrop-blur-md w-full">
-                            <span class="text-[10px] font-mono text-red-400 font-bold uppercase tracking-wider block mb-1">INÍCIO</span>
-                            <h4 class="text-xs font-bold text-cream-50 leading-tight mb-1">O Sonho Inicial</h4>
-                            <p class="text-[11px] text-cream-300/60 leading-snug">Compra da 1ª prensa e a ilusão de ter uma fábrica.</p>
-                        </div>
-                    </div>
-
-                    <!-- CHECKPOINT 02 -->
-                    <div class="flex flex-col items-center text-center group translate-y-6">
-                        <div class="w-10 h-10 rounded-full bg-onyx-900 border-2 border-red-500/80 text-red-400 flex items-center justify-center font-mono font-bold text-xs shadow-lg mb-4 group-hover:scale-110 transition-transform">
-                            02
-                        </div>
-                        <div class="p-3.5 rounded-2xl bg-onyx-900/90 border border-red-900/50 text-left shadow-xl backdrop-blur-md w-full">
-                            <span class="text-[10px] font-mono text-red-400 font-bold uppercase tracking-wider block mb-1">FRUSTRAÇÃO</span>
-                            <h4 class="text-xs font-bold text-cream-50 leading-tight mb-1">O Tombo Técnico</h4>
-                            <p class="text-[11px] text-cream-300/60 leading-snug">Tecido encolhendo, gola torta, modelagem errada e prejuízo.</p>
+                        <div class="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-xs shadow-lg">
+                            <i class="fa-solid fa-flag text-[10px]"></i>
                         </div>
                     </div>
 
-                    <!-- CHECKPOINT 03 -->
-                    <div class="flex flex-col items-center text-center group -translate-y-2">
-                        <div class="w-10 h-10 rounded-full bg-onyx-900 border-2 border-amber-500/80 text-amber-400 flex items-center justify-center font-mono font-bold text-xs shadow-lg mb-4 group-hover:scale-110 transition-transform">
-                            03
+                    <!-- CP 02 (Tombo) -->
+                    <div class="flex flex-col items-center translate-y-12">
+                        <div class="p-3 bg-white border border-red-300 rounded-xl shadow-md text-left w-full relative mb-3 hover:shadow-xl transition-shadow">
+                            <span class="text-[9px] font-mono text-red-600 font-bold uppercase block mb-0.5">CHECKPOINT 02</span>
+                            <h4 class="text-xs font-extrabold text-red-700 leading-tight">O Tombo Técnico</h4>
+                            <p class="text-[10px] text-gray-600 mt-1">Tecido encolhido, gola torta e prejuízo.</p>
                         </div>
-                        <div class="p-3.5 rounded-2xl bg-onyx-900/90 border border-amber-900/50 text-left shadow-xl backdrop-blur-md w-full">
-                            <span class="text-[10px] font-mono text-amber-400 font-bold uppercase tracking-wider block mb-1">SOZINHO</span>
-                            <h4 class="text-xs font-bold text-cream-50 leading-tight mb-1">Trabalho Escravo</h4>
-                            <p class="text-[11px] text-cream-300/60 leading-snug">Margem espremida na região e dono fazendo tudo sozinho.</p>
-                        </div>
-                    </div>
-
-                    <!-- CHECKPOINT 04 -->
-                    <div class="flex flex-col items-center text-center group translate-y-8">
-                        <div class="w-10 h-10 rounded-full bg-onyx-900 border-2 border-red-600 text-red-500 flex items-center justify-center font-mono font-bold text-xs shadow-lg mb-4 group-hover:scale-110 transition-transform">
-                            04
-                        </div>
-                        <div class="p-3.5 rounded-2xl bg-onyx-900/90 border border-red-800/60 text-left shadow-xl backdrop-blur-md w-full">
-                            <span class="text-[10px] font-mono text-red-400 font-bold uppercase tracking-wider block mb-1">FALHA</span>
-                            <h4 class="text-xs font-bold text-cream-50 leading-tight mb-1">Vendas sem Método</h4>
-                            <p class="text-[11px] text-cream-300/60 leading-snug">Anúncios errados na internet, gastando caixa e tomando calote.</p>
+                        <div class="w-8 h-8 rounded-full bg-red-500 text-white flex items-center justify-center font-bold text-xs shadow-lg">
+                            <i class="fa-solid fa-user text-[10px]"></i>
                         </div>
                     </div>
 
-                    <!-- CHECKPOINT 05 -->
-                    <div class="flex flex-col items-center text-center group translate-y-12">
-                        <div class="w-10 h-10 rounded-full bg-red-950 border-2 border-red-500 text-red-400 flex items-center justify-center font-mono font-bold text-xs shadow-lg mb-4 group-hover:scale-110 transition-transform animate-pulse">
-                            05
+                    <!-- CP 03 (Escravo) -->
+                    <div class="flex flex-col items-center translate-y-64">
+                        <div class="p-3 bg-white border border-amber-300 rounded-xl shadow-md text-left w-full relative mb-3 hover:shadow-xl transition-shadow">
+                            <span class="text-[9px] font-mono text-amber-600 font-bold uppercase block mb-0.5">CHECKPOINT 03</span>
+                            <h4 class="text-xs font-extrabold text-gray-900 leading-tight">Trabalho Escravo</h4>
+                            <p class="text-[10px] text-gray-600 mt-1">Margem baixa e dono fazendo tudo sozinho.</p>
                         </div>
-                        <div class="p-3.5 rounded-2xl bg-onyx-900/95 border-2 border-red-500/50 text-left shadow-2xl backdrop-blur-md w-full">
-                            <span class="text-[10px] font-mono text-red-400 font-extrabold uppercase tracking-wider block mb-1">FUNDO DO POÇO</span>
-                            <h4 class="text-xs font-bold text-red-300 leading-tight mb-1">Caos & Exaustão</h4>
-                            <p class="text-[11px] text-cream-300/70 leading-snug">Trabalhando 14h/dia, refação de peças e lucro sumindo no desperdício.</p>
-                        </div>
-                    </div>
-
-                    <!-- CHECKPOINT 06 (DIVISOR DE ÁGUAS / MENTORIA) -->
-                    <div class="flex flex-col items-center text-center group -translate-y-8">
-                        <div class="w-11 h-11 rounded-full bg-emerald-950 border-2 border-emerald-400 text-emerald-300 flex items-center justify-center font-mono font-bold text-sm shadow-[0_0_20px_rgba(16,185,129,0.5)] mb-4 group-hover:scale-110 transition-transform">
-                            06
-                        </div>
-                        <div class="p-3.5 rounded-2xl bg-onyx-900/95 border-2 border-emerald-500/60 text-left shadow-2xl backdrop-blur-md w-full glow-emerald">
-                            <span class="text-[10px] font-mono text-emerald-400 font-extrabold uppercase tracking-wider block mb-1">A VIRADA DE CHAVE</span>
-                            <h4 class="text-xs font-bold text-cream-50 leading-tight mb-1">Método Premier</h4>
-                            <p class="text-[11px] text-emerald-200/90 leading-snug">Entrada na mentoria: fim do desperdício (-33%) e motor de WhatsApp.</p>
+                        <div class="w-8 h-8 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold text-xs shadow-lg">
+                            <i class="fa-solid fa-xmark text-[10px]"></i>
                         </div>
                     </div>
 
-                    <!-- APOGEU / AGORA -->
-                    <div class="flex flex-col items-center text-center group -translate-y-16">
-                        <div class="w-12 h-12 rounded-full bg-gold-500 text-onyx-950 flex items-center justify-center font-mono font-extrabold text-sm shadow-[0_0_30px_rgba(245,158,11,0.7)] mb-4 group-hover:scale-110 transition-transform">
+                    <!-- CP 04 (Vendas Frustradas) -->
+                    <div class="flex flex-col items-center translate-y-36">
+                        <div class="p-3 bg-white border border-red-300 rounded-xl shadow-md text-left w-full relative mb-3 hover:shadow-xl transition-shadow">
+                            <span class="text-[9px] font-mono text-red-600 font-bold uppercase block mb-0.5">CHECKPOINT 04</span>
+                            <h4 class="text-xs font-extrabold text-gray-900 leading-tight">Vendas sem Método</h4>
+                            <p class="text-[10px] text-gray-600 mt-1">Anúncios errados e calote de cliente de fora.</p>
+                        </div>
+                        <div class="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-xs shadow-lg">
+                            <i class="fa-solid fa-bullhorn text-[10px]"></i>
+                        </div>
+                    </div>
+
+                    <!-- CP 05 (Fundo do Poço) -->
+                    <div class="flex flex-col items-center translate-y-20">
+                        <div class="p-3 bg-red-50 border-2 border-red-500 rounded-xl shadow-lg text-left w-full relative mb-3">
+                            <span class="text-[9px] font-mono text-red-700 font-extrabold uppercase block mb-0.5">CHECKPOINT 05</span>
+                            <h4 class="text-xs font-extrabold text-red-800 leading-tight">Caos & Exaustão</h4>
+                            <p class="text-[10px] text-red-900 mt-1 font-medium">14h/dia, refação e perceber que SOZINHO vai quebrar.</p>
+                        </div>
+                        <div class="w-9 h-9 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-xs shadow-xl animate-bounce">
+                            <i class="fa-solid fa-triangle-exclamation text-xs"></i>
+                        </div>
+                    </div>
+
+                    <!-- CP 06 (A VIRADA DA MENTORIA) -->
+                    <div class="flex flex-col items-center translate-y-36">
+                        <div class="p-3.5 bg-emerald-50 border-2 border-emerald-500 rounded-xl shadow-xl text-left w-full relative mb-3">
+                            <span class="text-[9px] font-mono text-emerald-700 font-extrabold uppercase block mb-0.5">A VIRADA DE CHAVE</span>
+                            <h4 class="text-xs font-extrabold text-emerald-900 leading-tight">Método Premier</h4>
+                            <p class="text-[10px] text-emerald-800 mt-1 font-medium">Entrada na mentoria: fim do desperdício e funil WhatsApp.</p>
+                        </div>
+                        <div class="w-9 h-9 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-xs shadow-xl ring-4 ring-emerald-200">
+                            <i class="fa-solid fa-circle-check text-sm"></i>
+                        </div>
+                    </div>
+
+                    <!-- CP 07 (APOGEU / AGORA) -->
+                    <div class="flex flex-col items-center -translate-y-2">
+                        <div class="p-4 bg-gradient-to-br from-amber-500 to-gold-600 text-white rounded-2xl shadow-2xl text-left w-full relative mb-3 border-2 border-gold-300">
+                            <span class="text-[9px] font-mono text-amber-100 font-extrabold uppercase block mb-0.5">AGORA • O APOGEU</span>
+                            <h4 class="text-sm font-extrabold text-white leading-tight">Marca Esportiva Nacional</h4>
+                            <p class="text-[10px] text-amber-100 mt-1 font-medium">CEO fora da máquina, margem cheia e R$ 60k a 600k/ano.</p>
+                        </div>
+                        <div class="w-10 h-10 rounded-full bg-amber-500 text-onyx-950 flex items-center justify-center font-extrabold text-base shadow-xl ring-4 ring-amber-300">
                             🏆
                         </div>
-                        <div class="p-4 rounded-2xl bg-card border-2 border-gold-400 text-left shadow-2xl backdrop-blur-md w-full glow-gold">
-                            <span class="text-[10px] font-mono text-gold-400 font-extrabold uppercase tracking-wider block mb-1">O APOGEU</span>
-                            <h4 class="text-xs font-bold text-cream-50 leading-tight mb-1">Marca Esportiva</h4>
-                            <p class="text-[11px] text-cream-200 leading-snug">CEO fora do operacional, margem cheia e faturamento nacional recorrente.</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- CONTAINER MOBILE & TABLET (PATTERN INTERRUPT COMPACTO E CLARO) -->
+            <div class="block lg:hidden relative my-8">
+                <div class="space-y-4">
+                    
+                    <!-- CP 01 -->
+                    <div class="p-4 rounded-2xl bg-gray-50 border border-gray-200 flex items-start space-x-3 shadow-sm">
+                        <div class="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">01</div>
+                        <div>
+                            <span class="text-[10px] font-mono text-gray-500 font-bold uppercase">CHECKPOINT 01 • INÍCIO</span>
+                            <h3 class="text-sm font-extrabold text-gray-900 mt-0.5">O Sonho Inicial</h3>
+                            <p class="text-xs text-gray-600 mt-1">Compra da 1ª prensa com a ilusão de que ter máquina = ter empresa.</p>
+                        </div>
+                    </div>
+
+                    <!-- CP 02 -->
+                    <div class="p-4 rounded-2xl bg-red-50/60 border border-red-200 flex items-start space-x-3 shadow-sm">
+                        <div class="w-8 h-8 rounded-full bg-red-500 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">02</div>
+                        <div>
+                            <span class="text-[10px] font-mono text-red-600 font-bold uppercase">CHECKPOINT 02 • TOMBO TÉCNICO</span>
+                            <h3 class="text-sm font-extrabold text-red-900 mt-0.5">Erros & Prejuízo</h3>
+                            <p class="text-xs text-gray-700 mt-1">Sem fornecedores bons, tecido encolhendo, golas tortas e prejuízo antes da 1ª camisa.</p>
+                        </div>
+                    </div>
+
+                    <!-- CP 03 -->
+                    <div class="p-4 rounded-2xl bg-amber-50/60 border border-amber-200 flex items-start space-x-3 shadow-sm">
+                        <div class="w-8 h-8 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">03</div>
+                        <div>
+                            <span class="text-[10px] font-mono text-amber-700 font-bold uppercase">CHECKPOINT 03 • TRABALHO ESCRAVO</span>
+                            <h3 class="text-sm font-extrabold text-gray-900 mt-0.5">Preço Baixo & Sobrecarga</h3>
+                            <p class="text-xs text-gray-700 mt-1">Cobrando barato na região pra não perder vendas. Virou o funcionário mais barato da fábrica.</p>
+                        </div>
+                    </div>
+
+                    <!-- CP 04 -->
+                    <div class="p-4 rounded-2xl bg-red-50/60 border border-red-200 flex items-start space-x-3 shadow-sm">
+                        <div class="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">04</div>
+                        <div>
+                            <span class="text-[10px] font-mono text-red-600 font-bold uppercase">CHECKPOINT 04 • SEM MÉTODO</span>
+                            <h3 class="text-sm font-extrabold text-red-900 mt-0.5">Vendas Frustradas</h3>
+                            <p class="text-xs text-gray-700 mt-1">Anúncios e posts sem processo: gastou dinheiro com curioso e tomou calote fora da cidade.</p>
+                        </div>
+                    </div>
+
+                    <!-- CP 05 -->
+                    <div class="p-4 rounded-2xl bg-red-100 border-2 border-red-500 flex items-start space-x-3 shadow-md">
+                        <div class="w-8 h-8 rounded-full bg-red-700 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">05</div>
+                        <div>
+                            <span class="text-[10px] font-mono text-red-700 font-extrabold uppercase">CHECKPOINT 05 • FUNDO DO POÇO</span>
+                            <h3 class="text-sm font-extrabold text-red-950 mt-0.5">Caos Operacional</h3>
+                            <p class="text-xs text-red-900 font-medium mt-1">14h por dia, estresse, refação constante e percebendo que SOZINHO VAI QUEBRAR.</p>
+                        </div>
+                    </div>
+
+                    <!-- DIVISOR DE ÁGUAS (MENTORIA) -->
+                    <div class="p-5 rounded-2xl bg-emerald-50 border-2 border-emerald-500 flex items-start space-x-3 shadow-lg">
+                        <div class="w-9 h-9 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-sm shrink-0 mt-0.5">06</div>
+                        <div>
+                            <span class="text-[10px] font-mono text-emerald-700 font-extrabold uppercase">A VIRADA DE CHAVE • COM O FLÁVIO</span>
+                            <h3 class="text-base font-extrabold text-emerald-950 mt-0.5">Método Premier Brand Sports</h3>
+                            <p class="text-xs text-emerald-900 font-medium mt-1">Diagnóstico de 30 dias que zera o desperdício de tecido e tinta e ativa o motor de vendas de WhatsApp.</p>
+                        </div>
+                    </div>
+
+                    <!-- APOGEU (AGORA) -->
+                    <div class="p-5 rounded-2xl bg-gradient-to-r from-amber-500 to-gold-600 text-white border-2 border-gold-300 flex items-start space-x-3 shadow-xl">
+                        <div class="w-10 h-10 rounded-full bg-white text-onyx-950 flex items-center justify-center font-extrabold text-base shrink-0 mt-0.5">🏆</div>
+                        <div>
+                            <span class="text-[10px] font-mono text-amber-100 font-extrabold uppercase">O APOGEU • AGORA</span>
+                            <h3 class="text-base font-extrabold text-white mt-0.5">Marca Esportiva Nacional</h3>
+                            <p class="text-xs text-amber-100 font-medium mt-1">Dono atuando como CEO fora da máquina, margem cheia e faturamento de R$ 60k a R$ 600k/ano.</p>
                         </div>
                     </div>
 
                 </div>
             </div>
 
-            <!-- CONTAINER MOBILE & TABLET (TIMELINE VERTICAL RESPONSIVO) -->
-            <div class="block lg:hidden relative border-l-2 border-red-800/40 ml-4 pl-6 space-y-8 my-10">
-                
-                <!-- CP 01 -->
-                <div class="relative">
-                    <span class="absolute -left-[35px] top-0 w-8 h-8 rounded-full bg-onyx-900 border-2 border-red-500 text-red-400 font-mono text-xs flex items-center justify-center font-bold">01</span>
-                    <div class="p-4 rounded-2xl bg-onyx-900 border border-red-900/40">
-                        <span class="text-[10px] font-mono text-red-400 font-bold uppercase">CHECKPOINT 01 • O INÍCIO</span>
-                        <h3 class="text-base font-bold text-cream-50 mt-1 mb-1">O Sonho Inicial</h3>
-                        <p class="text-xs text-cream-300/70">Compra da 1ª prensa e impressora com a ilusão de que ter máquinas é o suficiente.</p>
-                    </div>
-                </div>
-
-                <!-- CP 02 -->
-                <div class="relative">
-                    <span class="absolute -left-[35px] top-0 w-8 h-8 rounded-full bg-onyx-900 border-2 border-red-500 text-red-400 font-mono text-xs flex items-center justify-center font-bold">02</span>
-                    <div class="p-4 rounded-2xl bg-onyx-900 border border-red-900/50">
-                        <span class="text-[10px] font-mono text-red-400 font-bold uppercase">CHECKPOINT 02 • O TOMBO TÉCNICO</span>
-                        <h3 class="text-base font-bold text-cream-50 mt-1 mb-1">Erros e Prejuízo</h3>
-                        <p class="text-xs text-cream-300/70">Falta de fornecedores bons, tecido encolhendo, golas tortas, modelagem errada e prejuízo antes da 1ª camisa perfeita.</p>
-                    </div>
-                </div>
-
-                <!-- CP 03 -->
-                <div class="relative">
-                    <span class="absolute -left-[35px] top-0 w-8 h-8 rounded-full bg-onyx-900 border-2 border-amber-500 text-amber-400 font-mono text-xs flex items-center justify-center font-bold">03</span>
-                    <div class="p-4 rounded-2xl bg-onyx-900 border border-amber-900/40">
-                        <span class="text-[10px] font-mono text-amber-400 font-bold uppercase">CHECKPOINT 03 • SOZINHO</span>
-                        <h3 class="text-base font-bold text-cream-50 mt-1 mb-1">Trabalho Escravo</h3>
-                        <p class="text-xs text-cream-300/70">Pega pedidos regionais cobrando barato pra não perder vendas. Virou o funcionário mais barato da própria fábrica.</p>
-                    </div>
-                </div>
-
-                <!-- CP 04 -->
-                <div class="relative">
-                    <span class="absolute -left-[35px] top-0 w-8 h-8 rounded-full bg-onyx-900 border-2 border-red-500 text-red-400 font-mono text-xs flex items-center justify-center font-bold">04</span>
-                    <div class="p-4 rounded-2xl bg-onyx-900 border border-red-900/50">
-                        <span class="text-[10px] font-mono text-red-400 font-bold uppercase">CHECKPOINT 04 • SEM MÉTODO</span>
-                        <h3 class="text-base font-bold text-cream-50 mt-1 mb-1">Vendas Frustradas</h3>
-                        <p class="text-xs text-cream-300/70">Tenta anúncios e postagens na internet sem processo: gasta dinheiro com curioso e toma calote de clientes fora da cidade.</p>
-                    </div>
-                </div>
-
-                <!-- CP 05 -->
-                <div class="relative">
-                    <span class="absolute -left-[35px] top-0 w-8 h-8 rounded-full bg-red-950 border-2 border-red-500 text-red-400 font-mono text-xs flex items-center justify-center font-bold animate-pulse">05</span>
-                    <div class="p-4 rounded-2xl bg-onyx-900 border-2 border-red-500/60 shadow-xl">
-                        <span class="text-[10px] font-mono text-red-400 font-extrabold uppercase">CHECKPOINT 05 • FUNDO DO POÇO</span>
-                        <h3 class="text-base font-bold text-red-300 mt-1 mb-1">Caos & Exaustão Operacional</h3>
-                        <p class="text-xs text-cream-300/80">Donos trabalhando 14h por dia, estressado, refação constante e percebendo que SOZINHO VAI CONTINUAR PRESO NO OPERACIONAL.</p>
-                    </div>
-                </div>
-
-                <!-- CP 06 (DIVISOR DE ÁGUAS) -->
-                <div class="relative border-l-2 border-emerald-500 -ml-[26px] pl-6 pt-4">
-                    <span class="absolute -left-[17px] top-4 w-8 h-8 rounded-full bg-emerald-950 border-2 border-emerald-400 text-emerald-300 font-mono text-xs flex items-center justify-center font-bold shadow-[0_0_15px_rgba(16,185,129,0.6)]">06</span>
-                    <div class="p-5 rounded-2xl bg-onyx-900 border-2 border-emerald-500/60 glow-emerald shadow-2xl">
-                        <span class="text-[10px] font-mono text-emerald-400 font-extrabold uppercase">A VIRADA DE CHAVE • COM A MENTORIA</span>
-                        <h3 class="text-base font-bold text-cream-50 mt-1 mb-1">Método Premier Brand Sports</h3>
-                        <p class="text-xs text-emerald-200/90">Diagnóstico de 30 dias que estanca o desperdício de tecido e tinta e ativa o motor de vendas direto no WhatsApp.</p>
-                    </div>
-                </div>
-
-                <!-- APOGEU -->
-                <div class="relative pl-6 pt-2">
-                    <span class="absolute -left-[17px] top-2 w-8 h-8 rounded-full bg-gold-500 text-onyx-950 font-mono text-sm flex items-center justify-center font-extrabold shadow-[0_0_20px_rgba(245,158,11,0.8)]">🏆</span>
-                    <div class="p-5 rounded-2xl bg-card border-2 border-gold-400 glow-gold shadow-2xl">
-                        <span class="text-[10px] font-mono text-gold-400 font-extrabold uppercase">O APOGEU • MARCA NACIONAL</span>
-                        <h3 class="text-base font-bold text-cream-50 mt-1 mb-1">Membro da Liga Premier</h3>
-                        <p class="text-xs text-cream-200">Dono atuando como CEO fora da prensa e da máquina, margem cheia e faturamento recorrente de R$ 60k a R$ 600k/ano.</p>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Chamada de Conexão no final do Gráfico -->
-            <div class="mt-12 text-center">
-                <p class="text-sm sm:text-base text-cream-200 font-medium mb-6">
+            <!-- Chamada Final da Seção -->
+            <div class="mt-12 text-center pt-6 border-t border-gray-200">
+                <p class="text-base sm:text-lg text-gray-800 font-bold mb-6">
                     Em qual destes Checkpoints a sua confecção está travada hoje?
                 </p>
-                <a href="#aplicacao" class="inline-flex items-center justify-center space-x-3 w-full sm:w-auto bg-gradient-to-r from-emerald-500 via-emerald-400 to-gold-500 hover:brightness-110 text-onyx-950 font-extrabold px-8 py-4 sm:py-5 rounded-2xl text-base sm:text-lg transition-all duration-300 transform hover:-translate-y-1 shadow-2xl glow-emerald text-center">
+                <a href="#aplicacao" class="inline-flex items-center justify-center space-x-3 w-full sm:w-auto bg-gradient-to-r from-emerald-600 via-emerald-500 to-gold-500 hover:brightness-110 text-white font-extrabold px-8 py-4 sm:py-5 rounded-2xl text-base sm:text-lg transition-all duration-300 transform hover:-translate-y-1 shadow-xl text-center">
                     <i class="fa-solid fa-trophy text-lg"></i>
                     <span>QUERO PREENCHER FORMULÁRIO PARA TENTAR UMA VAGA NA MENTORIA</span>
                 </a>
