@@ -1050,27 +1050,37 @@
         </div>
     </section>
 
-    <!-- SCRIPT DE ENVIO PARA O GOOGLE SHEETS -->
+    <!-- SCRIPT DE ENVIO PARA O GOOGLE SHEETS + REDIRECIONAMENTO WHATSAPP -->
     <script>
         // URL da Web App do Google Apps Script (Sua Planilha do Google)
         const GOOGLE_SHEETS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxxOrIOPFEXQ980VsgP1PPryMm-QHswelCYoUrcDRuzzqi3PzwgrGv_gVoDa1mqMV1bqA/exec';
+        
+        // Número do WhatsApp que receberá o contato imediato do Lead (DDD + Número)
+        const WHATSAPP_NUMERO = '5511999999999'; // Substitua pelo seu WhatsApp oficial
 
         document.getElementById('appForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const form = e.target;
             const btn = document.getElementById('submitBtn');
             btn.disabled = true;
-            btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Enviando formulário...';
+            btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Salvando dados e abrindo WhatsApp...';
 
             const formData = new FormData(form);
+            const nome = formData.get('nome') || '';
+            const confeccao = formData.get('confeccao') || '';
 
-            // Se o link do Google Sheets ainda não estiver configurado, simula sucesso localmente
+            // Mensagem pré-formatada para o lead enviar direto ao seu WhatsApp
+            const mensagemText = `Olá Flávio! Acabei de preencher a seleção da Mentoria Premier Brand Sports.\n\nMeu nome é *${nome}* da confecção *${confeccao}*. Quero confirmar minha vaga!`;
+            const waUrl = `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(mensagemText)}`;
+
+            const finalizarEEnviarWA = () => {
+                form.classList.add('hidden');
+                document.getElementById('successMessage').classList.remove('hidden');
+                window.open(waUrl, '_blank');
+            };
+
             if (GOOGLE_SHEETS_SCRIPT_URL === 'COLE_AQUI_A_SUA_URL_DO_GOOGLE_SCRIPT') {
-                console.log('Simulação de Envio (Configure a URL do Google Sheets no script):', Object.fromEntries(formData));
-                setTimeout(() => {
-                    form.classList.add('hidden');
-                    document.getElementById('successMessage').classList.remove('hidden');
-                }, 1000);
+                setTimeout(finalizarEEnviarWA, 1000);
                 return;
             }
 
@@ -1079,14 +1089,11 @@
                 body: formData
             })
             .then(response => {
-                form.classList.add('hidden');
-                document.getElementById('successMessage').classList.remove('hidden');
+                finalizarEEnviarWA();
             })
             .catch(error => {
                 console.error('Erro ao enviar para Google Sheets:', error);
-                // Exibe sucesso amigável ao usuário
-                form.classList.add('hidden');
-                document.getElementById('successMessage').classList.remove('hidden');
+                finalizarEEnviarWA();
             });
         });
     </script>
