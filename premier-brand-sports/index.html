@@ -600,7 +600,7 @@
             </div>
 
             <!-- ESTRUTURA MONTANHA-RUSSA FIEL À IMAGEM DE REFERÊNCIA (EXCLUSIVO DESKTOP) -->
-            <div class="hidden lg:block relative w-full h-[620px] my-6">
+            <div class="hidden lg:block relative w-full h-[650px] my-6">
                 
                 <!-- SVG Linha Gráfica Vermelha Tracejada + Silhueta Suave de Montanha de Fundo -->
                 <div class="absolute inset-0 pointer-events-none z-0">
@@ -622,13 +622,13 @@
                 </div>
 
                 <!-- CP 01 (Início da Fábrica - Base Esquerda) -->
-                <div class="absolute left-[4%] top-[66%] -translate-x-1/2 flex flex-col items-center z-10">
-                    <!-- Badge Vermelho -->
-                    <div class="w-9 h-9 rounded-full bg-gray-800 text-white flex items-center justify-center font-bold text-xs shadow-lg border-2 border-white shrink-0 z-20">
-                        <i class="fa-solid fa-flag text-xs"></i>
-                    </div>
-                    <!-- Tooltip Card Abaixo -->
-                    <div class="mt-3 p-3 bg-white border border-gray-200 rounded-xl shadow-lg w-48 text-left border-t-4 border-t-gray-600">
+                <!-- Badge no Ponto de Origem -->
+                <div class="absolute left-[4%] top-[66%] -translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-gray-800 text-white flex items-center justify-center font-bold text-xs shadow-lg border-2 border-white z-20">
+                    <i class="fa-solid fa-flag text-xs"></i>
+                </div>
+                <!-- Card Posicionado Abaixo da Linha -->
+                <div class="absolute left-[4%] top-[72%] -translate-x-1/2 z-10">
+                    <div class="p-3 bg-white border border-gray-200 rounded-xl shadow-lg w-48 text-left border-t-4 border-t-gray-600">
                         <span class="text-[9px] font-mono text-gray-500 font-bold uppercase block mb-0.5">CHECKPOINT 01</span>
                         <h4 class="text-xs font-extrabold text-gray-900 leading-tight">Início da Fábrica</h4>
                         <p class="text-[10px] text-gray-600 mt-1 leading-snug">Compra da 1ª prensa e impressora com o sonho de começar a produzir.</p>
@@ -636,27 +636,27 @@
                 </div>
 
                 <!-- CP 02 (O Tombo Técnico - 1º Pico Superior) -->
-                <div class="absolute left-[19%] top-[28%] -translate-x-1/2 flex flex-col items-center z-10">
-                    <!-- Tooltip Card Acima do Pico -->
-                    <div class="mb-3 p-3 bg-white border border-red-200 rounded-xl shadow-lg w-52 text-left border-b-4 border-b-red-500">
+                <!-- Card BEM ACIMA DO PICO (Conforme Rascunho) -->
+                <div class="absolute left-[19%] top-[2%] -translate-x-1/2 z-10">
+                    <div class="p-3 bg-white border border-red-200 rounded-xl shadow-lg w-52 text-left border-b-4 border-b-red-500">
                         <span class="text-[9px] font-mono text-red-600 font-bold uppercase block mb-0.5">CHECKPOINT 02</span>
                         <h4 class="text-xs font-extrabold text-red-900 leading-tight">O Tombo Técnico</h4>
                         <p class="text-[10px] text-gray-700 mt-1 leading-snug">Sem fornecedor, Perfil de cor errado, Prensa fazendo sombra, Tecido desfiando, modelagem ruim, costura torta e prejuízo todos os dias.</p>
                     </div>
-                    <!-- Badge do Pico -->
-                    <div class="w-9 h-9 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-xs shadow-lg border-2 border-white shrink-0 z-20">
-                        <i class="fa-solid fa-user text-xs"></i>
-                    </div>
+                </div>
+                <!-- Badge Exato no Pico 1 da Linha -->
+                <div class="absolute left-[19%] top-[28%] -translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-xs shadow-lg border-2 border-white z-20">
+                    <i class="fa-solid fa-user text-xs"></i>
                 </div>
 
                 <!-- CP 03 (Trabalho Escravo - 1º Vale Inferior) -->
-                <div class="absolute left-[34%] top-[68%] -translate-x-1/2 flex flex-col items-center z-10">
-                    <!-- Badge no Vale -->
-                    <div class="w-9 h-9 rounded-full bg-amber-600 text-white flex items-center justify-center font-bold text-xs shadow-lg border-2 border-white shrink-0 z-20">
-                        <i class="fa-solid fa-xmark text-xs"></i>
-                    </div>
-                    <!-- Tooltip Card Abaixo do Vale -->
-                    <div class="mt-3 p-3 bg-white border border-amber-300 rounded-xl shadow-lg w-52 text-left border-t-4 border-t-amber-500">
+                <!-- Badge Exato no Vale 1 da Linha -->
+                <div class="absolute left-[34%] top-[68%] -translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-amber-600 text-white flex items-center justify-center font-bold text-xs shadow-lg border-2 border-white z-20">
+                    <i class="fa-solid fa-xmark text-xs"></i>
+                </div>
+                <!-- Card Posicionado Abaixo do Vale 1 -->
+                <div class="absolute left-[34%] top-[74%] -translate-x-1/2 z-10">
+                    <div class="p-3 bg-white border border-amber-300 rounded-xl shadow-lg w-52 text-left border-t-4 border-t-amber-500">
                         <span class="text-[9px] font-mono text-amber-700 font-bold uppercase block mb-0.5">CHECKPOINT 03</span>
                         <h4 class="text-xs font-extrabold text-gray-900 leading-tight">Trabalho Escravo</h4>
                         <p class="text-[10px] text-gray-700 mt-1 leading-snug">Erros de produção, prejuízos, desperdícios, trabalhando 20h por dia e fazendo tudo sozinho.</p>
@@ -664,27 +664,27 @@
                 </div>
 
                 <!-- CP 04 (Vendas sem Método - Pico Intermediário) -->
-                <div class="absolute left-[49%] top-[44%] -translate-x-1/2 flex flex-col items-center z-10">
-                    <!-- Tooltip Card Acima -->
-                    <div class="mb-3 p-3 bg-white border border-red-200 rounded-xl shadow-lg w-52 text-left border-b-4 border-b-red-500">
+                <!-- Card BEM ACIMA DO PICO 2 (Conforme Rascunho) -->
+                <div class="absolute left-[49%] top-[12%] -translate-x-1/2 z-10">
+                    <div class="p-3 bg-white border border-red-200 rounded-xl shadow-lg w-52 text-left border-b-4 border-b-red-500">
                         <span class="text-[9px] font-mono text-red-600 font-bold uppercase block mb-0.5">CHECKPOINT 04</span>
                         <h4 class="text-xs font-extrabold text-red-900 leading-tight">Vendas sem Método</h4>
                         <p class="text-[10px] text-gray-700 mt-1 leading-snug">Clientes pedindo desconto, clientes indo comprar na concorrência, dando brindes, fazendo promoções malucas e perdendo dinheiro todo dia.</p>
                     </div>
-                    <!-- Badge do Pico -->
-                    <div class="w-9 h-9 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-xs shadow-lg border-2 border-white shrink-0 z-20">
-                        <i class="fa-solid fa-tag text-xs"></i>
-                    </div>
+                </div>
+                <!-- Badge Exato no Pico 2 da Linha -->
+                <div class="absolute left-[49%] top-[44%] -translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-xs shadow-lg border-2 border-white z-20">
+                    <i class="fa-solid fa-tag text-xs"></i>
                 </div>
 
                 <!-- CP 05 (Caos & Exaustão - Fundo do Poço) -->
-                <div class="absolute left-[64%] top-[70%] -translate-x-1/2 flex flex-col items-center z-10">
-                    <!-- Badge Fundo do Poço -->
-                    <div class="w-9 h-9 rounded-full bg-red-700 text-white flex items-center justify-center font-bold text-xs shadow-lg border-2 border-white shrink-0 z-20 animate-bounce">
-                        <i class="fa-solid fa-skull text-xs"></i>
-                    </div>
-                    <!-- Tooltip Card Abaixo -->
-                    <div class="mt-3 p-3 bg-red-50 border border-red-400 rounded-xl shadow-lg w-56 text-left border-t-4 border-t-red-600">
+                <!-- Badge Exato no Vale 2 da Linha -->
+                <div class="absolute left-[64%] top-[70%] -translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-red-700 text-white flex items-center justify-center font-bold text-xs shadow-lg border-2 border-white z-20 animate-bounce">
+                    <i class="fa-solid fa-skull text-xs"></i>
+                </div>
+                <!-- Card Posicionado Abaixo do Vale 2 -->
+                <div class="absolute left-[64%] top-[76%] -translate-x-1/2 z-10">
+                    <div class="p-3 bg-red-50 border border-red-400 rounded-xl shadow-lg w-56 text-left border-t-4 border-t-red-600">
                         <span class="text-[9px] font-mono text-red-700 font-extrabold uppercase block mb-0.5">CHECKPOINT 05 • FUNDO DO POÇO</span>
                         <h4 class="text-xs font-extrabold text-red-950 leading-tight">Caos & Exaustão</h4>
                         <p class="text-[10px] text-red-900 mt-1 font-medium leading-snug">20h/dia trabalhando, refazendo um monte de pedido, trabalha mais que todo mundo e descobre que fazendo tudo sozinho vai quebrar e sair do jogo.</p>
@@ -692,27 +692,27 @@
                 </div>
 
                 <!-- CP 06 (Método Premier - Virada de Chave) -->
-                <div class="absolute left-[79%] top-[36%] -translate-x-1/2 flex flex-col items-center z-10">
-                    <!-- Tooltip Card Acima -->
-                    <div class="mb-3 p-3.5 bg-emerald-50 border border-emerald-400 rounded-xl shadow-xl w-56 text-left border-b-4 border-b-emerald-500">
+                <!-- Card BEM ACIMA DO PICO 3 (Conforme Rascunho) -->
+                <div class="absolute left-[79%] top-[6%] -translate-x-1/2 z-10">
+                    <div class="p-3.5 bg-emerald-50 border border-emerald-400 rounded-xl shadow-xl w-56 text-left border-b-4 border-b-emerald-500">
                         <span class="text-[9px] font-mono text-emerald-700 font-extrabold uppercase block mb-0.5">A VIRADA DE CHAVE</span>
                         <h4 class="text-xs font-extrabold text-emerald-950 leading-tight">Método Premier</h4>
                         <p class="text-[10px] text-emerald-900 mt-1 font-medium leading-snug">Entrada na mentoria: fim do desperdício, aplica o processo de fabricação, aumenta margem de lucro, aplica um funil de vendas automáticas, implementa atendimento automatizado no WhatsApp.</p>
                     </div>
-                    <!-- Badge Verde Virada -->
-                    <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-xs shadow-lg border-2 border-white shrink-0 z-20 ring-4 ring-emerald-100">
-                        <i class="fa-solid fa-chart-line text-xs"></i>
-                    </div>
+                </div>
+                <!-- Badge Exato no Pico 3 da Linha -->
+                <div class="absolute left-[79%] top-[36%] -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-xs shadow-lg border-2 border-white z-20 ring-4 ring-emerald-100">
+                    <i class="fa-solid fa-chart-line text-xs"></i>
                 </div>
 
                 <!-- CP 07 (Marca Esportiva Nacional - Topo da Montanha) -->
-                <div class="absolute left-[94%] top-[16%] -translate-x-1/2 flex flex-col items-center z-10">
-                    <!-- Badge Topo da Montanha -->
-                    <div class="w-11 h-11 rounded-full bg-gradient-to-br from-amber-400 to-gold-600 text-onyx-950 flex items-center justify-center font-extrabold text-base shadow-xl border-2 border-amber-200 shrink-0 z-20 ring-4 ring-amber-200">
-                        🏆
-                    </div>
-                    <!-- Tooltip Card Abaixo -->
-                    <div class="mt-3 p-3.5 bg-gradient-to-br from-amber-500 to-gold-600 text-white rounded-xl shadow-2xl w-56 text-left border-t-4 border-t-gold-300">
+                <!-- Badge Exato no Topo da Linha -->
+                <div class="absolute left-[94%] top-[16%] -translate-x-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-gradient-to-br from-amber-400 to-gold-600 text-onyx-950 flex items-center justify-center font-extrabold text-base shadow-xl border-2 border-amber-200 z-20 ring-4 ring-amber-200">
+                    🏆
+                </div>
+                <!-- Card Posicionado Abaixo do Topo -->
+                <div class="absolute left-[94%] top-[24%] -translate-x-1/2 z-10">
+                    <div class="p-3.5 bg-gradient-to-br from-amber-500 to-gold-600 text-white rounded-xl shadow-2xl w-56 text-left border-t-4 border-t-gold-300">
                         <span class="text-[9px] font-mono text-amber-100 font-extrabold uppercase block mb-0.5">O APOGEU • AGORA</span>
                         <h4 class="text-xs font-extrabold text-white leading-tight">Marca Esportiva Nacional</h4>
                         <p class="text-[10px] text-amber-100 mt-1 font-medium leading-snug">Saiu da camada operacional da empresa e agora atua na camada Estratégica como um verdadeiro CEO e começa a bater faturamento cheio de R$ 60k a 600k já no primeiro ano.</p>
