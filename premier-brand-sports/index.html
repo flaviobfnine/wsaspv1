@@ -947,7 +947,7 @@
     <section id="selecao" class="relative min-h-screen flex flex-col justify-center py-24 bg-onyx-950">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="p-8 sm:p-12 rounded-3xl bg-card border border-emerald-600/40 shadow-2xl glow-emerald">
-                <div class="text-center mb-10">
+                <div id="formHeader" class="text-center mb-10">
                     <span class="px-4 py-1.5 rounded-full bg-gold-500/20 border border-gold-400/40 text-gold-300 text-xs font-bold uppercase tracking-widest">PROCESSO SELETIVO</span>
                     <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-cream-50 mt-4">Seleção para a PREMIER BRAND SPORTS</h2>
                     <p class="text-cream-300/70 mt-3 text-sm">Preencha o formulário abaixo para passar pela nossa análise de perfil de fábrica. Entraremos em contato via WhatsApp para agendar sua reunião individual.</p>
@@ -1042,9 +1042,18 @@
                         <i class="fa-solid fa-circle-check"></i>
                     </div>
                     <h3 class="font-heading font-extrabold text-2xl text-cream-50 mb-2">Formulário de Seleção Enviado com Sucesso!</h3>
-                    <p class="text-sm text-cream-300/80 max-w-md mx-auto">
+                    <p class="text-sm text-cream-300/80 max-w-md mx-auto mb-6">
                         Analisaremos os dados da sua fábrica e nossa equipe entrará em contato via WhatsApp nas próximas horas para agendar a sua reunião individual.
                     </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+                        <a id="btnWaSuccess" href="#" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-emerald-500 hover:bg-emerald-400 text-onyx-950 font-extrabold px-6 py-3.5 rounded-xl text-sm transition-all shadow-lg glow-emerald">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>ABRIR CONVERSA NO WHATSAPP</span>
+                        </a>
+                        <button onclick="resetForm()" type="button" class="w-full sm:w-auto text-xs text-cream-300/60 hover:text-cream-100 underline px-4 py-2 cursor-pointer">
+                            Fechar / Novo preenchimento
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1074,7 +1083,13 @@
             const waUrl = `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(mensagemText)}`;
 
             const finalizarEEnviarWA = () => {
+                const header = document.getElementById('formHeader');
+                if (header) header.classList.add('hidden');
                 form.classList.add('hidden');
+                
+                const btnWa = document.getElementById('btnWaSuccess');
+                if (btnWa) btnWa.href = waUrl;
+
                 document.getElementById('successMessage').classList.remove('hidden');
                 window.open(waUrl, '_blank');
             };
@@ -1096,6 +1111,23 @@
                 finalizarEEnviarWA();
             });
         });
+
+        function resetForm() {
+            const header = document.getElementById('formHeader');
+            if (header) header.classList.remove('hidden');
+            const form = document.getElementById('appForm');
+            if (form) {
+                form.reset();
+                form.classList.remove('hidden');
+            }
+            const success = document.getElementById('successMessage');
+            if (success) success.classList.add('hidden');
+            const btn = document.getElementById('submitBtn');
+            if (btn) {
+                btn.disabled = false;
+                btn.innerHTML = '<span>ENVIAR SELEÇÃO PARA ANÁLISE</span><i class="fa-solid fa-paper-plane text-sm"></i>';
+            }
+        }
     </script>
             </div>
         </div>
