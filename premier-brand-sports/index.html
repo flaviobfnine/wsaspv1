@@ -664,7 +664,7 @@
         </div>
     </section>
 
-    <!-- SEÇÃO A JORNADA DO FABRICANTE (FUNDO BRANCO DESTACADO - DESKTOP COM BANDEIRINHAS E RESPIRO / MOBILE VERTICAL) -->
+    <!-- SEÇÃO A JORNADA DO FABRICANTE (HISTÓRIA REAL DO CHÃO DE FÁBRICA) -->
     <section id="jornada" class="relative min-h-screen flex flex-col justify-center py-16 sm:py-24 bg-white text-gray-900 border-y-4 border-emerald-500 shadow-2xl overflow-hidden">
         <!-- Elemento Gráfico de Fundo Suave -->
         <div class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none"></div>
@@ -683,227 +683,92 @@
                 </p>
             </div>
 
-            <!-- ESTRUTURA MONTANHA-RUSSA FIEL À IMAGEM DE REFERÊNCIA (EXCLUSIVO DESKTOP) -->
-            <div class="hidden lg:block relative w-full h-[650px] my-6">
-                
-                <!-- SVG Linha Gráfica Vermelha Tracejada + Silhueta Suave de Montanha de Fundo -->
-                <div class="absolute inset-0 pointer-events-none z-0">
-                    <svg class="w-full h-full overflow-visible" viewBox="0 0 1000 500" fill="none" preserveAspectRatio="none">
-                        <defs>
-                            <!-- Gradiente de Fundo da Montanha -->
-                            <linearGradient id="mountainBgGrad" x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="0%" stop-color="#fee2e2" stop-opacity="0.5" />
-                                <stop offset="50%" stop-color="#fef3c7" stop-opacity="0.3" />
-                                <stop offset="100%" stop-color="#d1fae5" stop-opacity="0.15" />
-                            </linearGradient>
-                        </defs>
-                        <!-- Silhueta da Montanha preenchida de fundo -->
-                        <path d="M 40 500 L 40 330 L 190 140 L 340 340 L 490 220 L 640 350 L 790 180 L 940 80 L 940 500 Z" fill="url(#mountainBgGrad)" />
-                        <!-- Linha Gráfica Vermelha Tracejada (Curva da Montanha Russa) -->
-                        <path d="M 40 330 L 190 140 L 340 340 L 490 220 L 640 350 L 790 180 L 940 80" 
-                              stroke="#dc2626" stroke-width="4" stroke-dasharray="8 6" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </div>
+            <!-- ESTRUTURA ÚNICA E RESPONSIVA DA JORNADA DE CHECKPOINTS (7 CHECKPOINTS UNIFICADOS) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-4 my-8 relative">
 
-                <!-- CP 01 (Início da Fábrica - Base Esquerda) -->
-                <!-- Badge no Ponto de Origem -->
-                <div class="absolute left-[4%] top-[66%] -translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-gray-800 text-white flex items-center justify-center font-bold text-xs shadow-lg border-2 border-white z-20">
-                    <i class="fa-solid fa-flag text-xs"></i>
-                </div>
-                <!-- Card Posicionado Abaixo da Linha -->
-                <div class="absolute left-[4%] top-[72%] -translate-x-1/2 z-10">
-                    <div class="p-3 bg-white border border-gray-200 rounded-xl shadow-lg w-48 text-left border-t-4 border-t-gray-600">
-                        <span class="text-[9px] font-mono text-gray-500 font-bold uppercase block mb-0.5">CHECKPOINT 01</span>
-                        <h4 class="text-xs font-extrabold text-gray-900 leading-tight">Início da Fábrica</h4>
-                        <p class="text-[10px] text-gray-600 mt-1 leading-snug">Compra da 1ª prensa e impressora com o sonho de começar a produzir.</p>
-                    </div>
-                </div>
-
-                <!-- CP 02 (O Tombo Técnico - 1º Pico Superior) -->
-                <!-- Card BEM ACIMA DO PICO (Conforme Rascunho) -->
-                <div class="absolute left-[19%] top-[2%] -translate-x-1/2 z-10">
-                    <div class="p-3 bg-white border border-red-200 rounded-xl shadow-lg w-52 text-left border-b-4 border-b-red-500">
-                        <span class="text-[9px] font-mono text-red-600 font-bold uppercase block mb-0.5">CHECKPOINT 02</span>
-                        <h4 class="text-xs font-extrabold text-red-900 leading-tight">O Tombo Técnico</h4>
-                        <p class="text-[10px] text-gray-700 mt-1 leading-snug">Sem fornecedor, Perfil de cor errado, Prensa fazendo sombra, Tecido desfiando, modelagem ruim, costura torta e prejuízo todos os dias.</p>
-                    </div>
-                </div>
-                <!-- Badge Exato no Pico 1 da Linha -->
-                <div class="absolute left-[19%] top-[28%] -translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-xs shadow-lg border-2 border-white z-20">
-                    <i class="fa-solid fa-user text-xs"></i>
-                </div>
-
-                <!-- CP 03 (Trabalho Escravo - 1º Vale Inferior) -->
-                <!-- Badge Exato no Vale 1 da Linha -->
-                <div class="absolute left-[34%] top-[68%] -translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-amber-600 text-white flex items-center justify-center font-bold text-xs shadow-lg border-2 border-white z-20">
-                    <i class="fa-solid fa-xmark text-xs"></i>
-                </div>
-                <!-- Card Posicionado Abaixo do Vale 1 -->
-                <div class="absolute left-[34%] top-[74%] -translate-x-1/2 z-10">
-                    <div class="p-3 bg-white border border-amber-300 rounded-xl shadow-lg w-52 text-left border-t-4 border-t-amber-500">
-                        <span class="text-[9px] font-mono text-amber-700 font-bold uppercase block mb-0.5">CHECKPOINT 03</span>
-                        <h4 class="text-xs font-extrabold text-gray-900 leading-tight">Trabalho Escravo</h4>
-                        <p class="text-[10px] text-gray-700 mt-1 leading-snug">Erros de produção, prejuízos, desperdícios, trabalhando 20h por dia e fazendo tudo sozinho.</p>
-                    </div>
-                </div>
-
-                <!-- CP 04 (Vendas sem Método - Pico Intermediário) -->
-                <!-- Card BEM ACIMA DO PICO 2 (Conforme Rascunho) -->
-                <div class="absolute left-[49%] top-[12%] -translate-x-1/2 z-10">
-                    <div class="p-3 bg-white border border-red-200 rounded-xl shadow-lg w-52 text-left border-b-4 border-b-red-500">
-                        <span class="text-[9px] font-mono text-red-600 font-bold uppercase block mb-0.5">CHECKPOINT 04</span>
-                        <h4 class="text-xs font-extrabold text-red-900 leading-tight">Vendas sem Método</h4>
-                        <p class="text-[10px] text-gray-700 mt-1 leading-snug">Clientes pedindo desconto, clientes indo comprar na concorrência, dando brindes, fazendo promoções malucas e perdendo dinheiro todo dia.</p>
-                    </div>
-                </div>
-                <!-- Badge Exato no Pico 2 da Linha -->
-                <div class="absolute left-[49%] top-[44%] -translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-xs shadow-lg border-2 border-white z-20">
-                    <i class="fa-solid fa-tag text-xs"></i>
-                </div>
-
-                <!-- CP 05 (Caos & Exaustão - Fundo do Poço) -->
-                <!-- Badge Exato no Vale 2 da Linha -->
-                <div class="absolute left-[64%] top-[70%] -translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-red-700 text-white flex items-center justify-center font-bold text-xs shadow-lg border-2 border-white z-20 animate-bounce">
-                    <i class="fa-solid fa-skull text-xs"></i>
-                </div>
-                <!-- Card Posicionado Abaixo do Vale 2 -->
-                <div class="absolute left-[64%] top-[76%] -translate-x-1/2 z-10">
-                    <div class="p-3 bg-red-50 border border-red-400 rounded-xl shadow-lg w-56 text-left border-t-4 border-t-red-600">
-                        <span class="text-[9px] font-mono text-red-700 font-extrabold uppercase block mb-0.5">CHECKPOINT 05 • FUNDO DO POÇO</span>
-                        <h4 class="text-xs font-extrabold text-red-950 leading-tight">Caos & Exaustão</h4>
-                        <p class="text-[10px] text-red-900 mt-1 font-medium leading-snug">20h/dia trabalhando, refazendo um monte de pedido, trabalha mais que todo mundo e descobre que fazendo tudo sozinho vai quebrar e sair do jogo.</p>
-                    </div>
-                </div>
-
-                <!-- CP 06 (Método Premier - Virada de Chave) -->
-                <!-- Card BEM ACIMA DO PICO 3 (Conforme Rascunho) -->
-                <div class="absolute left-[79%] top-[6%] -translate-x-1/2 z-10">
-                    <div class="p-3.5 bg-emerald-50 border border-emerald-400 rounded-xl shadow-xl w-56 text-left border-b-4 border-b-emerald-500">
-                        <span class="text-[9px] font-mono text-emerald-700 font-extrabold uppercase block mb-0.5">A VIRADA DE CHAVE</span>
-                        <h4 class="text-xs font-extrabold text-emerald-950 leading-tight">Método Premier</h4>
-                        <p class="text-[10px] text-emerald-900 mt-1 font-medium leading-snug">Entrada na mentoria: fim do desperdício, engenharia fabril, produtos diferenciados com Order Bump/UpSell e funil de vendas multicanal.</p>
-                    </div>
-                </div>
-                <!-- Badge Exato no Pico 3 da Linha -->
-                <div class="absolute left-[79%] top-[36%] -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-xs shadow-lg border-2 border-white z-20 ring-4 ring-emerald-100">
-                    <i class="fa-solid fa-chart-line text-xs"></i>
-                </div>
-
-                <!-- CP 07 (Marca Esportiva Nacional - Topo da Montanha) -->
-                <!-- Badge Exato no Topo da Linha -->
-                <div class="absolute left-[94%] top-[16%] -translate-x-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-gradient-to-br from-amber-400 to-gold-600 text-onyx-950 flex items-center justify-center font-extrabold text-base shadow-xl border-2 border-amber-200 z-20 ring-4 ring-amber-200">
-                    🏆
-                </div>
-                <!-- Card Posicionado Abaixo do Topo -->
-                <div class="absolute left-[94%] top-[24%] -translate-x-1/2 z-10">
-                    <div class="p-3.5 bg-gradient-to-br from-amber-500 to-gold-600 text-white rounded-xl shadow-2xl w-56 text-left border-t-4 border-t-gold-300">
-                        <span class="text-[9px] font-mono text-amber-100 font-extrabold uppercase block mb-0.5">O APOGEU • AGORA</span>
-                        <h4 class="text-xs font-extrabold text-white leading-tight">Marca Esportiva Nacional</h4>
-                        <p class="text-[10px] text-amber-100 mt-1 font-medium leading-snug">Saiu da camada operacional da empresa e agora atua na camada Estratégica como um verdadeiro CEO, com uma operação gerida por mecanismos e equipe.</p>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- ESTRUTURA VERTICAL DE SCROLL NATURAL (EXCLUSIVO MOBILE / TABLET) -->
-            <div class="lg:hidden relative my-6">
-                <!-- Linha Vertical Mobile (Eixo Esquerdo) -->
-                <div class="absolute inset-y-0 left-6 w-1 bg-gradient-to-b from-red-500 via-red-600 via-emerald-500 to-amber-500 pointer-events-none z-0 rounded-full"></div>
-
-                <!-- LISTA DE CHECKPOINTS VERTICAIS -->
-                <div class="space-y-8 relative z-10">
-
-                    <!-- CP 01 (Início) -->
-                    <div class="relative flex items-start pl-20 sm:pl-24">
-                        <div class="absolute left-0 px-2.5 py-1 rounded-full bg-gray-800 text-white font-extrabold text-[10px] shadow-lg border-2 border-white flex items-center space-x-1 shrink-0 z-10">
+                <!-- CHECKPOINT 01 -->
+                <div class="p-5 rounded-2xl bg-white border-2 border-gray-200 shadow-md hover:border-gray-400 transition-all flex flex-col justify-between border-t-4 border-t-gray-600 relative">
+                    <div>
+                        <div class="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded-full bg-gray-800 text-white font-extrabold text-[10px] uppercase mb-3">
                             <i class="fa-solid fa-flag text-[9px]"></i>
-                            <span>INÍCIO</span>
+                            <span>CP 01</span>
                         </div>
-                        <div class="w-full p-4 bg-white border-2 border-gray-200 rounded-2xl shadow-md">
-                            <span class="text-[10px] font-mono text-gray-500 font-bold uppercase block mb-1">CHECKPOINT 01 • INÍCIO</span>
-                            <h3 class="text-base font-extrabold text-gray-900 leading-tight">Início da Fábrica</h3>
-                            <p class="text-xs text-gray-600 mt-2 leading-relaxed">Compra da 1ª prensa e impressora com o sonho de começar a produzir.</p>
-                        </div>
+                        <h3 class="text-base lg:text-xs font-extrabold text-gray-900 leading-tight mb-2">Início da Fábrica</h3>
+                        <p class="text-xs lg:text-[10px] text-gray-600 leading-relaxed">Compra da 1ª prensa e impressora com o sonho de começar a produzir.</p>
                     </div>
+                </div>
 
-                    <!-- CP 02 (O Tombo Técnico) -->
-                    <div class="relative flex items-start pl-20 sm:pl-24">
-                        <div class="absolute left-0 px-2.5 py-1 rounded-full bg-red-500 text-white font-extrabold text-[10px] shadow-lg border-2 border-white flex items-center space-x-1 shrink-0 z-10">
+                <!-- CHECKPOINT 02 -->
+                <div class="p-5 rounded-2xl bg-red-50/60 border-2 border-red-300 shadow-md hover:border-red-500 transition-all flex flex-col justify-between border-t-4 border-t-red-500 relative">
+                    <div>
+                        <div class="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded-full bg-red-600 text-white font-extrabold text-[10px] uppercase mb-3">
                             <i class="fa-solid fa-triangle-exclamation text-[9px]"></i>
-                            <span>TOMBO</span>
+                            <span>CP 02</span>
                         </div>
-                        <div class="w-full p-4 bg-red-50/60 border-2 border-red-300 rounded-2xl shadow-md">
-                            <span class="text-[10px] font-mono text-red-600 font-bold uppercase block mb-1">CHECKPOINT 02 • O TOMBO TÉCNICO</span>
-                            <h3 class="text-base font-extrabold text-red-900 leading-tight">O Tombo Técnico</h3>
-                            <p class="text-xs text-gray-700 mt-2 leading-relaxed">Sem fornecedor, Perfil de cor errado, Prensa fazendo sombra, Tecido desfiando, modelagem ruim, costura torta e prejuízo todos os dias.</p>
-                        </div>
+                        <h3 class="text-base lg:text-xs font-extrabold text-red-900 leading-tight mb-2">O Tombo Técnico</h3>
+                        <p class="text-xs lg:text-[10px] text-gray-700 leading-relaxed">Sem fornecedor, perfil de cor errado, prensa fazendo sombra, tecido desfiando e prejuízo todos os dias.</p>
                     </div>
+                </div>
 
-                    <!-- CP 03 (Trabalho Escravo) -->
-                    <div class="relative flex items-start pl-20 sm:pl-24">
-                        <div class="absolute left-0 px-2.5 py-1 rounded-full bg-amber-500 text-white font-extrabold text-[10px] shadow-lg border-2 border-white flex items-center space-x-1 shrink-0 z-10">
+                <!-- CHECKPOINT 03 -->
+                <div class="p-5 rounded-2xl bg-amber-50/60 border-2 border-amber-300 shadow-md hover:border-amber-500 transition-all flex flex-col justify-between border-t-4 border-t-amber-500 relative">
+                    <div>
+                        <div class="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded-full bg-amber-600 text-white font-extrabold text-[10px] uppercase mb-3">
                             <i class="fa-solid fa-user-lock text-[9px]"></i>
-                            <span>PRISÃO</span>
+                            <span>CP 03</span>
                         </div>
-                        <div class="w-full p-4 bg-amber-50/60 border-2 border-amber-300 rounded-2xl shadow-md">
-                            <span class="text-[10px] font-mono text-amber-700 font-bold uppercase block mb-1">CHECKPOINT 03 • TRABALHO ESCRAVO</span>
-                            <h3 class="text-base font-extrabold text-gray-900 leading-tight">Trabalho Escravo</h3>
-                            <p class="text-xs text-gray-700 mt-2 leading-relaxed">Erros de produção, prejuízos, desperdícios, trabalhando 20h por dia e fazendo tudo sozinho.</p>
-                        </div>
+                        <h3 class="text-base lg:text-xs font-extrabold text-gray-900 leading-tight mb-2">Trabalho Escravo</h3>
+                        <p class="text-xs lg:text-[10px] text-gray-700 leading-relaxed">Erros de produção, prejuízos, desperdícios, trabalhando 20h por dia e fazendo tudo sozinho.</p>
                     </div>
+                </div>
 
-                    <!-- CP 04 (Vendas sem Método) -->
-                    <div class="relative flex items-start pl-20 sm:pl-24">
-                        <div class="absolute left-0 px-2.5 py-1 rounded-full bg-red-600 text-white font-extrabold text-[10px] shadow-lg border-2 border-white flex items-center space-x-1 shrink-0 z-10">
+                <!-- CHECKPOINT 04 -->
+                <div class="p-5 rounded-2xl bg-red-50/60 border-2 border-red-300 shadow-md hover:border-red-500 transition-all flex flex-col justify-between border-t-4 border-t-red-600 relative">
+                    <div>
+                        <div class="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded-full bg-red-600 text-white font-extrabold text-[10px] uppercase mb-3">
                             <i class="fa-solid fa-arrow-trend-down text-[9px]"></i>
-                            <span>DESCONTO</span>
+                            <span>CP 04</span>
                         </div>
-                        <div class="w-full p-4 bg-red-50/60 border-2 border-red-300 rounded-2xl shadow-md">
-                            <span class="text-[10px] font-mono text-red-600 font-bold uppercase block mb-1">CHECKPOINT 04 • SEM MÉTODO</span>
-                            <h3 class="text-base font-extrabold text-red-900 leading-tight">Vendas sem Método</h3>
-                            <p class="text-xs text-gray-700 mt-2 leading-relaxed">Clientes pedindo desconto, clientes indo comprar na concorrência, dando brindes, fazendo promoções malucas e perdendo dinheiro todo dia.</p>
-                        </div>
+                        <h3 class="text-base lg:text-xs font-extrabold text-red-900 leading-tight mb-2">Vendas sem Método</h3>
+                        <p class="text-xs lg:text-[10px] text-gray-700 leading-relaxed">Clientes pedindo desconto, clientes indo comprar na concorrência e dando brindes pra não perder venda.</p>
                     </div>
+                </div>
 
-                    <!-- CP 05 (Fundo do Poço) -->
-                    <div class="relative flex items-start pl-20 sm:pl-24">
-                        <div class="absolute left-0 px-2.5 py-1 rounded-full bg-red-700 text-white font-extrabold text-[10px] shadow-xl border-2 border-white flex items-center space-x-1 shrink-0 z-10 animate-bounce">
+                <!-- CHECKPOINT 05 -->
+                <div class="p-5 rounded-2xl bg-red-100 border-2 border-red-500 shadow-xl hover:border-red-700 transition-all flex flex-col justify-between border-t-4 border-t-red-700 relative">
+                    <div>
+                        <div class="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded-full bg-red-700 text-white font-extrabold text-[10px] uppercase mb-3 animate-pulse">
                             <i class="fa-solid fa-skull text-[9px]"></i>
-                            <span>POÇO</span>
+                            <span>CP 05 • POÇO</span>
                         </div>
-                        <div class="w-full p-5 bg-red-100 border-2 border-red-500 rounded-2xl shadow-xl">
-                            <span class="text-[10px] font-mono text-red-700 font-extrabold uppercase block mb-1">CHECKPOINT 05 • FUNDO DO POÇO</span>
-                            <h3 class="text-base font-extrabold text-red-950 leading-tight">Caos & Exaustão</h3>
-                            <p class="text-xs text-red-900 font-medium mt-1 leading-relaxed">20h/dia trabalhando, refazendo um monte de pedido, trabalha mais que todo mundo e descobre que fazendo tudo sozinho vai quebrar e sair do jogo.</p>
-                        </div>
+                        <h3 class="text-base lg:text-xs font-extrabold text-red-950 leading-tight mb-2">Caos & Exaustão</h3>
+                        <p class="text-xs lg:text-[10px] text-red-900 font-medium leading-relaxed">20h/dia trabalhando, refazendo pedidos e descobrindo que fazendo tudo sozinho vai quebrar.</p>
                     </div>
+                </div>
 
-                    <!-- CP 06 (A Virada da Mentoria) -->
-                    <div class="relative flex items-start pl-20 sm:pl-24">
-                        <div class="absolute left-0 px-2.5 py-1 rounded-full bg-emerald-600 text-white font-extrabold text-[10px] shadow-xl border-2 border-white flex items-center space-x-1 shrink-0 z-10">
+                <!-- CHECKPOINT 06 -->
+                <div class="p-5 rounded-2xl bg-emerald-50 border-2 border-emerald-500 shadow-xl hover:border-emerald-600 transition-all flex flex-col justify-between border-t-4 border-t-emerald-500 relative">
+                    <div>
+                        <div class="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded-full bg-emerald-600 text-white font-extrabold text-[10px] uppercase mb-3">
                             <i class="fa-solid fa-key text-[9px]"></i>
-                            <span>VIRADA</span>
+                            <span>CP 06 • VIRADA</span>
                         </div>
-                        <div class="w-full p-5 bg-emerald-50 border-2 border-emerald-500 rounded-2xl shadow-xl">
-                            <span class="text-[10px] font-mono text-emerald-700 font-extrabold uppercase block mb-1">A VIRADA DE CHAVE • COM O FLÁVIO</span>
-                            <h3 class="text-lg font-extrabold text-emerald-950 leading-tight">Método Premier</h3>
-                            <p class="text-xs text-emerald-900 font-medium mt-2 leading-relaxed">Entrada na mentoria: fim do desperdício, engenharia fabril, produtos diferenciados com Order Bump/UpSell e funil de vendas multicanal.</p>
-                        </div>
+                        <h3 class="text-base lg:text-xs font-extrabold text-emerald-950 leading-tight mb-2">Método Premier</h3>
+                        <p class="text-xs lg:text-[10px] text-emerald-900 font-medium leading-relaxed">Fim do desperdício, engenharia fabril, produtos com Order Bump/UpSell e funil multicanal.</p>
                     </div>
+                </div>
 
-                    <!-- CP 07 (Apogeu / Marca Esportiva Nacional) -->
-                    <div class="relative flex items-start pl-20 sm:pl-24">
-                        <div class="absolute left-0 px-3 py-1 rounded-full bg-gradient-to-r from-amber-400 to-gold-600 text-onyx-950 font-extrabold text-[11px] shadow-2xl border-2 border-amber-200 flex items-center space-x-1 shrink-0 z-10">
+                <!-- CHECKPOINT 07 -->
+                <div class="p-5 rounded-2xl bg-gradient-to-br from-amber-500 via-gold-500 to-amber-600 text-white shadow-2xl hover:brightness-105 transition-all flex flex-col justify-between border-t-4 border-t-gold-300 relative">
+                    <div>
+                        <div class="inline-flex items-center space-x-1 px-3 py-0.5 rounded-full bg-amber-400 text-onyx-950 font-extrabold text-[10px] uppercase mb-3 shadow">
                             <span>🏆 APOGEU</span>
                         </div>
-                        <div class="w-full p-6 bg-gradient-to-r from-amber-500 via-gold-500 to-amber-600 text-white rounded-3xl shadow-2xl border-2 border-gold-300">
-                            <span class="text-[11px] font-mono text-amber-100 font-extrabold uppercase tracking-widest block mb-1">O APOGEU • AGORA</span>
-                            <h3 class="text-xl font-extrabold text-white leading-tight">Marca Esportiva Nacional</h3>
-                            <p class="text-xs text-amber-100 font-medium mt-3 leading-relaxed">Saiu da camada operacional da empresa e agora atua na camada Estratégica como um verdadeiro CEO, com uma operação gerida por mecanismos e equipe.</p>
-                        </div>
+                        <h3 class="text-base lg:text-xs font-extrabold text-white leading-tight mb-2">Marca Esportiva</h3>
+                        <p class="text-xs lg:text-[10px] text-amber-100 font-medium leading-relaxed">Atua na camada Estratégica como CEO, com uma operação gerida por mecanismos e equipe.</p>
                     </div>
-
                 </div>
+
             </div>
 
             <!-- Chamada Final da Seção (Responsiva) -->
@@ -1097,10 +962,23 @@
     <section id="selecao" class="relative min-h-screen flex flex-col justify-center py-24 bg-onyx-950">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="p-8 sm:p-12 rounded-3xl bg-card border border-emerald-600/40 shadow-2xl glow-emerald">
-                <div id="formHeader" class="text-center mb-10">
+                <div id="formHeader" class="text-center mb-8">
                     <span class="px-4 py-1.5 rounded-full bg-gold-500/20 border border-gold-400/40 text-gold-300 text-xs font-bold uppercase tracking-widest">PROCESSO SELETIVO</span>
                     <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-cream-50 mt-4">Seleção para a PREMIER BRAND SPORTS</h2>
                     <p class="text-cream-300/70 mt-3 text-sm">Preencha o formulário abaixo para passar pela nossa análise de perfil de fábrica. Entraremos em contato via WhatsApp para agendar sua reunião individual.</p>
+                </div>
+
+                <!-- ALÍVIO DE RISCO & SEGURANÇA DA APLICAÇÃO (DOBRA 11) -->
+                <div class="p-4 rounded-2xl bg-emerald-950/70 border border-emerald-500/40 text-left mb-8 flex items-start space-x-3 backdrop-blur-sm shadow-md">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-900/80 border border-emerald-500/50 flex items-center justify-center text-emerald-400 text-lg shrink-0 mt-0.5">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-emerald-300 mb-1">Aplicação 100% Gratuita & Sem Compromisso</h4>
+                        <p class="text-xs text-cream-200/80 leading-relaxed">
+                            Preencher este formulário é gratuito e não gera nenhuma obrigação financeira. A reunião individual serve exclusivamente para realizar um diagnóstico prático da sua fábrica e verificar se a sua confecção é qualificada para entrar na Mentoria Premier Brand Sports.
+                        </p>
+                    </div>
                 </div>
 
                 <form id="appForm" action="#" method="POST" class="space-y-6">
