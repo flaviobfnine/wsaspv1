@@ -1,0 +1,8 @@
+---
+deployment:
+  tasks:
+    - /bin/mkdir -p /home/fabricae/bfninecamisetas.com.br/premier-brand-sports
+    - /bin/chmod 755 /home/fabricae/bfninecamisetas.com.br/premier-brand-sports
+    - /bin/cp -rf index.html assets /home/fabricae/bfninecamisetas.com.br/premier-brand-sports/
+    - /bin/chmod -R 755 /home/fabricae/bfninecamisetas.com.br/premier-brand-sports/assets 2>/dev/null || true
+    - /bin/chmod 644 /home/fabricae/bfninecamisetas.com.br/premier-brand-sports/*.html 2>/dev/null || true
