@@ -526,60 +526,108 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- PILAR 1 -->
-                <div class="p-8 rounded-3xl bg-card border border-emerald-800/40 relative flex flex-col justify-between hover:border-emerald-500/60 transition-all duration-300">
+                <div class="p-8 rounded-3xl bg-card border border-emerald-800/40 relative flex flex-col justify-between hover:border-emerald-500/60 transition-all duration-300 overflow-hidden group">
                     <div>
-                        <div class="w-14 h-14 rounded-2xl bg-emerald-900/60 border border-emerald-500/40 flex items-center justify-center text-emerald-400 text-2xl font-bold mb-8">
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-900/60 border border-emerald-500/40 flex items-center justify-center text-emerald-400 text-2xl font-bold mb-6">
                             01
                         </div>
                         <h3 class="text-2xl font-heading font-bold text-cream-50 mb-4">Engenharia Fabril & Análise de Lucratividade</h3>
-                        <p class="text-cream-300/70 text-sm leading-relaxed mb-6">
-                            Auditoria completa do seu fluxo produtivo. Elimine GAPs e mão de obra ociosa, descubra via análise de dados quais produtos dão lucro real (e quais descontinuar) e monte sua equipe de processos para sair do chão de fábrica.
-                        </p>
                     </div>
-                    <ul class="space-y-2.5 text-xs text-emerald-300/80 pt-6 border-t border-emerald-900/50">
-                        <li class="flex items-start space-x-2"><i class="fa-solid fa-circle-check text-gold-400 mt-0.5 shrink-0"></i><span>Auditoria de prejuízos e mão de obra ociosa</span></li>
-                        <li class="flex items-start space-x-2"><i class="fa-solid fa-circle-check text-gold-400 mt-0.5 shrink-0"></i><span>Análise de produtos: descontinue o que não dá lucro</span></li>
-                        <li class="flex items-start space-x-2"><i class="fa-solid fa-circle-check text-gold-400 mt-0.5 shrink-0"></i><span>Sua fábrica operando sem sua presença diária</span></li>
-                    </ul>
+
+                    <!-- Conteúdo Protegido por Confidencialidade -->
+                    <div class="relative mt-2">
+                        <div class="filter blur-[5px] opacity-35 select-none pointer-events-none transition-all duration-300">
+                            <p class="text-cream-300/70 text-sm leading-relaxed mb-6">
+                                Auditoria completa do seu fluxo produtivo. Elimine GAPs e mão de obra ociosa, descubra via análise de dados quais produtos dão lucro real (e quais descontinuar) e monte sua equipe de processos para sair do chão de fábrica.
+                            </p>
+                            <ul class="space-y-2.5 text-xs text-emerald-300/80 pt-6 border-t border-emerald-900/50">
+                                <li class="flex items-start space-x-2"><i class="fa-solid fa-circle-check text-gold-400 mt-0.5 shrink-0"></i><span>Auditoria de prejuízos e mão de obra ociosa</span></li>
+                                <li class="flex items-start space-x-2"><i class="fa-solid fa-circle-check text-gold-400 mt-0.5 shrink-0"></i><span>Análise de produtos: descontinue o que não dá lucro</span></li>
+                                <li class="flex items-start space-x-2"><i class="fa-solid fa-circle-check text-gold-400 mt-0.5 shrink-0"></i><span>Sua fábrica operando sem sua presença diária</span></li>
+                            </ul>
+                        </div>
+
+                        <!-- Selo Confidencial Overlay -->
+                        <div class="absolute inset-0 flex items-center justify-center p-2 z-20">
+                            <div class="px-4 py-3 rounded-xl bg-onyx-950/90 border border-gold-500/70 shadow-2xl backdrop-blur-md text-center transform -rotate-3 border-dashed">
+                                <span class="text-xs font-extrabold uppercase tracking-widest text-gold-400 flex items-center justify-center gap-1.5">
+                                    <i class="fa-solid fa-lock text-gold-400"></i> CONFIDENCIAL
+                                </span>
+                                <span class="text-[10px] font-bold text-cream-200/90 block mt-1">Apenas para Mentorados</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- PILAR 2 -->
-                <div class="p-8 rounded-3xl bg-card border border-gold-500/40 relative flex flex-col justify-between hover:border-gold-400/60 transition-all duration-300 shadow-xl glow-gold">
+                <div class="p-8 rounded-3xl bg-card border border-gold-500/40 relative flex flex-col justify-between hover:border-gold-400/60 transition-all duration-300 shadow-xl glow-gold overflow-hidden group">
                     <div class="absolute -top-4 right-6 px-3 py-1 rounded-full bg-gold-500 text-onyx-950 text-[10px] font-extrabold uppercase">
                         MARGEM PROTEGIDA
                     </div>
                     <div>
-                        <div class="w-14 h-14 rounded-2xl bg-gold-500/20 border border-gold-400/40 flex items-center justify-center text-gold-400 text-2xl font-bold mb-8">
+                        <div class="w-14 h-14 rounded-2xl bg-gold-500/20 border border-gold-400/40 flex items-center justify-center text-gold-400 text-2xl font-bold mb-6">
                             02
                         </div>
                         <h3 class="text-2xl font-heading font-bold text-cream-50 mb-4">Oferta "Sexy", Esteira LTV & Zero Desconto</h3>
-                        <p class="text-cream-300/70 text-sm leading-relaxed mb-6">
-                            Posicione-se como a Referência Única da região. Crie ofertas irresistíveis com esteira de produtos (Order Bump, UpSell e Cross-Sell) para dobrar seu ticket médio, criar LTV recorrente e nunca mais dar desconto.
-                        </p>
                     </div>
-                    <ul class="space-y-2.5 text-xs text-gold-300/80 pt-6 border-t border-gold-900/50">
-                        <li class="flex items-start space-x-2"><i class="fa-solid fa-circle-check text-emerald-400 mt-0.5 shrink-0"></i><span>Dobre o ticket médio com esteira (Order Bump/UpSell/Cross)</span></li>
-                        <li class="flex items-start space-x-2"><i class="fa-solid fa-circle-check text-emerald-400 mt-0.5 shrink-0"></i><span>Esteira de LTV: o mesmo cliente comprando ano a ano</span></li>
-                        <li class="flex items-start space-x-2"><i class="fa-solid fa-circle-check text-emerald-400 mt-0.5 shrink-0"></i><span>Política Zero Desconto com margem intocável</span></li>
-                    </ul>
+
+                    <!-- Conteúdo Protegido por Confidencialidade -->
+                    <div class="relative mt-2">
+                        <div class="filter blur-[5px] opacity-35 select-none pointer-events-none transition-all duration-300">
+                            <p class="text-cream-300/70 text-sm leading-relaxed mb-6">
+                                Posicione-se como a Referência Única da região. Crie ofertas irresistíveis com esteira de produtos (Order Bump, UpSell e Cross-Sell) para dobrar seu ticket médio, criar LTV recorrente e nunca mais dar desconto.
+                            </p>
+                            <ul class="space-y-2.5 text-xs text-gold-300/80 pt-6 border-t border-gold-900/50">
+                                <li class="flex items-start space-x-2"><i class="fa-solid fa-circle-check text-emerald-400 mt-0.5 shrink-0"></i><span>Dobre o ticket médio com esteira (Order Bump/UpSell/Cross)</span></li>
+                                <li class="flex items-start space-x-2"><i class="fa-solid fa-circle-check text-emerald-400 mt-0.5 shrink-0"></i><span>Esteira de LTV: o mesmo cliente comprando ano a ano</span></li>
+                                <li class="flex items-start space-x-2"><i class="fa-solid fa-circle-check text-emerald-400 mt-0.5 shrink-0"></i><span>Política Zero Desconto com margem intocável</span></li>
+                            </ul>
+                        </div>
+
+                        <!-- Selo Confidencial Overlay -->
+                        <div class="absolute inset-0 flex items-center justify-center p-2 z-20">
+                            <div class="px-4 py-3 rounded-xl bg-onyx-950/90 border border-gold-500/70 shadow-2xl backdrop-blur-md text-center transform rotate-2 border-dashed">
+                                <span class="text-xs font-extrabold uppercase tracking-widest text-gold-400 flex items-center justify-center gap-1.5">
+                                    <i class="fa-solid fa-lock text-gold-400"></i> CONFIDENCIAL
+                                </span>
+                                <span class="text-[10px] font-bold text-cream-200/90 block mt-1">Apenas para Mentorados</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- PILAR 3 -->
-                <div class="p-8 rounded-3xl bg-card border border-emerald-800/40 relative flex flex-col justify-between hover:border-emerald-500/60 transition-all duration-300">
+                <div class="p-8 rounded-3xl bg-card border border-emerald-800/40 relative flex flex-col justify-between hover:border-emerald-500/60 transition-all duration-300 overflow-hidden group">
                     <div>
-                        <div class="w-14 h-14 rounded-2xl bg-emerald-900/60 border border-emerald-500/40 flex items-center justify-center text-emerald-400 text-2xl font-bold mb-8">
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-900/60 border border-emerald-500/40 flex items-center justify-center text-emerald-400 text-2xl font-bold mb-6">
                             03
                         </div>
                         <h3 class="text-2xl font-heading font-bold text-cream-50 mb-4">Aquisição Multicanal & Eventos Emboscada</h3>
-                        <p class="text-cream-300/70 text-sm leading-relaxed mb-6">
-                            Estruture seu funil de vendas multicanal com redes sociais, páginas de vendas, tráfego pago e e-commerce, conecte patrocinadores da cidade que "pagam" os uniformes dos parceiros e aplique a estratégia do Evento Emboscada.
-                        </p>
                     </div>
-                    <ul class="space-y-2.5 text-xs text-emerald-300/80 pt-6 border-t border-emerald-900/50">
-                        <li class="flex items-start space-x-2"><i class="fa-solid fa-circle-check text-gold-400 mt-0.5 shrink-0"></i><span>Funil multicanal e time comercial de alta conversão</span></li>
-                        <li class="flex items-start space-x-2"><i class="fa-solid fa-circle-check text-gold-400 mt-0.5 shrink-0"></i><span>Patrocínio cruzado com empresas da cidade</span></li>
-                        <li class="flex items-start space-x-2"><i class="fa-solid fa-circle-check text-gold-400 mt-0.5 shrink-0"></i><span>Estratégia do Evento Emboscada para vendas em massa</span></li>
-                    </ul>
+
+                    <!-- Conteúdo Protegido por Confidencialidade -->
+                    <div class="relative mt-2">
+                        <div class="filter blur-[5px] opacity-35 select-none pointer-events-none transition-all duration-300">
+                            <p class="text-cream-300/70 text-sm leading-relaxed mb-6">
+                                Estruture seu funil de vendas multicanal com redes sociais, páginas de vendas, tráfego pago e e-commerce, conecte patrocinadores da cidade que "pagam" os uniformes dos parceiros e aplique a estratégia do Evento Emboscada.
+                            </p>
+                            <ul class="space-y-2.5 text-xs text-emerald-300/80 pt-6 border-t border-emerald-900/50">
+                                <li class="flex items-start space-x-2"><i class="fa-solid fa-circle-check text-gold-400 mt-0.5 shrink-0"></i><span>Funil multicanal e time comercial de alta conversão</span></li>
+                                <li class="flex items-start space-x-2"><i class="fa-solid fa-circle-check text-gold-400 mt-0.5 shrink-0"></i><span>Patrocínio cruzado com empresas da cidade</span></li>
+                                <li class="flex items-start space-x-2"><i class="fa-solid fa-circle-check text-gold-400 mt-0.5 shrink-0"></i><span>Estratégia do Evento Emboscada para vendas em massa</span></li>
+                            </ul>
+                        </div>
+
+                        <!-- Selo Confidencial Overlay -->
+                        <div class="absolute inset-0 flex items-center justify-center p-2 z-20">
+                            <div class="px-4 py-3 rounded-xl bg-onyx-950/90 border border-gold-500/70 shadow-2xl backdrop-blur-md text-center transform -rotate-2 border-dashed">
+                                <span class="text-xs font-extrabold uppercase tracking-widest text-gold-400 flex items-center justify-center gap-1.5">
+                                    <i class="fa-solid fa-lock text-gold-400"></i> CONFIDENCIAL
+                                </span>
+                                <span class="text-[10px] font-bold text-cream-200/90 block mt-1">Apenas para Mentorados</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
