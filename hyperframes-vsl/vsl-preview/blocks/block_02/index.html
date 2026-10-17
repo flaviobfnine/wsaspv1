@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>VSL Bloco 2 - Premier Brand Sports Masterclass</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html, body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #030706;
+        font-family: 'Inter', -apple-system, sans-serif;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at 20% 30%, #082218 0%, #04140e 45%, #030706 100%);
+        overflow: hidden;
+      }
+
+      .ambient-emerald {
+        position: absolute;
+        top: -100px;
+        left: -100px;
+        width: 800px;
+        height: 800px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(16, 185, 129, 0.12) 0%, transparent 70%);
+        pointer-events: none;
+      }
+      .ambient-gold {
+        position: absolute;
+        bottom: -150px;
+        right: 200px;
+        width: 700px;
+        height: 700px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(245, 158, 11, 0.08) 0%, transparent 70%);
+        pointer-events: none;
+      }
+
+      #header-bar {
+        position: absolute;
+        top: 40px;
+        left: 50px;
+        right: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 10;
+      }
+      .brand-badge {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .brand-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #10b981;
+        box-shadow: 0 0 12px #10b981;
+      }
+      .brand-title {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: 800;
+        letter-spacing: 2px;
+        color: #fdfbf7;
+        text-transform: uppercase;
+      }
+      .brand-sub {
+        color: #34d399;
+        font-weight: 700;
+      }
+      .live-tag {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(16, 185, 129, 0.12);
+        border: 1px solid rgba(16, 185, 129, 0.35);
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        color: #34d399;
+        text-transform: uppercase;
+      }
+
+      #speaker-frame {
+        position: absolute;
+        top: 110px;
+        right: 50px;
+        width: 1040px;
+        height: 820px;
+        border-radius: 24px;
+        overflow: hidden;
+        border: 1px solid rgba(52, 211, 153, 0.25);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 30px rgba(16, 185, 129, 0.1);
+        background: #04140e;
+        z-index: 5;
+      }
+      #speaker-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 40% 15%;
+        display: block;
+      }
+      .speaker-overlay-gradient {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(3, 7, 6, 0.05) 0%, rgba(3, 7, 6, 0.4) 100%);
+        pointer-events: none;
+      }
+      .speaker-name-tag {
+        position: absolute;
+        bottom: 24px;
+        left: 24px;
+        background: rgba(8, 34, 24, 0.85);
+        border: 1px solid rgba(52, 211, 153, 0.3);
+        padding: 10px 18px;
+        border-radius: 12px;
+        backdrop-filter: blur(10px);
+        display: flex;
+        flex-direction: column;
+      }
+      .tag-name {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: 800;
+        color: #fdfbf7;
+        letter-spacing: 0.5px;
+      }
+      .tag-role {
+        font-size: 12px;
+        font-weight: 600;
+        color: #34d399;
+      }
+
+      #content-dock {
+        position: absolute;
+        top: 110px;
+        left: 50px;
+        width: 720px;
+        height: 820px;
+        z-index: 5;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .scene {
+        position: absolute;
+        width: 100%;
+        opacity: 0;
+        pointer-events: none;
+      }
+      .scene.active {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .luxury-card {
+        background: rgba(8, 34, 24, 0.65);
+        border: 1px solid rgba(52, 211, 153, 0.22);
+        border-radius: 20px;
+        padding: 34px 38px;
+        backdrop-filter: blur(16px);
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+        margin-bottom: 20px;
+      }
+      .luxury-card-compact {
+        background: rgba(8, 34, 24, 0.7);
+        border: 1px solid rgba(52, 211, 153, 0.25);
+        border-radius: 18px;
+        padding: 22px 28px;
+        backdrop-filter: blur(14px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+        margin-bottom: 20px;
+      }
+      .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+      }
+      .card-badge {
+        background: rgba(16, 185, 129, 0.18);
+        border: 1px solid #10b981;
+        color: #6ee7b7;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        padding: 5px 12px;
+        border-radius: 20px;
+        display: inline-block;
+      }
+      .luxury-card-title {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 26px;
+        font-weight: 900;
+        color: #fdfbf7;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+        line-height: 1.25;
+      }
+      .luxury-card-title-sm {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 22px;
+        font-weight: 800;
+        color: #fdfbf7;
+        text-transform: uppercase;
+        margin-top: 8px;
+        line-height: 1.25;
+      }
+      .luxury-card-desc {
+        font-family: 'Inter', sans-serif;
+        font-size: 17px;
+        font-weight: 500;
+        color: #e2e8f0;
+        line-height: 1.5;
+      }
+
+      /* ESTILIZAÇÃO DOS CARDS QUADRADOS COM FLUXO E SETAS */
+      .flow-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-top: 8px;
+        width: 100%;
+      }
+      .two-cols {
+        gap: 16px;
+      }
+      .square-card {
+        flex: 1;
+        min-height: 195px;
+        background: rgba(8, 34, 24, 0.8);
+        border: 1px solid rgba(52, 211, 153, 0.3);
+        border-radius: 18px;
+        padding: 22px 18px;
+        backdrop-filter: blur(16px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        overflow: hidden;
+      }
+      .square-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #10b981, #34d399);
+      }
+      .square-card.alert {
+        border-color: rgba(239, 68, 68, 0.4);
+      }
+      .square-card.alert::before {
+        background: linear-gradient(90deg, #f59e0b, #ef4444);
+      }
+      .square-card.gold-card {
+        border-color: rgba(245, 158, 11, 0.45);
+        background: rgba(18, 30, 20, 0.85);
+      }
+      .square-card.gold-card::before {
+        background: linear-gradient(90deg, #f59e0b, #fbbf24);
+      }
+      .card-tag {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: #34d399;
+      }
+      .card-tag.alert, .card-tag.red {
+        color: #f87171;
+      }
+      .card-tag.gold {
+        color: #fbbf24;
+      }
+      .square-title {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 19px;
+        font-weight: 800;
+        color: #fdfbf7;
+        margin: 6px 0;
+        line-height: 1.2;
+      }
+      .square-desc {
+        font-family: 'Inter', sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+        color: #cbd5e1;
+        line-height: 1.4;
+      }
+      .flow-arrow {
+        color: #34d399;
+        font-size: 26px;
+        font-weight: 900;
+        opacity: 0.8;
+        text-shadow: 0 0 12px rgba(52, 211, 153, 0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        flex-shrink: 0;
+      }
+
+      
+      #captions-dock {
+        position: absolute;
+        top: 570px;
+        right: 50px;
+        width: 1040px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        pointer-events: none;
+        z-index: 15;
+      }
+        
+
+      .caption-pill {
+        background: rgba(8, 34, 24, 0.94);
+        border: 1px solid rgba(52, 211, 153, 0.3);
+        padding: 12px 30px;
+        border-radius: 18px;
+        backdrop-filter: blur(14px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(16, 185, 129, 0.15);
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+      .cap-text {
+        font-family: 'Inter', sans-serif;
+        font-size: 28px;
+        font-weight: 700;
+        color: #e2e8f0;
+        letter-spacing: -0.2px;
+      }
+      .cap-w {
+        display: inline-block;
+        margin: 0 6px;
+        color: #94a3b8;
+      }
+      .cap-w.active {
+        color: #fbbf24;
+        font-weight: 800;
+        text-shadow: 0 0 12px rgba(251, 191, 36, 0.6);
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-width="1920"
+      data-height="1080"
+      data-duration="66.02"
+    >
+      <div class="ambient-emerald"></div>
+      <div class="ambient-gold"></div>
+
+      <div id="header-bar">
+        <div class="brand-badge">
+          <div class="brand-dot"></div>
+          <div class="brand-title">PREMIER BRAND SPORTS <span class="brand-sub">| MENTORIA VIP</span></div>
+        </div>
+        <div class="live-tag">MÉTODO EXCLUSIVO DE CONVERSÃO</div>
+      </div>
+
+      <div id="speaker-frame">
+        <video
+          id="speaker-video"
+          src="assets/video_blocks/block_02.mp4"
+          data-start="0"
+          data-duration="66.02"
+          muted
+          playsinline
+          preload="auto"
+        ></video>
+        <div class="speaker-overlay-gradient"></div>
+        <div class="speaker-name-tag">
+          <span class="tag-name">FLÁVIO BFNINE</span>
+          <span class="tag-role">Fundador e Mentor da Premier Brand Sports</span>
+        </div>
+      </div>
+
+      <div id="content-dock">
+        <!-- CENA 1: FLUXO DE 3 CARDS QUADRADOS (0 a 35%) -->
+        <div id="scene-1" class="scene active">
+          <div class="luxury-card-compact">
+            <span class="card-badge">FILTRO DE QUALIFICAÇÃO</span>
+            <div class="luxury-card-title-sm">Para Quem é Este Vídeo</div>
+          </div>
+
+          <div class="flow-container">
+            <div class="square-card flow-c1">
+              <div class="card-tag">01. IDENTIFICAÇÃO</div>
+              <div class="square-title">Não é Para Amadores</div>
+              <div class="square-desc">Não existe botão mágico para construir marca esportiva de valor</div>
+            </div>
+            <div class="flow-arrow flow-a1">→</div>
+            <div class="square-card flow-c2">
+              <div class="card-tag">02. IMPACTO</div>
+              <div class="square-title">Dono de Confecção Real</div>
+              <div class="square-desc">Para quem já produz e fatura, mas está travado no operacional</div>
+            </div>
+            <div class="flow-arrow flow-a2">→</div>
+            <div class="square-card flow-c3 gold-card">
+              <div class="card-tag gold">03. RESULTADO</div>
+              <div class="square-title">Mentalidade de Escala</div>
+              <div class="square-desc">Quem busca transformar fábrica em uma marca de alto padrão</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CENA 2: COMPARATIVO EM CARDS QUADRADOS (35% a 68%) -->
+        <div id="scene-2" class="scene">
+          <div class="luxury-card-compact">
+            <span class="card-badge">DIRETRIZ ESTRATÉGICA</span>
+            <div class="luxury-card-title-sm">Dono de Confecção Real</div>
+          </div>
+
+          <div class="flow-container two-cols">
+            <div class="square-card alert flow-sc2-c1">
+              <div class="card-tag alert">O ERRO COMUM</div>
+              <div class="square-title">Padrão do Mercado</div>
+              <div class="square-desc">Não existe botão mágico para construir marca esportiva de valor</div>
+            </div>
+            <div class="flow-arrow flow-sc2-a">→</div>
+            <div class="square-card gold-card flow-sc2-c2">
+              <div class="card-tag gold">O PADRÃO PREMIER</div>
+              <div class="square-title">Método Blindado</div>
+              <div class="square-desc">Quem busca transformar fábrica em uma marca de alto padrão</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CENA 3: SÍNTESE E VISÃO EMPRESARIAL (68% a 100%) -->
+        <div id="scene-3" class="scene">
+          <div class="luxury-card">
+            <div class="card-header">
+              <span class="card-badge">VISÃO DO FUNDADOR</span>
+            </div>
+            <div class="luxury-card-title">Mentalidade de Escala</div>
+            <div class="luxury-card-desc">Se você quer atalho mágico ou fórmula fácil, feche agora. Isso é para empresários sérios.</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="captions-dock">
+        <div class="caption-pill">
+          <div id="caption-box" class="cap-text"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const tl = gsap.timeline({ paused: true });
+
+      tl.fromTo(
+        "#speaker-frame",
+        { opacity: 0, scale: 0.9, y: 30 },
+        { opacity: 1, scale: 1, y: 0, duration: 0.8, ease: "power3.out" },
+        0.0
+      );
+
+      // TRANSIÇÃO DE CENAS E ANIMAÇÃO DOS CARDS
+      // CENA 1
+      tl.fromTo("#scene-1", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 0.3);
+      tl.fromTo(".flow-c1", { opacity: 0, scale: 0.85, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(1.4)" }, 3.3);
+      tl.fromTo(".flow-a1", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.3, ease: "power2.out" }, 7.92);
+      tl.fromTo(".flow-c2", { opacity: 0, scale: 0.85, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(1.4)" }, 9.9);
+      tl.fromTo(".flow-a2", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.3, ease: "power2.out" }, 14.52);
+      tl.fromTo(".flow-c3", { opacity: 0, scale: 0.85, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(1.4)" }, 16.5);
+      tl.to("#scene-1", { opacity: 0, x: 20, duration: 0.3, ease: "power2.in" }, 23.11);
+
+      // CENA 2
+      tl.fromTo("#scene-2", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 23.31);
+      tl.fromTo(".flow-sc2-c1", { opacity: 0, scale: 0.88, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(1.4)" }, 24.31);
+      tl.fromTo(".flow-sc2-a", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.3 }, 33.02);
+      tl.fromTo(".flow-sc2-c2", { opacity: 0, scale: 0.88, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(1.4)" }, 35.18);
+      tl.to("#scene-2", { opacity: 0, x: 20, duration: 0.3, ease: "power2.in" }, 44.89);
+
+      // CENA 3
+      tl.fromTo("#scene-3", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 45.09);
+
+      // LEGENDAS DETERMINÍSTICAS (PALAVRA POR PALAVRA)
+      const words = [{"t": "fechar", "s": 0.0, "e": 0.28}, {"t": "esse", "s": 0.28, "e": 0.44}, {"t": "vídeo", "s": 0.44, "e": 0.6}, {"t": "aqui", "s": 0.6, "e": 0.86}, {"t": "porque", "s": 0.86, "e": 1.32}, {"t": "isso", "s": 1.32, "e": 1.6}, {"t": "aqui", "s": 1.6, "e": 1.76}, {"t": "não", "s": 1.76, "e": 1.86}, {"t": "é", "s": 1.86, "e": 2.0}, {"t": "para", "s": 2.0, "e": 2.08}, {"t": "você.", "s": 2.08, "e": 2.34}, {"t": "Mas", "s": 2.44, "e": 2.54}, {"t": "se", "s": 2.54, "e": 2.66}, {"t": "você", "s": 2.66, "e": 2.86}, {"t": "quiser", "s": 2.86, "e": 3.22}, {"t": "que", "s": 3.22, "e": 3.58}, {"t": "a", "s": 3.58, "e": 3.62}, {"t": "sua", "s": 3.62, "e": 3.72}, {"t": "confecção", "s": 3.72, "e": 4.12}, {"t": "esportiva", "s": 4.12, "e": 4.64}, {"t": "seja", "s": 4.64, "e": 5.12}, {"t": "uma", "s": 5.12, "e": 5.3}, {"t": "referência", "s": 5.3, "e": 5.92}, {"t": "aí", "s": 5.92, "e": 6.46}, {"t": "na", "s": 6.46, "e": 6.54}, {"t": "sua", "s": 6.54, "e": 6.66}, {"t": "cidade,", "s": 6.66, "e": 7.04}, {"t": "fica", "s": 7.26, "e": 7.42}, {"t": "comigo", "s": 7.42, "e": 7.68}, {"t": "até", "s": 7.68, "e": 8.12}, {"t": "o", "s": 8.12, "e": 8.24}, {"t": "final", "s": 8.24, "e": 8.36}, {"t": "desse", "s": 8.36, "e": 8.56}, {"t": "vídeo", "s": 8.56, "e": 8.88}, {"t": "porque", "s": 8.88, "e": 9.16}, {"t": "o", "s": 9.16, "e": 9.28}, {"t": "que", "s": 9.28, "e": 9.36}, {"t": "eu", "s": 9.36, "e": 9.46}, {"t": "vou", "s": 9.46, "e": 9.56}, {"t": "te", "s": 9.56, "e": 9.66}, {"t": "mostrar", "s": 9.66, "e": 9.88}, {"t": "aqui", "s": 9.88, "e": 10.2}, {"t": "vai", "s": 10.2, "e": 10.58}, {"t": "mudar", "s": 10.58, "e": 10.8}, {"t": "algum", "s": 10.8, "e": 11.1}, {"t": "da", "s": 11.1, "e": 11.64}, {"t": "sua", "s": 11.64, "e": 11.8}, {"t": "fabricação", "s": 11.8, "e": 12.22}, {"t": "esportiva", "s": 12.22, "e": 12.74}, {"t": "com", "s": 12.74, "e": 13.04}, {"t": "o", "s": 13.04, "e": 13.18}, {"t": "mecanismo", "s": 13.18, "e": 13.58}, {"t": "que", "s": 13.58, "e": 13.8}, {"t": "eu", "s": 13.8, "e": 13.92}, {"t": "uso", "s": 13.92, "e": 14.02}, {"t": "aqui", "s": 14.02, "e": 14.2}, {"t": "hoje", "s": 14.2, "e": 14.44}, {"t": "na", "s": 14.44, "e": 14.58}, {"t": "BF9", "s": 14.58, "e": 14.98}, {"t": "Casitas.", "s": 14.98, "e": 15.46}, {"t": "Vamos", "s": 15.9, "e": 15.92}, {"t": "falar", "s": 15.92, "e": 16.12}, {"t": "a", "s": 16.12, "e": 16.26}, {"t": "verdade", "s": 16.26, "e": 16.52}, {"t": "aqui,", "s": 16.52, "e": 16.82}, {"t": "você", "s": 16.94, "e": 17.08}, {"t": "chega", "s": 17.08, "e": 17.26}, {"t": "de", "s": 17.26, "e": 17.42}, {"t": "manhã", "s": 17.42, "e": 17.78}, {"t": "aí", "s": 17.78, "e": 18.06}, {"t": "na", "s": 18.06, "e": 18.14}, {"t": "sua", "s": 18.14, "e": 18.3}, {"t": "fábrica", "s": 18.3, "e": 18.7}, {"t": "e", "s": 18.7, "e": 18.9}, {"t": "a", "s": 18.9, "e": 18.96}, {"t": "primeira", "s": 18.96, "e": 19.22}, {"t": "coisa", "s": 19.22, "e": 19.48}, {"t": "que", "s": 19.48, "e": 19.66}, {"t": "você", "s": 19.66, "e": 19.86}, {"t": "vê", "s": 19.86, "e": 20.12}, {"t": "é", "s": 20.12, "e": 20.72}, {"t": "um", "s": 20.72, "e": 20.82}, {"t": "monte", "s": 20.82, "e": 21.04}, {"t": "de", "s": 21.04, "e": 21.22}, {"t": "peça", "s": 21.22, "e": 21.56}, {"t": "errada", "s": 21.56, "e": 22.54}, {"t": "e", "s": 22.54, "e": 22.98}, {"t": "um", "s": 22.98, "e": 23.1}, {"t": "monte", "s": 23.1, "e": 23.42}, {"t": "de", "s": 23.42, "e": 23.62}, {"t": "tecido", "s": 23.62, "e": 23.88}, {"t": "acumulado", "s": 23.88, "e": 24.46}, {"t": "aí", "s": 24.46, "e": 24.84}, {"t": "no", "s": 24.84, "e": 24.98}, {"t": "chão", "s": 24.98, "e": 25.38}, {"t": "ou", "s": 25.38, "e": 25.8}, {"t": "debaixo", "s": 25.8, "e": 26.14}, {"t": "da", "s": 26.14, "e": 26.28}, {"t": "bancada", "s": 26.28, "e": 26.7}, {"t": "virando", "s": 26.7, "e": 27.46}, {"t": "prejuízo.", "s": 27.46, "e": 27.94}, {"t": "O", "s": 28.02, "e": 28.08}, {"t": "perfil", "s": 28.08, "e": 28.32}, {"t": "de", "s": 28.32, "e": 28.46}, {"t": "cor", "s": 28.46, "e": 28.68}, {"t": "está", "s": 28.68, "e": 29.04}, {"t": "configurado", "s": 29.04, "e": 29.48}, {"t": "errado", "s": 29.48, "e": 29.88}, {"t": "e", "s": 29.88, "e": 30.16}, {"t": "está", "s": 30.16, "e": 30.26}, {"t": "soltando", "s": 30.26, "e": 30.66}, {"t": "um", "s": 30.66, "e": 30.78}, {"t": "montão", "s": 30.78, "e": 31.0}, {"t": "de", "s": 31.0, "e": 31.12}, {"t": "impressão", "s": 31.12, "e": 31.5}, {"t": "opaca.", "s": 31.5, "e": 32.08}, {"t": "A", "s": 32.26, "e": 32.34}, {"t": "prensa", "s": 32.34, "e": 32.86}, {"t": "está", "s": 32.86, "e": 33.14}, {"t": "fazendo", "s": 33.14, "e": 33.46}, {"t": "estria", "s": 33.46, "e": 33.92}, {"t": "e", "s": 33.92, "e": 34.52}, {"t": "está", "s": 34.52, "e": 34.68}, {"t": "deixando", "s": 34.68, "e": 35.06}, {"t": "um", "s": 35.06, "e": 35.32}, {"t": "lado", "s": 35.32, "e": 35.54}, {"t": "mais", "s": 35.54, "e": 35.74}, {"t": "preto", "s": 35.74, "e": 36.1}, {"t": "no", "s": 36.1, "e": 36.22}, {"t": "tecido", "s": 36.22, "e": 36.62}, {"t": "e", "s": 36.62, "e": 36.82}, {"t": "um", "s": 36.82, "e": 36.9}, {"t": "outro", "s": 36.9, "e": 37.06}, {"t": "lado", "s": 37.06, "e": 37.32}, {"t": "mais", "s": 37.32, "e": 37.52}, {"t": "opaco.", "s": 37.52, "e": 37.9}, {"t": "E", "s": 38.06, "e": 38.08}, {"t": "lá", "s": 38.08, "e": 38.18}, {"t": "vai", "s": 38.18, "e": 38.3}, {"t": "você", "s": 38.3, "e": 38.54}, {"t": "ter", "s": 38.54, "e": 38.68}, {"t": "que", "s": 38.68, "e": 38.76}, {"t": "fazer", "s": 38.76, "e": 39.02}, {"t": "um", "s": 39.02, "e": 39.5}, {"t": "lote", "s": 39.5, "e": 39.84}, {"t": "de", "s": 39.84, "e": 39.9}, {"t": "uniforme", "s": 39.9, "e": 40.3}, {"t": "inteiro", "s": 40.3, "e": 40.7}, {"t": "que", "s": 40.7, "e": 41.06}, {"t": "você", "s": 41.06, "e": 41.28}, {"t": "vai", "s": 41.28, "e": 41.42}, {"t": "ter", "s": 41.42, "e": 41.56}, {"t": "que", "s": 41.56, "e": 41.66}, {"t": "pagar", "s": 41.66, "e": 41.82}, {"t": "do", "s": 41.82, "e": 42.0}, {"t": "seu", "s": 42.0, "e": 42.08}, {"t": "próprio", "s": 42.08, "e": 42.56}, {"t": "bolso", "s": 42.56, "e": 43.04}, {"t": "para", "s": 43.04, "e": 43.24}, {"t": "refazer.", "s": 43.24, "e": 43.72}, {"t": "Lá", "s": 43.72, "e": 43.92}, {"t": "na", "s": 43.92, "e": 44.02}, {"t": "costura", "s": 44.02, "e": 44.44}, {"t": "ordem", "s": 44.44, "e": 45.16}, {"t": "de", "s": 45.16, "e": 45.24}, {"t": "produção", "s": 45.24, "e": 45.54}, {"t": "sem", "s": 45.54, "e": 45.76}, {"t": "padrão.", "s": 45.76, "e": 46.16}, {"t": "Costureira", "s": 46.26, "e": 46.7}, {"t": "perdida", "s": 46.7, "e": 47.34}, {"t": "perguntando", "s": 47.34, "e": 47.8}, {"t": "para", "s": 47.8, "e": 47.92}, {"t": "você", "s": 47.92, "e": 48.12}, {"t": "como", "s": 48.12, "e": 48.28}, {"t": "é", "s": 48.28, "e": 48.38}, {"t": "que", "s": 48.38, "e": 48.44}, {"t": "faz.", "s": 48.44, "e": 48.74}, {"t": "Praze", "s": 49.08, "e": 49.36}, {"t": "estorando", "s": 49.36, "e": 49.9}, {"t": "o", "s": 49.9, "e": 50.1}, {"t": "pessoal", "s": 50.1, "e": 50.24}, {"t": "do", "s": 50.24, "e": 50.4}, {"t": "comercial", "s": 50.4, "e": 50.76}, {"t": "te", "s": 50.76, "e": 50.98}, {"t": "perguntando", "s": 50.98, "e": 51.34}, {"t": "se", "s": 51.34, "e": 51.44}, {"t": "está", "s": 51.44, "e": 51.58}, {"t": "pronto", "s": 51.58, "e": 51.84}, {"t": "isso", "s": 51.84, "e": 52.2}, {"t": "ou", "s": 52.2, "e": 52.34}, {"t": "aquilo.", "s": 52.34, "e": 52.66}, {"t": "E", "s": 52.86, "e": 52.92}, {"t": "quando", "s": 52.92, "e": 53.1}, {"t": "dá", "s": 53.1, "e": 53.28}, {"t": "8", "s": 53.28, "e": 53.46}, {"t": "horas", "s": 53.46, "e": 53.68}, {"t": "da", "s": 53.68, "e": 53.82}, {"t": "noite", "s": 53.82, "e": 54.06}, {"t": "quem", "s": 54.06, "e": 54.44}, {"t": "que", "s": 54.44, "e": 54.58}, {"t": "está", "s": 54.58, "e": 54.74}, {"t": "na", "s": 54.74, "e": 54.86}, {"t": "impressora", "s": 54.86, "e": 55.54}, {"t": "imprimindo", "s": 55.54, "e": 56.52}, {"t": "a", "s": 56.52, "e": 57.0}, {"t": "produção?", "s": 57.0, "e": 57.26}, {"t": "Quem", "s": 57.72, "e": 58.0}, {"t": "que", "s": 58.0, "e": 58.16}, {"t": "está", "s": 58.16, "e": 58.3}, {"t": "na", "s": 58.3, "e": 58.4}, {"t": "prensa", "s": 58.4, "e": 59.02}, {"t": "sublimando", "s": 59.02, "e": 59.88}, {"t": "as", "s": 59.88, "e": 60.3}, {"t": "camisetas", "s": 60.3, "e": 60.82}, {"t": "o", "s": 60.82, "e": 61.12}, {"t": "uniforme", "s": 61.12, "e": 61.42}, {"t": "geral?", "s": 61.42, "e": 61.64}, {"t": "Quem", "s": 62.28, "e": 62.42}, {"t": "que", "s": 62.42, "e": 62.54}, {"t": "está", "s": 62.54, "e": 62.7}, {"t": "dobrando", "s": 62.7, "e": 63.36}, {"t": "as", "s": 63.36, "e": 63.48}, {"t": "camisetas", "s": 63.48, "e": 63.88}, {"t": "para", "s": 63.88, "e": 64.02}, {"t": "ser", "s": 64.02, "e": 64.14}, {"t": "entrega", "s": 64.14, "e": 64.44}, {"t": "amanhã?", "s": 64.44, "e": 64.74}, {"t": "Você.", "s": 65.54, "e": 66.02}];
+
+      {
+        const captionBox = document.getElementById("caption-box");
+        const CHUNK_SIZE = 4;
+        for (let i = 0; i < words.length; i += CHUNK_SIZE) {
+          const chunk = words.slice(i, i + CHUNK_SIZE);
+          const tStart = chunk[0].s;
+          const tEnd = chunk[chunk.length - 1].e + 0.15;
+
+          const chunkEl = document.createElement("span");
+          chunkEl.style.display = "none";
+          chunkEl.id = `chunk-${i}`;
+
+          chunk.forEach((w, wIdx) => {
+            const span = document.createElement("span");
+            span.className = "cap-w";
+            span.id = `w-${i + wIdx}`;
+            span.textContent = w.t;
+            chunkEl.appendChild(span);
+          });
+
+          captionBox.appendChild(chunkEl);
+
+          tl.set(chunkEl, { display: "inline-block" }, tStart);
+          chunk.forEach((w, wIdx) => {
+            tl.set(`#w-${i + wIdx}`, { className: "cap-w active" }, w.s);
+            tl.set(`#w-${i + wIdx}`, { className: "cap-w" }, w.e);
+          });
+          tl.set(chunkEl, { display: "none" }, tEnd);
+        }
+      }
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>VSL Bloco 11 - Premier Brand Sports Masterclass</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html, body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #030706;
+        font-family: 'Inter', -apple-system, sans-serif;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at 20% 30%, #082218 0%, #04140e 45%, #030706 100%);
+        overflow: hidden;
+      }
+
+      .ambient-emerald {
+        position: absolute;
+        top: -100px;
+        left: -100px;
+        width: 800px;
+        height: 800px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(16, 185, 129, 0.12) 0%, transparent 70%);
+        pointer-events: none;
+      }
+      .ambient-gold {
+        position: absolute;
+        bottom: -150px;
+        right: 200px;
+        width: 700px;
+        height: 700px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(245, 158, 11, 0.08) 0%, transparent 70%);
+        pointer-events: none;
+      }
+
+      #header-bar {
+        position: absolute;
+        top: 40px;
+        left: 50px;
+        right: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 10;
+      }
+      .brand-badge {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .brand-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #10b981;
+        box-shadow: 0 0 12px #10b981;
+      }
+      .brand-title {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: 800;
+        letter-spacing: 2px;
+        color: #fdfbf7;
+        text-transform: uppercase;
+      }
+      .brand-sub {
+        color: #34d399;
+        font-weight: 700;
+      }
+      .live-tag {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(16, 185, 129, 0.12);
+        border: 1px solid rgba(16, 185, 129, 0.35);
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        color: #34d399;
+        text-transform: uppercase;
+      }
+
+      #speaker-frame {
+        position: absolute;
+        top: 110px;
+        right: 50px;
+        width: 1040px;
+        height: 820px;
+        border-radius: 24px;
+        overflow: hidden;
+        border: 1px solid rgba(52, 211, 153, 0.25);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 30px rgba(16, 185, 129, 0.1);
+        background: #04140e;
+        z-index: 5;
+      }
+      #speaker-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 40% 15%;
+        display: block;
+      }
+      .speaker-overlay-gradient {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(3, 7, 6, 0.05) 0%, rgba(3, 7, 6, 0.4) 100%);
+        pointer-events: none;
+      }
+      .speaker-name-tag {
+        position: absolute;
+        bottom: 24px;
+        left: 24px;
+        background: rgba(8, 34, 24, 0.85);
+        border: 1px solid rgba(52, 211, 153, 0.3);
+        padding: 10px 18px;
+        border-radius: 12px;
+        backdrop-filter: blur(10px);
+        display: flex;
+        flex-direction: column;
+      }
+      .tag-name {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: 800;
+        color: #fdfbf7;
+        letter-spacing: 0.5px;
+      }
+      .tag-role {
+        font-size: 12px;
+        font-weight: 600;
+        color: #34d399;
+      }
+
+      #content-dock {
+        position: absolute;
+        top: 110px;
+        left: 50px;
+        width: 720px;
+        height: 820px;
+        z-index: 5;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .scene {
+        position: absolute;
+        width: 100%;
+        opacity: 0;
+        pointer-events: none;
+      }
+      .scene.active {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .luxury-card {
+        background: rgba(8, 34, 24, 0.65);
+        border: 1px solid rgba(52, 211, 153, 0.22);
+        border-radius: 20px;
+        padding: 34px 38px;
+        backdrop-filter: blur(16px);
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+        margin-bottom: 20px;
+      }
+      .luxury-card-compact {
+        background: rgba(8, 34, 24, 0.7);
+        border: 1px solid rgba(52, 211, 153, 0.25);
+        border-radius: 18px;
+        padding: 22px 28px;
+        backdrop-filter: blur(14px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+        margin-bottom: 20px;
+      }
+      .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+      }
+      .card-badge {
+        background: rgba(16, 185, 129, 0.18);
+        border: 1px solid #10b981;
+        color: #6ee7b7;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        padding: 5px 12px;
+        border-radius: 20px;
+        display: inline-block;
+      }
+      .luxury-card-title {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 26px;
+        font-weight: 900;
+        color: #fdfbf7;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+        line-height: 1.25;
+      }
+      .luxury-card-title-sm {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 22px;
+        font-weight: 800;
+        color: #fdfbf7;
+        text-transform: uppercase;
+        margin-top: 8px;
+        line-height: 1.25;
+      }
+      .luxury-card-desc {
+        font-family: 'Inter', sans-serif;
+        font-size: 17px;
+        font-weight: 500;
+        color: #e2e8f0;
+        line-height: 1.5;
+      }
+
+      /* ESTILIZAÇÃO DOS CARDS QUADRADOS COM FLUXO E SETAS */
+      .flow-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-top: 8px;
+        width: 100%;
+      }
+      .two-cols {
+        gap: 16px;
+      }
+      .square-card {
+        flex: 1;
+        min-height: 195px;
+        background: rgba(8, 34, 24, 0.8);
+        border: 1px solid rgba(52, 211, 153, 0.3);
+        border-radius: 18px;
+        padding: 22px 18px;
+        backdrop-filter: blur(16px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        overflow: hidden;
+      }
+      .square-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #10b981, #34d399);
+      }
+      .square-card.alert {
+        border-color: rgba(239, 68, 68, 0.4);
+      }
+      .square-card.alert::before {
+        background: linear-gradient(90deg, #f59e0b, #ef4444);
+      }
+      .square-card.gold-card {
+        border-color: rgba(245, 158, 11, 0.45);
+        background: rgba(18, 30, 20, 0.85);
+      }
+      .square-card.gold-card::before {
+        background: linear-gradient(90deg, #f59e0b, #fbbf24);
+      }
+      .card-tag {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: #34d399;
+      }
+      .card-tag.alert, .card-tag.red {
+        color: #f87171;
+      }
+      .card-tag.gold {
+        color: #fbbf24;
+      }
+      .square-title {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 19px;
+        font-weight: 800;
+        color: #fdfbf7;
+        margin: 6px 0;
+        line-height: 1.2;
+      }
+      .square-desc {
+        font-family: 'Inter', sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+        color: #cbd5e1;
+        line-height: 1.4;
+      }
+      .flow-arrow {
+        color: #34d399;
+        font-size: 26px;
+        font-weight: 900;
+        opacity: 0.8;
+        text-shadow: 0 0 12px rgba(52, 211, 153, 0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        flex-shrink: 0;
+      }
+
+      
+      #captions-dock {
+        position: absolute;
+        bottom: 40px;
+        right: 50px;
+        width: 1040px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        pointer-events: none;
+        z-index: 15;
+      }
+        
+
+      .caption-pill {
+        background: rgba(8, 34, 24, 0.94);
+        border: 1px solid rgba(52, 211, 153, 0.3);
+        padding: 12px 30px;
+        border-radius: 18px;
+        backdrop-filter: blur(14px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(16, 185, 129, 0.15);
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+      .cap-text {
+        font-family: 'Inter', sans-serif;
+        font-size: 28px;
+        font-weight: 700;
+        color: #e2e8f0;
+        letter-spacing: -0.2px;
+      }
+      .cap-w {
+        display: inline-block;
+        margin: 0 6px;
+        color: #94a3b8;
+      }
+      .cap-w.active {
+        color: #fbbf24;
+        font-weight: 800;
+        text-shadow: 0 0 12px rgba(251, 191, 36, 0.6);
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-width="1920"
+      data-height="1080"
+      data-duration="84.36"
+    >
+      <div class="ambient-emerald"></div>
+      <div class="ambient-gold"></div>
+
+      <div id="header-bar">
+        <div class="brand-badge">
+          <div class="brand-dot"></div>
+          <div class="brand-title">PREMIER BRAND SPORTS <span class="brand-sub">| MENTORIA VIP</span></div>
+        </div>
+        <div class="live-tag">MÉTODO EXCLUSIVO DE CONVERSÃO</div>
+      </div>
+
+      <div id="speaker-frame">
+        <video
+          id="speaker-video"
+          src="assets/video_blocks/block_11.mp4"
+          data-start="0"
+          data-duration="84.36"
+          muted
+          playsinline
+          preload="auto"
+        ></video>
+        <div class="speaker-overlay-gradient"></div>
+        <div class="speaker-name-tag">
+          <span class="tag-name">FLÁVIO BFNINE</span>
+          <span class="tag-role">Fundador e Mentor da Premier Brand Sports</span>
+        </div>
+      </div>
+
+      <div id="content-dock">
+        <!-- CENA 1: FLUXO DE 3 CARDS QUADRADOS (0 a 35%) -->
+        <div id="scene-1" class="scene active">
+          <div class="luxury-card-compact">
+            <span class="card-badge">DECISÃO E PRÓXIMO PASSO</span>
+            <div class="luxury-card-title-sm">Dois Caminhos Diante de Você</div>
+          </div>
+
+          <div class="flow-container">
+            <div class="square-card flow-c1">
+              <div class="card-tag">01. IDENTIFICAÇÃO</div>
+              <div class="square-title">Caminho 1: Voltar ao Caos</div>
+              <div class="square-desc">Continuar refém de pedidos pequenos, clientes difíceis e zero lucro</div>
+            </div>
+            <div class="flow-arrow flow-a1">→</div>
+            <div class="square-card flow-c2">
+              <div class="card-tag">02. IMPACTO</div>
+              <div class="square-title">Caminho 2: Aplicar para a Mentoria</div>
+              <div class="square-desc">Construir sua marca esportiva com método, escala e valorização</div>
+            </div>
+            <div class="flow-arrow flow-a2">→</div>
+            <div class="square-card flow-c3 gold-card">
+              <div class="card-tag gold">03. RESULTADO</div>
+              <div class="square-title">Vagas Limitadas</div>
+              <div class="square-desc">Aperte o botão abaixo e preencha sua aplicação agora</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CENA 2: COMPARATIVO EM CARDS QUADRADOS (35% a 68%) -->
+        <div id="scene-2" class="scene">
+          <div class="luxury-card-compact">
+            <span class="card-badge">DIRETRIZ ESTRATÉGICA</span>
+            <div class="luxury-card-title-sm">Caminho 2: Aplicar para a Mentoria</div>
+          </div>
+
+          <div class="flow-container two-cols">
+            <div class="square-card alert flow-sc2-c1">
+              <div class="card-tag alert">O ERRO COMUM</div>
+              <div class="square-title">Padrão do Mercado</div>
+              <div class="square-desc">Continuar refém de pedidos pequenos, clientes difíceis e zero lucro</div>
+            </div>
+            <div class="flow-arrow flow-sc2-a">→</div>
+            <div class="square-card gold-card flow-sc2-c2">
+              <div class="card-tag gold">O PADRÃO PREMIER</div>
+              <div class="square-title">Método Blindado</div>
+              <div class="square-desc">Aperte o botão abaixo e preencha sua aplicação agora</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CENA 3: SÍNTESE E VISÃO EMPRESARIAL (68% a 100%) -->
+        <div id="scene-3" class="scene">
+          <div class="luxury-card">
+            <div class="card-header">
+              <span class="card-badge">VISÃO DO FUNDADOR</span>
+            </div>
+            <div class="luxury-card-title">Vagas Limitadas</div>
+            <div class="luxury-card-desc">Continuar apagando incêndio na guerra de preços ou dar o passo definitivo para se tornar uma marca de elite.</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="captions-dock">
+        <div class="caption-pill">
+          <div id="caption-box" class="cap-text"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const tl = gsap.timeline({ paused: true });
+
+      tl.fromTo(
+        "#speaker-frame",
+        { opacity: 0, scale: 0.9, y: 30 },
+        { opacity: 1, scale: 1, y: 0, duration: 0.8, ease: "power3.out" },
+        0.0
+      );
+
+      // TRANSIÇÃO DE CENAS E ANIMAÇÃO DOS CARDS
+      // CENA 1
+      tl.fromTo("#scene-1", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 0.3);
+      tl.fromTo(".flow-c1", { opacity: 0, scale: 0.85, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(1.4)" }, 4.22);
+      tl.fromTo(".flow-a1", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.3, ease: "power2.out" }, 10.12);
+      tl.fromTo(".flow-c2", { opacity: 0, scale: 0.85, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(1.4)" }, 12.65);
+      tl.fromTo(".flow-a2", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.3, ease: "power2.out" }, 18.56);
+      tl.fromTo(".flow-c3", { opacity: 0, scale: 0.85, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(1.4)" }, 21.09);
+      tl.to("#scene-1", { opacity: 0, x: 20, duration: 0.3, ease: "power2.in" }, 29.53);
+
+      // CENA 2
+      tl.fromTo("#scene-2", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 29.73);
+      tl.fromTo(".flow-sc2-c1", { opacity: 0, scale: 0.88, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(1.4)" }, 30.73);
+      tl.fromTo(".flow-sc2-a", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.3 }, 42.16);
+      tl.fromTo(".flow-sc2-c2", { opacity: 0, scale: 0.88, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(1.4)" }, 44.93);
+      tl.to("#scene-2", { opacity: 0, x: 20, duration: 0.3, ease: "power2.in" }, 57.36);
+
+      // CENA 3
+      tl.fromTo("#scene-3", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 57.56);
+
+      // LEGENDAS DETERMINÍSTICAS (PALAVRA POR PALAVRA)
+      const words = [{"t": "O", "s": 0.2, "e": 0.28}, {"t": "primeiro", "s": 0.28, "e": 0.5}, {"t": "caminho", "s": 0.5, "e": 0.74}, {"t": "é", "s": 0.74, "e": 0.98}, {"t": "você", "s": 0.98, "e": 1.12}, {"t": "fechar", "s": 1.12, "e": 1.52}, {"t": "esse", "s": 1.52, "e": 1.72}, {"t": "vídeo", "s": 1.72, "e": 2.08}, {"t": "e", "s": 2.08, "e": 2.64}, {"t": "voltar", "s": 2.64, "e": 2.86}, {"t": "aí", "s": 2.86, "e": 3.08}, {"t": "para", "s": 3.08, "e": 3.14}, {"t": "a", "s": 3.14, "e": 3.3}, {"t": "sua", "s": 3.3, "e": 3.3}, {"t": "fábrica,", "s": 3.3, "e": 3.72}, {"t": "continuar", "s": 4.12, "e": 4.36}, {"t": "tomando", "s": 4.36, "e": 4.8}, {"t": "prejuízo", "s": 4.8, "e": 5.34}, {"t": "na", "s": 5.34, "e": 5.44}, {"t": "sua", "s": 5.44, "e": 5.56}, {"t": "produção,", "s": 5.56, "e": 5.8}, {"t": "fazendo", "s": 5.94, "e": 6.22}, {"t": "um", "s": 6.22, "e": 6.34}, {"t": "montão", "s": 6.34, "e": 6.6}, {"t": "de", "s": 6.6, "e": 6.7}, {"t": "coisas", "s": 6.7, "e": 6.86}, {"t": "erradas,", "s": 6.86, "e": 7.26}, {"t": "ficar", "s": 7.62, "e": 7.8}, {"t": "engolindo", "s": 7.8, "e": 8.3}, {"t": "e", "s": 8.3, "e": 8.44}, {"t": "desaforando", "s": 8.44, "e": 8.98}, {"t": "de", "s": 8.98, "e": 9.12}, {"t": "cliente,", "s": 9.12, "e": 9.82}, {"t": "que", "s": 9.88, "e": 9.96}, {"t": "fica", "s": 9.96, "e": 10.18}, {"t": "pedindo", "s": 10.18, "e": 10.46}, {"t": "desconto", "s": 10.46, "e": 11.0}, {"t": "de", "s": 11.0, "e": 11.2}, {"t": "2", "s": 11.2, "e": 11.48}, {"t": "reais,", "s": 11.48, "e": 11.78}, {"t": "terminar", "s": 12.36, "e": 12.72}, {"t": "a", "s": 12.72, "e": 13.04}, {"t": "semana", "s": 13.04, "e": 13.34}, {"t": "toda", "s": 13.34, "e": 13.62}, {"t": "exausto,", "s": 13.62, "e": 14.48}, {"t": "cansado,", "s": 14.58, "e": 15.1}, {"t": "sem", "s": 15.46, "e": 15.72}, {"t": "dinheiro", "s": 15.72, "e": 15.94}, {"t": "no", "s": 15.94, "e": 16.16}, {"t": "bolso", "s": 16.16, "e": 16.52}, {"t": "e", "s": 16.52, "e": 17.0}, {"t": "o", "s": 17.0, "e": 17.1}, {"t": "que", "s": 17.1, "e": 17.12}, {"t": "eu", "s": 17.12, "e": 17.2}, {"t": "considero", "s": 17.2, "e": 17.58}, {"t": "pior,", "s": 17.58, "e": 17.8}, {"t": "sem", "s": 18.38, "e": 18.6}, {"t": "ter", "s": 18.6, "e": 18.74}, {"t": "ficado", "s": 18.74, "e": 19.04}, {"t": "com", "s": 19.04, "e": 19.16}, {"t": "a", "s": 19.16, "e": 19.24}, {"t": "sua", "s": 19.24, "e": 19.32}, {"t": "família.", "s": 19.32, "e": 19.62}, {"t": "E", "s": 19.86, "e": 19.98}, {"t": "o", "s": 19.98, "e": 20.06}, {"t": "segundo", "s": 20.06, "e": 20.28}, {"t": "caminho", "s": 20.28, "e": 20.6}, {"t": "é", "s": 20.6, "e": 21.1}, {"t": "você", "s": 21.1, "e": 21.26}, {"t": "ir", "s": 21.26, "e": 21.36}, {"t": "até", "s": 21.36, "e": 21.52}, {"t": "o", "s": 21.52, "e": 21.62}, {"t": "final", "s": 21.62, "e": 21.74}, {"t": "dessa", "s": 21.74, "e": 21.94}, {"t": "página,", "s": 21.94, "e": 22.34}, {"t": "preencer", "s": 23.04, "e": 23.44}, {"t": "o", "s": 23.44, "e": 23.58}, {"t": "formulário", "s": 23.58, "e": 23.94}, {"t": "de", "s": 23.94, "e": 24.06}, {"t": "aplicação", "s": 24.06, "e": 24.56}, {"t": "para", "s": 24.56, "e": 25.02}, {"t": "a", "s": 25.02, "e": 25.1}, {"t": "mentoria", "s": 25.1, "e": 25.6}, {"t": "Premiere", "s": 25.6, "e": 26.02}, {"t": "Brand", "s": 26.02, "e": 26.36}, {"t": "Sports.", "s": 26.36, "e": 26.7}, {"t": "Essa", "s": 26.96, "e": 27.14}, {"t": "aplicação", "s": 27.14, "e": 27.54}, {"t": "que", "s": 27.54, "e": 27.78}, {"t": "você", "s": 27.78, "e": 28.02}, {"t": "preenche", "s": 28.02, "e": 28.4}, {"t": "o", "s": 28.4, "e": 28.5}, {"t": "formulário", "s": 28.5, "e": 28.92}, {"t": "é", "s": 28.92, "e": 29.18}, {"t": "100", "s": 29.18, "e": 29.38}, {"t": "%", "s": 29.38, "e": 29.7}, {"t": "gratuita.", "s": 29.7, "e": 30.36}, {"t": "Você", "s": 30.52, "e": 30.7}, {"t": "só", "s": 30.7, "e": 30.86}, {"t": "vai", "s": 30.86, "e": 30.98}, {"t": "responder", "s": 30.98, "e": 31.28}, {"t": "algumas", "s": 31.28, "e": 31.5}, {"t": "perguntas", "s": 31.5, "e": 31.96}, {"t": "sobre", "s": 31.96, "e": 32.16}, {"t": "a", "s": 32.16, "e": 32.24}, {"t": "sua", "s": 32.24, "e": 32.38}, {"t": "produção", "s": 32.38, "e": 32.64}, {"t": "atual,", "s": 32.64, "e": 33.1}, {"t": "sobre", "s": 33.24, "e": 33.36}, {"t": "a", "s": 33.36, "e": 33.56}, {"t": "sua", "s": 33.56, "e": 33.56}, {"t": "fábrica", "s": 33.56, "e": 34.04}, {"t": "e", "s": 34.34, "e": 34.58}, {"t": "o", "s": 34.58, "e": 34.68}, {"t": "seu", "s": 34.68, "e": 34.74}, {"t": "momento", "s": 34.74, "e": 35.0}, {"t": "atual.", "s": 35.0, "e": 35.38}, {"t": "E", "s": 35.7, "e": 35.8}, {"t": "se", "s": 35.8, "e": 35.88}, {"t": "o", "s": 35.88, "e": 36.02}, {"t": "seu", "s": 36.02, "e": 36.1}, {"t": "perfil", "s": 36.1, "e": 36.38}, {"t": "for", "s": 36.38, "e": 36.58}, {"t": "aprovado,", "s": 36.58, "e": 37.06}, {"t": "a", "s": 37.38, "e": 37.42}, {"t": "Juliana", "s": 37.42, "e": 37.74}, {"t": "define", "s": 37.74, "e": 38.02}, {"t": "e", "s": 38.02, "e": 38.28}, {"t": "ela", "s": 38.28, "e": 38.38}, {"t": "vai", "s": 38.38, "e": 38.54}, {"t": "entrar", "s": 38.54, "e": 38.74}, {"t": "em", "s": 38.74, "e": 38.84}, {"t": "contato", "s": 38.84, "e": 39.14}, {"t": "com", "s": 39.14, "e": 39.3}, {"t": "você,", "s": 39.3, "e": 39.62}, {"t": "viu", "s": 39.88, "e": 40.0}, {"t": "WhatsApp,", "s": 40.0, "e": 40.5}, {"t": "para", "s": 40.82, "e": 41.0}, {"t": "ela", "s": 41.0, "e": 41.14}, {"t": "descobrir", "s": 41.14, "e": 41.58}, {"t": "qual", "s": 41.58, "e": 42.14}, {"t": "que", "s": 42.14, "e": 42.36}, {"t": "é", "s": 42.36, "e": 42.4}, {"t": "o", "s": 42.4, "e": 42.44}, {"t": "melhor", "s": 42.44, "e": 42.66}, {"t": "dia", "s": 42.66, "e": 42.98}, {"t": "para", "s": 42.98, "e": 43.38}, {"t": "você", "s": 43.38, "e": 43.88}, {"t": "e", "s": 43.88, "e": 44.42}, {"t": "para", "s": 44.42, "e": 44.64}, {"t": "mim,", "s": 44.64, "e": 44.92}, {"t": "para", "s": 45.32, "e": 45.48}, {"t": "a", "s": 45.48, "e": 45.52}, {"t": "gente", "s": 45.52, "e": 45.66}, {"t": "se", "s": 45.66, "e": 45.8}, {"t": "encontrar", "s": 45.8, "e": 46.2}, {"t": "e", "s": 46.2, "e": 46.48}, {"t": "fazer", "s": 46.48, "e": 46.7}, {"t": "uma", "s": 46.7, "e": 46.84}, {"t": "reunião", "s": 46.84, "e": 47.18}, {"t": "ao", "s": 47.18, "e": 47.64}, {"t": "vivo,", "s": 47.64, "e": 47.98}, {"t": "100", "s": 48.46, "e": 48.9}, {"t": "%", "s": 48.9, "e": 49.3}, {"t": "gratuita", "s": 49.3, "e": 49.72}, {"t": "também,", "s": 49.72, "e": 49.86}, {"t": "você", "s": 49.94, "e": 50.06}, {"t": "não", "s": 50.06, "e": 50.16}, {"t": "paga", "s": 50.16, "e": 50.4}, {"t": "nada", "s": 50.4, "e": 50.6}, {"t": "por", "s": 50.6, "e": 50.82}, {"t": "isso,", "s": 50.82, "e": 51.06}, {"t": "para", "s": 51.38, "e": 51.62}, {"t": "a", "s": 51.62, "e": 51.68}, {"t": "gente", "s": 51.68, "e": 51.8}, {"t": "poder", "s": 51.8, "e": 52.12}, {"t": "diagnosticar", "s": 52.12, "e": 53.34}, {"t": "exatamente", "s": 53.34, "e": 54.08}, {"t": "onde", "s": 54.08, "e": 54.82}, {"t": "a", "s": 54.82, "e": 54.96}, {"t": "sua", "s": 54.96, "e": 55.24}, {"t": "confecção", "s": 55.24, "e": 55.48}, {"t": "está", "s": 55.92, "e": 56.24}, {"t": "perdendo", "s": 56.24, "e": 56.56}, {"t": "dinheiro", "s": 56.56, "e": 57.02}, {"t": "e", "s": 57.02, "e": 57.38}, {"t": "te", "s": 57.38, "e": 57.5}, {"t": "mostrar", "s": 57.5, "e": 57.78}, {"t": "como", "s": 57.78, "e": 58.3}, {"t": "que", "s": 58.3, "e": 58.46}, {"t": "você", "s": 58.46, "e": 58.7}, {"t": "vai", "s": 58.7, "e": 58.86}, {"t": "aplicar", "s": 58.86, "e": 59.84}, {"t": "esse", "s": 59.84, "e": 60.16}, {"t": "mecanismo", "s": 60.16, "e": 60.84}, {"t": "de", "s": 60.84, "e": 61.0}, {"t": "três", "s": 61.0, "e": 61.2}, {"t": "pilares", "s": 61.2, "e": 61.58}, {"t": "direto", "s": 61.58, "e": 62.52}, {"t": "no", "s": 62.52, "e": 62.66}, {"t": "seu", "s": 62.66, "e": 62.78}, {"t": "show", "s": 62.78, "e": 62.92}, {"t": "de", "s": 62.92, "e": 63.04}, {"t": "fábrica.", "s": 63.04, "e": 63.4}, {"t": "E", "s": 63.58, "e": 63.66}, {"t": "se", "s": 63.66, "e": 63.74}, {"t": "fizer", "s": 63.74, "e": 64.06}, {"t": "sentido", "s": 64.06, "e": 64.5}, {"t": "para", "s": 64.5, "e": 64.82}, {"t": "você", "s": 64.82, "e": 65.18}, {"t": "e", "s": 65.18, "e": 65.62}, {"t": "fazer", "s": 65.62, "e": 65.88}, {"t": "sentido", "s": 65.88, "e": 66.24}, {"t": "para", "s": 66.24, "e": 66.46}, {"t": "mim", "s": 66.46, "e": 66.62}, {"t": "também,", "s": 66.62, "e": 66.94}, {"t": "eu", "s": 67.44, "e": 67.64}, {"t": "vou", "s": 67.64, "e": 67.74}, {"t": "fazer", "s": 67.74, "e": 67.9}, {"t": "um", "s": 67.9, "e": 68.0}, {"t": "convite", "s": 68.0, "e": 68.42}, {"t": "para", "s": 68.42, "e": 68.7}, {"t": "você", "s": 68.7, "e": 68.94}, {"t": "entrar", "s": 68.94, "e": 69.32}, {"t": "na", "s": 69.32, "e": 69.48}, {"t": "Premiere", "s": 69.48, "e": 69.8}, {"t": "Brand", "s": 69.8, "e": 70.08}, {"t": "Sports,", "s": 70.08, "e": 70.28}, {"t": "que", "s": 70.46, "e": 70.5}, {"t": "é", "s": 70.5, "e": 70.52}, {"t": "a", "s": 70.52, "e": 70.62}, {"t": "minha", "s": 70.62, "e": 70.64}, {"t": "mentoria.", "s": 70.64, "e": 71.08}, {"t": "Mas", "s": 71.46, "e": 71.64}, {"t": "se", "s": 71.64, "e": 71.78}, {"t": "não", "s": 71.78, "e": 71.86}, {"t": "fizer", "s": 71.86, "e": 72.06}, {"t": "sentido,", "s": 72.06, "e": 72.4}, {"t": "você", "s": 72.9, "e": 73.04}, {"t": "sai", "s": 73.04, "e": 73.2}, {"t": "com", "s": 73.2, "e": 73.36}, {"t": "o", "s": 73.36, "e": 73.4}, {"t": "diagnóstico", "s": 73.4, "e": 73.88}, {"t": "pronto", "s": 73.88, "e": 74.24}, {"t": "para", "s": 74.24, "e": 74.46}, {"t": "você", "s": 74.46, "e": 74.74}, {"t": "executar", "s": 74.74, "e": 75.32}, {"t": "aí", "s": 75.32, "e": 75.5}, {"t": "no", "s": 75.5, "e": 75.54}, {"t": "seu", "s": 75.54, "e": 75.64}, {"t": "negócio.", "s": 75.64, "e": 75.9}, {"t": "Você", "s": 76.32, "e": 76.56}, {"t": "não", "s": 76.56, "e": 76.76}, {"t": "tem", "s": 76.76, "e": 76.88}, {"t": "absolutamente", "s": 76.88, "e": 77.5}, {"t": "nada", "s": 77.5, "e": 78.18}, {"t": "a", "s": 78.18, "e": 78.34}, {"t": "perder.", "s": 78.34, "e": 78.56}, {"t": "O", "s": 78.88, "e": 79.08}, {"t": "formulário", "s": 79.08, "e": 79.56}, {"t": "para", "s": 79.56, "e": 79.72}, {"t": "a", "s": 79.72, "e": 79.76}, {"t": "aplicação", "s": 79.76, "e": 80.14}, {"t": "está", "s": 80.14, "e": 80.44}, {"t": "aqui", "s": 80.44, "e": 80.62}, {"t": "embaixo.", "s": 80.62, "e": 80.9}, {"t": "Vai", "s": 81.4, "e": 81.46}, {"t": "lá", "s": 81.46, "e": 81.6}, {"t": "preenche", "s": 81.6, "e": 81.88}, {"t": "o", "s": 81.88, "e": 82.0}, {"t": "formulário", "s": 82.0, "e": 82.3}, {"t": "agora", "s": 82.3, "e": 82.68}, {"t": "para", "s": 82.68, "e": 83.04}, {"t": "a", "s": 83.04, "e": 83.08}, {"t": "gente", "s": 83.08, "e": 83.18}, {"t": "poder", "s": 83.18, "e": 83.42}, {"t": "se", "s": 83.42, "e": 83.58}, {"t": "ver", "s": 83.58, "e": 83.7}, {"t": "do", "s": 83.7, "e": 83.78}, {"t": "outro", "s": 83.78, "e": 83.88}, {"t": "lado.", "s": 83.88, "e": 84.08}];
+
+      {
+        const captionBox = document.getElementById("caption-box");
+        const CHUNK_SIZE = 4;
+        for (let i = 0; i < words.length; i += CHUNK_SIZE) {
+          const chunk = words.slice(i, i + CHUNK_SIZE);
+          const tStart = chunk[0].s;
+          const tEnd = chunk[chunk.length - 1].e + 0.15;
+
+          const chunkEl = document.createElement("span");
+          chunkEl.style.display = "none";
+          chunkEl.id = `chunk-${i}`;
+
+          chunk.forEach((w, wIdx) => {
+            const span = document.createElement("span");
+            span.className = "cap-w";
+            span.id = `w-${i + wIdx}`;
+            span.textContent = w.t;
+            chunkEl.appendChild(span);
+          });
+
+          captionBox.appendChild(chunkEl);
+
+          tl.set(chunkEl, { display: "inline-block" }, tStart);
+          chunk.forEach((w, wIdx) => {
+            tl.set(`#w-${i + wIdx}`, { className: "cap-w active" }, w.s);
+            tl.set(`#w-${i + wIdx}`, { className: "cap-w" }, w.e);
+          });
+          tl.set(chunkEl, { display: "none" }, tEnd);
+        }
+      }
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
