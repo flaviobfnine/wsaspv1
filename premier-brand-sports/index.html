@@ -359,32 +359,38 @@
                         </div>
                     </div>
 
-                    <!-- Aspect Ratio 16:9 do Vídeo com Thumbnail e Botão Play Grandioso -->
-                    <div class="relative w-full aspect-video rounded-2xl overflow-hidden bg-onyx-950 group cursor-pointer border border-emerald-800/40 shadow-inner">
-                        <!-- Imagem de Capa do Vídeo (Bio Mentor) -->
-                        <img src="assets/flavio_mentor_bio.webp" alt="Flávio Bfnine Vídeo de Vendas" class="w-full h-full object-cover object-top opacity-60 group-hover:scale-105 group-hover:opacity-75 transition-all duration-700">
-                        
-                        <!-- Overlay com Gradiente Escuro -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-onyx-950 via-onyx-950/40 to-transparent"></div>
+                    <!-- Aspect Ratio 16:9 do Vídeo com Carregamento Inteligente (Capa Super Leve + Vimeo com Autoplay) -->
+                    <div id="vslPlayerContainer" class="relative w-full aspect-video rounded-2xl overflow-hidden bg-onyx-950 border border-emerald-800/40 shadow-inner">
+                        <!-- Capa Super Leve (Apenas 64kb) com Botão Play -->
+                        <div id="vslFacade" onclick="playVslVideo()" class="absolute inset-0 cursor-pointer group z-10">
+                            <!-- Imagem de Capa do Vídeo -->
+                            <img src="assets/flavio_mentor_bio.webp" alt="Flávio Bfnine Vídeo de Vendas" class="w-full h-full object-cover object-top opacity-70 group-hover:scale-105 group-hover:opacity-85 transition-all duration-700">
+                            
+                            <!-- Overlay com Gradiente Escuro -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-onyx-950 via-onyx-950/40 to-transparent"></div>
 
-                        <!-- Botão Play Central Pulsante -->
-                        <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-4">
-                            <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-r from-emerald-500 to-gold-500 text-onyx-950 flex items-center justify-center shadow-[0_0_40px_rgba(16,185,129,0.7)] group-hover:scale-110 transition-transform duration-300 mb-4 pl-1">
-                                <i class="fa-solid fa-play text-2xl sm:text-3xl text-onyx-950"></i>
+                            <!-- Botão Play Central Pulsante -->
+                            <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-4">
+                                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-r from-emerald-500 to-gold-500 text-onyx-950 flex items-center justify-center shadow-[0_0_40px_rgba(16,185,129,0.7)] group-hover:scale-110 transition-transform duration-300 mb-4 pl-1">
+                                    <i class="fa-solid fa-play text-2xl sm:text-3xl text-onyx-950"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold uppercase tracking-widest text-cream-50 bg-onyx-950/90 px-4 py-1.5 rounded-full border border-emerald-500/50 backdrop-blur-md">
+                                    Clique para dar o Play
+                                </span>
                             </div>
-                            <span class="text-xs sm:text-sm font-bold uppercase tracking-widest text-cream-50 bg-onyx-950/90 px-4 py-1.5 rounded-full border border-emerald-500/50 backdrop-blur-md">
-                                Clique para dar o Play
-                            </span>
+
+                            <!-- Barra Inferior do Player Video -->
+                            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs text-cream-200/90 bg-onyx-900/80 px-4 py-2 rounded-xl backdrop-blur-md border border-emerald-800/40">
+                                <div class="flex items-center space-x-2">
+                                    <i class="fa-solid fa-shield-halved text-emerald-400"></i>
+                                    <span class="font-semibold text-cream-50">Mensagem Oficial de Admissão</span>
+                                </div>
+                                <span class="hidden sm:inline text-cream-300/70">Flávio Bfnine • Fundador da Premier Brand</span>
+                            </div>
                         </div>
 
-                        <!-- Barra Inferior do Player Video Mockup -->
-                        <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs text-cream-200/90 bg-onyx-900/80 px-4 py-2 rounded-xl backdrop-blur-md border border-emerald-800/40">
-                            <div class="flex items-center space-x-2">
-                                <i class="fa-solid fa-shield-halved text-emerald-400"></i>
-                                <span class="font-semibold text-cream-50">Mensagem Oficial de Admissão</span>
-                            </div>
-                            <span class="hidden sm:inline text-cream-300/70">Flávio Bfnine • Fundador da Premier Brand</span>
-                        </div>
+                        <!-- Onde o Iframe do Vimeo entra instantaneamente após o clique -->
+                        <div id="vslIframeWrapper" class="w-full h-full"></div>
                     </div>
                 </div>
 
@@ -1488,6 +1494,15 @@
                     body.classList.add('hidden');
                     icon.classList.remove('rotate-180');
                 }
+            }
+        }
+
+        function playVslVideo() {
+            const facade = document.getElementById('vslFacade');
+            const wrapper = document.getElementById('vslIframeWrapper');
+            if (facade && wrapper) {
+                facade.style.display = 'none';
+                wrapper.innerHTML = '<iframe src="https://player.vimeo.com/video/1236893471?h=006772e655&autoplay=1&color=10b981&title=0&byline=0&portrait=0" class="w-full h-full absolute inset-0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>';
             }
         }
 
