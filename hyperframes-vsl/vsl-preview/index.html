@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=1920, height=1080" />
-    <title>VSL Bloco 1 - Premier Brand Sports Masterclass</title>
+    <title>VSL Bloco 3 - Premier Brand Sports Masterclass</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -176,15 +176,6 @@
         pointer-events: auto;
       }
 
-      .luxury-card {
-        background: rgba(8, 34, 24, 0.65);
-        border: 1px solid rgba(52, 211, 153, 0.22);
-        border-radius: 20px;
-        padding: 34px 38px;
-        backdrop-filter: blur(16px);
-        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
-        margin-bottom: 20px;
-      }
       .luxury-card-compact {
         background: rgba(8, 34, 24, 0.7);
         border: 1px solid rgba(52, 211, 153, 0.25);
@@ -193,12 +184,6 @@
         backdrop-filter: blur(14px);
         box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
         margin-bottom: 20px;
-      }
-      .card-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 12px;
       }
       .card-badge {
         background: rgba(16, 185, 129, 0.18);
@@ -213,15 +198,6 @@
         border-radius: 20px;
         display: inline-block;
       }
-      .luxury-card-title {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 26px;
-        font-weight: 900;
-        color: #fdfbf7;
-        text-transform: uppercase;
-        margin-bottom: 8px;
-        line-height: 1.25;
-      }
       .luxury-card-title-sm {
         font-family: 'Montserrat', sans-serif;
         font-size: 22px;
@@ -231,15 +207,7 @@
         margin-top: 8px;
         line-height: 1.25;
       }
-      .luxury-card-desc {
-        font-family: 'Inter', sans-serif;
-        font-size: 17px;
-        font-weight: 500;
-        color: #e2e8f0;
-        line-height: 1.5;
-      }
 
-      /* COMPONENTES DE CARDS QUADRADOS (INSPIRADO NO VÍDEO EXEMPLO) */
       .flow-container {
         display: flex;
         align-items: center;
@@ -296,7 +264,7 @@
         text-transform: uppercase;
         color: #34d399;
       }
-      .card-tag.alert, .card-tag.red {
+      .card-tag.alert {
         color: #f87171;
       }
       .card-tag.gold {
@@ -330,32 +298,7 @@
         flex-shrink: 0;
       }
 
-      .focus-callout {
-        margin-top: 18px;
-        background: rgba(16, 185, 129, 0.1);
-        border: 1px solid rgba(52, 211, 153, 0.35);
-        border-radius: 14px;
-        padding: 16px 20px;
-        backdrop-filter: blur(12px);
-      }
-      .focus-badge {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 10px;
-        font-weight: 800;
-        letter-spacing: 1.5px;
-        color: #fbbf24;
-        text-transform: uppercase;
-        margin-bottom: 4px;
-      }
-      .focus-text {
-        font-family: 'Inter', sans-serif;
-        font-size: 15px;
-        font-weight: 600;
-        color: #fdfbf7;
-        font-style: italic;
-      }
-
-      /* LEGENDA REBAIXADA PARA COBRIR BOTÃO DA CAMISA (top: 570px) */
+      /* LEGENDA REBAIXADA (top: 570px) PARA COBRIR BOTÃO DA CAMISA */
       #captions-dock {
         position: absolute;
         top: 570px;
@@ -404,7 +347,7 @@
       data-start="0"
       data-width="1920"
       data-height="1080"
-      data-duration="65.76"
+      data-duration="67.8"
     >
       <div class="ambient-emerald"></div>
       <div class="ambient-gold"></div>
@@ -420,9 +363,9 @@
       <div id="speaker-frame">
         <video
           id="speaker-video"
-          src="assets/video_blocks/block_01.mp4"
+          src="assets/video_blocks/block_03.mp4"
           data-start="0"
-          data-duration="65.76"
+          data-duration="67.8"
           muted
           playsinline
           preload="auto"
@@ -435,97 +378,81 @@
       </div>
 
       <div id="content-dock">
-        <!-- CENA 1: DIAGNÓSTICO + ANIMAÇÃO DE CARDS QUADRADOS (0.0s - 16.44s) -->
+        <!-- CENA 1: OS TIRADORES DE PEDIDO (0s a 18.2s - 2:12 a 2:30 de vídeo) -->
         <div id="scene-1" class="scene active">
           <div class="luxury-card-compact">
-            <span class="card-badge">DIAGNÓSTICO EMPRESARIAL</span>
-            <div class="luxury-card-title-sm">O Ciclo da Operação Presa</div>
+            <span class="card-badge">O FALSO COMERCIAL</span>
+            <div class="luxury-card-title-sm">Tiradores de Pedido vs Vendedores</div>
           </div>
 
           <div class="flow-container">
-            <div class="square-card flow-c1">
-              <div class="card-tag">01. TEMPO</div>
-              <div class="square-title">20h / dia</div>
-              <div class="square-desc">Sujo de tinta até a madrugada</div>
+            <div class="square-card alert flow-c1">
+              <div class="card-tag alert">01. O COMERCIAL</div>
+              <div class="square-title">Tiradores de Pedido</div>
+              <div class="square-desc">Eles só vendem porque você entrega as vendas para eles</div>
             </div>
             <div class="flow-arrow flow-a1">→</div>
-            <div class="square-card flow-c2">
-              <div class="card-tag">02. FÁBRICA</div>
-              <div class="square-title">Chão de Fábrica</div>
-              <div class="square-desc">Pegando papel e cortando tecido</div>
+            <div class="square-card alert flow-c2">
+              <div class="card-tag alert">02. REFÉM DE TIMINHO</div>
+              <div class="square-title">Guerra de R$ 2</div>
+              <div class="square-desc">Pedem desconto de R$ 2, prazo de 10 dias e ameaçam com vizinho</div>
             </div>
             <div class="flow-arrow flow-a2">→</div>
-            <div class="square-card flow-c3 alert">
-              <div class="card-tag alert">03. PREÇO</div>
-              <div class="square-title">Guerra de R$ 2</div>
-              <div class="square-desc">Margem destruída pelo concorrente</div>
+            <div class="square-card alert flow-c3">
+              <div class="card-tag alert">03. MARGEM ZERO</div>
+              <div class="square-title">O Dono Sangra</div>
+              <div class="square-desc">O concorrente da esquina ditando o preço da sua confecção</div>
             </div>
-          </div>
-
-          <div class="focus-callout focus-c1">
-            <div class="focus-badge">ATENÇÃO TOTAL</div>
-            <div class="focus-text">"Para tudo o que você está fazendo agora e olha bem nos meus olhos."</div>
           </div>
         </div>
 
-        <!-- CENA 2: COMPARATIVO EM CARDS QUADRADOS (16.64s - 32.88s) -->
+        <!-- CENA 2: AS DUAS FALSAS SOLUÇÕES (18.5s a 39.0s - 2:30 a 2:50 de vídeo - SINCRONIZADO NO ATO DA FALA) -->
         <div id="scene-2" class="scene">
           <div class="luxury-card-compact">
-            <span class="card-badge">MUDANÇA DE PARADIGMA</span>
-            <div class="luxury-card-title-sm">O Que Ninguém Te Mostra</div>
+            <span class="card-badge">O MAIOR VENENO NESSA HORA</span>
+            <div class="luxury-card-title-sm">Tentando Tapar o Sol com a Peneira</div>
           </div>
 
           <div class="flow-container two-cols">
             <div class="square-card alert flow-sc2-c1">
-              <div class="card-tag alert">ILUSÃO</div>
-              <div class="square-title">Fórmula Mágica</div>
-              <div class="square-desc">Promessas vazias de enriquecimento fácil que quebram oficinas</div>
+              <div class="card-tag alert">ILUSÃO 01 (R$ 90 MIL)</div>
+              <div class="square-title">Máquina Mais Rápida</div>
+              <div class="square-desc">Achar que comprar impressora de 90 mil reais resolve erro de gestão</div>
             </div>
             <div class="flow-arrow flow-sc2-a">→</div>
-            <div class="square-card gold-card flow-sc2-c2">
-              <div class="card-tag gold">MÉTODO REAL</div>
-              <div class="square-title">Mecanismo Exato</div>
-              <div class="square-desc">Processo de fabricação esportiva validado na prática</div>
+            <div class="square-card alert flow-sc2-c2">
+              <div class="card-tag alert">ILUSÃO 02 (MARKETING)</div>
+              <div class="square-title">Agência de Fora</div>
+              <div class="square-desc">Contratar agência para post bonitinho sem entender o mercado</div>
             </div>
           </div>
         </div>
 
-        <!-- CENA 3: 3 PILARES EM CARDS QUADRADOS (33.08s - 49.32s) -->
+        <!-- CENA 3: A REALIDADE CRUCIAL (39.2s a 67.8s) -->
         <div id="scene-3" class="scene">
           <div class="luxury-card-compact">
-            <span class="card-badge">MÉTODO PREMIER BRAND</span>
-            <div class="luxury-card-title-sm">3 Blindagens no Chão de Fábrica</div>
+            <span class="card-badge">O DIAGNÓSTICO REAL</span>
+            <div class="luxury-card-title-sm">Perdendo Dinheiro Mais Rápido</div>
           </div>
 
           <div class="flow-container">
-            <div class="square-card flow-sc3-c1">
-              <div class="card-tag">01. OPERAÇÃO</div>
-              <div class="square-title">Sem Depender</div>
-              <div class="square-desc">Processo autônomo sem refém de funcionários</div>
+            <div class="square-card alert flow-s3-c1">
+              <div class="card-tag alert">01. PREJUÍZO ACELERADO</div>
+              <div class="square-title">Sem Processo</div>
+              <div class="square-desc">Máquina rápida com mesa desregulada só faz queimar dinheiro mais rápido</div>
             </div>
-            <div class="flow-arrow flow-sc3-a1">→</div>
-            <div class="square-card flow-sc3-c2">
-              <div class="card-tag">02. QUALIDADE</div>
-              <div class="square-title">Zero Perda</div>
-              <div class="square-desc">Sem retalho perdido e sem resublimação</div>
+            <div class="flow-arrow flow-s3-a1">→</div>
+            <div class="square-card alert flow-s3-c2">
+              <div class="card-tag alert">02. AGÊNCIA SEM NICHO</div>
+              <div class="square-title">Banco de Imagem</div>
+              <div class="square-desc">Não sabem o que é sublimação nem poliéster. Post que você mesmo faz</div>
             </div>
-            <div class="flow-arrow flow-sc3-a2">→</div>
-            <div class="square-card gold-card flow-sc3-c3">
-              <div class="card-tag gold">+R$ 60 MIL/MÊS</div>
-              <div class="square-title">Marca Própria</div>
-              <div class="square-desc">Lucro real fabricando uniformes esportivos</div>
+            <div class="flow-arrow flow-s3-a2">→</div>
+            <div class="square-card alert flow-s3-c3">
+              <div class="card-tag alert">03. CUSTO FIXO INÚTIL</div>
+              <div class="square-title">Mensalidade Cara</div>
+              <div class="square-desc">Mais um boleto que não devolve um real em vendas reais</div>
             </div>
-          </div>
-        </div>
-
-        <!-- CENA 4: POSICIONAMENTO EMPRESARIAL (49.52s - 65.76s) -->
-        <div id="scene-4" class="scene">
-          <div class="luxury-card">
-            <div class="card-header">
-              <span class="card-badge">POSICIONAMENTO</span>
-            </div>
-            <div class="luxury-card-title">Empresário de Verdade</div>
-            <div class="luxury-card-desc">Sua equipe precisa rodar a produção enquanto você comanda o negócio. Chega de perder o jantar com a sua família por causa de cliente chorando por dois reais.</div>
           </div>
         </div>
       </div>
@@ -547,47 +474,46 @@
         0.0
       );
 
-      // TRANSIÇÃO DE CENAS E ANIMAÇÃO DOS CARDS QUADRADOS (GSAP DETERMINÍSTICO)
-      // CENA 1 (0.0s a 16.44s)
-      tl.fromTo("#scene-1", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 0.3);
-      
-      // Animação sincronizada dos cards quadrados inspirada no exemplo_card_animacao.mp4:
-      // Card 1: 4.68s ("vinte horas por dia sujo de tinta")
-      tl.fromTo(".flow-c1", { opacity: 0, scale: 0.85, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(1.4)" }, 4.68);
-      // Seta 1: 6.8s
-      tl.fromTo(".flow-a1", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.3, ease: "power2.out" }, 6.8);
-      // Card 2: 7.24s ("pegando papel cortando tecido")
-      tl.fromTo(".flow-c2", { opacity: 0, scale: 0.85, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(1.4)" }, 7.24);
-      // Seta 2: 8.8s
-      tl.fromTo(".flow-a2", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.3, ease: "power2.out" }, 8.8);
-      // Card 3: 9.04s ("brigando com concorrente por 2 reais")
-      tl.fromTo(".flow-c3", { opacity: 0, scale: 0.85, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(1.4)" }, 9.04);
-      // Callout: 12.12s ("para tudo o que você está fazendo...")
-      tl.fromTo(".focus-c1", { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 12.12);
+      // ==========================================
+      // SINCRONIZAÇÃO CIRÚRGICA DOS CARDS COM A FALA
+      // ==========================================
 
-      tl.to("#scene-1", { opacity: 0, x: 20, duration: 0.3, ease: "power2.in" }, 16.44);
+      // CENA 1: 0.0s a 18.2s
+      tl.fromTo("#scene-1", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 0.2);
+      // Card 1: 0.5s ("E lá no comercial os tiradores de pedido...")
+      tl.fromTo(".flow-c1", { opacity: 0, scale: 0.85, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(1.4)" }, 0.5);
+      tl.fromTo(".flow-a1", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.3, ease: "power2.out" }, 7.2);
+      // Card 2: 7.7s ("Você ainda fica refém de timinho que fica pedindo desconto de 2 reais...")
+      tl.fromTo(".flow-c2", { opacity: 0, scale: 0.85, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(1.4)" }, 7.7);
+      tl.fromTo(".flow-a2", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.3, ease: "power2.out" }, 11.5);
+      // Card 3: 11.8s ("Pede prazo de 10 dias e ainda fica te ameaçando falando que o concorrente da esquina é mais barato")
+      tl.fromTo(".flow-c3", { opacity: 0, scale: 0.85, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(1.4)" }, 11.8);
+      tl.to("#scene-1", { opacity: 0, x: 20, duration: 0.3, ease: "power2.in" }, 18.2);
 
-      // CENA 2 (16.64s a 32.88s)
-      tl.fromTo("#scene-2", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 16.64);
-      tl.fromTo(".flow-sc2-c1", { opacity: 0, scale: 0.88, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(1.4)" }, 20.2);
-      tl.fromTo(".flow-sc2-a", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.3 }, 24.5);
-      tl.fromTo(".flow-sc2-c2", { opacity: 0, scale: 0.88, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(1.4)" }, 25.2);
-      tl.to("#scene-2", { opacity: 0, x: 20, duration: 0.3, ease: "power2.in" }, 32.88);
+      // CENA 2: 18.5s a 39.0s (Minuto 2:30 a 2:50 de vídeo)
+      // Flávio fala aos 18.6s: "E sabe qual que é o maior veneno nessa hora? É a ilusão..."
+      tl.fromTo("#scene-2", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 18.5);
+      // Card 1: 25.0s (EXATAMENTE quando fala "Eu acho que eu preciso comprar aquela impressora mais rápida que custa 90 mil reais")
+      tl.fromTo(".flow-sc2-c1", { opacity: 0, scale: 0.88, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(1.4)" }, 25.0);
+      tl.fromTo(".flow-sc2-a", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.3 }, 31.0);
+      // Card 2: 31.5s (EXATAMENTE quando fala "Ou pior ainda, vai achar que precisa contratar uma agência de marketing pra post bonitinho")
+      tl.fromTo(".flow-sc2-c2", { opacity: 0, scale: 0.88, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(1.4)" }, 31.5);
+      tl.to("#scene-2", { opacity: 0, x: 20, duration: 0.3, ease: "power2.in" }, 39.0);
 
-      // CENA 3 (33.08s a 49.32s)
-      tl.fromTo("#scene-3", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 33.08);
-      tl.fromTo(".flow-sc3-c1", { opacity: 0, scale: 0.85, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(1.4)" }, 33.2);
-      tl.fromTo(".flow-sc3-a1", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.3 }, 34.6);
-      tl.fromTo(".flow-sc3-c2", { opacity: 0, scale: 0.85, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(1.4)" }, 35.2);
-      tl.fromTo(".flow-sc3-a2", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.3 }, 44.5);
-      tl.fromTo(".flow-sc3-c3", { opacity: 0, scale: 0.85, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(1.4)" }, 46.4);
-      tl.to("#scene-3", { opacity: 0, x: 20, duration: 0.3, ease: "power2.in" }, 49.32);
-
-      // CENA 4 (49.52s a 65.76s)
-      tl.fromTo("#scene-4", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 49.52);
+      // CENA 3: 39.2s a 67.8s
+      // Flávio fala aos 39.5s: "Mas pare e pensa comigo, se você está perdendo dinheiro na mesa de corte..."
+      tl.fromTo("#scene-3", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 39.2);
+      // Card 1: 40.0s (EXATAMENTE quando fala "comprar máquina mais rápida só vai fazer você perder dinheiro mais rápido")
+      tl.fromTo(".flow-s3-c1", { opacity: 0, scale: 0.85, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(1.4)" }, 40.0);
+      tl.fromTo(".flow-s3-a1", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.3, ease: "power2.out" }, 52.0);
+      // Card 2: 52.8s (EXATAMENTE quando fala "E a agência? Os caras não sabem nem o que é sublimação nem poliéster... banco de imagem")
+      tl.fromTo(".flow-s3-c2", { opacity: 0, scale: 0.85, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(1.4)" }, 52.8);
+      tl.fromTo(".flow-s3-a2", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.3, ease: "power2.out" }, 62.0);
+      // Card 3: 63.8s (EXATAMENTE quando fala "outro custo que você vai ter com a mensalidade daquela agência")
+      tl.fromTo(".flow-s3-c3", { opacity: 0, scale: 0.85, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(1.4)" }, 63.8);
 
       // LEGENDAS DETERMINÍSTICAS (PALAVRA POR PALAVRA)
-      const words = [{"t": "Se", "s": 0.0, "e": 0.14}, {"t": "você", "s": 0.14, "e": 0.36}, {"t": "é", "s": 0.36, "e": 0.52}, {"t": "dono", "s": 0.52, "e": 0.82}, {"t": "de", "s": 0.82, "e": 0.92}, {"t": "confecção", "s": 0.92, "e": 1.42}, {"t": "esportiva,", "s": 1.42, "e": 2.08}, {"t": "trabalha", "s": 2.48, "e": 2.8}, {"t": "com", "s": 2.8, "e": 2.94}, {"t": "sublimação", "s": 2.94, "e": 3.52}, {"t": "e", "s": 3.52, "e": 3.92}, {"t": "continua", "s": 3.92, "e": 4.22}, {"t": "trabalhando", "s": 4.22, "e": 4.68}, {"t": "vinte", "s": 4.68, "e": 5.0}, {"t": "horas", "s": 5.0, "e": 5.22}, {"t": "por", "s": 5.22, "e": 5.48}, {"t": "dia,", "s": 5.48, "e": 5.8}, {"t": "sujo", "s": 6.12, "e": 6.4}, {"t": "de", "s": 6.4, "e": 6.56}, {"t": "tinta,", "s": 6.56, "e": 6.98}, {"t": "pegando", "s": 7.24, "e": 7.46}, {"t": "papel,", "s": 7.46, "e": 7.86}, {"t": "cortando", "s": 8.04, "e": 8.32}, {"t": "tecido", "s": 8.32, "e": 8.86}, {"t": "e", "s": 8.86, "e": 9.04}, {"t": "brigando", "s": 9.04, "e": 9.4}, {"t": "com", "s": 9.4, "e": 9.58}, {"t": "o", "s": 9.58, "e": 9.66}, {"t": "concorrente", "s": 9.66, "e": 10.24}, {"t": "por", "s": 10.24, "e": 10.8}, {"t": "dois", "s": 10.8, "e": 11.0}, {"t": "reais", "s": 11.0, "e": 11.28}, {"t": "de", "s": 11.28, "e": 11.5}, {"t": "desconto,", "s": 11.5, "e": 11.98}, {"t": "para", "s": 12.12, "e": 12.32}, {"t": "tudo", "s": 12.32, "e": 12.54}, {"t": "o", "s": 12.54, "e": 12.68}, {"t": "que", "s": 12.68, "e": 12.7}, {"t": "você", "s": 12.7, "e": 12.9}, {"t": "está", "s": 12.9, "e": 13.02}, {"t": "fazendo", "s": 13.02, "e": 13.3}, {"t": "agora,", "s": 13.3, "e": 13.6}, {"t": "e", "s": 14.06, "e": 15.76}, {"t": "olha", "s": 15.76, "e": 15.88}, {"t": "bem", "s": 15.88, "e": 16.12}, {"t": "no", "s": 16.12, "e": 16.24}, {"t": "meu", "s": 16.24, "e": 16.34}, {"t": "olhos.", "s": 16.34, "e": 16.66}, {"t": "Nesse", "s": 16.94, "e": 17.16}, {"t": "vídeo,", "s": 17.16, "e": 17.48}, {"t": "eu", "s": 17.68, "e": 17.8}, {"t": "não", "s": 17.8, "e": 17.9}, {"t": "vou", "s": 17.9, "e": 18.02}, {"t": "te", "s": 18.02, "e": 18.08}, {"t": "falar", "s": 18.08, "e": 18.3}, {"t": "o", "s": 18.3, "e": 18.5}, {"t": "que", "s": 18.5, "e": 18.54}, {"t": "vocês", "s": 18.54, "e": 18.78}, {"t": "já", "s": 18.78, "e": 18.98}, {"t": "sabem,", "s": 18.98, "e": 19.22}, {"t": "muito", "s": 19.62, "e": 19.88}, {"t": "menos", "s": 19.88, "e": 20.26}, {"t": "de", "s": 20.26, "e": 20.56}, {"t": "falar", "s": 20.56, "e": 20.82}, {"t": "a", "s": 20.82, "e": 21.2}, {"t": "fórmula", "s": 21.2, "e": 21.66}, {"t": "mágica", "s": 21.66, "e": 22.12}, {"t": "de", "s": 22.12, "e": 22.24}, {"t": "enriquecimento", "s": 22.24, "e": 22.82}, {"t": "fácil", "s": 22.82, "e": 23.26}, {"t": "nessa", "s": 23.26, "e": 23.52}, {"t": "área", "s": 23.52, "e": 23.74}, {"t": "de", "s": 23.74, "e": 23.88}, {"t": "fabricação", "s": 23.88, "e": 24.42}, {"t": "esportiva.", "s": 24.42, "e": 24.86}, {"t": "Eu", "s": 24.86, "e": 25.06}, {"t": "vou", "s": 25.06, "e": 25.16}, {"t": "te", "s": 25.16, "e": 25.22}, {"t": "mostrar", "s": 25.22, "e": 25.46}, {"t": "o", "s": 25.46, "e": 25.6}, {"t": "mecanismo", "s": 25.6, "e": 26.14}, {"t": "exato", "s": 26.14, "e": 26.84}, {"t": "que", "s": 26.84, "e": 26.96}, {"t": "eu", "s": 26.96, "e": 27.08}, {"t": "uso", "s": 27.08, "e": 27.24}, {"t": "aqui", "s": 27.24, "e": 27.42}, {"t": "no", "s": 27.42, "e": 27.56}, {"t": "meu", "s": 27.56, "e": 27.66}, {"t": "chão", "s": 27.66, "e": 27.86}, {"t": "de", "s": 27.86, "e": 27.98}, {"t": "fábrica,", "s": 27.98, "e": 28.4}, {"t": "para", "s": 28.56, "e": 29.0}, {"t": "fabricar", "s": 29.0, "e": 29.56}, {"t": "uniformes", "s": 29.56, "e": 30.48}, {"t": "e", "s": 30.48, "e": 30.64}, {"t": "camisetas", "s": 30.64, "e": 31.12}, {"t": "esportivas", "s": 31.12, "e": 31.84}, {"t": "sem", "s": 31.84, "e": 32.68}, {"t": "depender", "s": 32.68, "e": 33.04}, {"t": "de", "s": 33.04, "e": 33.22}, {"t": "funcionário,", "s": 33.22, "e": 33.76}, {"t": "sem", "s": 34.34, "e": 34.72}, {"t": "ficar", "s": 34.72, "e": 34.98}, {"t": "perdendo", "s": 34.98, "e": 35.34}, {"t": "tecido", "s": 35.34, "e": 36.04}, {"t": "na", "s": 36.04, "e": 36.48}, {"t": "mesa", "s": 36.48, "e": 36.66}, {"t": "de", "s": 36.66, "e": 36.78}, {"t": "corte,", "s": 36.78, "e": 37.22}, {"t": "sem", "s": 37.42, "e": 37.6}, {"t": "ter", "s": 37.6, "e": 37.76}, {"t": "desperdício", "s": 37.76, "e": 38.26}, {"t": "na", "s": 38.26, "e": 38.44}, {"t": "pensa", "s": 38.44, "e": 38.74}, {"t": "com", "s": 38.74, "e": 39.02}, {"t": "resublimação", "s": 39.02, "e": 39.68}, {"t": "ou", "s": 39.68, "e": 40.12}, {"t": "sombras", "s": 40.12, "e": 40.6}, {"t": "e", "s": 40.6, "e": 41.06}, {"t": "principalmente", "s": 41.06, "e": 41.5}, {"t": "te", "s": 41.5, "e": 42.08}, {"t": "ajudar", "s": 42.08, "e": 42.38}, {"t": "a", "s": 42.38, "e": 43.08}, {"t": "sair", "s": 43.08, "e": 43.32}, {"t": "da", "s": 43.32, "e": 43.56}, {"t": "escravidão", "s": 43.56, "e": 44.52}, {"t": "operacional", "s": 44.52, "e": 45.22}, {"t": "que", "s": 45.22, "e": 45.7}, {"t": "me", "s": 45.7, "e": 45.84}, {"t": "levou", "s": 45.84, "e": 46.34}, {"t": "a", "s": 46.34, "e": 46.42}, {"t": "faturar", "s": 46.42, "e": 46.68}, {"t": "mais", "s": 46.68, "e": 47.02}, {"t": "de", "s": 47.02, "e": 47.18}, {"t": "60", "s": 47.18, "e": 47.36}, {"t": "mil", "s": 47.36, "e": 47.58}, {"t": "reais", "s": 47.58, "e": 47.78}, {"t": "por", "s": 47.78, "e": 48.02}, {"t": "mês", "s": 48.02, "e": 48.28}, {"t": "fabricando", "s": 48.28, "e": 48.9}, {"t": "e", "s": 48.9, "e": 49.02}, {"t": "vendendo", "s": 49.02, "e": 49.28}, {"t": "uniformes", "s": 49.28, "e": 49.66}, {"t": "de", "s": 49.66, "e": 49.78}, {"t": "futebol", "s": 49.78, "e": 50.1}, {"t": "com", "s": 50.1, "e": 50.48}, {"t": "a", "s": 50.48, "e": 50.54}, {"t": "minha", "s": 50.54, "e": 50.62}, {"t": "própria", "s": 50.62, "e": 50.84}, {"t": "marca.", "s": 50.84, "e": 51.12}, {"t": "Mas", "s": 51.12, "e": 51.4}, {"t": "isso,", "s": 51.4, "e": 51.76}, {"t": "a", "s": 51.98, "e": 52.08}, {"t": "minha", "s": 52.08, "e": 52.22}, {"t": "equipe", "s": 52.22, "e": 52.76}, {"t": "rodando", "s": 52.76, "e": 53.16}, {"t": "a", "s": 53.16, "e": 53.28}, {"t": "produção", "s": 53.28, "e": 53.56}, {"t": "enquanto", "s": 53.56, "e": 54.46}, {"t": "eu", "s": 54.46, "e": 54.72}, {"t": "trabalho", "s": 54.72, "e": 55.16}, {"t": "atuando", "s": 55.16, "e": 55.74}, {"t": "como", "s": 55.74, "e": 56.0}, {"t": "um", "s": 56.0, "e": 56.14}, {"t": "empresário", "s": 56.14, "e": 56.64}, {"t": "de", "s": 56.64, "e": 56.8}, {"t": "verdade.", "s": 56.8, "e": 57.14}, {"t": "Mas", "s": 57.4, "e": 57.48}, {"t": "se", "s": 57.48, "e": 57.6}, {"t": "você", "s": 57.6, "e": 57.74}, {"t": "acha", "s": 57.74, "e": 57.9}, {"t": "normal", "s": 57.9, "e": 58.4}, {"t": "ficar", "s": 58.4, "e": 59.1}, {"t": "atendendo", "s": 59.1, "e": 59.4}, {"t": "o", "s": 59.4, "e": 59.56}, {"t": "cliente", "s": 59.56, "e": 59.92}, {"t": "que", "s": 59.92, "e": 60.12}, {"t": "fica", "s": 60.12, "e": 60.38}, {"t": "chorando", "s": 60.38, "e": 60.88}, {"t": "por", "s": 60.88, "e": 61.08}, {"t": "causa", "s": 61.08, "e": 61.2}, {"t": "de", "s": 61.2, "e": 61.38}, {"t": "dois", "s": 61.38, "e": 61.52}, {"t": "reais", "s": 61.52, "e": 61.78}, {"t": "de", "s": 61.78, "e": 61.98}, {"t": "desconto", "s": 61.98, "e": 62.34}, {"t": "e", "s": 62.34, "e": 62.52}, {"t": "que", "s": 62.52, "e": 62.6}, {"t": "você", "s": 62.6, "e": 62.78}, {"t": "fica", "s": 62.78, "e": 62.98}, {"t": "sem", "s": 62.98, "e": 63.14}, {"t": "tempo", "s": 63.14, "e": 63.44}, {"t": "até", "s": 63.44, "e": 63.8}, {"t": "para", "s": 63.8, "e": 63.98}, {"t": "jantar", "s": 63.98, "e": 64.42}, {"t": "com", "s": 64.42, "e": 64.56}, {"t": "a", "s": 64.56, "e": 64.62}, {"t": "sua", "s": 64.62, "e": 64.66}, {"t": "família,", "s": 64.66, "e": 64.98}, {"t": "pode", "s": 65.58, "e": 65.76}];
+      const words = [{"t": "E", "s": 0.34, "e": 0.5}, {"t": "lá", "s": 0.5, "e": 0.58}, {"t": "no", "s": 0.58, "e": 0.68}, {"t": "comercial", "s": 0.68, "e": 1.1}, {"t": "os", "s": 1.1, "e": 1.86}, {"t": "tiradores", "s": 1.86, "e": 2.12}, {"t": "de", "s": 2.12, "e": 2.3}, {"t": "pedido", "s": 2.3, "e": 2.68}, {"t": "que", "s": 2.68, "e": 2.96}, {"t": "não", "s": 2.96, "e": 3.04}, {"t": "são", "s": 3.04, "e": 3.16}, {"t": "blendadores.", "s": 3.16, "e": 3.58}, {"t": "Eles", "s": 4.28, "e": 4.52}, {"t": "só", "s": 4.52, "e": 4.68}, {"t": "vendem", "s": 4.68, "e": 4.94}, {"t": "porque", "s": 4.94, "e": 5.16}, {"t": "você", "s": 5.16, "e": 5.62}, {"t": "entrega", "s": 5.62, "e": 6.32}, {"t": "as", "s": 6.32, "e": 6.64}, {"t": "vendas", "s": 6.64, "e": 6.9}, {"t": "para", "s": 6.9, "e": 7.1}, {"t": "eles.", "s": 7.1, "e": 7.28}, {"t": "Você", "s": 7.76, "e": 7.96}, {"t": "ainda", "s": 7.96, "e": 8.08}, {"t": "fica", "s": 8.08, "e": 8.24}, {"t": "refém", "s": 8.24, "e": 8.66}, {"t": "de", "s": 8.66, "e": 8.8}, {"t": "timinho", "s": 8.8, "e": 9.36}, {"t": "que", "s": 9.36, "e": 9.64}, {"t": "fica", "s": 9.64, "e": 9.84}, {"t": "pedindo", "s": 9.84, "e": 10.18}, {"t": "desconto", "s": 10.18, "e": 10.54}, {"t": "de", "s": 10.54, "e": 10.78}, {"t": "2", "s": 10.78, "e": 11.16}, {"t": "reais.", "s": 11.16, "e": 11.5}, {"t": "Pede", "s": 11.86, "e": 12.1}, {"t": "prazo", "s": 12.1, "e": 12.64}, {"t": "de", "s": 12.64, "e": 12.8}, {"t": "10", "s": 12.8, "e": 13.06}, {"t": "dias", "s": 13.06, "e": 13.48}, {"t": "e", "s": 13.48, "e": 13.82}, {"t": "ainda", "s": 13.82, "e": 14.02}, {"t": "fica", "s": 14.02, "e": 14.4}, {"t": "te", "s": 14.4, "e": 14.58}, {"t": "ameaçando", "s": 14.58, "e": 15.18}, {"t": "falando", "s": 15.18, "e": 15.8}, {"t": "que", "s": 15.8, "e": 16.04}, {"t": "o", "s": 16.04, "e": 16.12}, {"t": "concorrente", "s": 16.12, "e": 16.52}, {"t": "da", "s": 16.52, "e": 16.62}, {"t": "vida", "s": 16.62, "e": 16.72}, {"t": "esquina", "s": 16.72, "e": 17.14}, {"t": "é", "s": 17.14, "e": 18.02}, {"t": "mais", "s": 18.02, "e": 18.18}, {"t": "barato.", "s": 18.18, "e": 18.54}, {"t": "E", "s": 18.68, "e": 18.76}, {"t": "sabe", "s": 18.76, "e": 18.9}, {"t": "qual", "s": 18.9, "e": 19.1}, {"t": "que", "s": 19.1, "e": 19.24}, {"t": "é", "s": 19.24, "e": 19.3}, {"t": "o", "s": 19.3, "e": 19.38}, {"t": "maior", "s": 19.38, "e": 19.58}, {"t": "veneno", "s": 19.58, "e": 20.02}, {"t": "nessa", "s": 20.02, "e": 20.24}, {"t": "hora?", "s": 20.24, "e": 20.52}, {"t": "É", "s": 20.98, "e": 21.22}, {"t": "a", "s": 21.22, "e": 21.34}, {"t": "ilusão", "s": 21.34, "e": 21.66}, {"t": "que", "s": 21.66, "e": 21.8}, {"t": "você", "s": 21.8, "e": 21.98}, {"t": "tem", "s": 21.98, "e": 22.12}, {"t": "na", "s": 22.12, "e": 22.22}, {"t": "sua", "s": 22.22, "e": 22.32}, {"t": "cabeça", "s": 22.32, "e": 22.66}, {"t": "para", "s": 22.66, "e": 23.0}, {"t": "tentar", "s": 23.0, "e": 23.24}, {"t": "tapar", "s": 23.24, "e": 23.62}, {"t": "o", "s": 23.62, "e": 23.78}, {"t": "sol", "s": 23.78, "e": 24.0}, {"t": "com", "s": 24.0, "e": 24.26}, {"t": "a", "s": 24.26, "e": 24.4}, {"t": "peleira.", "s": 24.4, "e": 24.82}, {"t": "Aí", "s": 25.0, "e": 25.12}, {"t": "você", "s": 25.12, "e": 25.32}, {"t": "entende,", "s": 25.32, "e": 25.6}, {"t": "desespera", "s": 25.72, "e": 26.12}, {"t": "e", "s": 26.12, "e": 26.2}, {"t": "pensa", "s": 26.2, "e": 26.38}, {"t": "assim.", "s": 26.38, "e": 26.64}, {"t": "Eu", "s": 27.22, "e": 27.4}, {"t": "acho", "s": 27.4, "e": 27.64}, {"t": "que", "s": 27.64, "e": 27.8}, {"t": "eu", "s": 27.8, "e": 27.82}, {"t": "preciso", "s": 27.82, "e": 28.02}, {"t": "comprar", "s": 28.02, "e": 28.38}, {"t": "aquela", "s": 28.38, "e": 28.58}, {"t": "impressora", "s": 28.58, "e": 29.02}, {"t": "mais", "s": 29.02, "e": 29.28}, {"t": "rápida", "s": 29.28, "e": 29.8}, {"t": "que", "s": 29.8, "e": 30.34}, {"t": "custa", "s": 30.34, "e": 30.58}, {"t": "90", "s": 30.58, "e": 30.88}, {"t": "mil", "s": 30.88, "e": 31.06}, {"t": "reais.", "s": 31.06, "e": 31.36}, {"t": "Ou", "s": 31.36, "e": 31.7}, {"t": "pior", "s": 31.7, "e": 31.94}, {"t": "ainda,", "s": 31.94, "e": 32.24}, {"t": "você", "s": 32.8, "e": 32.94}, {"t": "vai", "s": 32.94, "e": 33.08}, {"t": "achar", "s": 33.08, "e": 33.44}, {"t": "que", "s": 33.44, "e": 33.58}, {"t": "precisa", "s": 33.58, "e": 33.96}, {"t": "contratar", "s": 33.96, "e": 34.6}, {"t": "uma", "s": 34.6, "e": 34.74}, {"t": "agência", "s": 34.74, "e": 35.12}, {"t": "de", "s": 35.12, "e": 35.28}, {"t": "marketing", "s": 35.28, "e": 35.78}, {"t": "para", "s": 35.78, "e": 36.54}, {"t": "ficar", "s": 36.54, "e": 36.78}, {"t": "colocando", "s": 36.78, "e": 37.4}, {"t": "post", "s": 37.4, "e": 37.72}, {"t": "bonitinho", "s": 37.72, "e": 38.46}, {"t": "além", "s": 38.46, "e": 38.88}, {"t": "do", "s": 38.88, "e": 38.96}, {"t": "seu", "s": 38.96, "e": 39.04}, {"t": "estabilamento.", "s": 39.04, "e": 39.4}, {"t": "Mas", "s": 39.5, "e": 39.64}, {"t": "pare", "s": 39.64, "e": 39.82}, {"t": "e", "s": 39.82, "e": 40.08}, {"t": "pensa", "s": 40.08, "e": 40.08}, {"t": "comigo,", "s": 40.08, "e": 40.38}, {"t": "se", "s": 41.14, "e": 41.32}, {"t": "você", "s": 41.32, "e": 41.52}, {"t": "está", "s": 41.52, "e": 41.66}, {"t": "perdendo", "s": 41.66, "e": 42.04}, {"t": "dinheiro", "s": 42.04, "e": 42.56}, {"t": "ali", "s": 42.56, "e": 43.04}, {"t": "na", "s": 43.04, "e": 43.14}, {"t": "mesa", "s": 43.14, "e": 43.32}, {"t": "de", "s": 43.32, "e": 43.48}, {"t": "corte,", "s": 43.48, "e": 43.94}, {"t": "se", "s": 44.02, "e": 44.14}, {"t": "o", "s": 44.14, "e": 44.26}, {"t": "seu", "s": 44.26, "e": 44.36}, {"t": "perfil", "s": 44.36, "e": 44.76}, {"t": "de", "s": 44.76, "e": 44.92}, {"t": "cor", "s": 44.92, "e": 45.12}, {"t": "na", "s": 45.12, "e": 45.22}, {"t": "impressora", "s": 45.22, "e": 45.62}, {"t": "está", "s": 45.62, "e": 45.84}, {"t": "desregulado", "s": 45.84, "e": 46.48}, {"t": "e", "s": 46.48, "e": 46.62}, {"t": "você", "s": 46.62, "e": 46.8}, {"t": "não", "s": 46.8, "e": 46.9}, {"t": "sabe", "s": 46.9, "e": 47.06}, {"t": "nem", "s": 47.06, "e": 47.18}, {"t": "quanto", "s": 47.18, "e": 47.36}, {"t": "custa", "s": 47.36, "e": 47.76}, {"t": "para", "s": 47.76, "e": 47.88}, {"t": "fabricar", "s": 47.88, "e": 48.26}, {"t": "uma", "s": 48.26, "e": 48.4}, {"t": "camiseta,", "s": 48.4, "e": 49.02}, {"t": "comprar", "s": 49.16, "e": 49.34}, {"t": "uma", "s": 49.34, "e": 49.56}, {"t": "máquina", "s": 49.56, "e": 49.88}, {"t": "mais", "s": 49.88, "e": 50.16}, {"t": "rápida,", "s": 50.16, "e": 50.5}, {"t": "só", "s": 50.7, "e": 50.86}, {"t": "vai", "s": 50.86, "e": 51.06}, {"t": "fazer", "s": 51.06, "e": 51.3}, {"t": "você", "s": 51.3, "e": 51.52}, {"t": "perder", "s": 51.52, "e": 51.78}, {"t": "dinheiro", "s": 51.78, "e": 52.08}, {"t": "mais", "s": 52.08, "e": 52.28}, {"t": "rápido.", "s": 52.28, "e": 52.54}, {"t": "E", "s": 52.7, "e": 52.8}, {"t": "a", "s": 52.8, "e": 52.88}, {"t": "agência", "s": 52.88, "e": 53.08}, {"t": "de", "s": 53.08, "e": 53.24}, {"t": "marketing", "s": 53.24, "e": 53.52}, {"t": "que", "s": 53.52, "e": 53.76}, {"t": "você", "s": 53.76, "e": 53.86}, {"t": "quer", "s": 53.86, "e": 53.98}, {"t": "contratar?", "s": 53.98, "e": 54.48}, {"t": "Os", "s": 54.92, "e": 55.02}, {"t": "caras", "s": 55.02, "e": 55.18}, {"t": "não", "s": 55.18, "e": 55.26}, {"t": "sabem", "s": 55.26, "e": 55.4}, {"t": "nem", "s": 55.4, "e": 55.58}, {"t": "o", "s": 55.58, "e": 55.68}, {"t": "que", "s": 55.68, "e": 55.72}, {"t": "é", "s": 55.72, "e": 55.82}, {"t": "a", "s": 55.82, "e": 55.88}, {"t": "sublimação,", "s": 55.88, "e": 56.36}, {"t": "não", "s": 56.88, "e": 57.0}, {"t": "sabe", "s": 57.0, "e": 57.18}, {"t": "nem", "s": 57.18, "e": 57.4}, {"t": "o", "s": 57.4, "e": 57.52}, {"t": "que", "s": 57.52, "e": 57.6}, {"t": "é", "s": 57.6, "e": 57.72}, {"t": "um", "s": 57.72, "e": 57.82}, {"t": "testido", "s": 57.82, "e": 58.26}, {"t": "100", "s": 58.26, "e": 58.46}, {"t": "%", "s": 58.46, "e": 58.7}, {"t": "poliéstero.", "s": 58.7, "e": 59.48}, {"t": "Isso", "s": 59.48, "e": 59.66}, {"t": "vai", "s": 59.66, "e": 59.84}, {"t": "te", "s": 59.84, "e": 59.96}, {"t": "entregar", "s": 59.96, "e": 60.3}, {"t": "postagem", "s": 60.3, "e": 61.46}, {"t": "de", "s": 61.46, "e": 61.78}, {"t": "banco", "s": 61.78, "e": 62.06}, {"t": "de", "s": 62.06, "e": 62.2}, {"t": "imagem", "s": 62.2, "e": 62.46}, {"t": "que", "s": 62.46, "e": 62.62}, {"t": "você", "s": 62.62, "e": 62.86}, {"t": "mesmo", "s": 62.86, "e": 63.1}, {"t": "pode", "s": 63.1, "e": 63.36}, {"t": "fazer.", "s": 63.36, "e": 63.68}, {"t": "E", "s": 63.88, "e": 63.98}, {"t": "é", "s": 63.98, "e": 64.08}, {"t": "outro", "s": 64.08, "e": 64.42}, {"t": "custo", "s": 64.42, "e": 64.98}, {"t": "que", "s": 64.98, "e": 65.1}, {"t": "você", "s": 65.1, "e": 65.34}, {"t": "vai", "s": 65.34, "e": 65.48}, {"t": "ter", "s": 65.48, "e": 65.74}, {"t": "com", "s": 65.74, "e": 65.92}, {"t": "a", "s": 65.92, "e": 66.0}, {"t": "mensalidade", "s": 66.0, "e": 66.54}, {"t": "daquela", "s": 66.54, "e": 66.94}, {"t": "agência", "s": 66.94, "e": 67.26}, {"t": "de", "s": 67.26, "e": 67.42}, {"t": "marketing", "s": 67.42, "e": 67.8}];
 
       {
         const captionBox = document.getElementById("caption-box");
