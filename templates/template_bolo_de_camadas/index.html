@@ -1,0 +1,780 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Reels Bolo de Camadas - 5 Camadas Dinâmicas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html, body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #060908;
+        font-family: 'Inter', -apple-system, sans-serif;
+      }
+      #stage {
+        position: relative;
+        width: 1080px;
+        height: 1920px;
+        background: radial-gradient(circle at 50% 20%, #122116 0%, #060908 60%, #020302 100%);
+        overflow: hidden;
+      }
+
+      /* CAMADA DE FUNDO COM GRADIENTE ESPORTIVO E DIAGONAIS */
+      .bg-stripes {
+        position: absolute;
+        inset: -100px;
+        background: repeating-linear-gradient(
+          -45deg,
+          rgba(212, 255, 0, 0.015),
+          rgba(212, 255, 0, 0.015) 30px,
+          transparent 30px,
+          transparent 60px
+        );
+        pointer-events: none;
+      }
+      .glow-green {
+        position: absolute;
+        width: 750px;
+        height: 750px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(212, 255, 0, 0.12) 0%, transparent 70%);
+        top: 250px;
+        left: 50%;
+        transform: translateX(-50%);
+        pointer-events: none;
+      }
+      .glow-red {
+        position: absolute;
+        width: 800px;
+        height: 800px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(255, 45, 45, 0.16) 0%, transparent 70%);
+        top: 450px;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      /* 1. TOPO: HEADER ESPORTIVO COM STATUS */
+      #header {
+        position: absolute;
+        top: 55px;
+        left: 45px;
+        right: 45px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+      }
+      .badge-category {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background: rgba(14, 24, 18, 0.85);
+        border: 2px solid #d4ff00;
+        padding: 10px 24px;
+        border-radius: 40px;
+        box-shadow: 0 0 25px rgba(212, 255, 0, 0.25);
+      }
+      .rec-pulse {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #ff2d2d;
+        box-shadow: 0 0 16px #ff2d2d;
+      }
+      .badge-category span {
+        font-family: 'Anton', sans-serif;
+        font-size: 19px;
+        color: #d4ff00;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+      .badge-tag {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 15px;
+        font-weight: 800;
+        color: #ffffff;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 10px 20px;
+        border-radius: 14px;
+        backdrop-filter: blur(10px);
+      }
+
+      /* 2. CAMADA 3: O ROSTO NO CARD DINÂMICO QUE MUDA DE FORMA */
+      /* O container muda de tamanho e posição entre cenas */
+      #face-card-container {
+        position: absolute;
+        z-index: 30;
+        overflow: hidden;
+        transition: border 0.3s ease;
+        box-shadow: 0 35px 80px rgba(0, 0, 0, 0.9), 0 0 50px rgba(212, 255, 0, 0.2);
+      }
+      #face-zoom-wrapper {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform-origin: 50% 28%;
+      }
+      #speaker-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 20%;
+        display: block;
+      }
+      .card-border-green {
+        border: 3px solid #d4ff00;
+      }
+      .card-border-red {
+        border: 3px solid #ff2d2d;
+        box-shadow: 0 35px 80px rgba(0, 0, 0, 0.9), 0 0 60px rgba(255, 45, 45, 0.4) !important;
+      }
+
+      /* 3. CAMADA 4: GRÁFICOS QUE DESENHAM O QUE VOCÊ FALA */
+      #graphics-layer {
+        position: absolute;
+        inset: 0;
+        z-index: 50;
+        pointer-events: none;
+      }
+
+      /* Gancho de Abertura */
+      #hook-banner {
+        position: absolute;
+        top: 170px;
+        left: 45px;
+        right: 45px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
+      .hook-tag {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 16px;
+        font-weight: 800;
+        color: #060908;
+        background: #d4ff00;
+        padding: 6px 18px;
+        border-radius: 8px;
+        letter-spacing: 1px;
+      }
+      .hook-title {
+        font-family: 'Anton', sans-serif;
+        font-size: 58px;
+        line-height: 1.05;
+        text-align: center;
+        color: #ffffff;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        text-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
+      }
+      .hook-title span {
+        color: #ff2d2d;
+      }
+
+      /* Gráficos de Alerta e Comparação */
+      .metric-badge {
+        position: absolute;
+        background: rgba(14, 20, 16, 0.92);
+        border: 2px solid rgba(212, 255, 0, 0.6);
+        border-radius: 24px;
+        padding: 24px 32px;
+        backdrop-filter: blur(20px);
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      .metric-badge.alert-red {
+        border-color: #ff2d2d;
+        box-shadow: 0 25px 60px rgba(255, 45, 45, 0.35);
+      }
+      .metric-num {
+        font-family: 'Anton', sans-serif;
+        font-size: 72px;
+        line-height: 1;
+        color: #ff2d2d;
+        letter-spacing: 1px;
+      }
+      .metric-num.green {
+        color: #d4ff00;
+      }
+      .metric-lbl {
+        font-family: 'Inter', sans-serif;
+        font-size: 20px;
+        font-weight: 800;
+        color: #ffffff;
+        text-transform: uppercase;
+        margin-top: 8px;
+        letter-spacing: 1px;
+      }
+
+      /* Card de Alerta Especial: PREJUÍZO / REFAZER */
+      #alert-box-prejuizo {
+        position: absolute;
+        top: 210px;
+        left: 55px;
+        right: 55px;
+        background: linear-gradient(135deg, rgba(35, 10, 10, 0.95), rgba(18, 5, 5, 0.98));
+        border: 3px solid #ff2d2d;
+        border-radius: 28px;
+        padding: 30px 35px;
+        box-shadow: 0 30px 80px rgba(0,0,0,0.9), 0 0 50px rgba(255, 45, 45, 0.45);
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      .alert-tag-strip {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: #ff2d2d;
+        color: #ffffff;
+        font-family: 'Anton', sans-serif;
+        font-size: 22px;
+        letter-spacing: 2px;
+        padding: 6px 16px;
+        border-radius: 8px;
+        text-transform: uppercase;
+      }
+      .alert-msg-big {
+        font-family: 'Anton', sans-serif;
+        font-size: 46px;
+        line-height: 1.15;
+        color: #ffffff;
+        text-transform: uppercase;
+        margin-top: 14px;
+        letter-spacing: 1px;
+      }
+      .alert-msg-big span {
+        color: #ff2d2d;
+        text-decoration: underline;
+      }
+
+      /* Card Comparativo de Impressão e Prensa (Lado a Lado) */
+      #comparison-container {
+        position: absolute;
+        top: 200px;
+        left: 45px;
+        right: 45px;
+        display: flex;
+        gap: 20px;
+        opacity: 0;
+      }
+      .compare-card {
+        flex: 1;
+        background: rgba(14, 20, 16, 0.95);
+        border-radius: 24px;
+        padding: 24px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        backdrop-filter: blur(20px);
+      }
+      .compare-card.bad {
+        border: 2px solid #ff2d2d;
+        box-shadow: 0 20px 50px rgba(255, 45, 45, 0.25);
+      }
+      .compare-card.target {
+        border: 2px solid #d4ff00;
+        box-shadow: 0 20px 50px rgba(212, 255, 0, 0.25);
+      }
+      .compare-icon {
+        font-size: 40px;
+        margin-bottom: 8px;
+      }
+      .compare-title {
+        font-family: 'Anton', sans-serif;
+        font-size: 26px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .compare-title.red { color: #ff2d2d; }
+      .compare-title.green { color: #d4ff00; }
+      .compare-desc {
+        font-size: 17px;
+        font-weight: 700;
+        color: #e2e8f0;
+        margin-top: 8px;
+        line-height: 1.3;
+      }
+
+      /* Relógio 20:00 (8h da Noite Sozinho) */
+      #clock-night-card {
+        position: absolute;
+        top: 180px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 720px;
+        background: linear-gradient(135deg, rgba(16, 22, 18, 0.96), rgba(8, 12, 9, 0.98));
+        border: 3px solid #d4ff00;
+        border-radius: 32px;
+        padding: 30px;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        box-shadow: 0 35px 90px rgba(0, 0, 0, 0.95), 0 0 60px rgba(212, 255, 0, 0.35);
+        opacity: 0;
+      }
+      .clock-display {
+        font-family: 'Anton', sans-serif;
+        font-size: 78px;
+        line-height: 1;
+        color: #d4ff00;
+        letter-spacing: 3px;
+        background: #000;
+        padding: 14px 24px;
+        border-radius: 18px;
+        border: 1px solid rgba(212, 255, 0, 0.4);
+      }
+      .clock-info {
+        display: flex;
+        flex-direction: column;
+      }
+      .clock-badge {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 15px;
+        font-weight: 800;
+        color: #ff2d2d;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+      .clock-question {
+        font-family: 'Anton', sans-serif;
+        font-size: 32px;
+        color: #ffffff;
+        text-transform: uppercase;
+        margin-top: 6px;
+        line-height: 1.15;
+      }
+      .clock-question span {
+        color: #d4ff00;
+      }
+
+      /* 4. CAMADA 2: A LEGENDA PALAVRA POR PALAVRA (KARAOKÊ ESPORTIVO) */
+      #subtitle-area {
+        position: absolute;
+        bottom: 180px;
+        left: 45px;
+        right: 45px;
+        height: 180px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 80;
+        pointer-events: none;
+      }
+      .caption-bubble {
+        background: rgba(8, 12, 10, 0.92);
+        border: 2px solid rgba(255, 255, 255, 0.15);
+        padding: 22px 36px;
+        border-radius: 28px;
+        backdrop-filter: blur(25px);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.85);
+        text-align: center;
+        max-width: 980px;
+      }
+      .karaoke-word {
+        font-family: 'Anton', sans-serif;
+        font-size: 52px;
+        color: #718096;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        display: inline-block;
+        margin: 0 10px;
+        transform-origin: center center;
+        transition: color 0.1s ease;
+      }
+      .karaoke-word.active {
+        color: #ffffff;
+        transform: scale(1.18);
+        text-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
+      }
+      .karaoke-word.highlight {
+        color: #060908 !important;
+        background: #d4ff00;
+        padding: 4px 14px;
+        border-radius: 10px;
+        transform: scale(1.22);
+        box-shadow: 0 0 35px rgba(212, 255, 0, 0.7);
+      }
+      .karaoke-word.alert-word {
+        color: #ffffff !important;
+        background: #ff2d2d;
+        padding: 4px 14px;
+        border-radius: 10px;
+        transform: scale(1.22);
+        box-shadow: 0 0 35px rgba(255, 45, 45, 0.7);
+      }
+
+      /* 5. ÁREA INFERIOR DE SEGURANÇA (SAFE ZONE INSTAGRAM) */
+      #safe-bottom {
+        position: absolute;
+        bottom: 45px;
+        left: 45px;
+        right: 45px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+      }
+      .brand-pill {
+        font-family: 'Anton', sans-serif;
+        font-size: 20px;
+        color: #d4ff00;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        background: rgba(0, 0, 0, 0.6);
+        padding: 10px 22px;
+        border-radius: 30px;
+        border: 1px solid rgba(212, 255, 0, 0.3);
+      }
+      .swipe-cta {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 14px;
+        font-weight: 800;
+        color: #a0aec0;
+        letter-spacing: 1px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="stage">
+      <div class="bg-stripes"></div>
+      <div class="glow-green" id="glow-green"></div>
+      <div class="glow-red" id="glow-red"></div>
+
+      <!-- 1. HEADER -->
+      <div id="header">
+        <div class="badge-category">
+          <div class="rec-pulse"></div>
+          <span>ALERTA DE FÁBRICA</span>
+        </div>
+        <div class="badge-tag">GARGALO #01</div>
+      </div>
+
+      <!-- 2. CAMADA 3: O ROSTO NO CARD QUE MUDA DE FORMA -->
+      <!-- O container muda de dimensão e posição dinamicamente -->
+      <div id="face-card-container" class="card-border-green" style="top: 360px; left: 55px; width: 970px; height: 1120px; border-radius: 36px;">
+        <div id="face-zoom-wrapper">
+          <video
+            id="speaker-video"
+            src="assets/reels/flavio_raw_1m21_2m11.mp4"
+            muted
+            playsinline
+            preload="auto"
+          ></video>
+        </div>
+      </div>
+
+      <!-- 3. CAMADA 4: GRÁFICOS SINCRONIZADOS POR FALA -->
+      <div id="graphics-layer">
+        <!-- GANCHO DE ABERTURA (0 a 11s) -->
+        <div id="hook-banner">
+          <div class="hook-tag">A VERDADE QUE NINGUÉM CONTA</div>
+          <h1 class="hook-title">SUA FÁBRICA ESTÁ<br /><span>VIRANDO PREJUÍZO?</span></h1>
+        </div>
+
+        <!-- ALERTA DE PREJUÍZO (11s a 16s) -->
+        <div id="alert-box-prejuizo">
+          <div class="alert-tag-strip">GARGALO GRAVE DETECTADO</div>
+          <div class="alert-msg-big">
+            PEÇAS ERRADAS + TECIDO NO CHÃO = <span>PREJUÍZO DIRETO</span>
+          </div>
+        </div>
+
+        <!-- COMPARATIVO IMPRESSÃO & PRENSA (16s a 28s) -->
+        <div id="comparison-container">
+          <div class="compare-card bad">
+            <div class="compare-icon">⚠️</div>
+            <div class="compare-title red">IMPRESSÃO OPACA</div>
+            <div class="compare-desc">Perfil de cor descalibrado estragando o lote</div>
+          </div>
+          <div class="compare-card bad">
+            <div class="compare-icon">🔥</div>
+            <div class="compare-title red">PRENSA COM ESTRIA</div>
+            <div class="compare-desc">Um lado preto e o outro desbotado</div>
+          </div>
+        </div>
+
+        <!-- RELÓGIO 20:00 (37s a 50s) -->
+        <div id="clock-night-card">
+          <div class="clock-display">20:00</div>
+          <div class="clock-info">
+            <div class="clock-badge">8 HORAS DA NOITE</div>
+            <div class="clock-question">
+              QUEM ESTÁ NA PRENSA <span>SUBLIMANDO TUDO?</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. CAMADA 2: A LEGENDA PALAVRA POR PALAVRA -->
+      <div id="subtitle-area">
+        <div class="caption-bubble" id="caption-bubble">
+          <div id="caption-content"></div>
+        </div>
+      </div>
+
+      <!-- 5. SAFE BOTTOM -->
+      <div id="safe-bottom">
+        <div class="brand-pill">PREMIER BRAND SPORTS</div>
+        <div class="swipe-cta">MÉTODO BLINDADO ➔</div>
+      </div>
+    </div>
+
+    <script>
+      const tl = gsap.timeline({ paused: true });
+
+      // PALAVRAS TRANSCRIÇÃO COM TEMPOS EXATOS (1:21 a 2:11)
+      const transcript = [
+        {"t": "Vamos", "s": 0.66, "e": 0.88, "type": "normal"},
+        {"t": "falar", "s": 0.88, "e": 1.02, "type": "normal"},
+        {"t": "a", "s": 1.02, "e": 1.28, "type": "normal"},
+        {"t": "verdade", "s": 1.28, "e": 1.58, "type": "highlight"},
+        {"t": "aqui,", "s": 1.58, "e": 1.70, "type": "normal"},
+        {"t": "você", "s": 1.70, "e": 1.84, "type": "normal"},
+        {"t": "chega", "s": 1.84, "e": 2.18, "type": "normal"},
+        {"t": "de", "s": 2.18, "e": 2.54, "type": "normal"},
+        {"t": "manhã", "s": 2.54, "e": 2.82, "type": "normal"},
+        {"t": "na", "s": 2.82, "e": 3.06, "type": "normal"},
+        {"t": "fábrica", "s": 3.06, "e": 3.46, "type": "highlight"},
+        {"t": "e", "s": 3.46, "e": 3.72, "type": "normal"},
+        {"t": "a", "s": 3.72, "e": 3.98, "type": "normal"},
+        {"t": "primeira", "s": 3.98, "e": 4.24, "type": "normal"},
+        {"t": "coisa", "s": 4.24, "e": 4.62, "type": "normal"},
+        {"t": "que", "s": 4.62, "e": 4.88, "type": "normal"},
+        {"t": "vê", "s": 4.88, "e": 5.48, "type": "normal"},
+        {"t": "é", "s": 5.48, "e": 5.58, "type": "normal"},
+        {"t": "um", "s": 5.58, "e": 5.80, "type": "normal"},
+        {"t": "monte", "s": 5.80, "e": 5.98, "type": "normal"},
+        {"t": "de", "s": 5.98, "e": 6.32, "type": "normal"},
+        {"t": "peça", "s": 6.32, "e": 7.00, "type": "normal"},
+        {"t": "errada,", "s": 7.00, "e": 7.30, "type": "alert"},
+        {"t": "tecido", "s": 8.38, "e": 8.64, "type": "normal"},
+        {"t": "acumulado", "s": 8.64, "e": 9.22, "type": "normal"},
+        {"t": "no", "s": 9.60, "e": 9.74, "type": "normal"},
+        {"t": "chão", "s": 9.74, "e": 10.14, "type": "alert"},
+        {"t": "virando", "s": 11.46, "e": 12.22, "type": "normal"},
+        {"t": "PREJUÍZO!", "s": 12.22, "e": 12.70, "type": "alert"},
+        {"t": "O", "s": 12.78, "e": 12.84, "type": "normal"},
+        {"t": "perfil", "s": 12.84, "e": 13.08, "type": "normal"},
+        {"t": "de", "s": 13.08, "e": 13.22, "type": "normal"},
+        {"t": "cor", "s": 13.22, "e": 13.44, "type": "highlight"},
+        {"t": "está", "s": 13.44, "e": 13.80, "type": "normal"},
+        {"t": "errado", "s": 14.24, "e": 14.64, "type": "alert"},
+        {"t": "impressão", "s": 15.88, "e": 16.26, "type": "normal"},
+        {"t": "OPACA.", "s": 16.26, "e": 16.84, "type": "alert"},
+        {"t": "A", "s": 17.02, "e": 17.10, "type": "normal"},
+        {"t": "prensa", "s": 17.10, "e": 17.62, "type": "highlight"},
+        {"t": "fazendo", "s": 17.90, "e": 18.22, "type": "normal"},
+        {"t": "ESTRIA,", "s": 18.22, "e": 18.68, "type": "alert"},
+        {"t": "um", "s": 19.82, "e": 20.08, "type": "normal"},
+        {"t": "lado", "s": 20.08, "e": 20.30, "type": "normal"},
+        {"t": "preto", "s": 20.50, "e": 20.86, "type": "normal"},
+        {"t": "outro", "s": 21.66, "e": 21.82, "type": "normal"},
+        {"t": "opaco.", "s": 22.28, "e": 22.66, "type": "alert"},
+        {"t": "E", "s": 22.82, "e": 22.84, "type": "normal"},
+        {"t": "lá", "s": 22.84, "e": 22.94, "type": "normal"},
+        {"t": "vai", "s": 22.94, "e": 23.06, "type": "normal"},
+        {"t": "você", "s": 23.06, "e": 23.30, "type": "normal"},
+        {"t": "fazer", "s": 23.52, "e": 23.78, "type": "normal"},
+        {"t": "lote", "s": 24.26, "e": 24.60, "type": "normal"},
+        {"t": "inteiro", "s": 25.06, "e": 25.46, "type": "highlight"},
+        {"t": "pagar", "s": 26.42, "e": 26.58, "type": "normal"},
+        {"t": "DO", "s": 26.58, "e": 26.76, "type": "alert"},
+        {"t": "SEU", "s": 26.76, "e": 26.84, "type": "alert"},
+        {"t": "PRÓPRIO", "s": 26.84, "e": 27.32, "type": "alert"},
+        {"t": "BOLSO!", "s": 27.32, "e": 27.80, "type": "alert"},
+        {"t": "Costura", "s": 28.78, "e": 29.20, "type": "normal"},
+        {"t": "sem", "s": 30.30, "e": 30.52, "type": "normal"},
+        {"t": "padrão,", "s": 30.52, "e": 30.92, "type": "alert"},
+        {"t": "costureira", "s": 31.02, "e": 31.46, "type": "normal"},
+        {"t": "perdida,", "s": 31.46, "e": 32.10, "type": "alert"},
+        {"t": "prazo", "s": 33.84, "e": 34.12, "type": "normal"},
+        {"t": "estourando...", "s": 34.12, "e": 34.66, "type": "alert"},
+        {"t": "E", "s": 37.62, "e": 37.68, "type": "normal"},
+        {"t": "quando", "s": 37.68, "e": 37.86, "type": "normal"},
+        {"t": "dá", "s": 37.86, "e": 38.04, "type": "normal"},
+        {"t": "8", "s": 38.04, "e": 38.22, "type": "highlight"},
+        {"t": "HORAS", "s": 38.22, "e": 38.44, "type": "highlight"},
+        {"t": "DA", "s": 38.44, "e": 38.58, "type": "highlight"},
+        {"t": "NOITE...", "s": 38.58, "e": 38.82, "type": "highlight"},
+        {"t": "Quem", "s": 38.82, "e": 39.20, "type": "normal"},
+        {"t": "está", "s": 39.34, "e": 39.50, "type": "normal"},
+        {"t": "na", "s": 39.50, "e": 39.62, "type": "normal"},
+        {"t": "impressora?", "s": 39.62, "e": 40.30, "type": "alert"},
+        {"t": "Quem", "s": 42.48, "e": 42.76, "type": "normal"},
+        {"t": "está", "s": 42.92, "e": 43.06, "type": "normal"},
+        {"t": "na", "s": 43.06, "e": 43.16, "type": "normal"},
+        {"t": "PRENSA", "s": 43.16, "e": 43.78, "type": "alert"},
+        {"t": "sublimando", "s": 43.78, "e": 44.64, "type": "normal"},
+        {"t": "as", "s": 44.64, "e": 45.06, "type": "normal"},
+        {"t": "camisetas?", "s": 45.06, "e": 45.58, "type": "highlight"},
+        {"t": "Quem", "s": 47.04, "e": 47.18, "type": "normal"},
+        {"t": "está", "s": 47.30, "e": 47.46, "type": "normal"},
+        {"t": "dobrando", "s": 47.46, "e": 48.12, "type": "normal"},
+        {"t": "para", "s": 48.64, "e": 48.78, "type": "normal"},
+        {"t": "entregar", "s": 48.90, "e": 49.20, "type": "normal"},
+        {"t": "amanhã?", "s": 49.20, "e": 49.50, "type": "highlight"}
+      ];
+
+      // ==========================================
+      // CAMADA 3: O ROSTO NO CARD QUE MUDA DE FORMA (LAYOUT TRANSFORMATIONS)
+      // ==========================================
+      // Cena 1 (0.0s - 11.2s): Card Grande no centro com Gancho no topo
+      // Inicia em { top: 360, left: 55, width: 970, height: 1120, borderRadius: 36 }
+
+      // Transição Cena 2 (11.2s): Card encolhe para baixo e vira alerta vermelho!
+      tl.to("#face-card-container", {
+        top: 480,
+        left: 80,
+        width: 920,
+        height: 980,
+        borderRadius: "28px",
+        className: "card-border-red",
+        duration: 0.6,
+        ease: "power2.out"
+      }, 11.2);
+
+      // Transição Cena 3 (16.5s): Card desce mais para abrir espaço ao comparativo
+      tl.to("#face-card-container", {
+        top: 580,
+        left: 65,
+        width: 950,
+        height: 890,
+        borderRadius: "32px",
+        duration: 0.6,
+        ease: "power2.out"
+      }, 16.5);
+
+      // Transição Cena 4 (27.5s): Card volta para o formato imponente e borda verde
+      tl.to("#face-card-container", {
+        top: 360,
+        left: 55,
+        width: 970,
+        height: 1120,
+        borderRadius: "36px",
+        className: "card-border-green",
+        duration: 0.6,
+        ease: "power2.out"
+      }, 27.5);
+
+      // Transição Cena 5 (37.0s): Card encolhe para dar destaque total ao Relógio 20:00
+      tl.to("#face-card-container", {
+        top: 490,
+        left: 75,
+        width: 930,
+        height: 980,
+        borderRadius: "30px",
+        className: "card-border-green",
+        duration: 0.6,
+        ease: "power2.out"
+      }, 37.0);
+
+      // ==========================================
+      // CAMADA 5: CÂMERA & ZOOM DINÂMICO (PUNCH-INS DE IMPACTO)
+      // ==========================================
+      // Respiração contínua
+      tl.to("#face-zoom-wrapper", { scale: 1.05, duration: 11.0, ease: "sine.inOut" }, 0.0);
+
+      // PUNCH-IN 1 (11.4s): "VIRANDO PREJUÍZO"
+      tl.to("#face-zoom-wrapper", { scale: 1.25, duration: 0.25, ease: "power2.out" }, 11.3);
+      tl.to("#glow-red", { opacity: 1, duration: 0.3 }, 11.3);
+      tl.to("#face-zoom-wrapper", { scale: 1.08, duration: 0.8, ease: "power2.inOut" }, 12.8);
+      tl.to("#glow-red", { opacity: 0.3, duration: 0.8 }, 12.8);
+
+      // PUNCH-IN 2 (26.3s): "DO SEU PRÓPRIO BOLSO"
+      tl.to("#face-zoom-wrapper", { scale: 1.28, duration: 0.22, ease: "power2.out" }, 26.3);
+      tl.to("#face-zoom-wrapper", { scale: 1.06, duration: 0.8, ease: "power2.inOut" }, 27.8);
+
+      // PUNCH-IN 3 (37.4s): "8 HORAS DA NOITE QUEM ESTÁ NA PRENSA?"
+      tl.to("#face-zoom-wrapper", { scale: 1.30, duration: 0.3, ease: "power2.out" }, 37.3);
+      tl.to("#face-zoom-wrapper", { scale: 1.12, duration: 12.0, ease: "sine.inOut" }, 38.5);
+
+      // ==========================================
+      // CAMADA 4: ENTRADA DOS GRÁFICOS (1 NOVO A CADA 2-3 SEGUNDOS)
+      // ==========================================
+      // 1. Gancho sai aos 11.2s
+      tl.to("#hook-banner", { opacity: 0, y: -40, duration: 0.4 }, 11.0);
+
+      // 2. Alerta Prejuízo entra aos 11.4s
+      tl.to("#alert-box-prejuizo", { opacity: 1, y: 0, duration: 0.45, ease: "back.out(1.5)" }, 11.4);
+      tl.to("#alert-box-prejuizo", { scale: 1.03, duration: 0.3, yoyo: true, repeat: 2 }, 12.2);
+      tl.to("#alert-box-prejuizo", { opacity: 0, y: -30, duration: 0.4 }, 16.2);
+
+      // 3. Comparativo Impressão / Prensa entra aos 16.5s
+      tl.to("#comparison-container", { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 16.5);
+      tl.fromTo(".compare-card.bad", { scale: 0.85, opacity: 0 }, { scale: 1, opacity: 1, stagger: 0.2, duration: 0.4, ease: "back.out(1.5)" }, 16.6);
+      tl.to("#comparison-container", { opacity: 0, y: -30, duration: 0.4 }, 27.2);
+
+      // 4. Relógio 20:00 entra aos 37.2s
+      tl.to("#clock-night-card", { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.6)" }, 37.2);
+      tl.to(".clock-display", { scale: 1.08, duration: 0.3, yoyo: true, repeat: 5, ease: "sine.inOut" }, 38.0);
+
+      // ==========================================
+      // CAMADA 2: A LEGENDA KARAOKÊ (2 A 3 PALAVRAS POR VEZ)
+      // ==========================================
+      const captionContent = document.getElementById("caption-content");
+      const CHUNK_SIZE = 3;
+
+      for (let i = 0; i < transcript.length; i += CHUNK_SIZE) {
+        const chunk = transcript.slice(i, i + CHUNK_SIZE);
+        const chunkStart = chunk[0].s;
+        const chunkEnd = chunk[chunk.length - 1].e + 0.12;
+
+        const groupEl = document.createElement("div");
+        groupEl.id = `group-${i}`;
+        groupEl.style.display = "none";
+
+        chunk.forEach((w, idx) => {
+          const sp = document.createElement("span");
+          sp.className = "karaoke-word";
+          sp.id = `kw-${i + idx}`;
+          sp.textContent = w.t;
+          groupEl.appendChild(sp);
+        });
+        captionContent.appendChild(groupEl);
+
+        // Aparece o grupo de 2-3 palavras
+        tl.set(groupEl, { display: "block" }, chunkStart);
+
+        // Acende cada palavra individualmente
+        chunk.forEach((w, idx) => {
+          let activeClass = "karaoke-word active";
+          if (w.type === "highlight") activeClass = "karaoke-word highlight";
+          if (w.type === "alert") activeClass = "karaoke-word alert-word";
+
+          tl.set(`#kw-${i + idx}`, { className: activeClass }, w.s);
+          tl.fromTo(`#kw-${i + idx}`, { scale: 0.9 }, { scale: 1.2, duration: 0.12, ease: "power2.out" }, w.s);
+          tl.set(`#kw-${i + idx}`, { className: "karaoke-word", scale: 1.0 }, w.e);
+        });
+
+        tl.set(groupEl, { display: "none" }, chunkEnd);
+      }
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["reels"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
