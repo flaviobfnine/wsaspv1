@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Modelo 2.mp4 Cauhi Style - Minimalist Editorial Tech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html, body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #030712;
+        font-family: 'Inter', -apple-system, sans-serif;
+      }
+      #stage {
+        position: relative;
+        width: 1080px;
+        height: 1920px;
+        background: #050a14;
+        overflow: hidden;
+      }
+
+      /* 1. FUNDO COM DOT GRID IDÊNTICO AO 2.MP4 */
+      .dot-grid {
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1.5px, transparent 1.5px);
+        background-size: 32px 32px;
+        pointer-events: none;
+      }
+      .bg-vignette {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 50% 30%, rgba(14, 30, 60, 0.45) 0%, #030712 85%);
+        pointer-events: none;
+      }
+
+      /* 2. HEADER MINIMALISTA ESTILO CLAUDE / TECH (CAMADA DE TOP) */
+      #top-floating-badge {
+        position: absolute;
+        top: 65px;
+        right: 60px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: #111827;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        padding: 10px 22px;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        z-index: 100;
+        transform: rotate(2.5deg);
+      }
+      .badge-icon {
+        font-size: 16px;
+      }
+      .badge-text {
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        font-weight: 800;
+        color: #f3f4f6;
+        letter-spacing: -0.3px;
+      }
+
+      /* 3. CAMADA 3: O ROSTO DO FLÁVIO (CARD TRANSICIONAL DINÂMICO) */
+      /* Ele começa em Card Grande no centro e depois transiciona suavemente */
+      #speaker-card {
+        position: absolute;
+        top: 480px;
+        left: 100px;
+        width: 880px;
+        height: 1100px;
+        border-radius: 46px;
+        overflow: hidden;
+        background: #0a0f1d;
+        z-index: 40;
+        box-shadow: 0 40px 100px rgba(0, 0, 0, 0.95), 0 0 0 1px rgba(255, 255, 255, 0.15);
+      }
+      #video-inner-wrap {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform-origin: 50% 25%;
+      }
+      #speaker-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 18%;
+        display: block;
+      }
+
+      /* 4. CAMADA 4: OS ELEMENTOS CLEAN (JANELA MAC, TAGS, SELETOR, ITÁLICO SERIF) */
+      #graphic-elements {
+        position: absolute;
+        inset: 0;
+        z-index: 60;
+        pointer-events: none;
+      }
+
+      /* ELEMENTO 1: TÍTULO EDITORIAL COM PALAVRA SERIFADA ITÁLICA (FRAME 001 DO 2.MP4) */
+      #title-editorial-1 {
+        position: absolute;
+        top: 240px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      .title-bold-tech {
+        font-family: 'Inter', sans-serif;
+        font-size: 68px;
+        font-weight: 900;
+        color: #ffffff;
+        letter-spacing: -2px;
+        line-height: 1;
+      }
+      .title-serif-italic {
+        font-family: 'Instrument Serif', Georgia, serif;
+        font-style: italic;
+        font-size: 64px;
+        color: #60a5fa;
+        line-height: 1.1;
+        display: block;
+        margin-top: 5px;
+      }
+
+      /* JANELINHA DO MAC NO TOPO (FRAME 001) */
+      #mac-window-top {
+        position: absolute;
+        top: 120px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 680px;
+        height: 85px;
+        background: #111827;
+        border-radius: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+        gap: 15px;
+        opacity: 0;
+      }
+      .window-dots {
+        display: flex;
+        gap: 7px;
+      }
+      .w-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+      }
+      .dot-red { background: #ef4444; }
+      .dot-yellow { background: #f59e0b; }
+      .dot-green { background: #10b981; }
+      .window-bar-text {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 14px;
+        font-weight: 600;
+        color: #9ca3af;
+      }
+
+      /* ELEMENTO 2: CARD CLEAN TIPO MAC COM CÓDIGO/REGRA (FRAME 010 DO 2.MP4) */
+      #rule-card-mac {
+        position: absolute;
+        top: 420px;
+        left: 50%;
+        transform: translateX(-50%) scale(0.95);
+        width: 900px;
+        background: #ffffff;
+        border-radius: 28px;
+        box-shadow: 0 40px 100px rgba(0, 0, 0, 0.85);
+        padding: 34px 38px;
+        opacity: 0;
+      }
+      .rule-header-bar {
+        background: #f1f5f9;
+        border-radius: 14px;
+        padding: 16px 22px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 22px;
+      }
+      .rule-param {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 15px;
+        font-weight: 700;
+        color: #334155;
+      }
+      .rule-param span {
+        color: #2563eb;
+        font-weight: 800;
+      }
+      .rule-code-body {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 18px;
+        color: #1e293b;
+        line-height: 1.6;
+        font-weight: 500;
+      }
+      .rule-code-body .kw-blue {
+        color: #2563eb;
+        font-weight: 700;
+      }
+      .rule-code-body .kw-red {
+        color: #dc2626;
+        font-weight: 700;
+      }
+
+      /* ELEMENTO 3: LABEL TÉCNICA AO LADO DO ROSTO (FRAME 010) */
+      #bubble-label-text {
+        position: absolute;
+        top: 175px;
+        left: 380px;
+        opacity: 0;
+      }
+      .label-sub {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 13px;
+        letter-spacing: 3px;
+        color: #94a3b8;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      .label-main-bold {
+        font-family: 'Inter', sans-serif;
+        font-size: 42px;
+        font-weight: 900;
+        color: #ffffff;
+        letter-spacing: -1px;
+        margin-top: 2px;
+      }
+      .label-main-serif {
+        font-family: 'Instrument Serif', Georgia, serif;
+        font-style: italic;
+        font-size: 44px;
+        color: #60a5fa;
+      }
+
+      /* ELEMENTO 4: OS BOTÕES DE SELEÇÃO CHECK/CROSS (FRAME 027 DO 2.MP4) */
+      #options-buttons-stack {
+        position: absolute;
+        top: 480px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 720px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        opacity: 0;
+      }
+      .opt-btn {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        padding: 22px 30px;
+        border-radius: 20px;
+        font-family: 'Inter', sans-serif;
+        font-size: 30px;
+        font-weight: 900;
+        letter-spacing: -0.5px;
+      }
+      .opt-btn.correct {
+        background: rgba(30, 58, 138, 0.7);
+        border: 2px solid #3b82f6;
+        color: #ffffff;
+        box-shadow: 0 15px 40px rgba(59, 130, 246, 0.25);
+      }
+      .opt-btn.wrong {
+        background: rgba(127, 29, 29, 0.7);
+        border: 2px solid #ef4444;
+        color: #ffffff;
+        box-shadow: 0 15px 40px rgba(239, 68, 68, 0.25);
+      }
+      .opt-icon {
+        font-size: 26px;
+      }
+
+      /* 5. CAMADA 2: A LEGENDA DISCRETA MINIMALISTA (1 A 2 PALAVRAS EM BRANCO) */
+      #caption-clean-container {
+        position: absolute;
+        bottom: 220px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        z-index: 90;
+        pointer-events: none;
+      }
+      .word-clean {
+        font-family: 'Inter', sans-serif;
+        font-size: 54px;
+        font-weight: 900;
+        color: #ffffff;
+        letter-spacing: -1.5px;
+        display: inline-block;
+        margin: 0 8px;
+      }
+      .word-clean.serif-highlight {
+        font-family: 'Instrument Serif', Georgia, serif;
+        font-style: italic;
+        font-size: 60px;
+        color: #93c5fd;
+        font-weight: 400;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="stage"
+      data-composition-id="reels"
+      data-start="0"
+      data-width="1080"
+      data-height="1920"
+      data-duration="50.0"
+    >
+      <div class="dot-grid"></div>
+      <div class="bg-vignette"></div>
+
+      <!-- HEADER DISCRETO ESTILO HACKER/TECH -->
+      <div id="top-floating-badge">
+        <span class="badge-icon">🎬</span>
+        <span class="badge-text">gargalo de fábrica</span>
+      </div>
+
+      <!-- JANELINHA DO MAC (TOPO) -->
+      <div id="mac-window-top">
+        <div class="window-dots">
+          <div class="w-dot dot-red"></div>
+          <div class="w-dot dot-yellow"></div>
+          <div class="w-dot dot-green"></div>
+        </div>
+        <div class="window-bar-text">fabrica.config · auditoria</div>
+      </div>
+
+      <!-- TÍTULO EDITORIAL COM ITÁLICO SERIF (0 a 11s) -->
+      <div id="title-editorial-1">
+        <div class="title-bold-tech">Engenharia</div>
+        <div class="title-serif-italic">do prejuízo</div>
+      </div>
+
+      <!-- CARD DO ROSTO COM TRANSIÇÃO DE FORMATO (CAMADA 3) -->
+      <!-- Inicia Grande Central (Frame 001) e transiciona para Bolha (Frame 010) e Expandido (Frame 020) -->
+      <div id="speaker-card">
+        <div id="video-inner-wrap">
+          <video
+            id="speaker-video"
+            src="assets/reels/flavio_raw_1m21_2m11.mp4"
+            data-start="0"
+            data-duration="50.0"
+            muted
+            playsinline
+            preload="auto"
+          ></video>
+        </div>
+      </div>
+
+      <!-- ELEMENTOS GRÁFICOS (CAMADA 4) -->
+      <div id="graphic-elements">
+        <!-- Rótulo ao lado da bolha (11s a 27s) -->
+        <div id="bubble-label-text">
+          <div class="label-sub">0. REGRA DA FÁBRICA</div>
+          <div class="label-main-bold">achou o <span class="label-main-serif">erro</span></div>
+        </div>
+
+        <!-- Janela de Código / Regra (11.5s a 27s) -->
+        <div id="rule-card-mac">
+          <div class="rule-header-bar">
+            <div class="rule-param">CONFIG: <span>CORTE</span></div>
+            <div class="rule-param">ESTOQUE: <span>CHÃO</span></div>
+            <div class="rule-param">STATUS: <span style="color:#dc2626;">PREJUÍZO</span></div>
+          </div>
+          <div class="rule-code-body">
+            if (tecido.acumulado == true) {<br />
+            &nbsp;&nbsp;<span class="kw-red">gerarPrejuizo</span>(loteInteiro);<br />
+            &nbsp;&nbsp;<span class="kw-blue">pagarDoProprioBolso</span> = true;<br />
+            }
+          </div>
+        </div>
+
+        <!-- Botões de Seleção Check / Cross (27.5s a 37s) -->
+        <div id="options-buttons-stack">
+          <div class="opt-btn correct">
+            <span class="opt-icon">✓</span> método blindado
+          </div>
+          <div class="opt-btn wrong">
+            <span class="opt-icon">✕</span> costura sem padrão
+          </div>
+        </div>
+      </div>
+
+      <!-- LEGENDA CLEAN (CAMADA 2) -->
+      <div id="caption-clean-container">
+        <div id="caption-display"></div>
+      </div>
+    </div>
+
+    <script>
+      const tl = gsap.timeline({ paused: true });
+
+      // ====================================================
+      // 1. ANIMAÇÃO DE ELEMENTOS VISUAIS IDÊNTICA AO VÍDEO 2.MP4
+      // ====================================================
+
+      // CENA 1: ABERTURA (0.0s - 11.0s) - Igual ao Frame 001 do 2.mp4
+      tl.to("#mac-window-top", { opacity: 1, duration: 0.5, ease: "power2.out" }, 0.4);
+      tl.to("#title-editorial-1", { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 0.6);
+
+      // CENA 2: TRANSIÇÃO PARA BOLHA + CÓDIGO (11.2s - 27.2s) - Igual ao Frame 010 do 2.mp4
+      tl.to(["#mac-window-top", "#title-editorial-1"], { opacity: 0, y: -20, duration: 0.4 }, 11.0);
+
+      // O Card do Flávio encolhe e vira uma bolha circular perfeita no topo esquerdo!
+      tl.to("#speaker-card", {
+        top: 130,
+        left: 70,
+        width: 260,
+        height: 260,
+        borderRadius: 130,
+        boxShadow: "0 25px 60px rgba(0, 0, 0, 0.8), 0 0 0 4px rgba(255, 255, 255, 0.3)",
+        duration: 0.65,
+        ease: "power3.inOut"
+      }, 11.2);
+
+      // Entra o texto da regra ao lado da bolha
+      tl.to("#bubble-label-text", { opacity: 1, duration: 0.4, ease: "power2.out" }, 11.6);
+
+      // Entra o Card Mac branco com o código no centro
+      tl.to("#rule-card-mac", { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.4)" }, 11.7);
+
+      // CENA 3: BOTÕES DE SELEÇÃO CHECK / WRONG (27.5s - 36.8s) - Igual ao Frame 027 do 2.mp4
+      tl.to(["#bubble-label-text", "#rule-card-mac"], { opacity: 0, y: -20, duration: 0.35 }, 27.2);
+
+      // A bolha do Flávio vai para o topo direito (Frame 027)
+      tl.to("#speaker-card", {
+        top: 120,
+        left: 720,
+        duration: 0.6,
+        ease: "power2.inOut"
+      }, 27.4);
+
+      // Entram os botões de opção no centro
+      tl.to("#options-buttons-stack", { opacity: 1, duration: 0.4, ease: "power2.out" }, 27.6);
+      tl.fromTo(".opt-btn", { scale: 0.9, opacity: 0 }, { scale: 1, opacity: 1, stagger: 0.15, duration: 0.4, ease: "back.out(1.5)" }, 27.7);
+
+      // CENA 4: EXPANDIDO FECHAMENTO (37.0s - 50.0s) - Igual ao Frame 020 do 2.mp4
+      tl.to("#options-buttons-stack", { opacity: 0, scale: 0.95, duration: 0.3 }, 36.8);
+
+      // O Card volta a ser um card grande vertical centralizado com zoom de impacto
+      tl.to("#speaker-card", {
+        top: 260,
+        left: 80,
+        width: 920,
+        height: 1280,
+        borderRadius: 44,
+        boxShadow: "0 40px 100px rgba(0, 0, 0, 0.95), 0 0 0 1px rgba(255, 255, 255, 0.15)",
+        duration: 0.7,
+        ease: "power3.inOut"
+      }, 37.0);
+
+      // Micro-zooms de câmera (Punch-in)
+      tl.to("#video-inner-wrap", { scale: 1.15, duration: 0.25, ease: "power2.out" }, 11.4);
+      tl.to("#video-inner-wrap", { scale: 1.0, duration: 0.6, ease: "power2.inOut" }, 12.8);
+
+      tl.to("#video-inner-wrap", { scale: 1.18, duration: 0.25, ease: "power2.out" }, 26.3);
+      tl.to("#video-inner-wrap", { scale: 1.0, duration: 0.6, ease: "power2.inOut" }, 27.8);
+
+      tl.to("#video-inner-wrap", { scale: 1.20, duration: 0.3, ease: "power2.out" }, 37.4);
+
+      // ====================================================
+      // 2. LEGENDA CLEAN (1 A 2 PALAVRAS POR VEZ, ESTILO 2.MP4)
+      // ====================================================
+      const captionDisplay = document.getElementById("caption-display");
+
+      const cleanChunks = [
+        { text: "Vamos falar", s: 0.66, e: 1.15 },
+        { text: "a verdade", s: 1.15, e: 1.65, serif: true },
+        { text: "você chega", s: 1.70, e: 2.15 },
+        { text: "de manhã", s: 2.18, e: 2.75 },
+        { text: "na sua fábrica", s: 2.82, e: 3.60 },
+        { text: "e a primeira coisa", s: 3.66, e: 4.40 },
+        { text: "que você vê", s: 4.42, e: 5.20 },
+        { text: "é peça errada", s: 5.48, e: 7.20, serif: true },
+        { text: "tecido acumulado", s: 7.74, e: 9.20 },
+        { text: "no chão", s: 9.60, e: 10.40 },
+        { text: "ou na bancada", s: 10.56, e: 11.40 },
+        { text: "virando prejuízo!", s: 11.46, e: 12.70, serif: true },
+        { text: "Perfil de cor", s: 12.84, e: 13.80 },
+        { text: "configurado errado", s: 13.80, e: 14.80 },
+        { text: "impressão opaca", s: 15.02, e: 16.80, serif: true },
+        { text: "A prensa", s: 17.02, e: 17.80 },
+        { text: "fazendo estria", s: 17.90, e: 19.00 },
+        { text: "um lado preto", s: 19.44, e: 21.00 },
+        { text: "outro opaco", s: 21.38, e: 22.70 },
+        { text: "E lá vai você", s: 22.84, e: 23.40 },
+        { text: "refazer o lote", s: 23.52, e: 25.50 },
+        { text: "pagar", s: 26.32, e: 26.70 },
+        { text: "do próprio bolso!", s: 26.70, e: 28.20, serif: true },
+        { text: "Lá na costura", s: 28.48, e: 29.50 },
+        { text: "ordem sem padrão", s: 29.92, e: 31.00, serif: true },
+        { text: "costureira perdida", s: 31.02, e: 32.50 },
+        { text: "prazo estourando", s: 33.84, e: 35.00 },
+        { text: "E quando dá", s: 37.62, e: 38.00 },
+        { text: "8 horas da noite", s: 38.04, e: 39.20, serif: true },
+        { text: "quem está", s: 39.20, e: 39.60 },
+        { text: "na impressora?", s: 39.62, e: 41.50 },
+        { text: "Quem está", s: 42.48, e: 43.10 },
+        { text: "na prensa?", s: 43.16, e: 45.00, serif: true },
+        { text: "Dobrando camisetas", s: 47.04, e: 48.60 },
+        { text: "pra entregar amanhã?", s: 48.64, e: 49.80, serif: true }
+      ];
+
+      cleanChunks.forEach((c, idx) => {
+        const el = document.createElement("div");
+        el.id = `chunk-clean-${idx}`;
+        el.style.display = "none";
+        
+        const span = document.createElement("span");
+        span.className = c.serif ? "word-clean serif-highlight" : "word-clean";
+        span.textContent = c.text;
+        el.appendChild(span);
+        captionDisplay.appendChild(el);
+
+        tl.set(el, { display: "block" }, c.s);
+        tl.fromTo(span, { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.15, ease: "power2.out" }, c.s);
+        tl.set(el, { display: "none" }, c.e);
+      });
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
