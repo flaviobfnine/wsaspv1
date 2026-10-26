@@ -6,7 +6,3 @@ deployment:
     - /bin/cp -rf premier-brand-sports/* /home/fabricae/bfninecamisetas.com.br/mentov1/
     - /bin/chmod -R 755 /home/fabricae/bfninecamisetas.com.br/mentov1/assets 2>/dev/null || true
     - /bin/chmod 644 /home/fabricae/bfninecamisetas.com.br/mentov1/*.html 2>/dev/null || true
-    - /bin/mkdir -p /home/fabricae/bfninecamisetas.com.br/sportflow
-    - /bin/chmod 755 /home/fabricae/bfninecamisetas.com.br/sportflow
-    - /bin/cp -rf sportflow/* /home/fabricae/bfninecamisetas.com.br/sportflow/
-    - /bin/chmod 644 /home/fabricae/bfninecamisetas.com.br/sportflow/*.html 2>/dev/null || true
