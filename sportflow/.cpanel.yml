@@ -1,0 +1,7 @@
+---
+deployment:
+  tasks:
+    - /bin/mkdir -p /home/fabricae/bfninecamisetas.com.br/sportflow
+    - /bin/chmod 755 /home/fabricae/bfninecamisetas.com.br/sportflow
+    - /bin/cp -rf index.html /home/fabricae/bfninecamisetas.com.br/sportflow/
+    - /bin/chmod 644 /home/fabricae/bfninecamisetas.com.br/sportflow/*.html 2>/dev/null || true
